@@ -10,9 +10,10 @@ import { AsideMenu } from "./AsideMenu";
 export const Header = () => {
   const [selected, setSelected] = useState("US");
   const [currency, setCurrency] = useState("USD");
-  const [asideActive,setAsideActive] = useState(false)
+ const [asideActive, setAsideActive] = useState(false);
 
   const handleAside = () => setAsideActive(!asideActive)
+ 
 
   const getHandleEUR = () => {
     setCurrency("EUR");
@@ -20,9 +21,11 @@ export const Header = () => {
   const getHandleUSD = () => {
     setCurrency("USD");
   };
+
+  
   return (
     <header id="mainHeader">
-      <div className="container-xxl">
+      <div className="container-fluid">
         <div className=" py-1 top-nav d-flex justify-content-between align-items-center">
           <div className=" top-left d-flex justify-content-center align-items-center">
             <ReactFlagsSelect
@@ -145,13 +148,14 @@ export const Header = () => {
         </div>
         <Navbar
         handleAside={handleAside}
-        asideActive={asideActive}
         />
       </div>
       <AsideMenu
       handleAside={handleAside}
       asideActive={asideActive}
       />
+      <div onClick={handleAside} className={`aside-bg${asideActive ? " aside-bg-on" : ""}`}>
+      </div>
     </header>
   );
 };
