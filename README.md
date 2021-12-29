@@ -7,7 +7,11 @@
 ### Choosing your currency.
 ### Customizable Product containers.
 
-## So far I have added header and header components.
+## What has been done so far ?
+### So far I have added header and banner components.
+
+<img src="https://i.hizliresim.com/amh2vs9.png" />
+
 
 ## WHAT TECHNOLOGIES DID I USE ?
 <p align="left">
