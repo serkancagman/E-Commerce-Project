@@ -1,1 +1,96 @@
-/* No CSS *//*# sourceMappingURL=banner.css.map */
+.carousel-info {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  color: #fff;
+  font-weight: 600;
+}
+
+.carousel-info .carousel-header {
+  font-size: 40px;
+}
+
+.carousel-info .carousel-titles {
+  font-weight: 550;
+  display: block;
+  padding: 1rem 0 !important;
+  font-size: 18px;
+}
+
+.carousel-btn {
+  margin-top: 1rem;
+  color: #fff;
+  font-size: 16px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border: 2px solid #fff;
+  border-radius: 75px;
+  width: 150px;
+  height: 50px;
+  outline: none;
+  background-color: transparent;
+}
+
+.carousel-btn:hover {
+  background-color: #16bcdc;
+  border: 2px solid transparent;
+}
+
+.indicators {
+  margin-top: 1.5rem;
+}
+
+.indicator {
+  background-color: transparent;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.indicator:hover {
+  background-color: #fff !important;
+}
+
+.current-carousel {
+  background-color: #fff !important;
+}
+
+.carousel-image {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.banner-item-img {
+  border-radius: 20px;
+  width: 100%;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.banner-item-img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.banner-info {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  cursor: pointer;
+}
+
+.banner-info .banner-header {
+  color: #fff;
+  font-weight: 600;
+}
+
+.banner-info .banner-title {
+  color: #fff;
+}
+/*# sourceMappingURL=banner.css.map */

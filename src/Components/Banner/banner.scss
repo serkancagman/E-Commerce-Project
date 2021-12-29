@@ -1,0 +1,88 @@
+$maincolor: #263c97;
+$secondcolor: #16bcdc;
+$transition: all 0.3s ease;
+$navBorder: 1px solid rgba(255, 255, 255, 0.164);
+
+.carousel-info {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  color: #fff;
+  font-weight: 600;
+  .carousel-header {
+    font-size: 40px;
+  }
+  .carousel-titles {
+    font-weight: 550;
+    display: block;
+    padding: 1rem 0 !important;
+    font-size: 18px;
+  }
+}
+.carousel-btn {
+  margin-top: 1rem;
+  color: #fff;
+  font-size: 16px;
+  transition: $transition;
+  border: 2px solid #fff;
+  border-radius: 75px;
+  width: 150px;
+  height: 50px;
+  outline: none;
+  background-color: transparent;
+
+  &:hover {
+    background-color: $secondcolor;
+    border: 2px solid transparent;
+  }
+}
+.indicators {
+  margin-top: 1.5rem;
+}
+.indicator {
+  background-color: transparent;
+  transition: $transition;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: #fff !important;
+  }
+}
+
+.current-carousel {
+  background-color: #fff !important;
+}
+
+.carousel-image {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.banner-item-img {
+  border-radius: 20px;
+  width: 100%;
+  transition: $transition;
+    &:hover
+        {
+            transform: scale(1.05);
+            }
+}
+.banner-info{
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    cursor: pointer;
+    .banner-header{
+        color: #fff;
+        font-weight: 600;
+
+        }
+            .banner-title{
+                color: #fff;
+                }
+    }
