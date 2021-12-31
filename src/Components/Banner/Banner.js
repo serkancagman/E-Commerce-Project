@@ -11,8 +11,8 @@ export const Banner = () => {
 
   const [carousel, setCarousel] = React.useState(carouselList.firstItem);
   return (
-    <section className="py-2">
-      <div className="container-fluid">
+    <section className="py-4">
+      <div className="container-xxl">
         <div className="row justify-content-center align-items-center">
           <div className="col-lg-7 col-md-12">
             <div className="main-carousel">

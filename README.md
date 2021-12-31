@@ -8,9 +8,9 @@
 ### Customizable Product containers.
 
 ## What has been done so far ?
-### So far I have added header and banner components.
+### So far I have added Hot Trend Products components.
 
-<img src="https://i.hizliresim.com/amh2vs9.png" />
+<img src="https://imgyukle.com/f/2021/12/31/oCzFMt.png" />
 
 
 ## WHAT TECHNOLOGIES DID I USE ?
