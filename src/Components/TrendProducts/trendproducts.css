@@ -74,6 +74,11 @@
   opacity: 1 !important;
 }
 
+.product-box .product-img:hover .show-product .eye-icon {
+  width: 30px !important;
+  height: 30px !important;
+}
+
 .product-box .product-titles {
   background-color: #f0f0f0;
   width: 100%;
@@ -140,6 +145,8 @@
 }
 
 .eye-icon {
+  width: 0;
+  height: 0;
   opacity: 0.5;
   background-color: #fff;
   border-radius: 50%;
@@ -220,5 +227,20 @@
   margin-top: 30px;
   font-size: 17px;
   font-weight: normal;
+}
+
+.sale-price {
+  text-decoration: line-through;
+  color: #666 !important;
+}
+
+.sale-icon {
+  background-color: #e43d3d;
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-decoration: none;
+  font-size: 13px;
 }
 /*# sourceMappingURL=trendproducts.css.map */

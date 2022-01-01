@@ -56,6 +56,10 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
     &:hover {
       .show-product {
         opacity: 1 !important;
+        .eye-icon{
+          width: 30px !important;
+          height: 30px !important;
+          }
       }
     }
   }
@@ -107,6 +111,8 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
   height: 100%;
 }
 .eye-icon {
+  width:0;
+  height: 0;
   opacity: 0.5;
   background-color: #fff;
   border-radius: 50%;
@@ -173,3 +179,16 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
     }
   }
 }
+.sale-price{
+  text-decoration: line-through;
+  color: #666 !important;
+  }
+ .sale-icon{
+   background-color: #e43d3d;
+   color: #fff;
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   text-decoration: none;
+   font-size: 13px;
+   }   

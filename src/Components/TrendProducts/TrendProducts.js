@@ -66,13 +66,23 @@ export const TrendProducts = () => {
                             className="eye-icon"
                           />
                         </div>
+                        {products.sale !== null ? (
+                          <span className="sale-icon featured-sale">
+                            {products.saleIcon}
+                          </span>
+                        ) : (
+                          ""
+                        )}
                       </a>
                     </div>
                     <div className="product-titles text-center">
-                      <span className="product-title">{products.title}</span>
+                      <span className="product-title">{products.header}</span>
                     </div>
                     <div className="product-price my-3 w-100 d-flex justify-content-between align-items-center">
-                      <span className="price mx-2">{products.price}</span>
+                      <span className="price mx-2">
+                        {products.price}{" "}
+                        <span className="sale-price">{products.sale}</span>
+                      </span>
                       <button className="buy-btn mx-2">BUY</button>
                     </div>
                   </article>

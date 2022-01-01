@@ -1,0 +1,111 @@
+.featured-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.featured-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.featured-header {
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.featured-header:hover {
+  color: #16bcdc !important;
+}
+
+.featured-title {
+  font-size: 13px;
+  color: #666;
+  font-weight: 600;
+}
+
+.featured-area {
+  border: 1px solid #94949446;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.featured-area:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.featured-img:hover .show-product {
+  opacity: 1 !important;
+}
+
+.featured-img:hover .show-product .eye-icon {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.featured-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.featured-bottom .add-cart-btn {
+  color: #fff;
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #16bcdc;
+  font-weight: 600;
+  border: none;
+  font-size: 13px;
+  margin-left: auto;
+}
+
+.featured-price {
+  font-weight: 600;
+  font-size: 20px;
+  color: #16bcdc;
+}
+
+.discount-price {
+  color: #666;
+  text-decoration: line-through;
+  margin: 5px 0;
+}
+
+.featured-sale {
+  padding: 0 5px;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=featured.css.map */

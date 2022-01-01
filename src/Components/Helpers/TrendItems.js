@@ -21,109 +21,129 @@ export const TrendItems = [
 
     {
         "id":1,
-        "title":"Monica Fuentes",
+        "header":"Monica Fuentes",
+        "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€150.00",
-        "imgProduct":ProductItem
+        "imgProduct":ProductItem,
+        "sale":"€199.99",
+        "saleIcon":"-25%"
     },
     {
         "id":2,
-        "title":"Smart Watch for iOS Phones",
+        "header":"Smart Watch for iOS Phones",
+        "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€100.00",
         "imgProduct":ProductItem1
     },
     {
         "id":3,
-        "title":"Monica Fuentes",
+        "header":"Monica Fuentes",
+        "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€34.99",
         "imgProduct":ProductItem2
     },
     {
         "id":4,
-        "title":"Monica Fuentes",
+        "header":"Monica Fuentes",
+        "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€50.00",
         "imgProduct":ProductItem3
     },
     {
         "id":5,
-        "title":"Monica Fuentes",
+        "header":"Monica Fuentes",
+        "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€10.00",
         "imgProduct":ProductItem4
     },
     {
         "id":6,
-        "title":"Monica Fuentes",
+        "header":"Monica Fuentes",
+        "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€15.00",
         "imgProduct":ProductItem5
     },
     {
         "id":7,
-        "title":"Monica Fuentes",
+        "header":"Monica Fuentes",
+        "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€200.00",
         "imgProduct":ProductItem6
     },
     {
         "id":8,
-        "title":"Monica Fuentes",
+        "header":"Monica Fuentes",
+        "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€179.99",
         "imgProduct":ProductItem7
     },
     {
         "id":9,
-        "title":"Monica Fuentes",
+        "header":"Monica Fuentes",
+        "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€109.99",
         "imgProduct":ProductItem8
     },
     {
         "id":10,
-        "title":"Monica Fuentes",
+        "header":"Monica Fuentes",
+        "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€99.99",
         "imgProduct":ProductItem9
     },
     {
         "id":11,
-        "title":"Monica Fuentes",
+        "header":"Monica Fuentes",
+        "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€99.99",
         "imgProduct":ProductItem10
     },
     {
         "id":12,
-        "title":"Monica Fuentes",
+        "header":"Monica Fuentes",
+        "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€99.99",
         "imgProduct":ProductItem11
     },
     {
         "id":13,
-        "title":"Monica Fuentes",
+        "header":"Monica Fuentes",
+        "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€99.99",
         "imgProduct":ProductItem12
     },
     {
         "id":14,
-        "title":"Monica Fuentes",
+        "header":"Monica Fuentes",
+        "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€99.99",
         "imgProduct":ProductItem13
     },
     {
         "id":15,
-        "title":"Monica Fuentes",
+        "header":"Monica Fuentes",
+        "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€99.99",
         "imgProduct":ProductItem14
     },
     {
         "id":16,
-        "title":"Monica Fuentes",
+        "header":"Monica Fuentes",
+        "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€99.99",
         "imgProduct":ProductItem15
     },
     {
         "id":17,
-        "title":"Monica Fuentes",
+        "header":"Monica Fuentes",
+        "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€99.99",
         "imgProduct":ProductItem16
     },
     {
         "id":18,
-        "title":"Monica Fuentes",
+        "header":"Monica Fuentes",
+        "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€99.99",
         "imgProduct":ProductItem17
     },
