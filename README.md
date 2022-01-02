@@ -8,9 +8,9 @@
 ### Customizable Product containers.
 
 ## What has been done so far ?
-### So far I have added Top Featured Products components.
+### So far I have added new components.
 
-<img src="https://imgyukle.com/f/2022/01/02/ounupe.png" />
+<img src="https://imgyukle.com/f/2022/01/02/oxEOvR.png" />
 
 
 ## WHAT TECHNOLOGIES DID I USE ?

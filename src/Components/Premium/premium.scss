@@ -1,0 +1,70 @@
+$maincolor: #263c97;
+$secondcolor: #16bcdc;
+$transition: all 0.3s ease;
+$navBorder: 1px solid rgba(255, 255, 255, 0.164);
+
+.premium-area {
+  position: relative;
+}
+.premium-link {
+  top: 80%;
+}
+
+.premiumTop {
+  margin-bottom: 20px;
+  position: relative;
+  &:hover
+      {
+          img{
+              filter: blur(2px);
+              }
+                 
+          }
+
+  .premium-link {
+    top: 60%;
+  }
+}
+.premiumBottom {
+  position: relative;
+  &:hover
+      {
+          img{
+              filter: blur(2px);
+              }
+                
+          }
+  .premium-link {
+    top: 60%;
+  }
+}
+.premium-img {
+  border-radius: 20px;
+  transition: $transition;
+}
+.big-one {
+    &:hover
+        {
+            img{
+                filter: blur(2px)
+            }
+}}
+
+.premium-link {
+  min-width: 220px;
+  padding: 5px 2px;
+  text-decoration: none;
+  color: #000;
+  transition: $transition;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border-radius: 5px;
+  &:hover {
+    color: $secondcolor !important;
+  }
+}
