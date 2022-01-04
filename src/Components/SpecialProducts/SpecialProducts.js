@@ -1,9 +1,6 @@
 import React from "react";
 import "./specialproducts.css";
 import { TrendItems } from "../Helpers/TrendItems";
-import trendImage from "../../images/trendProduct.jpg";
-import trendImage1 from "../../images/trendProduct1.jpg";
-import trendImage2 from "../../images/trendProduct2.jpg";
 import { BsArrowRight } from "react-icons/bs";
 import {
   IoIosArrowDropleftCircle,

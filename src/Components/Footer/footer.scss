@@ -1,0 +1,63 @@
+$maincolor: #263c97;
+$secondcolor: #16bcdc;
+$transition: all 0.3s ease;
+$navBorder: 1px solid rgba(255, 255, 255, 0.164);
+    
+    
+    footer {
+  background-color: #1f2024;
+}
+.service-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    .service-icon {
+      animation: serviceIconRotate 0.7s ease-in-out;
+    }
+  }
+}
+.service-icon {
+  color: #16bcdc;
+  transition: $transition;
+}
+.service-info {
+  margin: 0 10px;
+}
+.service-header {
+  margin-bottom: 2px;
+  font-weight: 550;
+  font-size: 15px;
+  color: #fff;
+}
+.service-inner {
+  color: #666;
+}
+.service-main {
+  padding: 50px 0;
+  border-bottom: 1px solid #313135;
+}
+
+@keyframes serviceIconRotate {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  20% {
+    transform: rotate(25deg) scale(1.1);
+  }
+  40% {
+    transform: rotate(-25deg) scale(1.1);
+  }
+  60% {
+    transform: rotate(15deg) scale(1.2);
+  }
+  80% {
+    transform: rotate(-15deg) scale(1.1);
+  }
+  90% {
+    transform: rotate(-15deg) scale(1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}

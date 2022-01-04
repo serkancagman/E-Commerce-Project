@@ -10,7 +10,7 @@
 ## What has been done so far ?
 ### So far I have added new components.
 
-<img src="https://imgyukle.com/f/2022/01/02/oxEOvR.png" />
+<img src="https://imgyukle.com/f/2022/01/04/oICg2N.png" />
 
 
 ## WHAT TECHNOLOGIES DID I USE ?

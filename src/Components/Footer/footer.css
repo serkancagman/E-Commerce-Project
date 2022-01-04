@@ -1,0 +1,109 @@
+footer {
+  background-color: #1f2024;
+}
+
+.service-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.service-area:hover .service-icon {
+  -webkit-animation: serviceIconRotate 0.7s ease-in-out;
+          animation: serviceIconRotate 0.7s ease-in-out;
+}
+
+.service-icon {
+  color: #16bcdc;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.service-info {
+  margin: 0 10px;
+}
+
+.service-header {
+  margin-bottom: 2px;
+  font-weight: 550;
+  font-size: 15px;
+  color: #fff;
+}
+
+.service-inner {
+  color: #666;
+}
+
+.service-main {
+  padding: 50px 0;
+  border-bottom: 1px solid #313135;
+}
+
+@-webkit-keyframes serviceIconRotate {
+  0% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+  }
+  20% {
+    -webkit-transform: rotate(25deg) scale(1.1);
+            transform: rotate(25deg) scale(1.1);
+  }
+  40% {
+    -webkit-transform: rotate(-25deg) scale(1.1);
+            transform: rotate(-25deg) scale(1.1);
+  }
+  60% {
+    -webkit-transform: rotate(15deg) scale(1.2);
+            transform: rotate(15deg) scale(1.2);
+  }
+  80% {
+    -webkit-transform: rotate(-15deg) scale(1.1);
+            transform: rotate(-15deg) scale(1.1);
+  }
+  90% {
+    -webkit-transform: rotate(-15deg) scale(1);
+            transform: rotate(-15deg) scale(1);
+  }
+  100% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes serviceIconRotate {
+  0% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+  }
+  20% {
+    -webkit-transform: rotate(25deg) scale(1.1);
+            transform: rotate(25deg) scale(1.1);
+  }
+  40% {
+    -webkit-transform: rotate(-25deg) scale(1.1);
+            transform: rotate(-25deg) scale(1.1);
+  }
+  60% {
+    -webkit-transform: rotate(15deg) scale(1.2);
+            transform: rotate(15deg) scale(1.2);
+  }
+  80% {
+    -webkit-transform: rotate(-15deg) scale(1.1);
+            transform: rotate(-15deg) scale(1.1);
+  }
+  90% {
+    -webkit-transform: rotate(-15deg) scale(1);
+            transform: rotate(-15deg) scale(1);
+  }
+  100% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+}
+/*# sourceMappingURL=footer.css.map */

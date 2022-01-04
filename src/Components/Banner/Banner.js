@@ -2,60 +2,52 @@ import React from "react";
 import "./banner.css";
 import { carouselItems } from "../Helpers/CarouselItem";
 import { BannerItems } from "../Helpers/BannerItems";
-export const Banner = () => {
-  const carouselList = {
-    firstItem: carouselItems[0],
-    secondItem: carouselItems[1],
-    thirthItem: carouselItems[2],
-  };
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css/effect-creative";
+import SwiperCore, { Pagination } from "swiper";
+import "swiper/css";
 
-  const [carousel, setCarousel] = React.useState(carouselList.firstItem);
+SwiperCore.use([Pagination]);
+export const Banner = () => {
   return (
     <section className="py-4">
       <div className="container-xxl">
         <div className="row justify-content-center align-items-center">
           <div className="col-lg-7 col-md-12">
-            <div className="main-carousel">
-              <div className="carouselInner position-relative">
-                <img
-                  className="img-fluid carousel-image"
-                  src={carousel.imgBASE}
-                  alt="Loading"
-                />
-                <div className="carousel-info">
-                  <h5 className="carousel-header m-0">{carousel.header}</h5>
-                  <span className="carousel-titles">{carousel.title}</span>
-                  <button className="carousel-btn">DISCOVER NOW</button>
-
-                  <div className="indicators d-flex justify-content-center align-items-center">
-                    <span
-                      onClick={() => setCarousel(carouselList.firstItem)}
-                      className={`indicator${
-                        carousel === carouselList.firstItem
-                          ? " current-carousel"
-                          : ""
-                      }`}
-                    ></span>
-                    <span
-                      onClick={() => setCarousel(carouselList.secondItem)}
-                      className={`indicator${
-                        carousel === carouselList.secondItem
-                          ? " current-carousel"
-                          : ""
-                      }`}
-                    ></span>
-                    <span
-                      onClick={() => setCarousel(carouselList.thirthItem)}
-                      className={`indicator${
-                        carousel === carouselList.thirthItem
-                          ? " current-carousel"
-                          : ""
-                      }`}
-                    ></span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Swiper
+              pagination={true}
+              slidesPerView={1}
+              spaceBetween={35}
+              autoplay={{ delay: 5000 }}
+              loop={true}
+              loopFillGroupWithBlank={true}
+              className="mySwiper my-3"
+            >
+              {carouselItems.map((carousels) => {
+                return (
+                  <SwiperSlide>
+                    <div key={carousels.id} className="main-carousel">
+                      <div className="carouselInner position-relative">
+                        <img
+                          className="img-fluid carousel-image"
+                          src={carousels.imgBASE}
+                          alt="Loading"
+                        />
+                        <div className="carousel-info">
+                          <h5 className="carousel-header m-0">
+                            {carousels.header}
+                          </h5>
+                          <span className="carousel-titles">
+                            {carousels.title}
+                          </span>
+                          <button className="carousel-btn">DISCOVER NOW</button>
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
           </div>
           <div className="col-lg-5 col-md-12 bnr-itm">
             <div className="row g-4 justify-content-center align-items-center">
@@ -69,8 +61,8 @@ export const Banner = () => {
                         alt="Loading"
                       />
                       <div className="banner-info">
-                      <h5 className="banner-header">{boxes.header}</h5>
-                      <span className="banner-title">{boxes.title}</span>
+                        <h5 className="banner-header">{boxes.header}</h5>
+                        <span className="banner-title">{boxes.title}</span>
                       </div>
                     </div>
                   </div>
