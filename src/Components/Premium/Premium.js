@@ -6,6 +6,7 @@ import PremiumPic2 from "../../images/productMain3.jpg";
 import PremiumPic3 from "../../images/productMain4.jpg";
 import PremiumPic4 from "../../images/productMain5.jpg";
 import PremiumPic5 from "../../images/productMain6.jpg";
+import { Link } from "react-router-dom";
 export const Premium = () => {
   return (
     <section className="py-3">
@@ -19,7 +20,7 @@ export const Premium = () => {
                   src={PremiumPic}
                   alt=""
                 />
-                <a className="premium-link" href="/">CAMERAS</a>
+                <Link className="premium-link" to="/">CAMERAS</Link>
 
               </div>
               <div className="premiumBottom">
@@ -28,14 +29,14 @@ export const Premium = () => {
                   src={PremiumPic1}
                   alt=""
                 />
-                <a className="premium-link" href="/">ACCESSORIES</a>
+                <Link className="premium-link" to="/">ACCESSORIES</Link>
               </div>
             </div>
           </div>
           <div className="col-md-3 col-lg-3 text-center">
             <div className="premium-area big-one">
               <img className="img-fluid premium-img" src={PremiumPic2} alt="" />
-              <a className="premium-link" href="/">KEYBOARD & ACCESSORIES</a>
+              <Link className="premium-link" to="/">KEYBOARD & ACCESSORIES</Link>
             </div>
           </div>
           <div className="col-md-3 col-lg-3">
@@ -46,7 +47,7 @@ export const Premium = () => {
                   src={PremiumPic3}
                   alt=""
                 />
-                <a className="premium-link" href="/">SMARTPHONE</a>
+                <Link className="premium-link" to="/">SMARTPHONE</Link>
               </div>
               <div className="premiumBottom">
                 <img
@@ -54,14 +55,14 @@ export const Premium = () => {
                   src={PremiumPic4}
                   alt=""
                 />
-                <a className="premium-link" href="/">SPEAKER & AUDIO</a>
+                <Link className="premium-link" to="/">SPEAKER & AUDIO</Link>
               </div>
             </div>
           </div>
           <div className="col-md-3 col-lg-3 text-center">
             <div className="premium-area big-one">
               <img className="img-fluid premium-img" src={PremiumPic5} alt="" />
-              <a className="premium-link" href="/">GAMEPAD AND CONTROLLER</a>
+              <Link className="premium-link" to="/">GAMEPAD AND CONTROLLER</Link>
             </div>
           </div>
         </div>

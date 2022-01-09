@@ -7,6 +7,8 @@ import {
   IoIosArrowDroprightCircle,
 } from "react-icons/io";
 import { FaRegEye } from "react-icons/fa";
+import propTypes from "prop-types";
+import { Link } from "react-router-dom";
 export const SpecialProducts = () => {
   const [currentMove, setCurrentMove] = React.useState(0);
   const moveBar = () => {
@@ -36,20 +38,20 @@ export const SpecialProducts = () => {
         <div className="trend-area">
           <div className="trend-header-area d-flex justify-content-between align-items-center">
             <span className="trend-header">Special Products</span>
-            <a href="/" className="show-more">
+            <Link to="/" className="show-more">
               Show More <BsArrowRight color="#263c97" />
-            </a>
+            </Link>
           </div>
           <div className="trends-main py-2">
             <div
               style={{ transform: `translateX(${currentMove}px)` }}
               className="trend-inner  d-flex align-items-center"
             >
-              {TrendItems.map((products) => {
-                return (
+              {TrendItems.map((products) => (
+                
                   <article key={products.id} className="product-box">
                     <div className="product-img">
-                      <a href="/">
+                      <Link to="/">
                         <img
                           className="img-fluid"
                           src={products.imgProduct}
@@ -69,7 +71,7 @@ export const SpecialProducts = () => {
                         ) : (
                           ""
                         )}
-                      </a>
+                      </Link>
                     </div>
                     <div className="product-titles text-center">
                       <span className="product-title">{products.header}</span>
@@ -82,13 +84,13 @@ export const SpecialProducts = () => {
                       <button className="buy-btn mx-2">BUY</button>
                     </div>
                   </article>
-                );
-              })}
+                
+              ))}
             </div>
 
             <span
               onClick={prevMoveBar}
-              className={`show left${
+              className={`show-indicator left${
                 currentMove === 0 ? " hidden-indicator" : " "
               }`}
             >
@@ -96,7 +98,7 @@ export const SpecialProducts = () => {
             </span>
             <span
               onClick={moveBar}
-              className={`show right${
+              className={`show-indicator right${
                 currentMove === -2650 ? " hidden-indicator" : " "
               }`}
             >
@@ -111,3 +113,6 @@ export const SpecialProducts = () => {
     </section>
   );
 };
+SpecialProducts.propTypes ={
+  imgProduct : propTypes.string
+}

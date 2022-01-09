@@ -6,6 +6,7 @@ import { BsSearch, BsCart4 } from "react-icons/bs";
 import { FiUser } from "react-icons/fi";
 import { Navbar } from "./Navbar";
 import { AsideMenu } from "./AsideMenu";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [selected, setSelected] = useState("US");
@@ -77,45 +78,45 @@ export const Header = () => {
             <div className="need-help px-3">
               <span className="help-text">
                 Need Help ?{" "}
-                <a
+                <Link
                   className="call-num text-decoration-none text-white"
                   title="+001 123 456 789"
-                  href="tel:+001123456789"
+                  to="tel:+001123456789"
                 >
                   +001 123 456 789
-                </a>
+                </Link>
               </span>
             </div>
           </div>
           <div className="top-right d-flex justify-content-center align-items-center">
             <ul className="right-menu m-0 d-flex justify-content-center align-items-center">
               <li className="right-item">
-                <a className="right-link" href="/">
+                <Link className="right-link" to="/">
                   My Account
-                </a>
+                </Link>
               </li>
               <li className="right-item">
-                <a className="right-link" href="/">
+                <Link className="right-link" to="/">
                   About Us
-                </a>
+                </Link>
               </li>
               <li className="right-item">
-                <a className="right-link" href="/">
+                <Link className="right-link" to="/">
                   Contact Us
-                </a>
+                </Link>
               </li>
               <li className="right-item ">
-                <a className="right-link faq" href="/">
+                <Link className="right-link faq" to="/">
                   FAQs
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
         </div>
         <div className="middle-nav py-3 d-flex align-items-center justify-content-between">
-          <a className="navbar-brand mx-3" href="/">
+          <Link className="navbar-brand mx-3" to="/">
             <img width={250} className="img-fluid" src={Logo} alt="" />
-          </a>
+          </Link>
           <form>
             <input
               className="px-3"
@@ -150,7 +151,7 @@ export const Header = () => {
         handleAside={handleAside}
         />
       </div>
-      <AsideMenu
+      <asideMenu
       handleAside={handleAside}
       asideActive={asideActive}
       />

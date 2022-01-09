@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./featuredcategories.css";
 import { FeaturedCatItems } from "../Helpers/FeaturedCatItems";
 import { MdStars } from "react-icons/md";
@@ -25,47 +26,47 @@ export const FeaturedCategories = () => {
         <div className="row g-4 justify-content-center align-items-center">
           {FeaturedCatItems.map((catItems) => {
             return (
-              <div id={catItems.id} className="col-md-3 col-lg-3">
+              <div key={catItems.id} className="col-md-3 col-lg-3">
                 <div className="feat-box d-flex flex-column">
-                  <a href={catItems.mainLink} className="featured-link">
+                  <Link to={catItems.mainLink} className="featured-link">
                     <img
                       className="img-fluid featured-banner"
                       src={catItems.bannerImg}
                       alt="Loading..."
                     />
-                  </a>
-                  <a href={catItems.mainLink} className="featured-header w-100 text-center py-3">{catItems.header}</a>
+                  </Link>
+                  <Link to={catItems.mainLink} className="featured-header-cat w-100 text-center py-3">{catItems.header}</Link>
                   <div className="featured-nav">
                     <ul>
                       <li className="featured-item">
-                        <a href={catItems.firstLink} className="featured-link">
+                        <Link to={catItems.firstLink} className="featured-link">
                           {catItems.firstLinkName}
-                        </a>
+                        </Link>
                       </li>
                       <li className="featured-item">
-                        <a href={catItems.secondLink} className="featured-link">
+                        <Link to={catItems.secondLink} className="featured-link">
                           {catItems.secondLinkName}
-                        </a>
+                        </Link>
                       </li>
                       <li className="featured-item">
-                        <a href={catItems.thirthLink} className="featured-link">
+                        <Link to={catItems.thirthLink} className="featured-link">
                           {catItems.thirthLinkName}
-                        </a>
+                        </Link>
                       </li>
                       <li className="featured-item">
-                        <a href={catItems.fourthLink} className="featured-link">
+                        <Link to={catItems.fourthLink} className="featured-link">
                           {catItems.fourthLinkName}
-                        </a>
+                        </Link>
                       </li>
                       <li className="featured-item">
-                        <a href={catItems.fifthLink} className="featured-link">
+                        <Link to={catItems.fifthLink} className="featured-link">
                           {catItems.fifthLinkName}
-                        </a>
+                        </Link>
                       </li>
                       <li className="featured-item">
-                        <a href={catItems.sixthLink} className="featured-link">
+                        <Link to={catItems.sixthLink} className="featured-link">
                           {catItems.sixthLinkName}
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>

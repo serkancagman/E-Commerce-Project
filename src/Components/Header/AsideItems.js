@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export const AsideItems = () => {
   const menuNames = {
     first: "first",
@@ -16,9 +16,9 @@ export const AsideItems = () => {
   return (
     <>
       <li className="tree-item">
-        <a className="tree-link" href="/">
+        <Link className="tree-link" to="/">
           Computers & Laptops
-        </a>
+        </Link>
         <span
           onClick={() => setOpenMenuName(menuNames.first) & setInnerMenuName(null)}
           className={`list-icon${
@@ -42,9 +42,9 @@ export const AsideItems = () => {
         >
           <ul className="sub-nav">
             <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Computer Accessories
-              </a>
+              </Link>
               <span
           onClick={() => setInnerMenuName(menuNames.firstInner)}
           className={`list-icon${
@@ -63,21 +63,21 @@ export const AsideItems = () => {
         </span>
         <ul className={`in-sub  ${innerMenuName === menuNames.firstInner && openMenuName === menuNames.first ? " close-sub-in" : " "}`}>
               <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Mouses
-              </a>
+              </Link>
             </li>
             <li className="sub-item  sub-last">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Keyboards
-              </a>
+              </Link>
             </li>
             </ul>
             </li>
             <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Apple Macbook
-              </a>
+              </Link>
               <span
           onClick={() => setInnerMenuName(menuNames.secondInner)}
           className={`list-icon${
@@ -96,44 +96,44 @@ export const AsideItems = () => {
         </span>
               <ul className={`in-sub  ${innerMenuName === menuNames.secondInner && openMenuName === menuNames.first ? " close-sub-in" : " "}`}>
               <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 iMac
-              </a>
+              </Link>
             </li>
             <li className="sub-item  sub-last">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Macbook Pro
-              </a>
+              </Link>
             </li>
             </ul>
             </li>
             <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Cameras DSLR/SLR
-              </a>
+              </Link>
             </li>
             <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Computer Components
-              </a>
+              </Link>
             </li>
             <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Travel Cameras
-              </a>
+              </Link>
             </li>
             <li className="sub-item sub-last">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Printers & Accessories
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
       </li>
       <li className="tree-item">
-        <a className="tree-link" href="/">
+        <Link className="tree-link" to="/">
           Mobiles & Tablets
-        </a>
+        </Link>
         <span
           onClick={() => setOpenMenuName(menuNames.second) & setInnerMenuName(null) }
           className={`list-icon${
@@ -157,42 +157,42 @@ export const AsideItems = () => {
         >
           <ul className="sub-nav">
             <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Smartphone
-              </a>
+              </Link>
             </li>
             <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Basic Phones
-              </a>
+              </Link>
             </li>
             <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Mobile Accessories
-              </a>
+              </Link>
             </li>
             <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Tablets
-              </a>
+              </Link>
             </li>
             <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Headphones
-              </a>
+              </Link>
             </li>
             <li className="sub-item sub-last">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Landline Phones
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
       </li>
       <li className="tree-item">
-        <a className="tree-link" href="/">
+        <Link className="tree-link" to="/">
           TV, Video & Audio
-        </a>
+        </Link>
         <span
           onClick={() => setOpenMenuName(menuNames.thirth) & setInnerMenuName(null)}
           className={`list-icon${
@@ -216,42 +216,42 @@ export const AsideItems = () => {
         >
           <ul className="sub-nav">
             <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 TV
-              </a>
+              </Link>
             </li>
             <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 DVD, Bluray
-              </a>
+              </Link>
             </li>
             <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 HD Player
-              </a>
+              </Link>
             </li>
             <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Headset
-              </a>
+              </Link>
             </li>
             <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Speaker
-              </a>
+              </Link>
             </li>
             <li className="sub-item sub-last">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Android TV Box
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
       </li>
       <li className="tree-item">
-        <a className="tree-link" href="/">
+        <Link className="tree-link" to="/">
           Fashion & Accessories
-        </a>
+        </Link>
         <span
           onClick={() => setOpenMenuName(menuNames.fourth) & setInnerMenuName(null)}
           className={`list-icon${
@@ -275,72 +275,72 @@ export const AsideItems = () => {
         >
           <ul className="sub-nav">
             <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Shoes Men
-              </a>
+              </Link>
             </li>
             <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Shoes Women
-              </a>
+              </Link>
             </li>
             <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Men's Clothes
-              </a>
+              </Link>
             </li>
             <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Women's Clothes
-              </a>
+              </Link>
             </li>
             <li className="sub-item">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Bag Men
-              </a>
+              </Link>
             </li>
             <li className="sub-item sub-last">
-              <a href="/" className="sub-link">
+              <Link to="/" className="sub-link">
                 Bag Women
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
       </li>
       <li className="tree-item">
-        <a className="tree-link" href="/">
+        <Link className="tree-link" to="/">
           Watches & Accessories
-        </a>
+        </Link>
       </li>
       <li className="tree-item">
-        <a className="tree-link" href="/">
+        <Link className="tree-link" to="/">
           Mothers & Babies
-        </a>
+        </Link>
       </li>
       <li className="tree-item">
-        <a className="tree-link" href="/">
+        <Link className="tree-link" to="/">
           Sports & Outdoors
-        </a>
+        </Link>
       </li>
       <li className="tree-item">
-        <a className="tree-link" href="/">
+        <Link className="tree-link" to="/">
           Health & Beauty
-        </a>
+        </Link>
       </li>
       <li className="tree-item">
-        <a className="tree-link" href="/">
+        <Link className="tree-link" to="/">
           Home & Living
-        </a>
+        </Link>
       </li>
       <li className="tree-item">
-        <a className="tree-link" href="/">
+        <Link className="tree-link" to="/">
           Home Appliances
-        </a>
+        </Link>
       </li>
       <li className="tree-item">
-        <a className="tree-link" href="/">
+        <Link className="tree-link" to="/">
           Automotive & Gadgets
-        </a>
+        </Link>
       </li>
     </>
   );

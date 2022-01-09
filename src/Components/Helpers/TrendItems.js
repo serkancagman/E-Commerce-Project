@@ -21,6 +21,7 @@ export const TrendItems = [
 
     {
         "id":1,
+        "link":"/",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€150.00",
@@ -30,6 +31,7 @@ export const TrendItems = [
     },
     {
         "id":2,
+        "link":"/",
         "header":"Smart Watch for iOS Phones",
         "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€100.00",
@@ -37,6 +39,7 @@ export const TrendItems = [
     },
     {
         "id":3,
+        "link":"/",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€34.99",
@@ -44,6 +47,7 @@ export const TrendItems = [
     },
     {
         "id":4,
+        "link":"/",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€50.00",
@@ -51,6 +55,7 @@ export const TrendItems = [
     },
     {
         "id":5,
+        "link":"/",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€10.00",
@@ -58,6 +63,7 @@ export const TrendItems = [
     },
     {
         "id":6,
+        "link":"/",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€15.00",
@@ -65,6 +71,7 @@ export const TrendItems = [
     },
     {
         "id":7,
+        "link":"/",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€200.00",
@@ -72,6 +79,7 @@ export const TrendItems = [
     },
     {
         "id":8,
+        "link":"/",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€179.99",
@@ -79,6 +87,7 @@ export const TrendItems = [
     },
     {
         "id":9,
+        "link":"/",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€109.99",
@@ -86,6 +95,7 @@ export const TrendItems = [
     },
     {
         "id":10,
+        "link":"/",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€99.99",
@@ -93,6 +103,7 @@ export const TrendItems = [
     },
     {
         "id":11,
+        "link":"/",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€99.99",
@@ -100,6 +111,7 @@ export const TrendItems = [
     },
     {
         "id":12,
+        "link":"/",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€99.99",
@@ -107,6 +119,7 @@ export const TrendItems = [
     },
     {
         "id":13,
+        "link":"/",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€99.99",
@@ -114,6 +127,7 @@ export const TrendItems = [
     },
     {
         "id":14,
+        "link":"/",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€99.99",
@@ -121,6 +135,7 @@ export const TrendItems = [
     },
     {
         "id":15,
+        "link":"/",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€99.99",
@@ -128,6 +143,7 @@ export const TrendItems = [
     },
     {
         "id":16,
+        "link":"/",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€99.99",
@@ -135,6 +151,7 @@ export const TrendItems = [
     },
     {
         "id":17,
+        "link":"/",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€99.99",
@@ -142,6 +159,7 @@ export const TrendItems = [
     },
     {
         "id":18,
+        "link":"/",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
         "price":"€99.99",

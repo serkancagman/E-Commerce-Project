@@ -7,6 +7,7 @@ import TV from "../../images/tv.jpg";
 import Fashion from "../../images/fashion.jpg";
 import Watch from "../../images/watch.jpg";
 import Mother from "../../images/mothers-babies.jpg";
+import { Link } from "react-router-dom";
 
 export const Navbar = ({ handleAside }) => {
   const openerMenus = {
@@ -36,9 +37,9 @@ export const Navbar = ({ handleAside }) => {
           onMouseOut={() => setSelectedMenu(openerMenus.firstMenu.null)}
           className="nav-item"
         >
-          <a className="nav-link" href="/shop">
+          <Link className="nav-link" to="/shop">
             <span>SHOP</span>
-          </a>
+          </Link>
           <div
             className={`shop-opener bg-light p-2${
               selectedMenu === openerMenus.firstMenu ? " opened-menu" : " "
@@ -47,34 +48,34 @@ export const Navbar = ({ handleAside }) => {
             <h5 className="shop-header ">COMPUTERS & LAPTOPS</h5>
             <ul className="shop-menu p-2 d-flex justfiy-content-center flex-wrap align-items-center">
               <li className="shop-item">
-                <a href="/" className="shop-link">
+                <Link to="/" className="shop-link">
                   Computer Accessories
-                </a>
+                </Link>
               </li>
               <li className="shop-item">
-                <a href="/" className="shop-link">
+                <Link to="/" className="shop-link">
                   Apple Macbook
-                </a>
+                </Link>
               </li>
               <li className="shop-item">
-                <a href="/" className="shop-link">
+                <Link to="/" className="shop-link">
                   Cameras DSLR/SLR
-                </a>
+                </Link>
               </li>
               <li className="shop-item">
-                <a href="/" className="shop-link">
+                <Link to="/" className="shop-link">
                   Computer Components
-                </a>
+                </Link>
               </li>
               <li className="shop-item">
-                <a href="/" className="shop-link">
+                <Link to="/" className="shop-link">
                   Travel Cameras
-                </a>
+                </Link>
               </li>
               <li className="shop-item">
-                <a href="/" className="shop-link">
+                <Link to="/" className="shop-link">
                   Printers & Accessories
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -84,9 +85,9 @@ export const Navbar = ({ handleAside }) => {
           onMouseOut={() => setSelectedMenu(openerMenus.secondMenu.null)}
           className="nav-item"
         >
-          <a className="nav-link" href="/shop">
+          <Link className="nav-link" to="/shop">
             ELECTRONIC
-          </a>
+          </Link>
 
           <div
             className={`electronic-menu bg-light position-absolute p-2${
@@ -111,9 +112,9 @@ export const Navbar = ({ handleAside }) => {
           onMouseOut={() => setSelectedMenu(openerMenus.thirthMenu.null)}
           className="nav-item"
         >
-          <a className="nav-link" href="/shop">
+          <Link className="nav-link" to="/shop">
             FASHION
-          </a>
+          </Link>
           <span className="link-info new">NEW</span>
           <div
             className={`fashion-menu bg-light${
@@ -122,108 +123,108 @@ export const Navbar = ({ handleAside }) => {
           >
             <div className="fashion-menu-area">
               <ul className="fashion-nav">
-                <a href="/" className="fashion-header">
+                <Link to="/" className="fashion-header">
                   COMPUTERS & LAPTOPS
-                </a>
+                </Link>
                 <li className="fashion-item">
-                  <a href="/" className="fashion-link">
+                  <Link to="/" className="fashion-link">
                     Computer Accessories
-                  </a>
+                  </Link>
                 </li>
                 <li className="fashion-item">
-                  <a href="/" className="fashion-link">
+                  <Link to="/" className="fashion-link">
                     Keybords
-                  </a>
+                  </Link>
                 </li>
                 <li className="fashion-item">
-                  <a href="/" className="fashion-link">
+                  <Link to="/" className="fashion-link">
                     Laptops
-                  </a>
+                  </Link>
                 </li>
                 <li className="fashion-item">
-                  <a href="/" className="fashion-link">
+                  <Link to="/" className="fashion-link">
                     Apple Macbook
-                  </a>
+                  </Link>
                 </li>
                 <li className="fashion-item">
-                  <a href="/" className="fashion-link">
+                  <Link to="/" className="fashion-link">
                     Microphone
-                  </a>
+                  </Link>
                 </li>
                 <li className="fashion-item">
-                  <a href="/" className="fashion-link">
+                  <Link to="/" className="fashion-link">
                     Handphone
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <ul className="fashion-nav">
-                <a href="/" className="fashion-header">
+                <Link to="/" className="fashion-header">
                   TV, VIDEO & AUDIO
-                </a>
+                </Link>
                 <li className="fashion-item">
-                  <a href="/" className="fashion-link">
+                  <Link to="/" className="fashion-link">
                     Computer Accessories
-                  </a>
+                  </Link>
                 </li>
                 <li className="fashion-item">
-                  <a href="/" className="fashion-link">
+                  <Link to="/" className="fashion-link">
                     Keybords
-                  </a>
+                  </Link>
                 </li>
                 <li className="fashion-item">
-                  <a href="/" className="fashion-link">
+                  <Link to="/" className="fashion-link">
                     Laptops
-                  </a>
+                  </Link>
                 </li>
                 <li className="fashion-item">
-                  <a href="/" className="fashion-link">
+                  <Link to="/" className="fashion-link">
                     Apple Macbook
-                  </a>
+                  </Link>
                 </li>
                 <li className="fashion-item">
-                  <a href="/" className="fashion-link">
+                  <Link to="/" className="fashion-link">
                     Microphone
-                  </a>
+                  </Link>
                 </li>
                 <li className="fashion-item">
-                  <a href="/" className="fashion-link">
+                  <Link to="/" className="fashion-link">
                     Handphone
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <ul className="fashion-nav">
-                <a href="/" className="fashion-header">
+                <Link to="/" className="fashion-header">
                   MOBILES & TABLETS
-                </a>
+                </Link>
                 <li className="fashion-item">
-                  <a href="/" className="fashion-link">
+                  <Link to="/" className="fashion-link">
                     Computer Accessories
-                  </a>
+                  </Link>
                 </li>
                 <li className="fashion-item">
-                  <a href="/" className="fashion-link">
+                  <Link to="/" className="fashion-link">
                     Keybords
-                  </a>
+                  </Link>
                 </li>
                 <li className="fashion-item">
-                  <a href="/" className="fashion-link">
+                  <Link to="/" className="fashion-link">
                     Laptops
-                  </a>
+                  </Link>
                 </li>
                 <li className="fashion-item">
-                  <a href="/" className="fashion-link">
+                  <Link to="/" className="fashion-link">
                     Apple Macbook
-                  </a>
+                  </Link>
                 </li>
                 <li className="fashion-item">
-                  <a href="/" className="fashion-link">
+                  <Link to="/" className="fashion-link">
                     Microphone
-                  </a>
+                  </Link>
                 </li>
                 <li className="fashion-item">
-                  <a href="/" className="fashion-link">
+                  <Link to="/" className="fashion-link">
                     Handphone
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -233,120 +234,120 @@ export const Navbar = ({ handleAside }) => {
         onMouseMove={() => setSelectedMenu(openerMenus.fourthMenu)}
           onMouseOut={() => setSelectedMenu(openerMenus.fourthMenu.null)}
         className="nav-item">
-          <a className="nav-link" href="/shop">
+          <Link className="nav-link" to="/shop">
             APPLIANCES
-          </a>
+          </Link>
           <div className={`appliance-menu bg-light${
             selectedMenu === openerMenus.fourthMenu ? " opened-menu" : ""
           }`}>
-            <a href="/" className="appliance-header">
+            <Link to="/" className="appliance-header">
               COMPUTERS & LAPTOPS
-            </a>
+            </Link>
             <div className="appliance-area">
               <ul className="appliance-nav">
                 <li className="appliance-item">
-                  <a href="/" className="appliance-link">
+                  <Link to="/" className="appliance-link">
                     Computer Accessories
-                  </a>
+                  </Link>
                 </li>
                 <li className="appliance-item">
-                  <a href="/" className="appliance-link">
+                  <Link to="/" className="appliance-link">
                     Apple Macbook
-                  </a>
+                  </Link>
                 </li>
                 <li className="appliance-item">
-                  <a href="/" className="appliance-link">
+                  <Link to="/" className="appliance-link">
                     Computer Components
-                  </a>
+                  </Link>
                 </li>
                 <li className="appliance-item">
-                  <a href="/" className="appliance-link">
+                  <Link to="/" className="appliance-link">
                     Travel Cameras
-                  </a>
+                  </Link>
                 </li>
                 <li className="appliance-item">
-                  <a href="/" className="appliance-link">
+                  <Link to="/" className="appliance-link">
                     Cameras DSLR/SLR
-                  </a>
+                  </Link>
                 </li>
                 <li className="appliance-item">
-                  <a href="/" className="appliance-link">
+                  <Link to="/" className="appliance-link">
                     Printers & Accessories
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <div className="appliance-set-header w-100 my-2">
-              <a href="/" className="appliance-header">
+              <Link to="/" className="appliance-header">
               MOBILES & TABLETS
-            </a>
+            </Link>
               </div>
               <ul className="appliance-nav">
                 <li className="appliance-item">
-                  <a href="/" className="appliance-link">
+                  <Link to="/" className="appliance-link">
                     Computer Accessories
-                  </a>
+                  </Link>
                 </li>
                 <li className="appliance-item">
-                  <a href="/" className="appliance-link">
+                  <Link to="/" className="appliance-link">
                     Apple Macbook
-                  </a>
+                  </Link>
                 </li>
                 <li className="appliance-item">
-                  <a href="/" className="appliance-link">
+                  <Link to="/" className="appliance-link">
                     Computer Components
-                  </a>
+                  </Link>
                 </li>
                 <li className="appliance-item">
-                  <a href="/" className="appliance-link">
+                  <Link to="/" className="appliance-link">
                     Travel Cameras
-                  </a>
+                  </Link>
                 </li>
                 <li className="appliance-item">
-                  <a href="/" className="appliance-link">
+                  <Link to="/" className="appliance-link">
                     Cameras DSLR/SLR
-                  </a>
+                  </Link>
                 </li>
                 <li className="appliance-item">
-                  <a href="/" className="appliance-link">
+                  <Link to="/" className="appliance-link">
                     Printers & Accessories
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <div className="appliance-set-header w-100 my-2">
-              <a href="/" className="appliance-header">
+              <Link to="/" className="appliance-header">
               TV, VIDEO & AUDIO
-            </a>
+            </Link>
               </div>
               <ul className="appliance-nav">
                 <li className="appliance-item">
-                  <a href="/" className="appliance-link">
+                  <Link to="/" className="appliance-link">
                     Computer Accessories
-                  </a>
+                  </Link>
                 </li>
                 <li className="appliance-item">
-                  <a href="/" className="appliance-link">
+                  <Link to="/" className="appliance-link">
                     Apple Macbook
-                  </a>
+                  </Link>
                 </li>
                 <li className="appliance-item">
-                  <a href="/" className="appliance-link">
+                  <Link to="/" className="appliance-link">
                     Computer Components
-                  </a>
+                  </Link>
                 </li>
                 <li className="appliance-item">
-                  <a href="/" className="appliance-link">
+                  <Link to="/" className="appliance-link">
                     Travel Cameras
-                  </a>
+                  </Link>
                 </li>
                 <li className="appliance-item">
-                  <a href="/" className="appliance-link">
+                  <Link to="/" className="appliance-link">
                     Cameras DSLR/SLR
-                  </a>
+                  </Link>
                 </li>
                 <li className="appliance-item">
-                  <a href="/" className="appliance-link">
+                  <Link to="/" className="appliance-link">
                     Printers & Accessories
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -354,9 +355,9 @@ export const Navbar = ({ handleAside }) => {
         </li>
         <li onMouseMove={() => setSelectedMenu(openerMenus.fifthMenu)}
         onMouseOut={() => setSelectedMenu(openerMenus.fifthMenu.null)} className="nav-item">
-          <a className="nav-link" href="/shop">
+          <Link className="nav-link" to="/shop">
             SALES
-          </a>
+          </Link>
           <div
             className={`electronic-menu bg-light sales-menu position-absolute p-2${
               selectedMenu === openerMenus.fifthMenu ? " opened-menu" : ""
@@ -377,9 +378,9 @@ export const Navbar = ({ handleAside }) => {
         </li>
         <li onMouseMove={() => setSelectedMenu(openerMenus.sixthMenu)}
         onMouseOut={() => setSelectedMenu(openerMenus.sixthMenu.null)} className="nav-item">
-          <a className="nav-link" href="/shop">
+          <Link className="nav-link" to="/shop">
             BRANDS
-          </a>
+          </Link>
           <div
             className={`electronic-menu bg-light brands-menu position-absolute p-2${
               selectedMenu === openerMenus.sixthMenu ? " opened-menu" : ""
@@ -400,9 +401,9 @@ export const Navbar = ({ handleAside }) => {
         </li>
         <li onMouseMove={() => setSelectedMenu(openerMenus.seventhMenu)}
         onMouseOut={() => setSelectedMenu(openerMenus.seventhMenu.null)} className="nav-item">
-          <a className="nav-link" href="/shop">
+          <Link className="nav-link" to="/shop">
             FEATURES
-          </a>
+          </Link>
           <span className="link-info pro">PRO</span>
           <div
           className={`electronic-menu bg-light features-menu position-absolute p-2${

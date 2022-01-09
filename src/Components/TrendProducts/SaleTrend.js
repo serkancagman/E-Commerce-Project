@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const SaleTrend = ({ imageMain, header, title,trendLink }) => {
   return (
@@ -7,13 +8,13 @@ export const SaleTrend = ({ imageMain, header, title,trendLink }) => {
         <img className="img-fluid" src={imageMain} alt="Loading" />
 
         <div className="trend-info">
-          <a
-            href={trendLink}
+          <Link
+            to={trendLink}
             className="trend-link d-flex flex-column justify-content-between"
           >
             <span>{header}</span>
             <span className="trend-title">{title}</span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

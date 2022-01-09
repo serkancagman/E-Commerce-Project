@@ -3,23 +3,24 @@ import "./featured.css";
 import { FeaturedItems } from "../Helpers/FeaturedItems";
 import { FaRegEye } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
+import { Link } from "react-router-dom";
 export const FeaturedProducts = () => {
   return (
     <section>
       <div className="container-xxl">
         <div className="trend-header-area d-flex justify-content-between align-items-center">
           <span className="trend-header">Top Featured Products</span>
-          <a href="/" className="show-more">
+          <Link to="/" className="show-more">
             Show More <BsArrowRight color="#263c97" />
-          </a>
+          </Link>
         </div>
         <div className="row py-3 g-4 justify-content-center align-items-center">
           {FeaturedItems.map((products) => {
             return (
-              <div className="col-md-4 col-lg-4">
+              <div key={products.id} className="col-md-4 col-lg-4">
                 <div className="featured-area">
                   <div className="featured-img position-relative">
-                    <a className="featured-product" href="/">
+                    <Link className="featured-product" to={products.link}>
                       <img
                         className="img-fluid"
                         src={products.imgProduct}
@@ -41,13 +42,13 @@ export const FeaturedProducts = () => {
                       ) : (
                         ""
                       )}
-                    </a>
+                    </Link>
                   </div>
                   <div className="featured-info p-2">
                     <div className="featured-top">
-                      <a href="/" className="featured-header">
+                      <Link to={products.link} className="featured-header">
                         {products.header}
-                      </a>
+                      </Link>
                       <p className="featured-title">{products.title}</p>
                     </div>
                     <div className="featured-bottom text-end">

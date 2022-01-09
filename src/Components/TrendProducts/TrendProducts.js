@@ -11,6 +11,7 @@ import {
 } from "react-icons/io";
 import { FaRegEye } from "react-icons/fa";
 import { SaleTrend } from "./SaleTrend";
+import { Link } from "react-router-dom";
 export const TrendProducts = () => {
   const [currentMove, setCurrentMove] = React.useState(0);
   const moveBar = () => {
@@ -40,9 +41,9 @@ export const TrendProducts = () => {
         <div className="trend-area">
           <div className="trend-header-area d-flex justify-content-between align-items-center">
             <span className="trend-header">Hot Trend Products</span>
-            <a href="/" className="show-more">
+            <Link to="/" className="show-more">
               Show More <BsArrowRight color="#263c97" />
-            </a>
+            </Link>
           </div>
           <div className="trends-main py-2">
             <div
@@ -53,7 +54,7 @@ export const TrendProducts = () => {
                 return (
                   <article key={products.id} className="product-box">
                     <div className="product-img">
-                      <a href="/">
+                      <Link to={products.link}>
                         <img
                           className="img-fluid"
                           src={products.imgProduct}
@@ -73,7 +74,7 @@ export const TrendProducts = () => {
                         ) : (
                           ""
                         )}
-                      </a>
+                      </Link>
                     </div>
                     <div className="product-titles text-center">
                       <span className="product-title">{products.header}</span>
@@ -92,7 +93,7 @@ export const TrendProducts = () => {
 
             <span
               onClick={prevMoveBar}
-              className={`show left${
+              className={`show-indicator left${
                 currentMove === 0 ? " hidden-indicator" : " "
               }`}
             >
@@ -100,7 +101,7 @@ export const TrendProducts = () => {
             </span>
             <span
               onClick={moveBar}
-              className={`show right${
+              className={`show-indicator right${
                 currentMove === -2650 ? " hidden-indicator" : " "
               }`}
             >

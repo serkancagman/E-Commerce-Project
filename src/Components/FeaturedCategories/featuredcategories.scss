@@ -10,7 +10,7 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
   border-radius: 5px;
   border: 1px solid #94949446;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-  rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
   &:hover {
     transform: translateY(-5px);
@@ -18,13 +18,13 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
       rgba(0, 0, 0, 0.23) 0px 6px 6px;
   }
 }
-    .featured-banner{
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        }
-.brand-img{
-    cursor:pointer;
-    }
+.featured-banner {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.brand-img {
+  cursor: pointer;
+}
 .featured-nav {
   padding: 5px;
   ul {
@@ -51,6 +51,9 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
     }
   }
 }
-.featured-header{
-  background-color:#F0F0F0;
+.featured-header-cat {
+  background-color: #f0f0f0;
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
 }

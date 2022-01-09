@@ -1,5 +1,12 @@
 .carousel-info {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   top: 10%;
   left: 10%;
   right: 10%;
@@ -21,19 +28,22 @@
 .carousel-btn {
   margin-top: 1rem;
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  width: 170px;
+  text-align: center;
   border: 2px solid #fff;
   border-radius: 75px;
-  width: 150px;
-  height: 50px;
+  padding: 10px 20px;
+  text-decoration: none;
   outline: none;
   background-color: transparent;
 }
 
 .carousel-btn:hover {
   background-color: #16bcdc;
+  color: #fff !important;
   border: 2px solid transparent;
 }
 
@@ -92,5 +102,9 @@
 
 .banner-info .banner-title {
   color: #fff;
+}
+
+.boxes-url {
+  text-decoration: none;
 }
 /*# sourceMappingURL=banner.css.map */

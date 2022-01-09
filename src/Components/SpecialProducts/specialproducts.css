@@ -159,7 +159,7 @@
   opacity: 1 !important;
 }
 
-.show {
+.show-indicator {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -171,7 +171,7 @@
   cursor: pointer;
 }
 
-.show:hover {
+.show-indicator:hover {
   opacity: 1 !important;
 }
 

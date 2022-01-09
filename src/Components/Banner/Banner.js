@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/effect-creative";
 import SwiperCore, { Pagination } from "swiper";
 import "swiper/css";
+import { Link } from "react-router-dom";
 
 SwiperCore.use([Pagination]);
 export const Banner = () => {
@@ -25,8 +26,8 @@ export const Banner = () => {
             >
               {carouselItems.map((carousels) => {
                 return (
-                  <SwiperSlide>
-                    <div key={carousels.id} className="main-carousel">
+                  <SwiperSlide key={carousels.id} >
+                    <div  className="main-carousel">
                       <div className="carouselInner position-relative">
                         <img
                           className="img-fluid carousel-image"
@@ -40,7 +41,7 @@ export const Banner = () => {
                           <span className="carousel-titles">
                             {carousels.title}
                           </span>
-                          <button className="carousel-btn">DISCOVER NOW</button>
+                          <Link to={carousels.link} className="carousel-btn">DISCOVER NOW</Link>
                         </div>
                       </div>
                     </div>
@@ -61,8 +62,11 @@ export const Banner = () => {
                         alt="Loading"
                       />
                       <div className="banner-info">
+                        <Link to={boxes.link} className="boxes-url" >
                         <h5 className="banner-header">{boxes.header}</h5>
                         <span className="banner-title">{boxes.title}</span>
+                        </Link>
+                        
                       </div>
                     </div>
                   </div>

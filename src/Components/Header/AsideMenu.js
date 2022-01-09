@@ -2,6 +2,7 @@ import React from "react";
 import { GrFormClose } from "react-icons/gr";
 import { AsideItems } from "./AsideItems";
 import { FiUser } from "react-icons/fi";
+import { Link } from "react-router-dom";
 export const AsideMenu = ({ handleAside,asideActive }) => {
   const [asideLang, setAsideLang] = React.useState("EN");
 
@@ -24,24 +25,24 @@ export const AsideMenu = ({ handleAside,asideActive }) => {
         <div className="aside-nav ">
           <ul className="aside-nav-inner my-4">
             <li className="aside-nav-item">
-              <a href="/" className="aside-nav-link">
+              <Link to="/" className="aside-nav-link">
                 My Account
-              </a>
+              </Link>
             </li>
             <li className="aside-nav-item">
-              <a href="/" className="aside-nav-link">
+              <Link to="/" className="aside-nav-link">
                 About Us
-              </a>
+              </Link>
             </li>
             <li className="aside-nav-item">
-              <a href="/" className="aside-nav-link">
+              <Link to="/" className="aside-nav-link">
                 Contact Us
-              </a>
+              </Link>
             </li>
             <li className="aside-nav-item">
-              <a href="/" className="aside-nav-link">
+              <Link to="/" className="aside-nav-link">
                 FAQs
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="aside-login text-center">

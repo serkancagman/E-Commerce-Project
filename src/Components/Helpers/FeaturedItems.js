@@ -9,6 +9,7 @@ export const FeaturedItems = [
 
     {
         "id":1,
+        "link":"monica",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum",
         "price":"€150.00",
@@ -18,6 +19,7 @@ export const FeaturedItems = [
     },
     {
         "id":2,
+        "link":"iphone",
         "header":"Smart Watch for iOS Phones",
         "title":"Neque porro quisquam est qui dolorem ipsum",
         "price":"€100.00",
@@ -25,6 +27,7 @@ export const FeaturedItems = [
     },
     {
         "id":3,
+        "link":"monica",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum",
         "price":"€34.99",
@@ -32,6 +35,7 @@ export const FeaturedItems = [
     },
     {
         "id":4,
+        "link":"monica",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum",
         "price":"€50.00",
@@ -39,6 +43,7 @@ export const FeaturedItems = [
     },
     {
         "id":5,
+        "link":"monica",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum",
         "price":"€10.00",
@@ -46,6 +51,7 @@ export const FeaturedItems = [
     },
     {
         "id":6,
+        "link":"monica",
         "header":"Monica Fuentes",
         "title":"Neque porro quisquam est qui dolorem ipsum",
         "price":"€15.00",

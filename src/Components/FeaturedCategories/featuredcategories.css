@@ -64,7 +64,10 @@
   content: "> ";
 }
 
-.featured-header {
-  background-color: #F0F0F0;
+.featured-header-cat {
+  background-color: #f0f0f0;
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
 }
 /*# sourceMappingURL=featuredcategories.css.map */
