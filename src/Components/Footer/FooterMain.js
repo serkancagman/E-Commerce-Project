@@ -38,7 +38,9 @@ export const FooterMain = () => {
         </div>
         <FooterInner/>
         </div>
-            
+        <div className="copyright">
+          Copyright 2022 &copy; SuperMarket | Powered by <span>Serkan</span>
+      </div>
         </footer>
     )
 }

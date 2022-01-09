@@ -8,9 +8,9 @@
 ### Customizable Product containers.
 
 ## What has been done so far ?
-### So far I have added new components.
+### So far I have finished homepage.
 
-<img src="https://imgyukle.com/f/2022/01/04/oICg2N.png" />
+<img src="https://imgyukle.com/f/2022/01/10/oNPKPh.png" />
 
 
 ## WHAT TECHNOLOGIES DID I USE ?
