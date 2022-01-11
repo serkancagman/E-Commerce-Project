@@ -1,0 +1,176 @@
+$transition: all 0.3s ease-in-out;
+
+.loginMain {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  right: 0;
+ bottom:0;
+ width: 100%;
+ height: 100%;
+}
+.loginMainArea{
+  width:100%;
+  height:100%;
+}
+.loginRegisterWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:400px;
+  height:500px;
+}
+.LoginRegister {
+  position: relative;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+.loginWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.socialMedia {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.socialIconWrapper {
+  margin: 0 10px;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.096);
+  transition: $transition;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.219);
+  }
+}
+.closeLoginArea {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 2px;
+  cursor: pointer;
+}
+.SocialIcon {
+  font-size: 30px;
+}
+.facebookLogin {
+  color: #516fa3;
+}
+.twitterLogin {
+  color: #4db7eb;
+}
+.orLine {
+  margin: 10px 0;
+}
+.horizontalLine {
+  border: 1px solid rgba(102, 102, 102, 0.356);
+  width: 120px;
+}
+.orText {
+  margin: 0 5px;
+  color: rgba(102, 102, 102, 0.623);
+}
+.inputWrapper {
+  margin: 1rem 0;
+
+  .formLabel {
+    color: #000;
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  .formInput {
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #666;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 5px;
+    padding-right: 40px;
+  }
+  .formInput[name="email"] {
+    background-image: url(../../images/email.png);
+    background-position-y: 50%;
+    background-position-x: 95%;
+    background-repeat: no-repeat;
+    background-size: 25px;
+  }
+  .formInput[name="password"] {
+    background-image: url(../../images/password.png);
+    background-position-y: 50%;
+    background-position-x: 95%;
+    background-repeat: no-repeat;
+    background-size: 25px;
+  }
+  .formInput[name="passwordConfirm"] {
+    background-image: url(../../images/password.png);
+    background-position-y: 50%;
+    background-position-x: 95%;
+    background-repeat: no-repeat;
+    background-size: 25px;
+  }
+}
+
+.rememberText {
+  font-size: 15px;
+  margin-left: 5px;
+}
+.submitButton {
+  text-align: center;
+  .inputSubmit {
+    border: 2px solid #263c97;
+    padding: 5px 10px;
+    color: #fff;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #263c97;
+    transition: $transition;
+    &:hover {
+      color: #263c97 !important;
+      background-color: transparent !important;
+    }
+  }
+}
+.forgotArea {
+  margin: 10px 0;
+  .forgotText {
+    font-size: 13px;
+  }
+  .resetPassword {
+    font-size: 13px;
+    margin-left: 15px;
+  }
+}
+
+.createAccount {
+  text-align: center;
+  margin: 10px 0;
+
+  .createAccountText {
+    color: #263c97;
+    cursor: pointer;
+    padding-bottom: 2px;
+    transition: $transition;
+    border-bottom: 1px solid transparent;
+    &:hover {
+      border-bottom: 1px solid #263c97;
+    }
+  }
+}
+.errorMessage{
+    color: red;
+    font-size: 14px;
+    padding: 1px 0;
+    
+    
+}
+.errorInput{
+    border-color: red !important;
+}
