@@ -5,18 +5,18 @@ import { GrFormClose } from "react-icons/gr";
 import { FaApple, FaFacebookF, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { useFormik } from "formik";
 import validationSchema from "./LoginValidation";
-
-
-export const Login = ({ toRegister, toBack }) => {
-
-  const { handleChange, handleSubmit, errors, touched, handleBlur } =
+export const Login = ({ toRegister, toBack, onForm }) => {
+  const { handleChange, values, handleSubmit, errors, touched, handleBlur } =
     useFormik({
       initialValues: {
         email: "",
         password: "",
         rememberMe: "",
       },
-      validationSchema
+      validationSchema,
+      onSubmit: (values) => {
+        console.log(values);
+      },
     });
 
   return (
@@ -57,10 +57,10 @@ export const Login = ({ toRegister, toBack }) => {
             <span className={LoginStyle.orText}>OR</span>
             <span className={LoginStyle.horizontalLine}></span>
           </div>
-          <span onClick={()=> toBack(false)} className={LoginStyle.closeLoginArea}>
+          <span onClick={()=> onForm(false)} className={LoginStyle.closeLoginArea}>
             <GrFormClose size={25} />
           </span>
-          <form onSubmit={handleSubmit}>
+          <form className={LoginStyle.userForm} onSubmit={handleSubmit}>
             <div className={LoginStyle.inputWrapper}>
               <label htmlFor="email" className={LoginStyle.formLabel}>
                 E-mail

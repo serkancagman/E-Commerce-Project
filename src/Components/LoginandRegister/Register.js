@@ -6,7 +6,7 @@ import { FaApple, FaFacebookF, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { useFormik } from "formik";
 import validationSchema from "./RegisterValidation";
 
-export const Register = ({ toRegister, toBack }) => {
+export const Register = ({ toRegister, onForm }) => {
   const { handleChange, values, handleSubmit, errors, touched, handleBlur } =
     useFormik({
       initialValues: {
@@ -14,7 +14,10 @@ export const Register = ({ toRegister, toBack }) => {
         password: "",
         passwordConfirm: "",
       },
-      validationSchema
+      validationSchema,
+      onSubmit: (values) => {
+        console.log(values);
+      },
     });
 
   return (
@@ -55,10 +58,10 @@ export const Register = ({ toRegister, toBack }) => {
             <span className={LoginStyle.orText}>OR</span>
             <span className={LoginStyle.horizontalLine}></span>
           </div>
-          <span onClick={()=> toBack(false)} className={LoginStyle.closeLoginArea}>
+          <span onClick={()=> onForm(false)} className={LoginStyle.closeLoginArea}>
             <GrFormClose size={25} />
           </span>
-          <form onSubmit={handleSubmit}>
+          <form className={LoginStyle.userForm} onSubmit={handleSubmit}>
             <div className={LoginStyle.inputWrapper}>
               <label htmlFor="email" className={LoginStyle.formLabel}>
                 E-mail

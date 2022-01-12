@@ -6,7 +6,7 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
 .trends-main {
   position: relative;
   overflow: hidden;
-  height: 360px;
+  height: 100%;
   width: 100%;
 }
 .trend-area {
@@ -18,16 +18,21 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
   border-bottom: 3px solid $secondcolor;
 }
 .trend-inner {
-  transform: translateX(0);
-  transition: all 0.7s ease-in-out;
-
-  &::-webkit-scrollbar {
-    height: 0;
-  }
+ width: 100%;
+ height: 100%;
 }
 .trend-header-area {
   border-bottom: 1px solid #a5a5a549;
 }
+.mySwiper{
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+.brandSwiper{
+  background-color: #fff !important;
+}
+
 .show-more {
   color: #263c97;
   text-decoration: none;
@@ -37,10 +42,10 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 200px;
+  width: 220px;
   transform: translateY(0);
   transition: all 0.2s linear;
-  margin: 10px 10.4px;
+  margin: 5px !important;
   border: 1px solid #94949446;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -51,7 +56,7 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
   }
   .product-img {
     position: relative;
-    width: 200px;
+    width: 100% !important;
 
     &:hover {
       .show-product {

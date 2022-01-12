@@ -7,6 +7,10 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.164);
 }
 
+.loginMain {
+  opacity: 0 !important;
+}
+
 #mainHeader {
   background-color: #263c97;
   position: relative;
@@ -142,7 +146,7 @@
   border-bottom-left-radius: 5px;
 }
 
-form {
+.search-form {
   height: 50px;
 }
 
@@ -400,7 +404,7 @@ form {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   visibility: hidden;
   opacity: 0;
   top: 0;
@@ -950,5 +954,25 @@ form {
 .features-menu {
   z-index: 99;
   left: -614px !important;
+}
+
+.loginFormBack {
+  position: fixed;
+  width: 1%;
+  height: 1%;
+  background-color: rgba(0, 0, 0, 0.205);
+  z-index: 9;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: all 1.2s linear;
+  transition: all 1.2s linear;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.login-menu {
+  cursor: pointer;
 }
 /*# sourceMappingURL=header.css.map */

@@ -10,7 +10,9 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
   position: relative;
   border-bottom: $navBorder;
 }
-
+.loginMain{
+  opacity: 0 !important;
+}
 #mainHeader {
   background-color: $maincolor;
   position: relative;
@@ -127,7 +129,7 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-form {
+.search-form {
   height: 50px;
 }
 #searchSubmit {
@@ -321,7 +323,7 @@ form {
   background-color: #00000036;
   transition: all 0.3s ease;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   visibility: hidden;
   opacity: 0;
   top: 0;
@@ -756,3 +758,20 @@ form {
   z-index: 99;
   left: -614px !important;
   }
+  .loginFormBack{
+    position: fixed;
+    width: 1%;
+    height: 1%;
+    background-color: rgba(0, 0, 0, 0.205);
+    z-index: 9;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 1.2s linear;
+    opacity: 0;
+    visibility: hidden;
+  }
+.login-menu{
+  cursor: pointer;
+}

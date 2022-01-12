@@ -1,34 +1,49 @@
 $transition: all 0.3s ease-in-out;
 
 .loginMain {
+  opacity: 0;
+  visibility: hidden;
+  transition: $transition;
   position: fixed;
   z-index: 9999;
   left: 0;
   top: 0;
   right: 0;
  bottom:0;
- width: 100%;
- height: 100%;
+ width: 0;
+ height: 0;
+transition: all .5s linear;
 }
+
+
+
 .loginMainArea{
   width:100%;
   height:100%;
+  position: relative;
 }
 .loginRegisterWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width:400px;
-  height:500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 10;
+}
+
+.userForm{
+  height: 100%;
+  width: 100%;
 }
 .LoginRegister {
   position: relative;
   border-radius: 5px;
-  width: 100%;
+  width: 400px;
   height: 100%;
   padding: 1rem;
+  
 }
 .loginWrapper {
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -94,6 +109,7 @@ $transition: all 0.3s ease-in-out;
     padding-bottom: 7px;
     padding-left: 5px;
     padding-right: 40px;
+    
   }
   .formInput[name="email"] {
     background-image: url(../../images/email.png);
@@ -101,6 +117,7 @@ $transition: all 0.3s ease-in-out;
     background-position-x: 95%;
     background-repeat: no-repeat;
     background-size: 25px;
+    width: 100%;
   }
   .formInput[name="password"] {
     background-image: url(../../images/password.png);
@@ -108,6 +125,7 @@ $transition: all 0.3s ease-in-out;
     background-position-x: 95%;
     background-repeat: no-repeat;
     background-size: 25px;
+    width: 100%;
   }
   .formInput[name="passwordConfirm"] {
     background-image: url(../../images/password.png);
@@ -115,6 +133,7 @@ $transition: all 0.3s ease-in-out;
     background-position-x: 95%;
     background-repeat: no-repeat;
     background-size: 25px;
+    width: 100%;
   }
 }
 
@@ -173,4 +192,12 @@ $transition: all 0.3s ease-in-out;
 }
 .errorInput{
     border-color: red !important;
+}
+  .offLoginFormBg{
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100%;
+  height: 100%;
+  
+  
 }

@@ -7,11 +7,14 @@ import { FiUser } from "react-icons/fi";
 import { Navbar } from "./Navbar";
 import { AsideMenu } from "./AsideMenu";
 import { Link } from "react-router-dom";
+import {LoginOrRegister} from "../LoginandRegister/LoginOrRegister"
 
 export const Header = () => {
-  const [selected, setSelected] = useState("US");
+  const [userForm,setUserForm] = useState(false)
+   const [selected, setSelected] = useState("US");
   const [currency, setCurrency] = useState("USD");
  const [asideActive, setAsideActive] = useState(false);
+
 
   const handleAside = () => setAsideActive(!asideActive)
  
@@ -25,6 +28,7 @@ export const Header = () => {
 
   
   return (
+    <>
     <header id="mainHeader">
       <div className="container-fluid">
         <div className=" py-1 top-nav d-flex justify-content-between align-items-center">
@@ -117,7 +121,7 @@ export const Header = () => {
           <Link className="navbar-brand mx-3" to="/">
             <img width={250} className="img-fluid" src={Logo} alt="" />
           </Link>
-          <form>
+          <form className="search-form">
             <input
               className="px-3"
               id="search"
@@ -129,8 +133,8 @@ export const Header = () => {
             </button>
           </form>
           <div className="middle-right">
-            <div className="login-menu">
-              <FiUser size={35} color="#fff" />
+            <div onClick={()=> setUserForm(!userForm)} className="login-menu">
+              <FiUser className="userIcon" size={35} color="#fff" />
 
               <div className="login-or-register">
                 <span className="login-header">Sign in</span>
@@ -151,12 +155,16 @@ export const Header = () => {
         handleAside={handleAside}
         />
       </div>
-      <asideMenu
+      <AsideMenu
       handleAside={handleAside}
       asideActive={asideActive}
       />
       <div onClick={handleAside} className={`aside-bg${asideActive ? " aside-bg-on" : ""}`}>
       </div>
     </header>
+    {userForm && <LoginOrRegister onForm={userForm} updateForm={setUserForm} />}
+    
+    </>
+    
   );
 };
