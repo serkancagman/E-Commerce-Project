@@ -1,5 +1,8 @@
 .navbar {
+  background-color: transparent;
   min-height: 55px;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .top-nav {
@@ -12,8 +15,17 @@
 }
 
 #mainHeader {
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
   background-color: #263c97;
   position: relative;
+}
+
+.mainNav {
+  padding: 0 1rem !important;
+  background-color: #263c97;
+  height: 70px;
+  z-index: 98;
 }
 
 .ReactFlagsSelect-module_selectBtn__19wW7 {
@@ -57,8 +69,8 @@
 .ReactFlagsSelect-module_label__27pw9 {
   font-size: 0.9em !important;
   color: #fff;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .ReactFlagsSelect-module_label__27pw9:hover {
@@ -76,8 +88,8 @@
 .dropdown-item {
   padding: 5px 15px !important;
   font-size: 0.9em;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .dropdown-item:hover {
@@ -90,8 +102,8 @@
   border-right: 1px solid rgba(255, 255, 255, 0.164) !important;
   border: none;
   font-size: 0.9em;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 #dropdownMenu2:hover {
@@ -104,8 +116,8 @@
 }
 
 .call-num {
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .call-num:hover {
@@ -121,8 +133,8 @@
   font-size: 0.9em;
   text-decoration: none;
   padding: 0 15px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .right-item .right-link:nth-child(1) {
@@ -271,8 +283,8 @@
 .get-side-menu {
   font-size: 15px;
   color: #fff;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
   cursor: pointer;
 }
 
@@ -306,8 +318,8 @@
   font-size: 15px;
   text-align: center;
   color: #fff;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
   position: relative;
 }
 
@@ -328,8 +340,8 @@
   left: 52%;
   right: 50%;
   bottom: 10px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .link-info {
@@ -371,8 +383,8 @@
   background-color: #fff;
   width: 300px;
   height: 100%;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .aside-area .aside-header {
@@ -390,8 +402,8 @@
   margin: 15px 10px;
   top: 0;
   cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
   color: #afafaf;
 }
 
@@ -404,7 +416,7 @@
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   position: fixed;
-  z-index: 2;
+  z-index: 99;
   visibility: hidden;
   opacity: 0;
   top: 0;
@@ -432,8 +444,8 @@
 .tree-main .tree-item .tree-link {
   color: #666;
   text-decoration: none;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
   font-size: 14px;
 }
 
@@ -454,8 +466,8 @@
   border: 1px solid #acacac;
   margin-right: 10px;
   display: inline-block;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .list-icon {
@@ -515,8 +527,8 @@
 .sub-nav .sub-item .sub-link {
   text-decoration: none;
   color: #666;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
   font-size: 14px;
 }
 
@@ -558,8 +570,8 @@
 .aside-nav .aside-nav-inner .aside-nav-item .aside-nav-link {
   color: #666;
   text-decoration: none;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
   font-size: 15px;
 }
 
@@ -579,13 +591,13 @@
   padding: 5px 10px;
   border: 2px solid #666;
   border-radius: 5px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .aside-login-btn svg {
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .aside-login-btn:hover {
@@ -600,8 +612,8 @@
 .in-sub {
   height: 0;
   overflow: hidden;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .close-sub-in {
@@ -629,8 +641,8 @@
   margin-top: 0;
   color: #666;
   cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
   padding: 0 5px;
   font-weight: 600;
 }
@@ -684,8 +696,8 @@
 .shop-item {
   margin: 2px 0.9rem;
   list-style: none;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
   min-width: 175px;
 }
 
@@ -705,16 +717,16 @@
   border: 1px solid rgba(172, 172, 172, 0.356);
   margin-right: 10px;
   display: inline-block;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .shop-link {
   font-size: 15px;
   text-decoration: none;
   color: #666;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .electronic-menu {
@@ -761,8 +773,8 @@
   font-size: 15px;
   color: #000;
   text-decoration: none;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .electronic-link:hover {
@@ -815,8 +827,8 @@
   color: #666;
   text-decoration: none;
   font-size: 14px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .fashion-menu .fashion-menu-area .fashion-nav .fashion-item .fashion-link:hover {
@@ -828,8 +840,8 @@
   margin: 10px 0;
   text-decoration: none;
   color: #000;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .fashion-header:hover {
@@ -904,8 +916,8 @@
 .appliance-menu .appliance-area .appliance-nav .appliance-item .appliance-link {
   text-decoration: none;
   color: #666;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .appliance-menu .appliance-area .appliance-nav .appliance-item .appliance-link::before {
@@ -916,8 +928,8 @@
   border: 1px solid rgba(172, 172, 172, 0.356);
   margin-right: 10px;
   display: inline-block;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .appliance-menu .appliance-area .appliance-nav .appliance-item .appliance-link:hover {
@@ -933,8 +945,8 @@
   text-decoration: none;
   font-weight: 600;
   color: #000;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .appliance-header:hover {

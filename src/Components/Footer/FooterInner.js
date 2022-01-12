@@ -192,16 +192,16 @@ export const FooterInner = () => {
                 You may unsubscribe at any moment. For that purpose, please find
                 our contact info in the legal notice.
               </p>
-              <div class="input-group mb-3">
+              <div className="input-group mb-3">
                 <input
                   type="text"
-                  class="form-control py-3"
+                  className="form-control py-3"
                   placeholder="Your Email Adress"
                   aria-label="Recipient's username"
                   aria-describedby="button-addon2"
                 />
                 <button
-                  class="btn fw-bold btn-primary"
+                  className="btn fw-bold btn-primary"
                   type="button"
                   id="button-addon2"
                   disabled={checkNews ? "" : "disabled"}
@@ -210,7 +210,7 @@ export const FooterInner = () => {
                 </button>
               </div>
               <div className="checkSubscribe">
-                  <input onClick={()=> setCheckNews(!checkNews)} checked={checkNews} type="checkbox" className="checkForm" />
+                  <input onChange={()=> setCheckNews(!checkNews)} checked={checkNews} type="checkbox" className="checkForm" />
                   <span className="checkInfo">Enim quis fugiat consequat elit minim nisi eu occaecat occaecat deserunt aliquip nisi ex deserunt.</span>
               </div>
             </div>

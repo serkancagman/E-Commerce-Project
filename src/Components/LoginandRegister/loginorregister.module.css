@@ -151,7 +151,7 @@
 }
 
 .inputWrapper .formInput[name="password"] {
-  background-image: url(../../images/password.png);
+  background-image: url(../../images/password.gif);
   background-position-y: 50%;
   background-position-x: 95%;
   background-repeat: no-repeat;
@@ -160,7 +160,7 @@
 }
 
 .inputWrapper .formInput[name="passwordConfirm"] {
-  background-image: url(../../images/password.png);
+  background-image: url(../../images/password.gif);
   background-position-y: 50%;
   background-position-x: 95%;
   background-repeat: no-repeat;

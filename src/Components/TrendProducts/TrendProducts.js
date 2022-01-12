@@ -46,8 +46,8 @@ export const TrendProducts = () => {
               >
                 {TrendItems.map((products) => {
                   return (
-                    <SwiperSlide>
-                      <article key={products.id} className="product-box">
+                    <SwiperSlide key={products.id} >
+                      <article  className="product-box">
                         <div className="product-img">
                           <Link to={products.link}>
                             <img

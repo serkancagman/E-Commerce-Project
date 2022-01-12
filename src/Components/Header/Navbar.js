@@ -1,5 +1,6 @@
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { BsSearch, BsCart4 } from "react-icons/bs";
 import { ElectronicItems } from "./ElectronicItems";
 import Computer from "../../images/computers.jpg";
 import Tablet from "../../images/tablets.jpg";
@@ -8,8 +9,9 @@ import Fashion from "../../images/fashion.jpg";
 import Watch from "../../images/watch.jpg";
 import Mother from "../../images/mothers-babies.jpg";
 import { Link } from "react-router-dom";
+import { FiUser } from "react-icons/fi";
 
-export const Navbar = ({ handleAside }) => {
+const Navbar = ({ handleAside, onSticky, updateUser, loginUser }) => {
   const openerMenus = {
     firstMenu: "firstMenu",
     secondMenu: "secondMenu",
@@ -17,19 +19,23 @@ export const Navbar = ({ handleAside }) => {
     fourthMenu: "fourthMenu",
     fifthMenu: "fifthMenu",
     sixthMenu: "sixthMenu",
-    seventhMenu: "seventhMenu"
+    seventhMenu: "seventhMenu",
   };
 
   const [selectedMenu, setSelectedMenu] = React.useState(null);
-
+  console.log(onSticky);
   return (
-    <nav className="navbar navbar-expand-lg p-0">
+    <nav
+      className={` navbar navbar-expand-lg p-0 ${
+        onSticky.sticky ? " mainNav fixed-top   " : ""
+      }  `}
+    >
       <div
         onClick={handleAside}
         className="get-side-menu d-flex justify-content-center align-items-center"
       >
         <GiHamburgerMenu size={22} className="pb-1" />
-        <span className="aside-headers ms-3">SHOP BY DEPARTMENT</span>
+        <span className="aside-headers ms-3">CATEGORIES</span>
       </div>
       <ul className="navbar-nav mx-auto">
         <li
@@ -230,16 +236,19 @@ export const Navbar = ({ handleAside }) => {
             </div>
           </div>
         </li>
-        <li 
-        onMouseMove={() => setSelectedMenu(openerMenus.fourthMenu)}
+        <li
+          onMouseMove={() => setSelectedMenu(openerMenus.fourthMenu)}
           onMouseOut={() => setSelectedMenu(openerMenus.fourthMenu.null)}
-        className="nav-item">
+          className="nav-item"
+        >
           <Link className="nav-link" to="/shop">
             APPLIANCES
           </Link>
-          <div className={`appliance-menu bg-light${
-            selectedMenu === openerMenus.fourthMenu ? " opened-menu" : ""
-          }`}>
+          <div
+            className={`appliance-menu bg-light${
+              selectedMenu === openerMenus.fourthMenu ? " opened-menu" : ""
+            }`}
+          >
             <Link to="/" className="appliance-header">
               COMPUTERS & LAPTOPS
             </Link>
@@ -277,9 +286,9 @@ export const Navbar = ({ handleAside }) => {
                 </li>
               </ul>
               <div className="appliance-set-header w-100 my-2">
-              <Link to="/" className="appliance-header">
-              MOBILES & TABLETS
-            </Link>
+                <Link to="/" className="appliance-header">
+                  MOBILES & TABLETS
+                </Link>
               </div>
               <ul className="appliance-nav">
                 <li className="appliance-item">
@@ -314,9 +323,9 @@ export const Navbar = ({ handleAside }) => {
                 </li>
               </ul>
               <div className="appliance-set-header w-100 my-2">
-              <Link to="/" className="appliance-header">
-              TV, VIDEO & AUDIO
-            </Link>
+                <Link to="/" className="appliance-header">
+                  TV, VIDEO & AUDIO
+                </Link>
               </div>
               <ul className="appliance-nav">
                 <li className="appliance-item">
@@ -353,8 +362,11 @@ export const Navbar = ({ handleAside }) => {
             </div>
           </div>
         </li>
-        <li onMouseMove={() => setSelectedMenu(openerMenus.fifthMenu)}
-        onMouseOut={() => setSelectedMenu(openerMenus.fifthMenu.null)} className="nav-item">
+        <li
+          onMouseMove={() => setSelectedMenu(openerMenus.fifthMenu)}
+          onMouseOut={() => setSelectedMenu(openerMenus.fifthMenu.null)}
+          className="nav-item"
+        >
           <Link className="nav-link" to="/shop">
             SALES
           </Link>
@@ -376,8 +388,11 @@ export const Navbar = ({ handleAside }) => {
             </div>
           </div>
         </li>
-        <li onMouseMove={() => setSelectedMenu(openerMenus.sixthMenu)}
-        onMouseOut={() => setSelectedMenu(openerMenus.sixthMenu.null)} className="nav-item">
+        <li
+          onMouseMove={() => setSelectedMenu(openerMenus.sixthMenu)}
+          onMouseOut={() => setSelectedMenu(openerMenus.sixthMenu.null)}
+          className="nav-item"
+        >
           <Link className="nav-link" to="/shop">
             BRANDS
           </Link>
@@ -399,34 +414,63 @@ export const Navbar = ({ handleAside }) => {
             </div>
           </div>
         </li>
-        <li onMouseMove={() => setSelectedMenu(openerMenus.seventhMenu)}
-        onMouseOut={() => setSelectedMenu(openerMenus.seventhMenu.null)} className="nav-item">
+        <li
+          onMouseMove={() => setSelectedMenu(openerMenus.seventhMenu)}
+          onMouseOut={() => setSelectedMenu(openerMenus.seventhMenu.null)}
+          className="nav-item"
+        >
           <Link className="nav-link" to="/shop">
             FEATURES
           </Link>
           <span className="link-info pro">PRO</span>
           <div
-          className={`electronic-menu bg-light features-menu position-absolute p-2${
-            selectedMenu === openerMenus.seventhMenu ? " opened-menu" : ""
-          }`}
-        >
-          <div className="d-flex flex-wrap justify-content-center align-items-center electronic-menu-area">
-            <ElectronicItems imgURL={Computer} header="COMPUTERS & LAPTOPS" />
-            <ElectronicItems imgURL={Tablet} header="MOBILES & TABLETS" />
-            <ElectronicItems imgURL={TV} header="TV, VIDEO & AUDIO" />
-            <ElectronicItems
-              imgURL={Fashion}
-              header="FASHION & ACCESSORIES"
-            />
-            <ElectronicItems imgURL={Watch} header="WATCHES & ACCESSORIES" />
-            <ElectronicItems imgURL={Mother} header="MOTHERS & BABIES" />
+            className={`electronic-menu bg-light features-menu position-absolute p-2${
+              selectedMenu === openerMenus.seventhMenu ? " opened-menu" : ""
+            }`}
+          >
+            <div className="d-flex flex-wrap justify-content-center align-items-center electronic-menu-area">
+              <ElectronicItems imgURL={Computer} header="COMPUTERS & LAPTOPS" />
+              <ElectronicItems imgURL={Tablet} header="MOBILES & TABLETS" />
+              <ElectronicItems imgURL={TV} header="TV, VIDEO & AUDIO" />
+              <ElectronicItems
+                imgURL={Fashion}
+                header="FASHION & ACCESSORIES"
+              />
+              <ElectronicItems imgURL={Watch} header="WATCHES & ACCESSORIES" />
+              <ElectronicItems imgURL={Mother} header="MOTHERS & BABIES" />
+            </div>
           </div>
-        </div>
         </li>
       </ul>
-      <div className="promotion-title">
-        Spend €120 more and get free shipping!
-      </div>
+      {onSticky.sticky ? (
+                    <div className="middle-right">
+                    <div
+                      onClick={() => updateUser(!loginUser)}
+                      className="login-menu"
+                    >
+                      <FiUser className="userIcon" size={35} color="#fff" />
+      
+                      <div className="login-or-register">
+                        <span className="login-header">Sign in</span>
+                        <span className="register-header">Create an Account</span>
+                      </div>
+                    </div>
+                    <div className="my-cart">
+                      <BsCart4 size={35} color="#fff" />
+                      <div className="cart-info">
+                        <span className="cart-header">My Cart</span>
+                        <span className="cart-price">€0.00</span>
+                      </div>
+                      <span className="product-quantity">0</span>
+                    </div>
+                  </div>
+      ) : (
+        <div className="promotion-title">
+          Spend €120 more and get free shipping!
+        </div>
+      )}
     </nav>
   );
 };
+
+export default React.memo(Navbar);

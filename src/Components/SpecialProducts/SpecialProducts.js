@@ -20,24 +20,7 @@ import "swiper/css/navigation"
 
 export const SpecialProducts = ({header}) => {
   
-  const swiper = new Swiper(".swiper", {
-    breakpoints: {
-      320: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-
-      480: {
-        slidesPerView: 3,
-        spaceBetween: 30,
-      },
-
-      640: {
-        slidesPerView: 4,
-        spaceBetween: 40,
-      },
-    },
-  });
+  
   SwiperCore.use([FreeMode, Pagination, Navigation, Autoplay]);
 
     return (
@@ -63,8 +46,8 @@ export const SpecialProducts = ({header}) => {
                 >
                   {TrendItems.map((products) => {
                     return (
-                      <SwiperSlide>
-                        <article key={products.id} className="product-box">
+                      <SwiperSlide key={products.id} >
+                        <article  className="product-box">
                           <div className="product-img">
                             <Link to={products.link}>
                               <img
