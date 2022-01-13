@@ -1,4 +1,4 @@
-# This is my first responsive E-Commerce React Project.
+# This is my responsive E-Commerce React Project.
 
 ## What's in this project ?
 ### Adding and removing products from the shopping cart.
