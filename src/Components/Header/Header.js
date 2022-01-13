@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ReactFlagsSelect from "react-flags-select";
 import "./header.css";
 import Logo from "../../images/logo.png";
@@ -8,21 +8,23 @@ import Navbar from "./Navbar";
 import { AsideMenu } from "./AsideMenu";
 import { Link } from "react-router-dom";
 import { LoginOrRegister } from "../LoginandRegister/LoginOrRegister";
-
+import { ShopCart } from "../Shoppingcart/ShopCart";
 export const Header = () => {
-  const [userForm, setUserForm] = useState(false);
-  const [selected, setSelected] = useState("US");
-  const [currency, setCurrency] = useState("USD");
-  const [asideActive, setAsideActive] = useState(false);
-  const [pageHeigt, setPageHeight] = useState({ height: 0 });
-  const [navSticky, setNavSticky] = useState({ sticky: false });
+  const [userForm, setUserForm] = React.useState(false);
+  const [selected, setSelected] = React.useState("US");
+  const [currency, setCurrency] = React.useState("USD");
+  const [asideActive, setAsideActive] = React.useState(false);
+  const [pageHeigt, setPageHeight] = React.useState({ height: 0 });
+  const [navSticky, setNavSticky] = React.useState({ sticky: false });
+  const [shopCart, setShopCart] = React.useState(false);
   const handleAside = () => setAsideActive(!asideActive);
+  const showCart = () => setShopCart(!shopCart);
 
-  useEffect(() => {
+  React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
+  React.useEffect(() => {
     let stickyStatus;
 
     if (pageHeigt.height >= 170) {
@@ -166,7 +168,7 @@ export const Header = () => {
                     <span className="register-header">Create an Account</span>
                   </div>
                 </div>
-                <div className="my-cart">
+                <div onClick={showCart} className="my-cart">
                   <BsCart4 size={35} color="#fff" />
                   <div className="cart-info">
                     <span className="cart-header">My Cart</span>
@@ -182,12 +184,18 @@ export const Header = () => {
             handleAside={handleAside}
             updateUser={setUserForm}
             loginUser={userForm}
+            showCart={showCart}
           />
         </div>
         <AsideMenu handleAside={handleAside} asideActive={asideActive} />
+        <ShopCart showCart={showCart} shopCart={shopCart} />
         <div
           onClick={handleAside}
           className={`aside-bg${asideActive ? " aside-bg-on" : ""}`}
+        ></div>
+        <div
+          onClick={showCart}
+          className={`aside-bg${shopCart ? " aside-bg-on" : ""}`}
         ></div>
       </header>
       {userForm && (

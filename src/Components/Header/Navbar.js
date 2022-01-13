@@ -11,7 +11,7 @@ import Mother from "../../images/mothers-babies.jpg";
 import { Link } from "react-router-dom";
 import { FiUser } from "react-icons/fi";
 
-const Navbar = ({ handleAside, onSticky, updateUser, loginUser }) => {
+const Navbar = ({ handleAside, onSticky, updateUser, loginUser, showCart }) => {
   const openerMenus = {
     firstMenu: "firstMenu",
     secondMenu: "secondMenu",
@@ -23,7 +23,7 @@ const Navbar = ({ handleAside, onSticky, updateUser, loginUser }) => {
   };
 
   const [selectedMenu, setSelectedMenu] = React.useState(null);
-  console.log(onSticky);
+
   return (
     <nav
       className={` navbar navbar-expand-lg p-0 ${
@@ -455,7 +455,7 @@ const Navbar = ({ handleAside, onSticky, updateUser, loginUser }) => {
                         <span className="register-header">Create an Account</span>
                       </div>
                     </div>
-                    <div className="my-cart">
+                    <div onClick={showCart} className="my-cart">
                       <BsCart4 size={35} color="#fff" />
                       <div className="cart-info">
                         <span className="cart-header">My Cart</span>

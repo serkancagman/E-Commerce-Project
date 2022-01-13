@@ -57,7 +57,10 @@ export const Login = ({ toRegister, toBack, onForm }) => {
             <span className={LoginStyle.orText}>OR</span>
             <span className={LoginStyle.horizontalLine}></span>
           </div>
-          <span onClick={()=> onForm(false)} className={LoginStyle.closeLoginArea}>
+          <span
+            onClick={() => onForm(false)}
+            className={LoginStyle.closeLoginArea}
+          >
             <GrFormClose size={25} />
           </span>
           <form className={LoginStyle.userForm} onSubmit={handleSubmit}>
