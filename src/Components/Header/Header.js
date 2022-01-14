@@ -9,44 +9,22 @@ import { AsideMenu } from "./AsideMenu";
 import { Link } from "react-router-dom";
 import { LoginOrRegister } from "../LoginandRegister/LoginOrRegister";
 import { ShopCart } from "../Shoppingcart/ShopCart";
+import HeaderContext from "../../Context/HeaderContext";
 export const Header = () => {
-  const [userForm, setUserForm] = React.useState(false);
-  const [selected, setSelected] = React.useState("US");
-  const [currency, setCurrency] = React.useState("USD");
-  const [asideActive, setAsideActive] = React.useState(false);
-  const [pageHeigt, setPageHeight] = React.useState({ height: 0 });
-  const [navSticky, setNavSticky] = React.useState({ sticky: false });
-  const [shopCart, setShopCart] = React.useState(false);
-  const handleAside = () => setAsideActive(!asideActive);
-  const showCart = () => setShopCart(!shopCart);
-
-  React.useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  }, []);
-
-  React.useEffect(() => {
-    let stickyStatus;
-
-    if (pageHeigt.height >= 170) {
-      stickyStatus = true;
-    } else if (pageHeigt.height < 170) {
-      stickyStatus = false;
-    }
-
-    setNavSticky({ sticky: stickyStatus });
-  }, [pageHeigt]);
-
-  const handleScroll = () => {
-    const scrollTop = window.pageYOffset;
-    setPageHeight({ height: scrollTop });
-  };
-
-  const getHandleEUR = () => {
-    setCurrency("EUR");
-  };
-  const getHandleUSD = () => {
-    setCurrency("USD");
-  };
+  const {
+    setSelected,
+    setUserForm,
+    userForm,
+    selected,
+    currency,
+    getHandleUSD,
+    getHandleEUR,
+    shopCart,
+    navSticky,
+    handleAside,
+    asideActive,
+    showCart,
+  } = React.useContext(HeaderContext);
 
   return (
     <>
@@ -179,16 +157,10 @@ export const Header = () => {
               </div>
             )}
           </div>
-          <Navbar
-            onSticky={navSticky}
-            handleAside={handleAside}
-            updateUser={setUserForm}
-            loginUser={userForm}
-            showCart={showCart}
-          />
+          <Navbar />
         </div>
-        <AsideMenu handleAside={handleAside} asideActive={asideActive} />
-        <ShopCart showCart={showCart} shopCart={shopCart} />
+        <AsideMenu />
+        <ShopCart />
         <div
           onClick={handleAside}
           className={`aside-bg${asideActive ? " aside-bg-on" : ""}`}
@@ -198,9 +170,7 @@ export const Header = () => {
           className={`aside-bg${shopCart ? " aside-bg-on" : ""}`}
         ></div>
       </header>
-      {userForm && (
-        <LoginOrRegister onForm={userForm} updateForm={setUserForm} />
-      )}
+      {userForm && <LoginOrRegister />}
     </>
   );
 };

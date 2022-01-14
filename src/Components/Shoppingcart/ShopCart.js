@@ -4,7 +4,10 @@ import { GrFormClose } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import cartImg from "./cartImg.jpg";
 import { RiDeleteBin6Line } from "react-icons/ri";
-export const ShopCart = ({ showCart, shopCart }) => {
+import HeaderContext from "../../Context/HeaderContext";
+export const ShopCart = () => {
+  const { shopCart, showCart } = React.useContext(HeaderContext);
+
   return (
     <aside
       id="shopCart"

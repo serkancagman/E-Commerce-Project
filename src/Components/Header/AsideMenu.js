@@ -3,9 +3,10 @@ import { GrFormClose } from "react-icons/gr";
 import { AsideItems } from "./AsideItems";
 import { FiUser } from "react-icons/fi";
 import { Link } from "react-router-dom";
-export const AsideMenu = ({ handleAside,asideActive }) => {
+import HeaderContext from "../../Context/HeaderContext"
+export const AsideMenu = () => {
   const [asideLang, setAsideLang] = React.useState("EN");
-
+  const {handleAside, asideActive} = React.useContext(HeaderContext)
   
 
   return (

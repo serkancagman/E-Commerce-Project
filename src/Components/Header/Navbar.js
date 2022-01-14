@@ -1,6 +1,6 @@
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { BsSearch, BsCart4 } from "react-icons/bs";
+import { BsCart4 } from "react-icons/bs";
 import { ElectronicItems } from "./ElectronicItems";
 import Computer from "../../images/computers.jpg";
 import Tablet from "../../images/tablets.jpg";
@@ -10,24 +10,24 @@ import Watch from "../../images/watch.jpg";
 import Mother from "../../images/mothers-babies.jpg";
 import { Link } from "react-router-dom";
 import { FiUser } from "react-icons/fi";
+import HeaderContext from "../../Context/HeaderContext";
 
-const Navbar = ({ handleAside, onSticky, updateUser, loginUser, showCart }) => {
-  const openerMenus = {
-    firstMenu: "firstMenu",
-    secondMenu: "secondMenu",
-    thirthMenu: "thirthMenu",
-    fourthMenu: "fourthMenu",
-    fifthMenu: "fifthMenu",
-    sixthMenu: "sixthMenu",
-    seventhMenu: "seventhMenu",
-  };
-
-  const [selectedMenu, setSelectedMenu] = React.useState(null);
+const Navbar = () => {
+  const {
+    handleAside,
+    navSticky,
+    setUserForm,
+    showCart,
+    selectedMenu,
+    setSelectedMenu,
+    openerMenus,
+    userForm,
+  } = React.useContext(HeaderContext);
 
   return (
     <nav
       className={` navbar navbar-expand-lg p-0 ${
-        onSticky.sticky ? " mainNav fixed-top   " : ""
+        navSticky.sticky ? " mainNav fixed-top   " : ""
       }  `}
     >
       <div
@@ -442,28 +442,25 @@ const Navbar = ({ handleAside, onSticky, updateUser, loginUser, showCart }) => {
           </div>
         </li>
       </ul>
-      {onSticky.sticky ? (
-                    <div className="middle-right">
-                    <div
-                      onClick={() => updateUser(!loginUser)}
-                      className="login-menu"
-                    >
-                      <FiUser className="userIcon" size={35} color="#fff" />
-      
-                      <div className="login-or-register">
-                        <span className="login-header">Sign in</span>
-                        <span className="register-header">Create an Account</span>
-                      </div>
-                    </div>
-                    <div onClick={showCart} className="my-cart">
-                      <BsCart4 size={35} color="#fff" />
-                      <div className="cart-info">
-                        <span className="cart-header">My Cart</span>
-                        <span className="cart-price">€0.00</span>
-                      </div>
-                      <span className="product-quantity">0</span>
-                    </div>
-                  </div>
+      {navSticky.sticky ? (
+        <div className="middle-right">
+          <div onClick={() => setUserForm(!userForm)} className="login-menu">
+            <FiUser className="userIcon" size={35} color="#fff" />
+
+            <div className="login-or-register">
+              <span className="login-header">Sign in</span>
+              <span className="register-header">Create an Account</span>
+            </div>
+          </div>
+          <div onClick={showCart} className="my-cart">
+            <BsCart4 size={35} color="#fff" />
+            <div className="cart-info">
+              <span className="cart-header">My Cart</span>
+              <span className="cart-price">€0.00</span>
+            </div>
+            <span className="product-quantity">0</span>
+          </div>
+        </div>
       ) : (
         <div className="promotion-title">
           Spend €120 more and get free shipping!
