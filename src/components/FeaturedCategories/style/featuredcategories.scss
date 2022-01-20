@@ -1,0 +1,56 @@
+@import "../../../mainstyle/variables.scss";
+
+.feat-box { 
+  background-color: #fff; 
+  transition: $transition;
+  min-height: 331px;
+  border-radius: 5px;
+  border: 1px solid #94949446;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+      rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+}
+.featured-banner {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.brand-img {
+  cursor: pointer;
+}
+.featured-nav {
+  padding: 5px;
+  ul {
+    padding: 0;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+  }
+}
+.featured-item {
+  list-style-type: none;
+  margin: 5px;
+  min-width: 120px;
+  .featured-link {
+    color: #666;
+    transition: $transition;
+    text-decoration: none;
+    &:hover {
+      color: $secondcolor !important;
+    }
+    &::before {
+      content: "> ";
+    }
+  }
+}
+.featured-header-cat {
+  background-color: #f0f0f0;
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+}

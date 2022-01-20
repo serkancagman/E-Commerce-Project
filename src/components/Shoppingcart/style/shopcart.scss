@@ -1,0 +1,147 @@
+$mainColor: #263c97;
+$secondColor: #37a0bd;
+$transition: all 0.3s ease-in-out;
+$hoverColor: $secondColor !important;
+$borderBottom: 1px solid #ebebeb;
+
+
+#shopCart {
+  top: 0;
+  right: -320px;
+  bottom: 0;
+  height: 100%;
+  width: 320px;
+  overflow: auto;
+  background-color: #fff;
+  transition: $transition;
+  z-index: 999;
+
+  .cartMain {
+    padding: 5px;
+  }
+}
+.showShopCart {
+  right: 0 !important;
+}
+
+.cartHeader {
+  padding: 15px 0;
+  position: relative;
+  border-bottom: $borderBottom;
+}
+h4 {
+  margin: 0;
+
+  font-size: 1rem;
+}
+
+.closeCart {
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: 0;
+}
+.cartProduct {
+  border-bottom: $borderBottom;
+}
+.cartProductInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cartProductNames {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  a {
+    text-decoration: none;
+    font-family: "Rubik", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #222;
+    margin: 0;
+  }
+}
+.cartMainPrice {
+  color: $secondColor;
+  font-weight: 600;
+}
+.cartPrice {
+  margin-top: 10px;
+}
+.cartBottom {
+  padding: 10px 15px;
+  background-color: #f7f7f7;
+  border-bottom: $borderBottom;
+}
+.cartTotalProductInfo {
+  text-align: center;
+  background-color: #cff4fc;
+
+  color: $secondColor;
+  border-radius: 5px;
+  padding: 5px 0;
+}
+.cartSummaryLine {
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cartTotalExcl {
+  margin-top: 15px;
+  font-weight: 600;
+}
+.cartTotalIncl {
+  font-weight: 600;
+  margin: 5px 0;
+}
+.total-price {
+  color: #666;
+}
+.total-price-bottom {
+  color: $secondColor;
+}
+.taxes-price {
+  font-size: 13px;
+  color: #666;
+}
+.goCheck {
+  text-align: center;
+  margin: 15px 0;
+  &:hover {
+    .checkCart {
+      background-color: $mainColor !important;
+    }
+  }
+  .checkCart {
+    transition: $transition;
+    background-color: $secondColor;
+    color: #fff;
+
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 5px;
+    span {
+      font-size: 17px;
+      margin: 0 5px;
+    }
+  }
+}
+.cartCurrency {
+  margin: 15px 0;
+}
+.currencyType {
+  margin: 10px 5px;
+  background-color: $secondColor;
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+.selectedCurrency {
+  background-color: #5a9e74 !important;
+}
