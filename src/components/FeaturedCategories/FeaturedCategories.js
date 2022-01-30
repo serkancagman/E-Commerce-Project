@@ -26,7 +26,7 @@ export const FeaturedCategories = () => {
         <div className="row g-4 justify-content-center align-items-center">
           {FeaturedCatItems.map((catItems) => {
             return (
-              <div key={catItems.id} className="col-md-3 col-lg-3">
+              <div key={catItems.id} className="col-md-6 col-lg-3">
                 <div className="feat-box d-flex flex-column">
                   <Link to={catItems.mainLink} className="featured-link">
                     <img

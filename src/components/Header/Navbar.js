@@ -26,9 +26,10 @@ const Navbar = () => {
 
   return (
     <nav
-    id="navMain" 
-    className={`navbar navbar-expand-lg p-0 ${navSticky.sticky ? " sticky-nav" : " "}`} 
-        
+      id="navMain"
+      className={`navbar navbar-expand-lg p-0 ${
+        navSticky.sticky ? " sticky-nav" : " "
+      }`}
     >
       <div
         onClick={handleAside}
@@ -121,7 +122,7 @@ const Navbar = () => {
           <Link className="nav-link" to="/shop">
             FASHION
           </Link>
-          <span className="link-info new">NEW</span>
+
           <div
             className={`fashion-menu bg-light${
               selectedMenu === openerMenus.thirthMenu ? " opened-menu" : ""
@@ -422,7 +423,7 @@ const Navbar = () => {
           <Link className="nav-link" to="/shop">
             FEATURES
           </Link>
-          <span className="link-info pro">PRO</span>
+
           <div
             className={`electronic-menu bg-light features-menu position-absolute p-2${
               selectedMenu === openerMenus.seventhMenu ? " opened-menu" : ""

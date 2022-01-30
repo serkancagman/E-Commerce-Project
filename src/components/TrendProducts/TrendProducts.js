@@ -21,7 +21,7 @@ export const TrendProducts = () => {
 
 
   return (
-    <section id="trendProduct">
+    <section className="py-4" id="trendProduct">
       <div className="container-xxl">
         <div className="trend-area">
           <div className="trend-header-area d-flex justify-content-between align-items-center">

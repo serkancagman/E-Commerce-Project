@@ -217,6 +217,7 @@
 
 .trend-info {
   position: absolute;
+  text-align: start;
   top: 15%;
   left: 5%;
 }
@@ -256,6 +257,24 @@
   .eye-icon {
     width: 50px !important;
     height: 50px !important;
+  }
+  .trendLinkHeader {
+    font-size: 20px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .trend-info {
+    left: 15% !important;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .trendLinkHeader {
+    font-size: 15px !important;
+  }
+  .trend-title {
+    margin-top: 10px !important;
   }
 }
 /*# sourceMappingURL=trendproducts.css.map */

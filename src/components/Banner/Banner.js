@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 SwiperCore.use([Pagination]);
 export const Banner = () => {
   return (
-    <section className="py-4">
+    <section id="banner">
       <div className="container-xxl">
         <div className="row justify-content-center align-items-center">
           <div className="col-lg-7 col-md-12">

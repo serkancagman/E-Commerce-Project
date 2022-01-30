@@ -243,13 +243,13 @@ body {
 .navbar-nav {
   width: 716px;
   height: 55px;
+  position: relative;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
 .nav-item {
   margin: 0 10px;
-  position: relative;
   height: 100%;
 }
 .nav-link {
@@ -284,9 +284,7 @@ body {
   top: 0;
   right: 0;
   color: #fff !important;
-
   font-size: 10px;
-
   padding: 1px 5px 0 5px !important;
 }
 .new {
@@ -559,8 +557,8 @@ body {
   position: absolute;
   top: 100%;
   opacity: 0;
-  left: -10px;
-  width: 450px;
+  left: 0;
+  width: 100%;
   transform: translateY(10px);
   transition: all 0.1s linear;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -612,11 +610,10 @@ body {
   z-index: 99;
   visibility: hidden;
   opacity: 0;
-  position: absolute;
   transform: translateY(10px);
   top: 100%;
-  left: -85px;
-  width: 716px;
+  left: 0;
+  width: 100%;
   height: 250px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -657,12 +654,12 @@ body {
   opacity: 0;
   position: absolute;
   top: 100%;
-  left: -212px;
+  left: 0;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   transition: all 0.1s linear;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  width: 716px;
+  width: 100%;
   .fashion-menu-area {
     display: flex;
     justify-content: space-between;
@@ -705,12 +702,12 @@ body {
   position: absolute;
   z-index: 99;
   top: 100%;
-  left: -310px;
+  left: 0;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   transition: all 0.1s linear;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  width: 716px;
+  width: 100%;
   background-image: url(../../../images/appliance.jpg);
   background-repeat: no-repeat;
   background-position-y: bottom;
@@ -773,15 +770,13 @@ body {
 }
 .sales-menu {
   z-index: 99;
-  left: -436px !important;
+  
 }
 .brands-menu {
   z-index: 99;
-  left: -518px !important;
 }
 .features-menu {
   z-index: 99;
-  left: -614px !important;
 }
 .loginFormBack {
   position: fixed;

@@ -54,7 +54,9 @@
   font-weight: 600;
   text-decoration: none;
 }
-
+.service-info{
+  min-width: 180px !important;
+}
 // RESPONSIVE CSS
 
 @media screen and (max-width:991.99px){
@@ -68,3 +70,7 @@
     margin: 0 20px !important;
   }
 }
+
+
+  
+
