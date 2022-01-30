@@ -1,11 +1,18 @@
 import React from "react";
-import LoginStyle from "./loginorregister.module.css";
+import LoginStyle from "./style/loginorregister.module.css";
 import { FcGoogle } from "react-icons/fc";
 import { GrFormClose } from "react-icons/gr";
 import { FaApple, FaFacebookF, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { useFormik } from "formik";
 import validationSchema from "./LoginValidation";
-export const Login = ({ toRegister, toBack, onForm }) => {
+import { LoginFormContext } from "context/LoginFormContext";
+import HeaderContext from "context/HeaderContext";
+export const Login = () => {
+
+  const { login, setLogin } = React.useContext(LoginFormContext);
+  const { userForm, setUserForm } = React.useContext(HeaderContext);
+
+
   const { handleChange, values, handleSubmit, errors, touched, handleBlur } =
     useFormik({
       initialValues: {
@@ -58,8 +65,8 @@ export const Login = ({ toRegister, toBack, onForm }) => {
             <span className={LoginStyle.horizontalLine}></span>
           </div>
           <span
-            onClick={() => onForm(false)}
             className={LoginStyle.closeLoginArea}
+            onClick={() => setUserForm(false)}
           >
             <GrFormClose size={25} />
           </span>
@@ -137,7 +144,7 @@ export const Login = ({ toRegister, toBack, onForm }) => {
             </div>
             <div className={LoginStyle.createAccount}>
               <span
-                onClick={() => toRegister(false)}
+                onClick={() => setLogin(false)}
                 className={LoginStyle.createAccountText}
               >
                 Create Account

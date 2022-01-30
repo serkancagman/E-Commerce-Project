@@ -12,7 +12,7 @@ export const FooterMain = () => {
         <footer>
         <div className="container-xxl">
         <div className="service-main">
-        <div className="row justify-content-center align-items-center">
+        <div className="row  g-4 ">
         <FooterServices
         header="FREE DELIVERY"
         title="For all orders over $120"

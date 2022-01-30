@@ -1,6 +1,7 @@
 import React from "react";
 import ReactFlagsSelect from "react-flags-select";
 import "./style/header.css";
+import "./style/headerresponsive.css"
 import Logo from "../../images/logo.png";
 import { BsSearch, BsCart4 } from "react-icons/bs";
 import { FiUser } from "react-icons/fi";
@@ -42,7 +43,7 @@ export const Header = () => {
 
   return (
     <>
-      <header id="mainHeader">
+      <header className={navSticky.sticky ? " navFixedTol" : ""} id="mainHeader">
         <div className="container-fluid">
           <div className=" py-1 top-nav d-flex justify-content-between align-items-center">
             <div className=" top-left d-flex justify-content-center align-items-center">
@@ -130,7 +131,7 @@ export const Header = () => {
               </ul>
             </div>
           </div>
-          <div className="middle-nav py-3 d-flex align-items-center justify-content-between">
+          <div className="middle-nav py-3 d-flex align-items-center ">
             <Link className="navbar-brand mx-3" to="/">
               <img width={250} className="img-fluid" src={Logo} alt="" />
             </Link>
@@ -183,6 +184,9 @@ export const Header = () => {
         ></div>
       </header>
       {userForm && <LoginOrRegister />}
+      <div onClick={() => setUserForm(false)} className={`loginFormDark ${userForm ? " showDarkForm" : " "}`}>
+
+      </div>
     </>
   );
 };

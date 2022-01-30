@@ -1,13 +1,13 @@
 $maincolor: #263c97;
 $secondcolor: #16bcdc;
-$transition: all .3s linear;
+$transition: all 0.3s linear;
 $navBorder: 1px solid rgba(255, 255, 255, 0.164);
 
-#navMain{
+#navMain {
   z-index: 98;
 }
-body{
-  position:relative;
+body {
+  position: relative;
 }
 .navbar {
   background-color: transparent;
@@ -18,10 +18,10 @@ body{
   position: relative;
   border-bottom: $navBorder;
 }
-.loginMain{
+.loginMain {
   opacity: 0 !important;
 }
-.sticky-nav{
+.sticky-nav {
   position: fixed !important;
   top: 0 !important;
   width: 100% !important;
@@ -31,13 +31,12 @@ body{
   left: 0 !important;
 }
 #mainHeader {
-  transition: $transition;
   background-color: $maincolor;
   position: relative;
 }
 
 .ReactFlagsSelect-module_selectBtn__19wW7 {
-  border:none;
+  border: none;
   border-radius: 0px !important;
   border-right: $navBorder;
   padding: 0px 10px !important;
@@ -141,7 +140,7 @@ body{
 }
 
 #search {
-  width: 450px;
+  width: 80%;
   height: 50px;
   outline: none;
   border: none;
@@ -149,7 +148,9 @@ body{
   border-bottom-left-radius: 5px;
 }
 .search-form {
+  text-align: center;
   height: 50px;
+  width: 100%;
 }
 #searchSubmit {
   background-color: $secondcolor;
@@ -166,11 +167,13 @@ body{
 }
 .middle-nav {
   border-bottom: $navBorder;
+  justify-content: space-between;
 }
 .middle-right {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 350px;
 
   .login-menu {
     display: flex;
@@ -238,7 +241,6 @@ body{
   }
 }
 .navbar-nav {
-  
   width: 716px;
   height: 55px;
   align-items: center;
@@ -695,6 +697,9 @@ body{
     color: $secondcolor !important;
   }
 }
+.navFixedTol {
+  margin-bottom: 55px !important;
+}
 .appliance-menu {
   padding: 20px 0;
   position: absolute;
@@ -706,7 +711,7 @@ body{
   transition: all 0.1s linear;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   width: 716px;
-  background-image: url(../../images/appliance.jpg);
+  background-image: url(../../../images/appliance.jpg);
   background-repeat: no-repeat;
   background-position-y: bottom;
   visibility: hidden;
@@ -766,32 +771,120 @@ body{
     color: $secondcolor !important;
   }
 }
-.sales-menu{
+.sales-menu {
   z-index: 99;
   left: -436px !important;
-  }
-.brands-menu{
+}
+.brands-menu {
   z-index: 99;
   left: -518px !important;
-  }
-.features-menu{
+}
+.features-menu {
   z-index: 99;
   left: -614px !important;
-  }
-  .loginFormBack{
-    position: fixed;
-    width: 1%;
-    height: 1%;
-    background-color: rgba(0, 0, 0, 0.205);
-    z-index: 9;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transition: all 1.2s linear;
-    opacity: 0;
-    visibility: hidden;
-  }
-.login-menu{
+}
+.loginFormBack {
+  position: fixed;
+  width: 1%;
+  height: 1%;
+  background-color: rgba(0, 0, 0, 0.205);
+  z-index: 9;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 1.2s linear;
+  opacity: 0;
+  visibility: hidden;
+}
+.login-menu {
   cursor: pointer;
+}
+.formSHow {
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100%;
+  height: 100%;
+}
+.loginFormDark {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.315);
+  display: none;
+}
+.showDarkForm {
+  display: block !important;
+}
+
+// RESPONSIVE CSS
+
+@media screen and (max-width: 385px) {
+  .middle-right {
+    min-width: 100px !important;
+  }
+  .top-right {
+    display: none !important;
+  }
+  .login-header{
+    font-size: 12px !important;
+  }
+  .register-header{
+    font-size: 13px !important;
+  }.cart-header{
+    font-size: 13px !important;
+  }.login-menu{
+    margin: 0 .5rem !important;
+  }.my-cart{
+    margin:  0 .5rem !important;
+  }
+
+}
+
+@media screen and (max-width: 415px) and (min-width: 386px) {
+  .top-right {
+    display: none !important;
+  }
+  .middle-right {
+    min-width: 300px !important;
+  }
+}
+
+@media screen and (max-width: 1207px) {
+  .navbar-nav {
+    display: none !important;
+  }#navMain{
+    justify-content: space-between !important;
+  }
+}
+@media screen and (max-width: 866px) {
+  .aside-headers {
+    display: none;
+  }
+  .help-text {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767.99px) {
+  .middle-nav {
+    flex-direction: column !important;
+
+    .navbar-brand {
+      margin-bottom: 1rem !important;
+    }
+    .search-form {
+      margin-bottom: 1rem !important;
+    }
+  }
+
+}
+
+@media screen and (max-width: 1023.99px) and (min-width: 768px) {
+  
 }

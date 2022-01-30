@@ -1,11 +1,12 @@
 import React from "react";
 import "./style/trendproducts.css";
+import "./style/trendproductresponsive.css"
 import { TrendItems } from "../Helpers/TrendItems";
 import { BsArrowRight } from "react-icons/bs";
 import { FaRegEye } from "react-icons/fa";
 import { SaleTrend } from "../TrendProducts/SaleTrend";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay, FreeMode, Navigation, Pagination } from "swiper";
+import SwiperCore, { Autoplay, FreeMode, Navigation, Pagination} from "swiper";
 import { Link } from "react-router-dom";
 import trendImage from "../../images/trendProduct.jpg";
 import trendImage1 from "../../images/trendProduct1.jpg";
@@ -33,12 +34,41 @@ export const TrendProducts = () => {
             <div className="trend-inner  d-flex align-items-center">
               <Swiper
                 slidesPerView={5}
-                spaceBetween={35}
+                spaceBetween={50}
                 loop={true}
                 pagination
                 navigation
                 loopFillGroupWithBlank={true}
-                className="mySwiper my-3"
+                breakpoints={{
+                  "275": {
+                    "slidesPerView": 1,
+                    "spaceBetween": 30
+                    
+                  },
+                  "640": {
+                    "slidesPerView": 2,
+                    "spaceBetween": 30
+                    
+                  },
+                  "768": {
+                    "slidesPerView": 3
+                    
+                  },
+                  "700": {
+                    "slidesPerView": 3
+                    
+                    
+                  },
+                  "1024": {
+                    "slidesPerView": 4
+                    
+                  },"1200": {
+                    "slidesPerView": 5
+                  
+                  }
+                  
+                }}
+                className="mySwiper trendSwiper my-3"
               >
                 {TrendItems.map((products) => {
                   return (
@@ -75,8 +105,9 @@ export const TrendProducts = () => {
                         <div className="product-price my-3 w-100 d-flex justify-content-between align-items-center">
                           <span className="price mx-2">
                             {products.price}{" "}
-                            <span className="sale-price">{products.sale}</span>
+                            
                           </span>
+                          <span className="sale-price">{products.sale}</span>
                           <button className="buy-btn mx-2">BUY</button>
                         </div>
                       </article>

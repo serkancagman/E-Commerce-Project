@@ -4,7 +4,7 @@ export const FooterServices = ({header,title,icon}) => {
 
     return (
        
-                <div className="col-md-3 col-lg-3">
+                <div className="col-md-6 col-lg-3 text-center">
                 <div className="service-area w-100">
                 {icon}
                 <div className="service-info">

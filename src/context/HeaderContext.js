@@ -14,10 +14,12 @@ export const HeaderProvider = ({ children }) => {
   const [pageHeigt, setPageHeight] = React.useState({ height: 0 });
   const [navSticky, setNavSticky] = React.useState({ sticky: false });
   const [shopCart, setShopCart] = React.useState(false);
-
+  const currentWidth = window.innerWidth;
   const handleAside = () => setAsideActive(!asideActive);
   const showCart = () => setShopCart(!shopCart);
 
+  console.log(currentWidth);
+  console.log(pageHeigt)
   React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
   }, []);
@@ -25,14 +27,22 @@ export const HeaderProvider = ({ children }) => {
   React.useEffect(() => {
     let stickyStatus;
 
-    if (pageHeigt.height >= 170) {
+    if(currentWidth >= 768) {
+
+    if (pageHeigt.height >= 132) {
       stickyStatus = true;
-    } else if (pageHeigt.height < 170) {
+    } else if (pageHeigt.height < 132) {
       stickyStatus = false;
     }
-
+  } else {
+    if(pageHeigt.height >= 295) {
+      stickyStatus = true;
+    }else{
+      stickyStatus = false;
+    }
+  }
     setNavSticky({ sticky: stickyStatus });
-  }, [pageHeigt]);
+  }, [pageHeigt,currentWidth]);
 
 
 

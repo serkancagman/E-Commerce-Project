@@ -38,7 +38,36 @@ export const SpecialProducts = ({header}) => {
                  navigation
                  pagination
                   loopFillGroupWithBlank={true}
-                  className="mySwiper my-3"
+                  breakpoints={{
+                    "275": {
+                      "slidesPerView": 1,
+                      "spaceBetween": 30
+                      
+                    },
+                    "640": {
+                      "slidesPerView": 2,
+                      "spaceBetween": 30
+                      
+                    },
+                    "768": {
+                      "slidesPerView": 3
+                      
+                    },
+                    "700": {
+                      "slidesPerView": 3
+                      
+                      
+                    },
+                    "1024": {
+                      "slidesPerView": 4
+                      
+                    },"1200": {
+                      "slidesPerView": 5
+                    
+                    }
+                    
+                  }}
+                  className="mySwiper trendSwiper my-3"
                 >
                   {TrendItems.map((products) => {
                     return (

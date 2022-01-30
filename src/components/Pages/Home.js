@@ -13,7 +13,7 @@ export const Home = () => {
       <TrendProducts />
       <FeaturedProducts/>
       <Premium/>
-      <SpecialProducts/>
+      <SpecialProducts header="Special Products" />
       <FeaturedCategories/>
     </>
   );

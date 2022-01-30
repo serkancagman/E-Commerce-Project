@@ -1,12 +1,18 @@
 import React from "react";
-import LoginStyle from "./loginorregister.module.css";
+import LoginStyle from "./style/loginorregister.module.css";
 import { FcGoogle } from "react-icons/fc";
 import { GrFormClose } from "react-icons/gr";
 import { FaApple, FaFacebookF, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { useFormik } from "formik";
 import validationSchema from "./RegisterValidation";
+import { LoginFormContext } from "context/LoginFormContext";
+import HeaderContext from "context/HeaderContext";
+export const Register = () => {
 
-export const Register = ({ toRegister, onForm }) => {
+  const {setLogin} = React.useContext(LoginFormContext);
+  const {setUserForm} = React.useContext(HeaderContext);
+
+
   const { handleChange, values, handleSubmit, errors, touched, handleBlur } =
     useFormik({
       initialValues: {
@@ -58,7 +64,7 @@ export const Register = ({ toRegister, onForm }) => {
             <span className={LoginStyle.orText}>OR</span>
             <span className={LoginStyle.horizontalLine}></span>
           </div>
-          <span onClick={()=> onForm(false)} className={LoginStyle.closeLoginArea}>
+          <span onClick={()=> setUserForm(false)} className={LoginStyle.closeLoginArea}>
             <GrFormClose size={25} />
           </span>
           <form className={LoginStyle.userForm} onSubmit={handleSubmit}>
@@ -147,7 +153,7 @@ export const Register = ({ toRegister, onForm }) => {
             </div>
             <div className={LoginStyle.createAccount}>
               <span
-                onClick={() => toRegister(true)}
+                onClick={() => setLogin(true)}
                 className={LoginStyle.createAccountText}
               >
                 Login

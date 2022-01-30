@@ -54,3 +54,17 @@
   font-weight: 600;
   text-decoration: none;
 }
+
+// RESPONSIVE CSS
+
+@media screen and (max-width:991.99px){
+
+  .service-area{
+    padding: .5rem;
+    background-color: #333;
+    min-width: 150px;
+    
+  }.service-icon{
+    margin: 0 20px !important;
+  }
+}

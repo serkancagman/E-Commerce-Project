@@ -107,4 +107,22 @@
 .boxes-url {
   text-decoration: none;
 }
+
+@media screen and (max-width: 1024px) and (min-width: 992px) {
+  .carousel-header {
+    font-size: 30px !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .carousel-header {
+    font-size: 20px !important;
+  }
+  .carousel-titles {
+    display: none !important;
+  }
+  .carousel-btn {
+    width: 100% !important;
+  }
+}
 /*# sourceMappingURL=banner.css.map */

@@ -84,18 +84,29 @@ export const FeaturedCategories = () => {
           className="mySwiper my-3"
           style={{backgroundColor:"#fff"}}
           breakpoints={{
-            "640": {
-              "slidesPerView": 3,
+            "275": {
+              "slidesPerView": 2,
               "spaceBetween": 20
+              
             },
+            
             "768": {
-              "slidesPerView": 4,
-              "spaceBetween": 40
+              "slidesPerView": 3
+              
+            },
+            "700": {
+              "slidesPerView": 3
+              
+              
             },
             "1024": {
-              "slidesPerView": 6,
-              "spaceBetween": 50
+              "slidesPerView": 4
+              
+            },"1200": {
+              "slidesPerView": 5
+            
             }
+            
           }}
         >
           <SwiperSlide>

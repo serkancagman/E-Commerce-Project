@@ -142,46 +142,6 @@ export const FooterInner = () => {
                 </li>
               </ul>
             </div>
-            <div className="footer-nav-inner last-nav">
-              <h6 className="footer-nav-header">SAMPLE MENU</h6>
-              <ul className="footer-nav">
-                <li className="footer-item">
-                  <Link className="footer-link" to="/">
-                    About us
-                  </Link>
-                </li>
-                <li className="footer-item">
-                  <Link className="footer-link" to="/">
-                    Our stores
-                  </Link>
-                </li>
-                <li className="footer-item">
-                  <Link className="footer-link" to="/">
-                    Price drop
-                  </Link>
-                </li>
-                <li className="footer-item">
-                  <Link className="footer-link" to="/">
-                    New products
-                  </Link>
-                </li>
-                <li className="footer-item">
-                  <Link className="footer-link" to="/">
-                    Best sellers
-                  </Link>
-                </li>
-                <li className="footer-item">
-                  <Link className="footer-link" to="/">
-                    Contact us
-                  </Link>
-                </li>
-                <li className="footer-item">
-                  <Link className="footer-link" to="/">
-                    Sitemap
-                  </Link>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
         <div className="col-lg-4">

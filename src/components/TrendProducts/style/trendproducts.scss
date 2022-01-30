@@ -32,7 +32,9 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
 .brandSwiper{
   background-color: #fff !important;
 }
-
+.trendSwiper{
+  padding: 15px !important;
+}
 .show-more {
   color: #263c97;
   text-decoration: none;
@@ -42,10 +44,11 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 220px;
+  margin: 0 !important;
+  width: 100%;
   transform: translateY(0);
   transition: all 0.2s linear;
-  margin: 5px !important;
+
   border: 1px solid #94949446;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -61,17 +64,14 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
     &:hover {
       .show-product {
         opacity: 1 !important;
-        .eye-icon {
-          width: 30px !important;
-          height: 30px !important;
-        }
+        
       }
     }
   }
   .product-titles {
     background-color: #f0f0f0;
     width: 100%;
-    min-height: 60px;
+    min-height: 62px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -197,4 +197,18 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
   left: 10px;
   text-decoration: none;
   font-size: 13px;
+}
+
+// RESPONSIVE CSS
+
+@media screen and (max-width:450px){
+
+.trend-header{
+  font-size: 20px !important;
+}
+.eye-icon{
+  width: 50px !important;
+  height: 50px !important;
+}
+
 }
