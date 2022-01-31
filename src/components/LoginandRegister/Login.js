@@ -8,23 +8,19 @@ import validationSchema from "./LoginValidation";
 import { LoginFormContext } from "context/LoginFormContext";
 import HeaderContext from "context/HeaderContext";
 export const Login = () => {
+  const { setLogin } = React.useContext(LoginFormContext);
+  const { setUserForm } = React.useContext(HeaderContext);
 
-  const { login, setLogin } = React.useContext(LoginFormContext);
-  const { userForm, setUserForm } = React.useContext(HeaderContext);
-
-
-  const { handleChange, values, handleSubmit, errors, touched, handleBlur } =
-    useFormik({
+  const { handleChange, handleSubmit, errors, touched, handleBlur } = useFormik(
+    {
       initialValues: {
         email: "",
         password: "",
         rememberMe: "",
       },
       validationSchema,
-      onSubmit: (values) => {
-        console.log(values);
-      },
-    });
+    }
+  );
 
   return (
     <>

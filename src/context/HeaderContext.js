@@ -18,8 +18,7 @@ export const HeaderProvider = ({ children }) => {
   const handleAside = () => setAsideActive(!asideActive);
   const showCart = () => setShopCart(!shopCart);
 
-  console.log(currentWidth);
-  console.log(pageHeigt)
+  
   React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
   }, []);

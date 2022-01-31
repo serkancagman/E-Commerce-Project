@@ -1,6 +1,7 @@
 import React from "react";
 import "./style/specialproducts.css";
-import { TrendItems } from "../Helpers/TrendItems";
+import trendProductAPI from "../../API/trendProductAPI";
+import { useQuery } from "react-query";
 import { BsArrowRight } from "react-icons/bs";
 import { FaRegEye } from "react-icons/fa";
 import { SaleTrend } from "../TrendProducts/SaleTrend";
@@ -18,6 +19,16 @@ export const SpecialProducts = ({header}) => {
   
   
   SwiperCore.use([FreeMode, Pagination, Navigation, Autoplay]);
+
+  const { isLoading, error, data } = useQuery(
+    "repoData",
+    trendProductAPI
+  );
+
+  if (isLoading) return "Loading...";
+
+  if (error) return "An error has occurred: " + error.message;
+
 
     return (
       <section id="trendProduct">
@@ -69,17 +80,23 @@ export const SpecialProducts = ({header}) => {
                   }}
                   className="mySwiper trendSwiper my-3"
                 >
-                  {TrendItems.map((products) => {
+                  {data.map((specialData, i) => {
                     return (
-                      <SwiperSlide key={products.id} >
+                      <SwiperSlide key={i} >
                         <article  className="product-box">
                           <div className="product-img">
-                            <Link to={products.link}>
-                              <img
-                                className="img-fluid"
-                                src={products.imgProduct}
-                                alt="Loading..."
-                              />
+                            <Link to="/#">
+                            <picture>
+                        <source
+                          srcSet={specialData.photos[1]}
+                          type="image/webp"
+                        />
+                        <img
+                          className="img-fluid"
+                          src={specialData.photos[0]}
+                          type="image/vnd.ms-photo"
+                        />
+                      </picture>
                               <div className="show-product">
                                 <FaRegEye
                                   color="#E91E63"
@@ -87,24 +104,18 @@ export const SpecialProducts = ({header}) => {
                                   className="eye-icon"
                                 />
                               </div>
-                              {products.sale !== null ? (
-                                <span className="sale-icon featured-sale">
-                                  {products.saleIcon}
-                                </span>
-                              ) : (
-                                ""
-                              )}
+                              
                             </Link>
                           </div>
                           <div className="product-titles text-center">
                             <span className="product-title">
-                              {products.header}
+                              {specialData.title}
                             </span>
                           </div>
                           <div className="product-price my-3 w-100 d-flex justify-content-between align-items-center">
                             <span className="price mx-2">
-                              {products.price}{" "}
-                              <span className="sale-price">{products.sale}</span>
+                              {specialData.price}{" "}
+                              
                             </span>
                             <button className="buy-btn mx-2">BUY</button>
                           </div>

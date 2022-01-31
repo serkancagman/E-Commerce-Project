@@ -8,23 +8,19 @@ import validationSchema from "./RegisterValidation";
 import { LoginFormContext } from "context/LoginFormContext";
 import HeaderContext from "context/HeaderContext";
 export const Register = () => {
+  const { setLogin } = React.useContext(LoginFormContext);
+  const { setUserForm } = React.useContext(HeaderContext);
 
-  const {setLogin} = React.useContext(LoginFormContext);
-  const {setUserForm} = React.useContext(HeaderContext);
-
-
-  const { handleChange, values, handleSubmit, errors, touched, handleBlur } =
-    useFormik({
+  const { handleChange, handleSubmit, errors, touched, handleBlur } = useFormik(
+    {
       initialValues: {
         email: "",
         password: "",
         passwordConfirm: "",
       },
       validationSchema,
-      onSubmit: (values) => {
-        console.log(values);
-      },
-    });
+    }
+  );
 
   return (
     <>
@@ -64,7 +60,10 @@ export const Register = () => {
             <span className={LoginStyle.orText}>OR</span>
             <span className={LoginStyle.horizontalLine}></span>
           </div>
-          <span onClick={()=> setUserForm(false)} className={LoginStyle.closeLoginArea}>
+          <span
+            onClick={() => setUserForm(false)}
+            className={LoginStyle.closeLoginArea}
+          >
             <GrFormClose size={25} />
           </span>
           <form className={LoginStyle.userForm} onSubmit={handleSubmit}>

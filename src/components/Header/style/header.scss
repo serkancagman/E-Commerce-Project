@@ -770,7 +770,6 @@ body {
 }
 .sales-menu {
   z-index: 99;
-  
 }
 .brands-menu {
   z-index: 99;
@@ -826,19 +825,21 @@ body {
   .top-right {
     display: none !important;
   }
-  .login-header{
+  .login-header {
     font-size: 12px !important;
   }
-  .register-header{
+  .register-header {
     font-size: 13px !important;
-  }.cart-header{
-    font-size: 13px !important;
-  }.login-menu{
-    margin: 0 .5rem !important;
-  }.my-cart{
-    margin:  0 .5rem !important;
   }
-
+  .cart-header {
+    font-size: 13px !important;
+  }
+  .login-menu {
+    margin: 0 0.5rem !important;
+  }
+  .my-cart {
+    margin: 0 0.5rem !important;
+  }
 }
 
 @media screen and (max-width: 415px) and (min-width: 386px) {
@@ -853,7 +854,8 @@ body {
 @media screen and (max-width: 1207px) {
   .navbar-nav {
     display: none !important;
-  }#navMain{
+  }
+  #navMain {
     justify-content: space-between !important;
   }
 }
@@ -877,9 +879,9 @@ body {
       margin-bottom: 1rem !important;
     }
   }
-
 }
 
 @media screen and (max-width: 1023.99px) and (min-width: 768px) {
+
   
 }

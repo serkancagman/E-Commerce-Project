@@ -1,10 +1,20 @@
 import React from "react";
 import "./style/featured.css";
-import { FeaturedItems } from "../Helpers/FeaturedItems";
 import { FaRegEye } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import trendProductAPI from "../../API/trendProductAPI";
+import { useQuery } from "react-query";
 export const FeaturedProducts = () => {
+  const { isLoading, error, data } = useQuery(
+    "repoData",
+    trendProductAPI
+  );
+
+  if (isLoading) return "Loading...";
+
+  if (error) return "An error has occurred: " + error.message;
+
   return (
     <section>
       <div className="container-xxl">
@@ -15,17 +25,23 @@ export const FeaturedProducts = () => {
           </Link>
         </div>
         <div className="row py-3 g-4 justify-content-center align-items-center">
-          {FeaturedItems.map((products) => {
+          {data.map((featuredData, i) => {
             return (
-              <div key={products.id} className="col-md-4 col-lg-4">
+              <div key={i} className="col-md-4 col-lg-4">
                 <div className="featured-area">
                   <div className="featured-img position-relative">
-                    <Link className="featured-product" to={products.link}>
-                      <img
-                        className="img-fluid"
-                        src={products.imgProduct}
-                        alt="Loading"
-                      />
+                    <Link className="featured-product" to="/#">
+                      <picture>
+                        <source
+                          srcSet={featuredData.photos[1]}
+                          type="image/webp"
+                        />
+                        <img
+                          className="img-fluid"
+                          src={featuredData.photos[0]}
+                          type="image/vnd.ms-photo"
+                        />
+                      </picture>
 
                       <div className="show-product">
                         <FaRegEye
@@ -34,26 +50,19 @@ export const FeaturedProducts = () => {
                           className="eye-icon"
                         />
                       </div>
-
-                      {products.sale !== null ? (
-                        <span className="sale-icon featured-sale">
-                          {products.saleIcon}
-                        </span>
-                      ) : (
-                        ""
-                      )}
                     </Link>
                   </div>
                   <div className="featured-info p-2">
                     <div className="featured-top">
-                      <Link to={products.link} className="featured-header">
-                        {products.header}
+                      <Link to="/#" className="featured-header">
+                        {featuredData.title}
                       </Link>
-                      <p className="featured-title">{products.title}</p>
+                      <p className="featured-title">lorem ipsum lorem ipsum</p>
                     </div>
                     <div className="featured-bottom text-end">
-                      <span className="featured-price">{products.price}</span>
-                      <span className="discount-price">{products.sale}</span>
+                      <span className="featured-price py-2">
+                        ${featuredData.price}
+                      </span>
                       <button className="add-cart-btn">+ ADD TO CARD</button>
                     </div>
                   </div>
