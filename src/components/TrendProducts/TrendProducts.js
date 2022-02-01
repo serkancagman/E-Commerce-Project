@@ -11,7 +11,7 @@ import trendImage from "../../images/trendProduct.jpg";
 import trendImage1 from "../../images/trendProduct1.jpg";
 import trendImage2 from "../../images/trendProduct2.jpg";
 import { useQuery } from "react-query";
-import trendProductAPI from "../../API/trendProductAPI";
+import {trendProductAPI} from "../../API/trendProductAPI";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -73,7 +73,7 @@ export const TrendProducts = () => {
                     <SwiperSlide key={i}>
                       <article className="product-box">
                         <div className="product-img">
-                          <Link to="/#">
+                          <Link to={`/product/${trendData._id}`}>
                             <picture>
                               <source
                                 srcSet={trendData.photos[1]}
@@ -95,9 +95,9 @@ export const TrendProducts = () => {
                           </Link>
                         </div>
                         <div className="product-titles text-center">
-                          <span className="product-title">
+                          <Link to={`/product/${trendData._id}`} className="product-title">
                             {trendData.title}
-                          </span>
+                          </Link>
                         </div>
                         <div className="product-price my-3 w-100 d-flex justify-content-between align-items-center">
                           <span className="price mx-2">

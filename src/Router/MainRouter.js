@@ -1,7 +1,7 @@
 import { FooterMain } from "components/Footer/FooterMain";
 import { Header } from "components/Header/Header";
 import { Home } from "components/Pages/Home";
-import ProductDetail from "components/Pages/ProductDetail";
+import ProductDetail from "components/ProductDetail/ProductDetail";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
@@ -11,7 +11,7 @@ const MainRouter = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/product" element={<ProductDetail />} />
+        <Route path="/product/:product_id" element={<ProductDetail />} />
       </Routes>
       <FooterMain />
     </>

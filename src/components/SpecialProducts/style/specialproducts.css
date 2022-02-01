@@ -99,12 +99,14 @@
   width: 100%;
   font-weight: 600;
   margin: 10px 20px;
+  text-decoration: none;
+  color: #000;
 }
 
 .price {
   font-size: 15px;
   font-weight: 600;
-  color: #16bcdc;
+  color: #16bcdc !important;
 }
 
 .buy-btn {

@@ -76,12 +76,15 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
     width: 100%;
     font-weight: 600;
     margin: 10px 20px;
+    text-decoration: none;
+    color: #000;
   }
 }
 .price {
   font-size: 15px;
   font-weight: 600;
-  color: $secondcolor;
+  color: $secondcolor !important;
+  
 }
 .buy-btn {
   border-radius: 5px;

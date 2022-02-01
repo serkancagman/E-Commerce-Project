@@ -3,7 +3,7 @@ import "./style/featured.css";
 import { FaRegEye } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import trendProductAPI from "../../API/trendProductAPI";
+import {trendProductAPI} from "../../API/trendProductAPI";
 import { useQuery } from "react-query";
 export const FeaturedProducts = () => {
   const { isLoading, error, data } = useQuery(
@@ -30,7 +30,7 @@ export const FeaturedProducts = () => {
               <div key={i} className="col-md-4 col-lg-4">
                 <div className="featured-area">
                   <div className="featured-img position-relative">
-                    <Link className="featured-product" to="/#">
+                    <Link className="featured-product" to={`/product/${featuredData._id}`}>
                       <picture>
                         <source
                           srcSet={featuredData.photos[1]}

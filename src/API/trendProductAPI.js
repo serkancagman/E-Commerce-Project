@@ -1,10 +1,14 @@
 import axios from 'axios';
 
 
-const trendProductAPI = async () => {
+export const trendProductAPI = async () => {
     const {data} = await axios.get("http://localhost:4000/product");
     console.log(data);
     return data
 };
 
-export default trendProductAPI;
+export const getProductDetail = async (product_id) => {
+    const {data} = await axios.get(`http://localhost:4000/product/${product_id}`);
+    console.log(data);
+    return data
+}

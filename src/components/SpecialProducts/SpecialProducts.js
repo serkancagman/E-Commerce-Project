@@ -1,6 +1,6 @@
 import React from "react";
 import "./style/specialproducts.css";
-import trendProductAPI from "../../API/trendProductAPI";
+import {trendProductAPI} from "../../API/trendProductAPI";
 import { useQuery } from "react-query";
 import { BsArrowRight } from "react-icons/bs";
 import { FaRegEye } from "react-icons/fa";
@@ -85,7 +85,7 @@ export const SpecialProducts = ({header}) => {
                       <SwiperSlide key={i} >
                         <article  className="product-box">
                           <div className="product-img">
-                            <Link to="/#">
+                            <Link to={`/product/${specialData._id}`}>
                             <picture>
                         <source
                           srcSet={specialData.photos[1]}
@@ -108,13 +108,13 @@ export const SpecialProducts = ({header}) => {
                             </Link>
                           </div>
                           <div className="product-titles text-center">
-                            <span className="product-title">
+                            <Link to={`/product/${specialData._id}`} className="product-title">
                               {specialData.title}
-                            </span>
+                            </Link>
                           </div>
                           <div className="product-price my-3 w-100 d-flex justify-content-between align-items-center">
                             <span className="price mx-2">
-                              {specialData.price}{" "}
+                              ${specialData.price}{" "}
                               
                             </span>
                             <button className="buy-btn mx-2">BUY</button>
