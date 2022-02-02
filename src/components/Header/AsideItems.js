@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
 export const AsideItems = () => {
   const menuNames = {
@@ -16,7 +17,7 @@ export const AsideItems = () => {
   return (
     <>
       <li className="tree-item">
-        <Link className="tree-link" to="/">
+        <Link className="tree-link" to="/computer&laptops">
           Computers & Laptops
         </Link>
         <span

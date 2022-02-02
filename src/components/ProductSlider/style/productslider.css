@@ -1,7 +1,7 @@
 .trends-main {
   position: relative;
   overflow: hidden;
-  height: 360px;
+  height: 100%;
   width: 100%;
 }
 
@@ -16,18 +16,26 @@
 }
 
 .trend-inner {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-  -webkit-transition: all 0.7s ease-in-out;
-  transition: all 0.7s ease-in-out;
-}
-
-.trend-inner::-webkit-scrollbar {
-  height: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .trend-header-area {
   border-bottom: 1px solid #a5a5a549;
+}
+
+.mySwiper {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+.brandSwiper {
+  background-color: #fff !important;
+}
+
+.trendSwiper {
+  padding: 15px !important;
 }
 
 .show-more {
@@ -47,12 +55,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 200px;
+  margin: 0 !important;
+  width: 100%;
   -webkit-transform: translateY(0);
           transform: translateY(0);
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
-  margin: 10px 10.4px;
   border: 1px solid #94949446;
   -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
           box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -67,22 +75,17 @@
 
 .product-box .product-img {
   position: relative;
-  width: 200px;
+  width: 100% !important;
 }
 
 .product-box .product-img:hover .show-product {
   opacity: 1 !important;
 }
 
-.product-box .product-img:hover .show-product .eye-icon {
-  width: 30px !important;
-  height: 30px !important;
-}
-
 .product-box .product-titles {
   background-color: #f0f0f0;
   width: 100%;
-  min-height: 60px;
+  min-height: 62px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -106,7 +109,7 @@
 .price {
   font-size: 15px;
   font-weight: 600;
-  color: #16bcdc !important;
+  color: #16bcdc;
 }
 
 .buy-btn {
@@ -216,6 +219,7 @@
 
 .trend-info {
   position: absolute;
+  text-align: start;
   top: 15%;
   left: 5%;
 }
@@ -247,4 +251,32 @@
   text-decoration: none;
   font-size: 13px;
 }
-/*# sourceMappingURL=specialproducts.css.map */
+
+@media screen and (max-width: 450px) {
+  .trend-header {
+    font-size: 20px !important;
+  }
+  .eye-icon {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .trendLinkHeader {
+    font-size: 20px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .trend-info {
+    left: 15% !important;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .trendLinkHeader {
+    font-size: 15px !important;
+  }
+  .trend-title {
+    margin-top: 10px !important;
+  }
+}
+/*# sourceMappingURL=productslider.css.map */

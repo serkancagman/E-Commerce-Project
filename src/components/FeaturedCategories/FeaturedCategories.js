@@ -19,7 +19,7 @@ SwiperCore.use([FreeMode, Pagination, Autoplay]);
 export const FeaturedCategories = () => {
   return (
     <section>
-      <div className="container-xxl">
+      <div className="container-fluid">
         <h4 className="featured-cat-header my-2 fw-bold">
           <MdStars size={30} /> Featured Categories
         </h4>

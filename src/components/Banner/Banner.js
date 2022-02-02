@@ -12,7 +12,7 @@ SwiperCore.use([Pagination]);
 export const Banner = () => {
   return (
     <section id="banner">
-      <div className="container-xxl">
+      <div className="container-fluid">
         <div className="row justify-content-center align-items-center">
           <div className="col-lg-7 col-md-12">
             <Swiper

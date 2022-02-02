@@ -15,7 +15,7 @@ export const FooterInner = () => {
     const [checkNews,setCheckNews] = React.useState(false)
   return (
     <div className="footer-inner">
-      <div className="row justify-content-center ">
+      <div className="row justify-content-center g-4">
         <div className="col-lg-3 col-md-6">
           <div className="contact-area d-flex flex-column justify-content-between">
             <h6 className="contact-header">

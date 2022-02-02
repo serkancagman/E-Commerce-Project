@@ -10,7 +10,7 @@ import { FooterInner } from './FooterInner';
 export const FooterMain = () => {
     return (
         <footer>
-        <div className="container-xxl">
+        <div className="container-fluid">
         <div className="service-main">
         <div className="row  g-4 ">
         <FooterServices

@@ -12,7 +12,7 @@ import {HiPencil} from "react-icons/hi";
 import WriteReview from "./WriteReview";
 import {BiMoviePlay} from "react-icons/bi"
 import adsBanner from "images/adsImage.jpg"
-
+import loaderImg from "images/loaderCircle.gif"
 
 
 
@@ -27,7 +27,9 @@ const ProductDetail = () => {
   );
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="text-center">
+      <img className="img-fluid" src={loaderImg} alt="..." />
+    </div>;
   }
   if (error) {
     return <div>An error has occurred: {error.message}</div>;
@@ -51,6 +53,7 @@ const ProductDetail = () => {
                       className="img-fluid"
                       src={data.photos[0]}
                       type="image/vnd.ms-photo"
+                      alt="..."
                     />
                   </picture>
                   <span className="enlargeIcon">

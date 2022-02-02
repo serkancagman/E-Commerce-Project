@@ -9,9 +9,11 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   margin: 2rem 0;
   padding: 1.5rem;
+  background-color: #fff;
+  
 }
 .productLittleImg {
-  border-top: 1px solid #94949446;
+  
   cursor: pointer;
   margin: 0 5px;
   width: 100%;
@@ -33,6 +35,9 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     opacity: 1 !important;
   }
+}
+.productDetailImg{
+  border-bottom: 1px solid #94949446;
 }
 .productDetailPrice {
   color: $secondcolor;
