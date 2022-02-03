@@ -10,6 +10,7 @@ export const HeaderProvider = ({ children }) => {
   const [currency, setCurrency] = React.useState(
     localStorage.getItem("currency") || "USD"
   );
+  const [littleProfileNav, setLittleProfileNav] = React.useState(false);
   const [asideActive, setAsideActive] = React.useState(false);
   const [pageHeigt, setPageHeight] = React.useState({ height: 0 });
   const [navSticky, setNavSticky] = React.useState({ sticky: false });
@@ -88,6 +89,8 @@ export const HeaderProvider = ({ children }) => {
     setSelectedMenu,
     openerMenus,
     handleNavUser,
+    littleProfileNav,
+    setLittleProfileNav
   };
   return (
     <HeaderContext.Provider value={values}>{children}</HeaderContext.Provider>

@@ -11,6 +11,7 @@ import Mother from "images/mothers-babies.jpg";
 import { Link } from "react-router-dom";
 import { FiUser } from "react-icons/fi";
 import HeaderContext from "context/HeaderContext";
+import { AuthLoginContext } from "context/AuthLoginContext";
 
 const Navbar = () => {
   const {
@@ -22,7 +23,10 @@ const Navbar = () => {
     setSelectedMenu,
     openerMenus,
     userForm,
+    setLittleProfileNav,
+    littleProfileNav,
   } = React.useContext(HeaderContext);
+  const { isLoggedIn, handleLogout } = React.useContext(AuthLoginContext);
 
   return (
     <nav
@@ -445,14 +449,72 @@ const Navbar = () => {
       </ul>
       {navSticky.sticky ? (
         <div className="middle-right">
-          <div onClick={() => setUserForm(!userForm)} className="login-menu">
-            <FiUser className="userIcon" size={35} color="#fff" />
+          {isLoggedIn ? (
+            <>
+              {" "}
+              <div
+                onMouseOutCapture={() => setLittleProfileNav(false)}
+                onMouseMove={() => setLittleProfileNav(true)}
+                className="login-menu"
+              >
+                <ul
+                  className={`userDropdown ${
+                    littleProfileNav ? " showLittleNav" : ""
+                  }`}
+                >
+                  <li>
+                    <Link className="dropdown-item" to="#">
+                      Information
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="#">
+                      Adresses
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="#">
+                      Orders
+                    </Link>
+                  </li>
+                  <li>
+                    <hr className="dropdown-divider" />
+                  </li>
+                  <li>
+                    <Link
+                      onClick={handleLogout}
+                      className="dropdown-item signOut"
+                      to="#"
+                    >
+                      Sign out
+                    </Link>
+                  </li>
+                </ul>
+                <Link to="/profile" className="myProfileLink">
+                  <FiUser className="userIcon" size={35} color="#fff" />
 
-            <div className="login-or-register">
-              <span className="login-header">Sign in</span>
-              <span className="register-header">Create an Account</span>
-            </div>
-          </div>
+                  <div className="login-or-register">
+                    <span className="myProfileBtn">My Profile</span>
+                  </div>
+                </Link>
+              </div>
+            </>
+          ) : (
+            <>
+              <div
+                onClick={() => setUserForm(!userForm)}
+                className="login-menu defaultLogin"
+              >
+                <FiUser className="userIcon" size={35} color="#fff" />
+
+                <div className="login-or-register">
+                  <span className="login-header">Sign in</span>
+                  <span className="register-header">Create an Account</span>
+                </div>
+              </div>
+            </>
+          )}
+
           <div onClick={showCart} className="my-cart">
             <BsCart4 size={35} color="#fff" />
             <div className="cart-info">

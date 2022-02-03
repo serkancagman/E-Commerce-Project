@@ -7,6 +7,8 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
 
 .leftMenuInner {
   padding: 1.5rem;
+  position: sticky;
+  top: 75px;
   background: #fff;
   border: 1px solid #94949446;
 }
@@ -21,9 +23,9 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
     padding: 2px 0;
   }
 }
-.productCatBanner{
-    width: 100%;
-    height: 100%;
+.productCatBanner {
+  width: 100%;
+  height: 100%;
 }
 .catMainHeader {
   font-size: 25px;
@@ -73,57 +75,53 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
   border: $navBorder;
   margin: 1rem 0;
 }
-.subCatItem{
-    background-color: rgba(192, 192, 192, 0.164);
-    
-    padding: .5rem 0;
-    
-    .subCatLink{
-        font-size: 13px;
-        text-decoration: none;
-        color:#000;
-        
-        &:hover{
-            color: $secondcolor;
-        }
+.subCatItem {
+  background-color: rgba(192, 192, 192, 0.164);
+
+  padding: 0.5rem 0;
+
+  .subCatLink {
+    font-size: 13px;
+    text-decoration: none;
+    color: #000;
+
+    &:hover {
+      color: $secondcolor;
     }
+  }
 }
-.productTopLine{
+.productTopLine {
   background-color: #fff;
-  padding: .5rem;
+  padding: 0.5rem;
 }
-.productBoxStyle{
-  padding: .3rem;
+.productBoxStyle {
+  padding: 0.3rem;
   border: 1px solid #ced4da;
   border-radius: 5px;
   position: relative;
 }
-.boxStyleIcon{
+.boxStyleIcon {
   display: block;
   position: relative;
   font-weight: 600;
-  margin: 0 .2rem;
+  margin: 0 0.2rem;
   color: #666;
   cursor: pointer;
   font-size: 17px;
-  &:hover{
+  &:hover {
     color: $secondcolor !important;
   }
-
- 
 }
-.boxStyleIconInfo{
+.boxStyleIconInfo {
   display: none;
-  
 }
-.allproductLength{
+.allproductLength {
   color: #666;
   font-size: 15px;
 }
 
-.gridIcon{
-
-  &::after{
+.gridIcon {
+  &::after {
     content: "Grid";
     position: absolute;
     font-size: 13px;
@@ -133,24 +131,22 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
     bottom: 100%;
     text-align: center;
     width: 40px;
-    padding: .2rem 0;
+    padding: 0.2rem 0;
     border-radius: 5px;
     color: #fff;
     background-color: #000;
     display: none;
   }
 
-  &:hover{
-    &::after{
+  &:hover {
+    &::after {
       display: block !important;
     }
   }
 }
 
-
-.listIcon{
-  
-  &::after{
+.listIcon {
+  &::after {
     content: "List";
     position: absolute;
     font-size: 13px;
@@ -160,22 +156,21 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
     bottom: 100%;
     text-align: center;
     width: 40px;
-    padding: .2rem 0;
+    padding: 0.2rem 0;
     border-radius: 5px;
     color: #fff;
     background-color: #000;
     display: none;
   }
 
-  &:hover{
-    &::after{
+  &:hover {
+    &::after {
       display: block !important;
     }
   }
 }
-.tableIcon{
-  
-  &::after{
+.tableIcon {
+  &::after {
     content: "Table";
     position: absolute;
     font-size: 13px;
@@ -185,27 +180,35 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
     bottom: 100%;
     text-align: center;
     width: 40px;
-    padding: .2rem 0;
+    padding: 0.2rem 0;
     border-radius: 5px;
     color: #fff;
     background-color: #000;
     display: none;
   }
 
-  &:hover{
-    &::after{
+  &:hover {
+    &::after {
       display: block !important;
     }
   }
 }
-.sortProductBtn{
-  border:1px solid #999;
+.sortProductBtn {
+  border: 1px solid #999;
 }
-.sortText{
+.sortText {
   color: #000;
   font-weight: 550;
   min-width: 70px;
 }
-.sortProductSelect{
-  
+
+
+
+.loadMoreBtn{
+  border-radius: 5px;
+  color: #fff;
+  background-color: $secondcolor;
+  padding: .5rem;
+  border: none;
+  margin: 1rem 0;
 }

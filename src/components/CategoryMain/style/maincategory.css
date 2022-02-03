@@ -1,6 +1,9 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css");
 .leftMenuInner {
   padding: 1.5rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 75px;
   background: #fff;
   border: 1px solid #94949446;
 }
@@ -76,7 +79,7 @@
 
 .subCatItem {
   background-color: rgba(192, 192, 192, 0.164);
-  padding: .5rem 0;
+  padding: 0.5rem 0;
 }
 
 .subCatItem .subCatLink {
@@ -91,11 +94,11 @@
 
 .productTopLine {
   background-color: #fff;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .productBoxStyle {
-  padding: .3rem;
+  padding: 0.3rem;
   border: 1px solid #ced4da;
   border-radius: 5px;
   position: relative;
@@ -105,7 +108,7 @@
   display: block;
   position: relative;
   font-weight: 600;
-  margin: 0 .2rem;
+  margin: 0 0.2rem;
   color: #666;
   cursor: pointer;
   font-size: 17px;
@@ -134,7 +137,7 @@
   bottom: 100%;
   text-align: center;
   width: 40px;
-  padding: .2rem 0;
+  padding: 0.2rem 0;
   border-radius: 5px;
   color: #fff;
   background-color: #000;
@@ -155,7 +158,7 @@
   bottom: 100%;
   text-align: center;
   width: 40px;
-  padding: .2rem 0;
+  padding: 0.2rem 0;
   border-radius: 5px;
   color: #fff;
   background-color: #000;
@@ -176,7 +179,7 @@
   bottom: 100%;
   text-align: center;
   width: 40px;
-  padding: .2rem 0;
+  padding: 0.2rem 0;
   border-radius: 5px;
   color: #fff;
   background-color: #000;
@@ -195,5 +198,14 @@
   color: #000;
   font-weight: 550;
   min-width: 70px;
+}
+
+.loadMoreBtn {
+  border-radius: 5px;
+  color: #fff;
+  background-color: #16bcdc;
+  padding: .5rem;
+  border: none;
+  margin: 1rem 0;
 }
 /*# sourceMappingURL=maincategory.css.map */

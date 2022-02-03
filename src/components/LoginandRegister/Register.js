@@ -5,10 +5,13 @@ import { GrFormClose } from "react-icons/gr";
 import { FaApple, FaFacebookF, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { useFormik } from "formik";
 import validationSchema from "./RegisterValidation";
-import { LoginFormContext } from "context/LoginFormContext";
+
 import HeaderContext from "context/HeaderContext";
-export const Register = () => {
-  const { setLogin } = React.useContext(LoginFormContext);
+import { registerUser } from "API/trendProductAPI";
+import { AuthLoginContext } from "context/AuthLoginContext";
+export const Register = ({setLogin}) => {
+  const [isRegister, setIsRegister] = React.useState(false);
+  const {loggedUser} = React.useContext(AuthLoginContext);
   const { setUserForm } = React.useContext(HeaderContext);
 
   const { handleChange, handleSubmit, errors, touched, handleBlur } = useFormik(
@@ -19,11 +22,45 @@ export const Register = () => {
         passwordConfirm: "",
       },
       validationSchema,
+      onSubmit: async (values, bag) => {
+        try {
+          const sendRegisterUser = await registerUser({
+            email: values.email,
+            password: values.password,
+          });
+          loggedUser(sendRegisterUser);
+          setIsRegister(true);
+          setTimeout (() => {
+            setUserForm(false);
+          },1000)
+
+        } catch (err) {
+          bag.setErrors({ alreadyExist: err.response.data.message });
+        }
+        
+      },
     }
   );
 
+  
+
+    
   return (
     <>
+      {errors.alreadyExist && (
+       <div className={LoginStyle.registerError}>
+          <div className="alert alert-danger" role="alert">
+          {errors.alreadyExist}
+        </div>
+       </div>
+      )}
+      {isRegister && (
+        <div className={LoginStyle.registerError}>
+          <div class="alert alert-success" role="alert">
+            You have successfully registered.
+</div>
+        </div>
+      )}
       <div className={`bg-light ${LoginStyle.LoginRegister}`}>
         <div className={LoginStyle.loginWrapper}>
           <div className={LoginStyle.socialMedia}>
@@ -137,6 +174,7 @@ export const Register = () => {
                 )}
               </div>
             </div>
+
             <div className={LoginStyle.submitButton}>
               <button className={LoginStyle.inputSubmit} type="submit">
                 Register
@@ -151,6 +189,7 @@ export const Register = () => {
               </a>
             </div>
             <div className={LoginStyle.createAccount}>
+              <div className="orText my-1">OR</div>
               <span
                 onClick={() => setLogin(true)}
                 className={LoginStyle.createAccountText}

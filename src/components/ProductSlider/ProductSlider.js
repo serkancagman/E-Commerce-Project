@@ -13,7 +13,7 @@ const ProductSlider = ({ data, loading, header,error }) => {
   if (loading) return "Loading...";
 
   if (error) return "An error has occurred: " + error.message;
-  console.log(data)
+
   return (
     <section className="py-4" id="trendProduct">
       <div className="container-fluid">

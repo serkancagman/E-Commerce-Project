@@ -15,7 +15,7 @@ export const FeaturedProducts = () => {
   if (isLoading) return "Loading...";
 
   if (error) return "An error has occurred: " + error.message;
-  console.log(data)
+
   return (
     <section>
       <div className="container-fluid">

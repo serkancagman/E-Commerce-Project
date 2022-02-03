@@ -1,7 +1,7 @@
 import React from "react";
 import ReactFlagsSelect from "react-flags-select";
 import "./style/header.css";
-import "./style/headerresponsive.css"
+import "./style/headerresponsive.css";
 import Logo from "../../images/logo.png";
 import { BsSearch, BsCart4 } from "react-icons/bs";
 import { FiUser } from "react-icons/fi";
@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { LoginOrRegister } from "../LoginandRegister/LoginOrRegister";
 import { ShopCart } from "../Shoppingcart/ShopCart";
 import HeaderContext from "../../context/HeaderContext";
+import { AuthLoginContext } from "context/AuthLoginContext";
 export const Header = () => {
   const {
     setSelected,
@@ -24,8 +25,10 @@ export const Header = () => {
     asideActive,
     setCurrency,
     showCart,
+    setLittleProfileNav,
+    littleProfileNav,
   } = React.useContext(HeaderContext);
-
+  const { isLoggedIn, handleLogout } = React.useContext(AuthLoginContext);
   const getHandleEUR = () => {
     setCurrency("EUR");
   };
@@ -43,7 +46,10 @@ export const Header = () => {
 
   return (
     <>
-      <header className={navSticky.sticky ? " navFixedTol" : ""} id="mainHeader">
+      <header
+        className={navSticky.sticky ? " navFixedTol" : ""}
+        id="mainHeader"
+      >
         <div className="container-fluid">
           <div className=" py-1 top-nav d-flex justify-content-between align-items-center">
             <div className=" top-left d-flex justify-content-center align-items-center">
@@ -146,29 +152,85 @@ export const Header = () => {
                 <BsSearch />
               </button>
             </form>
-            
-              <div className="middle-right">
-                <div
-                  onClick={() => setUserForm(!userForm)}
-                  className="login-menu"
-                >
-                  <FiUser className="userIcon" size={35} color="#fff" />
 
-                  <div className="login-or-register">
-                    <span className="login-header">Sign in</span>
-                    <span className="register-header">Create an Account</span>
+            <div className="middle-right">
+              {isLoggedIn ? (
+                <>
+                  {" "}
+                  <div
+                    onMouseLeave={() => setLittleProfileNav(false)}
+                    onMouseMove={() => setLittleProfileNav(true)}
+                    className="login-menu"
+                  >
+                    <ul
+                      className={`userDropdown ${
+                        littleProfileNav ? " showLittleNav" : ""
+                      }`}
+                    >
+                      <li>
+                        <Link className="dropdown-item" to="#">
+                          Information
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item" to="#">
+                          Adresses
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item" to="#">
+                          Orders
+                        </Link>
+                      </li>
+                      <li>
+                        <hr className="dropdown-divider" />
+                      </li>
+                      <li>
+                        <Link
+                          onClick={handleLogout}
+                          className="dropdown-item signOut"
+                          to="#"
+                        >
+                          Sign out
+                        </Link>
+                      </li>
+                    </ul>
+                    <Link
+                      to="/profile"
+                      className="myProfileLink position-relative"
+                    >
+                      <FiUser className="userIcon" size={35} color="#fff" />
+
+                      <div className="login-or-register ">
+                        <span className="myProfileBtn">My Profile</span>
+                      </div>
+                    </Link>
                   </div>
-                </div>
-                <div onClick={showCart} className="my-cart">
-                  <BsCart4 size={35} color="#fff" />
-                  <div className="cart-info">
-                    <span className="cart-header">My Cart</span>
-                    <span className="cart-price">€0.00</span>
+                </>
+              ) : (
+                <>
+                  <div
+                    onClick={() => setUserForm(!userForm)}
+                    className="login-menu defaultLogin"
+                  >
+                    <FiUser className="userIcon" size={35} color="#fff" />
+
+                    <div className="login-or-register">
+                      <span className="login-header">Sign in</span>
+                      <span className="register-header">Create an Account</span>
+                    </div>
                   </div>
-                  <span className="product-quantity">0</span>
+                </>
+              )}
+              <div onClick={showCart} className="my-cart">
+                <BsCart4 size={35} color="#fff" />
+                <div className="cart-info">
+                  <span className="cart-header">My Cart</span>
+                  <span className="cart-price">€0.00</span>
                 </div>
+                <span className="product-quantity">0</span>
               </div>
-            
+            </div>
           </div>
           <Navbar />
         </div>
@@ -184,9 +246,10 @@ export const Header = () => {
         ></div>
       </header>
       {userForm && <LoginOrRegister />}
-      <div onClick={() => setUserForm(false)} className={`loginFormDark ${userForm ? " showDarkForm" : " "}`}>
-
-      </div>
+      <div
+        onClick={() => setUserForm(false)}
+        className={`loginFormDark ${userForm ? " showDarkForm" : " "}`}
+      ></div>
     </>
   );
 };

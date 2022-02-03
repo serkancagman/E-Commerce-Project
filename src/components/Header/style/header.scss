@@ -4,7 +4,7 @@ $transition: all 0.3s linear;
 $navBorder: 1px solid rgba(255, 255, 255, 0.164);
 
 #navMain {
-  z-index: 98;
+  
 }
 body {
   position: relative;
@@ -21,7 +21,11 @@ body {
 .loginMain {
   opacity: 0 !important;
 }
+.defaultLogin{
+  cursor: pointer;
+}
 .sticky-nav {
+  z-index: 98;
   position: fixed !important;
   top: 0 !important;
   width: 100% !important;
@@ -176,6 +180,7 @@ body {
   min-width: 350px;
 
   .login-menu {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -791,9 +796,9 @@ body {
   opacity: 0;
   visibility: hidden;
 }
-.login-menu {
-  cursor: pointer;
-}
+
+
+
 .formSHow {
   visibility: visible !important;
   opacity: 1 !important;
@@ -816,6 +821,42 @@ body {
   display: block !important;
 }
 
+.myProfileBtn{
+  color: #fff;
+  font-weight: 600;
+}
+.myProfileLink{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.userDropdown{
+  border: 1px solid #94949446;
+
+  display: none;
+  position: absolute;
+  background-color: #fff !important;
+  top: 100%;
+  z-index: 97;
+  
+  right: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 0 !important;
+  height: 150px;
+  li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.showLittleNav{
+  display: block !important;
+}
+.signOut{
+  color: rgb(199, 23, 23);
+}
 // RESPONSIVE CSS
 
 @media screen and (max-width: 385px) {

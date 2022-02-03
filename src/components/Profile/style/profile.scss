@@ -1,0 +1,73 @@
+
+$maincolor: #263c97;
+$secondcolor: #16bcdc;
+$transition: all 0.3s linear;
+$navBorder: 1px solid rgba(255, 255, 255, 0.164);
+
+
+
+
+
+
+
+
+
+.profileMenu{
+    background-color: #fff;
+    border: 1px solid #94949446;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.profileMenuHeader{
+    
+    border-bottom: 1px solid #94949446;
+
+    .profileMenuTitle{
+        padding: .3rem 0;
+        border-bottom: 2px solid $secondcolor;
+        display: inline-block;
+        margin: 0 !important;
+    }
+}
+
+.profileNav{
+    margin: 1rem 0;
+
+    .profileItem{
+        list-style: none;
+        margin: .5rem 0;
+
+        &:last-child{
+            margin:15px 0;
+        }
+        .profileLink{
+            
+            color: #666;
+            text-decoration: none;
+
+            &::before{
+                content: ">";
+                margin-right:  5px;
+            }
+            &:hover{
+                color: $secondcolor;
+            }
+        }
+    }
+}
+.logoutLink{
+    
+    cursor: pointer;
+    color: rgb(199, 23, 23);
+}
+
+.profileContentHeader{
+    margin-bottom: 1rem;
+    .profileContentTitle{
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #000;
+        margin: 0;
+    }
+}

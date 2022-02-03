@@ -5,9 +5,34 @@ import { Link } from "react-router-dom";
 import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import { FaListUl } from "react-icons/fa";
 import { MdTableRows } from "react-icons/md";
-const MainCategory = ({ bannerImg, subCatItem }) => {
+import { FaRegEye } from "react-icons/fa";
+import { FiArrowDown, FiArrowUp } from "react-icons/fi";
+const MainCategory = ({
+  bannerImg,
+  subCatItem,
+  data,
+  status,
+  error,
+  fetchNextPage,
+  hasNextPage,
+  isFetchingNextPage,
+  isFetching,
+}) => {
   const [showInfo, setShowInfo] = React.useState(false);
 
+  if (status === "loading") {
+    return (
+      <div className="text-center w-100">
+        <iframe title="..." src="https://embed.lottiefiles.com/animation/93759"></iframe>
+      </div>
+    );
+  }
+
+  if (status === "error") {
+    return <div className="text-center w-100">{error.message}</div>;
+  }
+
+  console.log(data);
   return (
     <section id="productCategory" className="my-3">
       <div className="container-fluid">
@@ -22,7 +47,7 @@ const MainCategory = ({ bannerImg, subCatItem }) => {
               </ul>
             </div>
           </div>
-          <div className="col-lg-9 col-md-9">
+          <div className="col-lg-9 col-md-9 h-100">
             <div className="productCatBanner">
               <img src={bannerImg} className="img-fluid" alt="Loading" />
 
@@ -63,7 +88,7 @@ const MainCategory = ({ bannerImg, subCatItem }) => {
                 onClick={() => setShowInfo(!showInfo)}
                 className="showMoreBtn"
               >
-                {showInfo ? "SHOW LESS " : "SHOW MORE"}
+                {showInfo ? <> <FiArrowUp/> SHOW LESS </>  : <> <FiArrowDown/> SHOW MORE </>}
               </button>
 
               <div className="subCategories">
@@ -121,12 +146,74 @@ const MainCategory = ({ bannerImg, subCatItem }) => {
               </div>
             </div>
 
-
             <div className="productListWrapper">
-                <div className="row g-4 justify-content-center align-items-center">
-                    
-                </div>
+              <div className="row g-4 justify-content-center align-items-center">
+                {data.pages.map((item, i) => {
+                  return (
+                    <React.Fragment key={i}>
+                      {item.map((mainData) => {
+                        return (
+                          <div key={mainData._id} className="col-md-3 col-lg-3">
+                            <article className="product-box">
+                              <div className="product-img">
+                                <Link to={`/product/${mainData._id}`}>
+                                  <picture>
+                                    <source
+                                      srcSet={mainData.photos[1]}
+                                      type="image/webp"
+                                    />
+                                    <img
+                                      className="img-fluid"
+                                      src={mainData.photos[0]}
+                                      type="image/vnd.ms-photo"
+                                      alt="..."
+                                    />
+                                  </picture>
+                                  <div className="show-product">
+                                    <FaRegEye
+                                      color="#E91E63"
+                                      size={30}
+                                      className="eye-icon"
+                                    />
+                                  </div>
+                                </Link>
+                              </div>
+                              <div className="product-titles text-center">
+                                <Link
+                                  to={`/product/${mainData._id}`}
+                                  className="product-title"
+                                >
+                                  {mainData.title}
+                                </Link>
+                              </div>
+                              <div className="product-price my-3 w-100 d-flex justify-content-between align-items-center">
+                                <span className="price mx-2">
+                                  ${mainData.price}{" "}
+                                </span>
 
+                                <button className="buy-btn mx-2">BUY</button>
+                              </div>
+                            </article>
+                          </div>
+                        );
+                      })}
+                    </React.Fragment>
+                  );
+                })}
+                <div className="loadMoreArea text-center">
+                <button
+                  className="loadMoreBtn"
+                  onClick={() => fetchNextPage()}
+                  disabled={!hasNextPage || isFetchingNextPage}
+                >
+                  {isFetchingNextPage
+                    ? "Loading more..."
+                    : hasNextPage
+                    ? "Load More"
+                    : "Nothing more to load"}
+                </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

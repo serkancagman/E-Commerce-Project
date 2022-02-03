@@ -178,3 +178,9 @@ transition: all .5s linear;
   visibility: visible !important;
   opacity: 1 !important;
 }
+.registerError{
+  position: absolute !important;
+  z-index: 9999;
+  top:-100px;
+  width: 100%;
+}

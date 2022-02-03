@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Banner } from "../Banner/Banner";
 import { FeaturedCategories } from "../FeaturedCategories/FeaturedCategories";
@@ -7,8 +8,10 @@ import { SpecialProducts } from "../SpecialProducts/SpecialProducts";
 import { TrendProducts } from "../TrendProducts/TrendProducts";
 
 export const Home = () => {
+  
   return (
     <>
+    
       <Banner />
       <TrendProducts />
       <FeaturedProducts/>

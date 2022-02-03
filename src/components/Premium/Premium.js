@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 export const Premium = () => {
   return (
     <section className="py-3">
-      <div className="container-xxl">
+      <div className="container-fluid">
         <div className="row g-4 justify-content-center align-items-center">
           <div className="col-md-3 col-lg-3">
             <div className="premium-area d-flex flex-column justify-content-center align-items-center">
