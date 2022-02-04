@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import { FiUser } from "react-icons/fi";
 import HeaderContext from "context/HeaderContext";
 import { AuthLoginContext } from "context/AuthLoginContext";
+import { ShopCartContext } from "context/ShopCartContext";
 
 const Navbar = () => {
   const {
@@ -27,7 +28,7 @@ const Navbar = () => {
     littleProfileNav,
   } = React.useContext(HeaderContext);
   const { isLoggedIn, handleLogout } = React.useContext(AuthLoginContext);
-
+  const { cartItems } = React.useContext(ShopCartContext);
   return (
     <nav
       id="navMain"
@@ -521,7 +522,7 @@ const Navbar = () => {
               <span className="cart-header">My Cart</span>
               <span className="cart-price">€0.00</span>
             </div>
-            <span className="product-quantity">0</span>
+            <span className="product-quantity">{cartItems.length}</span>
           </div>
         </div>
       ) : (

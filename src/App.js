@@ -5,6 +5,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import MainRouter from "Router/MainRouter";
 import { ProductProvider } from "context/ProductContext";
 import { AuthLoginProvider } from "context/AuthLoginContext";
+import { ShopCartProvider } from "context/ShopCartContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -21,9 +22,11 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <AuthLoginProvider>
           <ProductProvider>
+            <ShopCartProvider>
             <HeaderProvider>
               <MainRouter />
             </HeaderProvider>
+            </ShopCartProvider>
             <ReactQueryDevtools initialIsOpen={false} />
           </ProductProvider>
         </AuthLoginProvider>

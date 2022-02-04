@@ -12,9 +12,7 @@ const Profile = () => {
 
   return (
       <>
-     <section className="my-3" id="profileMain">
-        <div className="container-fluid">
-          <div className="row g-4 justify-content-center">
+     
             <div className="col-md-3 col-lg-3">
               <div className="profileMenu p-2">
                 <div className="profileMenuHeader">
@@ -42,17 +40,9 @@ const Profile = () => {
               </div>
             </div>
 
-            <div className="col-md-9 col-lg-9">
-              <div className="profileContent">
-                <div className="profileContentHeader">
-                  <h6 className="profileContentTitle">Your Account</h6>
-                  </div>
-              </div>
-            </div>
-          </div>
-          </div>
-    
-  </section>
+            
+             
+  
   </>
   );
 };

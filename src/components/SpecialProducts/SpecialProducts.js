@@ -19,7 +19,7 @@ export const SpecialProducts = () => {
         error={error}
         loading={isLoading}
       />
-      <SaleTrend />
+      
     </>
   );
 };

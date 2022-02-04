@@ -13,15 +13,21 @@ import WriteReview from "./WriteReview";
 import {BiMoviePlay} from "react-icons/bi"
 import adsBanner from "images/adsImage.jpg"
 import loaderImg from "images/loaderCircle.gif"
-
+import { ShopCartContext } from "context/ShopCartContext";
 
 
 
 const ProductDetail = () => {
+  const { addToCart, cartItems } = React.useContext(ShopCartContext);
+
+
   const [showReview, setShowReview] = React.useState(false);
   const {quantity, setQuantity, handleQuantityChange} = React.useContext(ProductContext);
 
   const { product_id } = useParams();
+  
+  const findItem = cartItems.find((item) => item._id === product_id);
+
   const { data, isLoading, error } = useQuery(["product", product_id], () =>
     getProductDetail(product_id)
   );
@@ -38,9 +44,10 @@ const ProductDetail = () => {
   
 
 
-
+  
   return (
     <>
+    
       <section id="productDetail">
         <div className="container-xxl">
           <div className="productDetailWrapper">
@@ -171,7 +178,7 @@ const ProductDetail = () => {
                           >+</span>
                         </div>
                      
-                        <button className="btn addToCartButton"><RiShoppingCartFill size={15}/> Add to cart</button>
+                        <button onClick={()=> addToCart(data, findItem, quantity)} className={`btn addToCartButton ${findItem && "removeFromBasket"}`}><RiShoppingCartFill className="addCartIcon" size={15}/>{findItem ? "Remove from cart" : "Add to cart"}</button>
                      
                       </div>
                      

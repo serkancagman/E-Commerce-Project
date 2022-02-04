@@ -346,3 +346,14 @@ font-weight: 600;
   color: #888;
   font-size: 13px;
 }
+.addCartIcon{
+  padding-bottom: 2px;
+  margin: 0 5px;
+}
+.removeFromBasket{
+  background-color: #d02124 !important;
+
+  &:hover{
+    color: #fff !important;
+  }
+}

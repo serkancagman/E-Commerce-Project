@@ -45,10 +45,11 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
             
             color: #666;
             text-decoration: none;
-
+            font-size: 15px;
             &::before{
                 content: ">";
                 margin-right:  5px;
+                font-size: 13px;
             }
             &:hover{
                 color: $secondcolor;
@@ -57,7 +58,7 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
     }
 }
 .logoutLink{
-    
+    font-size: 15px;
     cursor: pointer;
     color: rgb(199, 23, 23);
 }
@@ -69,5 +70,40 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
         font-weight: 700;
         color: #000;
         margin: 0;
+    }
+}
+
+.profileItemNav{
+    
+    background-color: #fff;
+    border: 1px solid #94949446;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+    .profileLinkNav{
+        text-transform: uppercase;
+        padding: .7rem 0 .7rem 1rem;
+        color: #666;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 550;
+        display: block;
+        &:hover{
+            color: $secondcolor !important;
+        }
+    }
+}
+.profileIcon{
+    font-size: 25px;
+    display: inline-block;
+}
+.profileFooter{
+    background-color: #fff;
+}
+.returnProfileLink{
+    color: #666;
+    text-decoration: none;
+    &:hover{
+        color: $secondcolor !important;
     }
 }

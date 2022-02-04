@@ -3,6 +3,8 @@ import React from "react";
 import bannerImage from "images/computerCategoryBanner.jpg";
 import { useInfiniteQuery } from "react-query";
 import { getProductByCategory } from "API/trendProductAPI";
+import { FooterMain } from "components/Footer/FooterMain";
+import { Header } from "components/Header/Header";
 const ComputerCategory = () => {
   const subCatItem = [
     {
@@ -59,6 +61,7 @@ const ComputerCategory = () => {
 
   return (
     <>
+    <Header />
       <MainCategory
         bannerImg={bannerImage}
         subCatItem={subCatItem}
@@ -70,6 +73,7 @@ const ComputerCategory = () => {
         isFetching={isFetching}
         isFetchingNextPage={isFetchingNextPage}
       />
+      <FooterMain />
     </>
   );
 };

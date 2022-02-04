@@ -11,10 +11,6 @@
   z-index: 999;
 }
 
-#shopCart .cartMain {
-  padding: 5px;
-}
-
 .showShopCart {
   right: 0 !important;
 }
@@ -48,9 +44,9 @@ h4 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -67,6 +63,7 @@ h4 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  min-width: 145px;
 }
 
 .cartProductNames a {
@@ -176,5 +173,13 @@ h4 {
 
 .selectedCurrency {
   background-color: #5a9e74 !important;
+}
+
+.cartItemImg {
+  width: 100px;
+}
+
+.deleteCartProduct {
+  cursor: pointer;
 }
 /*# sourceMappingURL=shopcart.css.map */

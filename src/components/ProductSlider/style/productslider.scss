@@ -33,7 +33,7 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
   background-color: #fff !important;
 }
 .trendSwiper{
-  padding: 15px !important;
+  padding: 25px 10px !important;
 }
 .show-more {
   color: #263c97;
@@ -118,8 +118,7 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
   height: 100%;
 }
 .eye-icon {
-  width: 0;
-  height: 0;
+ 
   opacity: 0.5;
   background-color: #fff;
   border-radius: 50%;
@@ -200,6 +199,17 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
   left: 10px;
   text-decoration: none;
   font-size: 13px;
+}
+.addedBasket{
+  background-color: #d02124 !important;
+}
+
+.swiper-css-mode{
+  .swiper-wrapper{
+    padding: 25px 10px !important;
+    overflow-y: visible !important;
+    overflow-x: auto !important;
+  }
 }
 
 // RESPONSIVE CSS

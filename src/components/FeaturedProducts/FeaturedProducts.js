@@ -5,7 +5,10 @@ import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { trendProductAPI } from "../../API/trendProductAPI";
 import { useQuery } from "react-query";
+import { ShopCartContext } from "context/ShopCartContext";
 export const FeaturedProducts = () => {
+
+  const {addToCart, cartItems} = React.useContext(ShopCartContext);
   const {
     data,
     error,
@@ -28,6 +31,9 @@ export const FeaturedProducts = () => {
         <div className="row py-3 g-4 justify-content-center align-items-center">
           
               {data.map((featuredData, i) => {
+
+                const filteredItems = cartItems.find(item => item._id === featuredData._id);
+
                 return (
                   <div key={i} className="col-md-4 col-lg-4">
                     <div className="featured-area">
@@ -71,8 +77,8 @@ export const FeaturedProducts = () => {
                           <span className="featured-price py-2">
                             ${featuredData.price}
                           </span>
-                          <button className="add-cart-btn">
-                            ADD TO CARD
+                          <button onClick={()=> addToCart(featuredData,filteredItems)} className={`add-cart-btn ${filteredItems ? "addedBasket" : ""}`}>
+                          {filteredItems ? "Remove from cart" : "Add to cart"}
                           </button>
                         </div>
                       </div>

@@ -32,11 +32,13 @@
 .profileNav .profileItem .profileLink {
   color: #666;
   text-decoration: none;
+  font-size: 15px;
 }
 
 .profileNav .profileItem .profileLink::before {
   content: ">";
   margin-right: 5px;
+  font-size: 13px;
 }
 
 .profileNav .profileItem .profileLink:hover {
@@ -44,6 +46,7 @@
 }
 
 .logoutLink {
+  font-size: 15px;
   cursor: pointer;
   color: #c71717;
 }
@@ -57,5 +60,44 @@
   font-weight: 700;
   color: #000;
   margin: 0;
+}
+
+.profileItemNav {
+  background-color: #fff;
+  border: 1px solid #94949446;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.profileItemNav .profileLinkNav {
+  text-transform: uppercase;
+  padding: .7rem 0 .7rem 1rem;
+  color: #666;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 550;
+  display: block;
+}
+
+.profileItemNav .profileLinkNav:hover {
+  color: #16bcdc !important;
+}
+
+.profileIcon {
+  font-size: 25px;
+  display: inline-block;
+}
+
+.profileFooter {
+  background-color: #fff;
+}
+
+.returnProfileLink {
+  color: #666;
+  text-decoration: none;
+}
+
+.returnProfileLink:hover {
+  color: #16bcdc !important;
 }
 /*# sourceMappingURL=profile.css.map */

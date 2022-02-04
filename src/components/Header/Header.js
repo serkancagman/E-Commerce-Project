@@ -4,7 +4,7 @@ import "./style/header.css";
 import "./style/headerresponsive.css";
 import Logo from "../../images/logo.png";
 import { BsSearch, BsCart4 } from "react-icons/bs";
-import { FiUser } from "react-icons/fi";
+import { FiLogOut, FiUser } from "react-icons/fi";
 import Navbar from "./Navbar";
 import { AsideMenu } from "./AsideMenu";
 import { Link } from "react-router-dom";
@@ -12,6 +12,7 @@ import { LoginOrRegister } from "../LoginandRegister/LoginOrRegister";
 import { ShopCart } from "../Shoppingcart/ShopCart";
 import HeaderContext from "../../context/HeaderContext";
 import { AuthLoginContext } from "context/AuthLoginContext";
+import { ShopCartContext } from "context/ShopCartContext";
 export const Header = () => {
   const {
     setSelected,
@@ -29,6 +30,7 @@ export const Header = () => {
     littleProfileNav,
   } = React.useContext(HeaderContext);
   const { isLoggedIn, handleLogout } = React.useContext(AuthLoginContext);
+  const {cartItems} = React.useContext(ShopCartContext)
   const getHandleEUR = () => {
     setCurrency("EUR");
   };
@@ -191,7 +193,7 @@ export const Header = () => {
                           className="dropdown-item signOut"
                           to="#"
                         >
-                          Sign out
+                        Sign out  <FiLogOut/> 
                         </Link>
                       </li>
                     </ul>
@@ -228,7 +230,7 @@ export const Header = () => {
                   <span className="cart-header">My Cart</span>
                   <span className="cart-price">€0.00</span>
                 </div>
-                <span className="product-quantity">0</span>
+                <span className="product-quantity">{cartItems.length}</span>
               </div>
             </div>
           </div>
