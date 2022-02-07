@@ -80,3 +80,11 @@ export const logoutUser = async () => {
   });
   return data;
 }
+
+// ORDER API
+export const getOrder = async (input) => {
+  const { data } = await axios.post(
+    `${process.env.REACT_APP_BACKEND_ENDPOINT}/order`,input);
+  
+  return data;
+}

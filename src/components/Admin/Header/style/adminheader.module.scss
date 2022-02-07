@@ -1,0 +1,68 @@
+$mainColor: #263c97;
+$secondColor: #37a0bd;
+$transition: all 0.3s ease-in-out;
+$hoverColor: $secondColor !important;
+$borderBottom: 1px solid #ebebeb;
+
+
+.MainHeader{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #f4f4ff;
+}
+
+.search {
+  border: none;
+}
+
+.logo {
+  width: 100px;
+}
+.searchBtn {
+  background-color: $secondColor;
+  color: #fff !important;
+}
+.searchText {
+  font-size: 20px;
+  margin: 0 20px;
+}
+.rightNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .rightNavItem {
+    position: relative;
+    margin: 0 10px;
+    .alertInfo {
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      background-color: $secondColor;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      display: inline-block;
+      color: #fff;
+      line-height: 1.5;
+
+      text-align: center;
+    }
+  }
+}
+.searchWrapper {
+  width: 100%;
+  text-align: center;
+}
+.addProductBtn {
+  padding: 10px 15px;
+  background-color: $secondColor;
+  color: #fff !important;
+  &:hover {
+    background-color: #32859c;
+  }
+}
+.rightIcons {
+  display: flex;
+}

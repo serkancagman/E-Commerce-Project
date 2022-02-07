@@ -4,20 +4,23 @@ import { useNavigate } from "react-router-dom";
 export const AuthLoginContext = React.createContext();
 
 export const AuthLoginProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  const getToken = localStorage.getItem("refresh-token")
+  const getRole = localStorage.getItem("role")
+  const [isLoggedIn, setIsLoggedIn] = React.useState(getToken ? true : false);
   const [user, setUser] = React.useState(null);
-  const [isLoading, setIsLoading] = React.useState(true);
-  let navigate = useNavigate()
+  const [isAdmin, setIsAdmin] = React.useState(getRole || null);
+  
+  const navigate = useNavigate()
   React.useEffect(() => {
     (async () => {
       try {
         const me = await getMe();
         console.log(me);
-        setIsLoading(false);
+  
         setIsLoggedIn(true);
         setUser(me);
       } catch (err) {
-        setIsLoading(false);
+
       }
     })();
   }, []);
@@ -25,8 +28,10 @@ export const AuthLoginProvider = ({ children }) => {
   const loggedUser = (data) => {
     setIsLoggedIn(true);
     setUser(data.user);
+    
     localStorage.setItem("access-token", data.accessToken);
     localStorage.setItem("refresh-token", data.refreshToken);
+    localStorage.setItem("role", data.user.role);
   };
 
   const logoutCurrentUser = async (routeToHome) => {
@@ -34,6 +39,7 @@ export const AuthLoginProvider = ({ children }) => {
     setUser(null);
     localStorage.removeItem("access-token");
     localStorage.removeItem("refresh-token");
+    localStorage.removeItem("role");
     await logoutUser();
     routeToHome();
   };
@@ -47,6 +53,7 @@ export const AuthLoginProvider = ({ children }) => {
     isLoggedIn,
     user,
     loggedUser,
+    isAdmin,
     logoutCurrentUser,
     handleLogout
   };

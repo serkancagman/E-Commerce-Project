@@ -6,26 +6,24 @@ import { getProductDetail } from "API/trendProductAPI";
 import { ImEnlarge, ImTruck } from "react-icons/im";
 import { Link } from "react-router-dom";
 import { ProductContext } from "context/ProductContext";
-import {RiShoppingCartFill} from "react-icons/ri";
-import {FaFacebookF, FaTwitter, FaPinterest} from "react-icons/fa";
-import {HiPencil} from "react-icons/hi";
+import { RiShoppingCartFill } from "react-icons/ri";
+import { FaFacebookF, FaTwitter, FaPinterest } from "react-icons/fa";
+import { HiPencil } from "react-icons/hi";
 import WriteReview from "./WriteReview";
-import {BiMoviePlay} from "react-icons/bi"
-import adsBanner from "images/adsImage.jpg"
-import loaderImg from "images/loaderCircle.gif"
+import { BiMoviePlay } from "react-icons/bi";
+import adsBanner from "images/adsImage.jpg";
+import loaderImg from "images/loaderCircle.gif";
 import { ShopCartContext } from "context/ShopCartContext";
-
-
 
 const ProductDetail = () => {
   const { addToCart, cartItems } = React.useContext(ShopCartContext);
 
-
   const [showReview, setShowReview] = React.useState(false);
-  const {quantity, setQuantity, handleQuantityChange} = React.useContext(ProductContext);
+  const { quantity, setQuantity, handleQuantityChange } =
+    React.useContext(ProductContext);
 
   const { product_id } = useParams();
-  
+
   const findItem = cartItems.find((item) => item._id === product_id);
 
   const { data, isLoading, error } = useQuery(["product", product_id], () =>
@@ -33,21 +31,18 @@ const ProductDetail = () => {
   );
 
   if (isLoading) {
-    return <div className="text-center">
-      <img className="img-fluid" src={loaderImg} alt="..." />
-    </div>;
+    return (
+      <div className="text-center">
+        <img className="img-fluid" src={loaderImg} alt="..." />
+      </div>
+    );
   }
   if (error) {
     return <div>An error has occurred: {error.message}</div>;
   }
 
-  
-
-
-  
   return (
     <>
-    
       <section id="productDetail">
         <div className="container-xxl">
           <div className="productDetailWrapper">
@@ -175,13 +170,24 @@ const ProductDetail = () => {
                           <span
                             onClick={() => setQuantity(quantity + 1)}
                             className="setQuantity"
-                          >+</span>
+                          >
+                            +
+                          </span>
                         </div>
-                     
-                        <button onClick={()=> addToCart(data, findItem, quantity)} className={`btn addToCartButton ${findItem && "removeFromBasket"}`}><RiShoppingCartFill className="addCartIcon" size={15}/>{findItem ? "Remove from cart" : "Add to cart"}</button>
-                     
+
+                        <button
+                          onClick={() => addToCart(data, findItem, quantity)}
+                          className={`btn addToCartButton ${
+                            findItem && "removeFromBasket"
+                          }`}
+                        >
+                          <RiShoppingCartFill
+                            className="addCartIcon"
+                            size={15}
+                          />
+                          {findItem ? "Remove from cart" : "Add to cart"}
+                        </button>
                       </div>
-                     
                     </div>
                     <div className="shareProduct d-flex justify-content-center align-items-center my-2">
                       <span className="shareProductIcon">
@@ -191,37 +197,53 @@ const ProductDetail = () => {
                         <FaTwitter className="twIcon" color="#1DA1F2" /> Tweet
                       </span>
                       <span className="shareProductIcon">
-                        <FaPinterest className="pnIcon" color="#E60023" /> Pinterest
+                        <FaPinterest className="pnIcon" color="#E60023" />{" "}
+                        Pinterest
                       </span>
                     </div>
-                    <button className="writeRewiew" onClick={() => setShowReview(true)}><HiPencil/> Write your review</button>
+                    <button
+                      className="writeRewiew"
+                      onClick={() => setShowReview(true)}
+                    >
+                      <HiPencil /> Write your review
+                    </button>
                   </div>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6">
-                 <div className="productVideoWrapper">
-                   <div className="productVideo d-flex align-items-center flex-start">
-                      <BiMoviePlay size={35}/>
-                      <div className="productVideoTitle">
-                        PRODUCT VIDEO
-                      </div>
-                   </div>
-                   <div className="orderInfo">
-                     <ImTruck/> FREE shipping on orders over <span>$25.00</span> shipped by Amazon. <Link className="orderInfoDetails" to="/#"> Details </Link>
-                   </div>
-                   <div className="webAdsenseArea text-end">
-                     <Link className="adsLink " to="/#">
-                       <img src={adsBanner} className="img-fluid" alt="..." />
-                     </Link>
-                     <span className="adsInfo">In-Store Advertising</span>
-                   </div>
-                 </div>
+                <div className="productVideoWrapper">
+                  <div className="productVideo d-flex align-items-center flex-start">
+                    <BiMoviePlay size={35} />
+                    <div className="productVideoTitle">PRODUCT VIDEO</div>
+                  </div>
+                  <div className="orderInfo">
+                    <ImTruck /> FREE shipping on orders over <span>$25.00</span>{" "}
+                    shipped by Amazon.{" "}
+                    <Link className="orderInfoDetails" to="/#">
+                      {" "}
+                      Details{" "}
+                    </Link>
+                  </div>
+                  <div className="webAdsenseArea text-end">
+                    <Link className="adsLink " to="/#">
+                      <img src={adsBanner} className="img-fluid" alt="..." />
+                    </Link>
+                    <span className="adsInfo">In-Store Advertising</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <WriteReview showReview={showReview} setShowReview={setShowReview} productData={data} />
-        <div onClick={() => setShowReview(false)} className={`reviewBg ${showReview ? " showReviewBg" : " "}`}></div>
+        <WriteReview
+          showReview={showReview}
+          setShowReview={setShowReview}
+          productData={data}
+        />
+        <div
+          onClick={() => setShowReview(false)}
+          className={`reviewBg ${showReview ? " showReviewBg" : " "}`}
+        ></div>
       </section>
     </>
   );
