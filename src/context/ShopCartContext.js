@@ -41,7 +41,7 @@ export const ShopCartProvider = ({ children }) => {
     setCartTotal(Math.floor(shippingTotal * 100) / 100);
   }, [cartItems, totalPrice]);
 
-  const values = { addToCart, cartItems, cartSub, shipping, cartTotal };
+  const values = { addToCart, cartItems, cartSub, shipping, cartTotal, setCartItems };
 
   return (
     <ShopCartContext.Provider value={values}>

@@ -1,0 +1,101 @@
+$mainColor: #263c97;
+$secondColor: #37a0bd;
+$transition: all 0.3s ease-in-out;
+$hoverColor: $secondColor !important;
+$borderBottom: 1px solid #ebebeb;
+
+
+
+
+
+.AdminInfo{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: #fff;
+    width: 100%;
+    padding: 1rem .5rem;
+    border-radius: 10px;
+ 
+}
+.adminImg{
+    width: 50px;
+    margin: 0 .5rem;
+    img{
+        border-radius: 50%;
+    }
+    
+}
+.adminName{
+    color: $secondColor;
+}
+.adminTitle{
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+.adminNameWrapper{
+    margin: 0 1rem;
+}
+.navbarNav{
+    padding: 0;
+
+    .navItem{
+        list-style: none;
+        padding-left: 2rem;
+        margin: .5rem 0;
+
+        .navLink{
+            color: #000;
+            text-decoration: none;
+            display: block;
+            padding: .5rem 0;
+            font-size: 1.1rem;
+            &:hover{
+                color:$secondColor !important;
+             
+            }
+        }
+    }
+}
+.navSubHeader{
+    color: #666;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.adminNavigation{
+    position: fixed;
+    left: 0;
+
+
+    width: 350px;
+    padding: 0 .5rem;   
+}
+.fixedNav{
+    overflow-y: scroll;
+    height: 670px;
+    &::-webkit-scrollbar {
+        display: none;
+        width: 7px;
+        transition: $transition;
+  
+    }
+
+    &:hover{
+        &::-webkit-scrollbar {
+            display: block;
+            
+        }
+    }
+    &::-webkit-scrollbar-track{
+        background-color: transparent;
+        
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: $secondColor;
+        border-radius: 10px;
+        
+    }
+
+}

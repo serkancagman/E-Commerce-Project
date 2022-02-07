@@ -90,7 +90,7 @@ export const ShopCart = () => {
                       <span>Taxes: $0.00</span>
                     </div>
                     <div className="goCheck">
-                      <Link to="/" className="checkCart">
+                      <Link to="/cartcheckout" className="checkCart">
                         CHECKOUT <span>▸</span>
                       </Link>
                     </div>
@@ -99,7 +99,7 @@ export const ShopCart = () => {
               </div>
             ) : (
               <div className="noItemsCart">
-                <div class="alert alert-warning" role="alert">
+                <div className="alert alert-warning" role="alert">
                   There are no more items in your cart.
                 </div>
               </div>
