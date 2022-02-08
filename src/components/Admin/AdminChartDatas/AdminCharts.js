@@ -55,6 +55,9 @@ export const ordersData = {
   ],
 };
 
+
+
+
 export const orderDataOptions = {
   responsive: true,
   maintainAspectRatio: false,
@@ -164,3 +167,44 @@ export const recentReviews = [
     review: "Lorem ipsum dolor sit amet",
   },
 ];
+
+// PRODUCT SALE CHART
+
+export const productSaleConfig = {
+  type: "bar",
+  
+
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: false,
+  },
+  scales: {
+    x: {
+      display: false,
+      grid: {
+        display: false,
+      },
+    },
+    y: {
+      display: false,
+      grid: {
+        display: false,
+      },
+    },
+  },
+};
+export const productData = {
+    labels,
+  datasets: [
+    {
+      data:  [30, 20, 40, 10, 20, 30, 20, 80, 70, 60],
+      borderColor: "transparent",
+      borderColorHover: "rgb(159, 43, 104)",
+      backgroundColor:"#f4f4ff",
+      borderWidth: 0,
+      
+      pointHoverBorderWidth: 2,
+    },
+  ],
+}

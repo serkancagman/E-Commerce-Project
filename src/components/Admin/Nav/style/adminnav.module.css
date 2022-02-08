@@ -10,13 +10,13 @@
           align-items: center;
   background-color: #fff;
   width: 100%;
-  padding: 1rem .5rem;
+  padding: 1rem 0.5rem;
   border-radius: 10px;
 }
 
 .adminImg {
   width: 50px;
-  margin: 0 .5rem;
+  margin: 0 0.5rem;
 }
 
 .adminImg img {
@@ -44,14 +44,14 @@
 .navbarNav .navItem {
   list-style: none;
   padding-left: 2rem;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
 }
 
 .navbarNav .navItem .navLink {
   color: #000;
   text-decoration: none;
   display: block;
-  padding: .5rem 0;
+  padding: 0.5rem 0;
   font-size: 1.1rem;
 }
 
@@ -70,7 +70,7 @@
   left: 0;
   top: 102px;
   width: 350px;
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
 }
 
 .fixedNav {

@@ -66,7 +66,7 @@
   border-radius: 10px;
   padding: 1rem;
   text-align: center;
-  min-height: 400px;
+  height: 100%;
 }
 
 .saleChartInner {
@@ -83,7 +83,7 @@
 
 .saleTotalIcon {
   font-size: 30px;
-  color: #64B371;
+  color: #64b371;
 }
 
 .saleTotalTitle {
@@ -92,7 +92,7 @@
 }
 
 .showMath {
-  color: #64B371;
+  color: #64b371;
   font-size: 14px;
 }
 
@@ -145,7 +145,7 @@
 }
 
 .doughnutInfo {
-  margin: 1rem 0;
+  margin: 0;
 }
 
 .pins {
@@ -154,7 +154,7 @@
   display: block;
   border-radius: 50%;
   float: left;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   margin-top: 6px;
 }
 
@@ -165,7 +165,7 @@
 
 .getDataBtn {
   border: 1px solid #37a0bd;
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 5px;
   color: #37a0bd;
   -webkit-transition: all 0.3s ease-in-out;
@@ -182,7 +182,7 @@
   background-color: #fff;
   border-radius: 10px;
   width: 100%;
-  min-height: 225px;
+  min-height: 230px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -193,7 +193,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 1rem;
 }
 
 .ordersValueWrapper .ordersValue {
@@ -212,7 +211,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .ordersIcon {
@@ -221,8 +220,12 @@
 
 .orderInnerValue {
   color: #000;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
   font-size: 27px;
+}
+
+.ordersTitle {
+  margin: 0;
 }
 
 .ordersValueFlex {
@@ -244,7 +247,7 @@
 }
 
 .statusLastMonth {
-  color: #64B371;
+  color: #64b371;
 }
 
 .viewMoreData {
@@ -275,5 +278,192 @@
 
 .reviewText {
   margin: 1rem 0;
+}
+
+.customerRatingWrapper {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.ordersHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ratingInner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ratingTotal {
+  font-size: 28px;
+  display: block;
+  margin-top: 1rem;
+}
+
+.starsWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.starsWrapper .ratingStarts {
+  margin-right: 10px;
+}
+
+.starsWrapper .ratingStarts:last-child {
+  margin-right: 0;
+}
+
+.starsWrapper .ratingStarts .starItem {
+  font-size: 25px;
+  color: #FFD700;
+}
+
+.starsWrapper .ratingStarts .starLast {
+  color: #666;
+}
+
+.ratingPercent {
+  color: #64b371;
+  margin: 1rem 0;
+}
+
+.ratingPercentTitle {
+  color: #666;
+}
+
+.productSaleChart {
+  padding: 1rem;
+  background-color: #906FD1;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.productSaleInner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.productSaleInner .productSaleIcon {
+  font-size: 40px;
+  color: #fff;
+}
+
+.productSaleHeader {
+  color: #fff;
+}
+
+.productSaleHeader {
+  font-size: 25px;
+  color: #fff;
+  margin: 1rem 0;
+}
+
+.productSaleChart {
+  text-align: center;
+}
+
+.productSoldValue {
+  color: #fff;
+  display: block;
+}
+
+.downloadChartData {
+  margin-top: .5rem;
+}
+
+.CountriesWrapper {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.contriesHeaderWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1rem 0;
+  padding: 0 .3rem;
+}
+
+.countryIcon {
+  width: 50px;
+  border-radius: 80px;
+}
+
+.countryItemInner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: .8rem 0;
+  margin: .5rem 0;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+.countryItemInner:last-child {
+  border-bottom: none;
+}
+
+.countryTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.countryTitle .countryIcon {
+  margin-right: 1rem;
 }
 /*# sourceMappingURL=admindashboard.module.css.map */
