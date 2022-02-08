@@ -4,7 +4,7 @@ import AdminStyle from "components/Admin/style/admin.module.css";
 
 
 import AdminHeader from "components/Admin/Header/AdminHeader";
-import AdminDashboard from "components/Admin/Pages/AdminDashboard";
+import AdminDashboard from "components/Admin/Pages/AdminDashboard/AdminDashboard";
 const Admin = () => {
 
 

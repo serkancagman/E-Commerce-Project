@@ -1,6 +1,6 @@
 import React from "react";
 import navStyle from "./style/adminnav.module.css";
-import Dashboard from "components/Admin/Pages/AdminDashboard";
+import Dashboard from "components/Admin/Pages/AdminDashboard/AdminDashboard";
 import { Link, useMatch,Route,Routes} from "react-router-dom";
 import {
   BsBarChart,
