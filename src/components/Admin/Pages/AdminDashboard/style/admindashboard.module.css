@@ -241,9 +241,9 @@
 }
 
 .orderInnerChart {
-  width: 120px;
-  height: 80px;
-  padding: 5px;
+  width: 130px;
+  height: 90px;
+  padding: 10px;
 }
 
 .statusLastMonth {
@@ -361,7 +361,7 @@
 
 .productSaleChart {
   padding: 1rem;
-  background-color: #906FD1;
+  background-color: #37a0bd;
   border-radius: 10px;
   height: 100%;
 }

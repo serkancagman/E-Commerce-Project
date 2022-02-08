@@ -179,9 +179,9 @@ $borderBottom: 1px solid #ebebeb;
   align-items: center;
 }
 .orderInnerChart {
-  width: 120px;
-  height: 80px;
-  padding: 5px;
+  width: 130px;
+  height: 90px;
+  padding:10px;
 }
 
 .statusLastMonth {
@@ -271,7 +271,7 @@ $borderBottom: 1px solid #ebebeb;
 
 .productSaleChart{
   padding: 1rem;
-  background-color: #906FD1;
+  background-color: $secondColor;
   border-radius: 10px;
   height: 100%;
 }
