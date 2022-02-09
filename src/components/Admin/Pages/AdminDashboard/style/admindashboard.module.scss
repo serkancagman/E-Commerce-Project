@@ -170,7 +170,7 @@ $borderBottom: 1px solid #ebebeb;
   margin: 0.5rem 0;
   font-size: 27px;
 }
-.ordersTitle{
+.ordersTitle {
   margin: 0;
 }
 .ordersValueFlex {
@@ -179,9 +179,9 @@ $borderBottom: 1px solid #ebebeb;
   align-items: center;
 }
 .orderInnerChart {
-  width: 120px;
-  height: 80px;
-  padding: 5px;
+  width: 130px;
+  height: 90px;
+  padding: 10px;
 }
 
 .statusLastMonth {
@@ -212,141 +212,197 @@ $borderBottom: 1px solid #ebebeb;
 .reviewText {
   margin: 1rem 0;
 }
-.customerRatingWrapper{
+.customerRatingWrapper {
   background-color: #fff;
   padding: 1rem;
   border-radius: 10px;
   height: 100%;
 }
-.ordersHeader{
+.ordersHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.ratingInner{
+.ratingInner {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.ratingTotal{
+.ratingTotal {
   font-size: 28px;
   display: block;
   margin-top: 1rem;
 }
-.starsWrapper{
+.starsWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  .ratingStarts{
+  .ratingStarts {
     margin-right: 10px;
-    
 
-    &:last-child{
+    &:last-child {
       margin-right: 0;
-      
     }
 
-    .starItem{
+    .starItem {
       font-size: 25px;
-      color: #FFD700 ;
-
-      
+      color: #ffd700;
     }
-    .starLast{
+    .starLast {
       color: #666;
     }
   }
-
 }
-.ratingPercent{
+.ratingPercent {
   color: #64b371;
   margin: 1rem 0;
 }
-.ratingPercentTitle{
+.ratingPercentTitle {
   color: #666;
 }
 
-
-.productSaleChart{
+.productSaleChart {
   padding: 1rem;
-  background-color: #906FD1;
+  background-color: $secondColor;
   border-radius: 10px;
   height: 100%;
 }
-.productSaleInner{
+.productSaleInner {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  .productSaleIcon{
+  .productSaleIcon {
     font-size: 40px;
     color: #fff;
-    
   }
 }
 
-.productSaleHeader{
+.productSaleHeader {
   color: #fff;
-
 }
 
-.productSaleHeader{
+.productSaleHeader {
   font-size: 25px;
   color: #fff;
   margin: 1rem 0;
 }
-.productSaleChart{
+.productSaleChart {
   text-align: center;
 }
-.productSoldValue{
+.productSoldValue {
   color: #fff;
   display: block;
-  
 }
-.downloadChartData{
-  margin-top: .5rem;
+.downloadChartData {
+  margin-top: 0.5rem;
 }
-.CountriesWrapper{
+.CountriesWrapper {
   background-color: #fff;
   border-radius: 10px;
   padding: 1rem;
 }
-.contriesHeaderWrapper{
+.contriesHeaderWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 1rem 0;
-  padding: 0 .3rem;
+  padding: 0 0.3rem;
 }
 
-.countryIcon{
+.countryIcon {
   width: 50px;
   border-radius: 80px;
-
 }
-.countryItemInner{
+.countryItemInner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: .8rem 0;
-  margin: .5rem 0;
+  padding: 0.8rem 0;
+  margin: 0.5rem 0;
   border-bottom: 1px solid rgb(170, 170, 170);
 
-  &:last-child{
+  &:last-child {
     border-bottom: none;
   }
 }
-.countryTitle{
+.countryTitle {
   display: flex;
   align-items: center;
 
-  .countryIcon{
+  .countryIcon {
     margin-right: 1rem;
   }
 }
-.countryName{
-  
+.activityOverview {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+
+  .activityOverviewInner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem 0;
+    padding: 0 0.3rem;
+  }
+}
+.activityOverviewIcon {
+  font-size: 50px;
+}
+.orderedColor {
+  color: #f1ac71;
+}
+.deliveredColor {
+  color: #64b371;
+}
+.reportColor {
+  color: $secondColor;
+}
+.arrivedColor {
+  color: #b661e8;
+}
+.arrivedChartColor {
+  background-color: #b661e8;
+  width: 70px;
+}
+.reportChartColor {
+  background-color: $secondColor;
+  width: 120px;
+}
+.orderedChatColor {
+  background-color: #f1ac71;
+  width: 30px;
+}
+.deliveredChatColor {
+  background-color: #64b371;
+  width: 150px;
+}
+.activityOverviewValue {
+  color: #666;
+  font-size: 15px;
+}
+.activityOverviewChart {
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  margin: 1rem 0;
+  position: relative;
+}
+.activityOverviewChartInner {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  height: 5px;
+  border-radius: 5px;
+}
+.activityOverviewHeader {
+  margin: 1rem 0;
+  font-size: 1.25rem;
 }

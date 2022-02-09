@@ -6,6 +6,7 @@ import MainRouter from "Router/MainRouter";
 import { ProductProvider } from "context/ProductContext";
 import { AuthLoginProvider } from "context/AuthLoginContext";
 import { ShopCartProvider } from "context/ShopCartContext";
+import { SaleandOrderProvider } from "context/AdminContext/SaleandOrderContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,7 +25,9 @@ function App() {
           <ProductProvider>
             <ShopCartProvider>
             <HeaderProvider>
-              <MainRouter />
+              <SaleandOrderProvider>
+                <MainRouter />
+              </SaleandOrderProvider>
             </HeaderProvider>
             </ShopCartProvider>
             <ReactQueryDevtools initialIsOpen={false} />
