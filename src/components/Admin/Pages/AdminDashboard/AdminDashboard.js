@@ -8,6 +8,7 @@ import CountryVisitor from "./CountryVisitor";
 import CustomerRating from "./CustomerRating";
 import RecentReviews from "./RecentReviews";
 import OrderProducts from "./OrderProducts";
+import ActivityOverview from "./ActivityOverview";
 const AdminDashboard = () => {
   return (
     <section className={adminStyle.dashboardMain}>
@@ -17,10 +18,10 @@ const AdminDashboard = () => {
         <OrderChart />
         <SalesTotalSub />
         <RecentReviews />
-        
         <CustomerRating />
         <OrderProducts />
         <CountryVisitor />
+        <ActivityOverview/>
       </div>
     </section>
   );
