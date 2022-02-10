@@ -9,7 +9,7 @@ import { SaleandOrderContext } from "context/AdminContext/SaleandOrderContext";
 
 const SalesChart = () => {
 
-    const {salesData,salesOptions} = React.useContext(SaleandOrderContext);
+    const {salesData,salesOptions,totalSalePrice} = React.useContext(SaleandOrderContext);
 
   return (
     <div className="col-md-6 col-lg-6 h-100">
@@ -55,7 +55,7 @@ const SalesChart = () => {
         <div className={adminStyle.saleChartInner}>
           <div className={`d-flex align-items-center${adminStyle.saleTotal}`}>
             <MdPriceCheck className={adminStyle.saleTotalIcon} />
-            <h6 className={adminStyle.saleTotalTitle}>$ 10,300,00</h6>
+            <h6 className={adminStyle.saleTotalTitle}>$ {totalSalePrice}</h6>
             <span className={adminStyle.showMath}>
               {" "}
               <BsArrowUp /> % 8.30

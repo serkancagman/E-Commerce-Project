@@ -4,15 +4,11 @@ import ProductInnerPage from "components/Pages/ProductInnerPage";
 import ProfileMainPage from "components/Pages/ProfileMainPage";
 import Checkout from "components/CartCheckout/Checkout";
 import React from "react";
-import { Routes, Route,useMatch} from "react-router-dom";
-
-
-
-import Admin from "components/Pages/Admin";
-
+import { Routes, Route} from "react-router-dom";
 import {ProtectedAdminRoute,ProtectedRoute, ProtectedAdminLogin} from "./ProtectedRoute";
-
 import AdminLogin from "components/Admin/Pages/AdminLogin/AdminLogin";
+import AdminDashboardPage from "components/Pages/AdminPages/AdminDashboardPage";
+import AdminOrdersPage from "components/Pages/AdminPages/AdminOrdersPage";
 
 const MainRouter = () => {
 
@@ -26,9 +22,9 @@ const MainRouter = () => {
         <Route path="/computer&laptops" element={<ComputerCategory />} />
         <Route path="/profile" element={<ProtectedRoute> <ProfileMainPage /> </ProtectedRoute>}/>
         <Route path="/admin" element={<ProtectedAdminLogin><AdminLogin /></ProtectedAdminLogin>} />
-        <Route path="/admin/dashboard" element={<ProtectedAdminRoute><Admin /></ProtectedAdminRoute>}/>
-        <Route path="/admin/orders" element={<ProtectedAdminRoute><Admin /></ProtectedAdminRoute>}/>
-        <Route path="/admin/products" element={<ProtectedAdminRoute><Admin /></ProtectedAdminRoute>}/>
+        <Route path="/admin/dashboard" element={<ProtectedAdminRoute><AdminDashboardPage /></ProtectedAdminRoute>}/>
+        <Route path="/admin/orders" element={<ProtectedAdminRoute><AdminOrdersPage/></ProtectedAdminRoute>}/>
+        <Route path="/admin/products" element={<ProtectedAdminRoute><AdminDashboardPage /></ProtectedAdminRoute>}/>
         <Route path="/cartcheckout" element={<Checkout />} /> 
       </Routes>
     </>

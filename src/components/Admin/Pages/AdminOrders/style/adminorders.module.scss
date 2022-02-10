@@ -1,0 +1,96 @@
+$mainColor: #263c97;
+$secondColor: #37a0bd;
+$transition: all 0.3s ease-in-out;
+$hoverColor: $secondColor !important;
+$borderBottom: 1px solid #ebebeb;
+
+.ordersMain {
+  margin-left: 350px;
+}
+.breadLink {
+  color: $secondColor;
+  text-decoration: none;
+}
+.lastCrumb {
+  color: #666;
+}
+.crumbIcon {
+  font-size: 18px;
+  margin-right: 10px;
+}
+.ordersHeaderNav {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 100%;
+
+  .ordersHeaderLeft {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.ordersHeaderTitle {
+  font-size: 17px;
+  min-width: 100px;
+  margin: 0;
+}
+.ordersHeaderSelect {
+  margin: 0 1rem;
+}
+.actionDropdown {
+  background-color: $secondColor;
+  color: #fff;
+}
+
+// ORDERS TABLE
+
+.orderTable {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  width: 100%;
+}
+.orderTableHeader {
+  font-size: 17px;
+  font-weight: 500;
+}
+.orderTableBody {
+  background-color: #fff;
+  
+  
+}
+.ordersTableTH {
+  padding: 0.5rem 1rem;
+  font-weight: 400 !important;
+  font-size: 14px;
+}
+.OrdersTableTD {
+  padding: 1.3rem 1rem;
+  
+
+  &:first-child {
+    
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  &:last-child {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  
+  }
+}
+.itemId{
+    color: $secondColor !important;
+    text-decoration: none;
+}
+.actionBtn {
+  border-radius: 5px !important;
+}
+.actionShow {
+  inset: 0px 40px auto auto !important;
+}
+.bodyTR{
+  
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}

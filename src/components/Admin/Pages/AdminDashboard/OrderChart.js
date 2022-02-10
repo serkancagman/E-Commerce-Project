@@ -18,7 +18,7 @@ import {
 } from "chart.js";
 
 const OrderChart = () => {
-  const { ordersData, orderDataOptions } =
+  const { orders,ordersData, orderDataOptions } =
     React.useContext(SaleandOrderContext);
     ChartJS.register(ArcElement, Tooltip, Legend);
     ChartJS.register(
@@ -63,7 +63,7 @@ const OrderChart = () => {
         </div>
         <h5 className={adminStyle.ordersTitle}>Orders</h5>
         <div className={adminStyle.ordersValueFlex}>
-          <h6 className={adminStyle.orderInnerValue}>255</h6>
+          <h6 className={adminStyle.orderInnerValue}>{orders.length}</h6>
           <div className={adminStyle.orderInnerChart}>
             <Line options={orderDataOptions} data={ordersData} />
           </div>

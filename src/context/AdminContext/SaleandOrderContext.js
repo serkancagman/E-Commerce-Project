@@ -1,8 +1,33 @@
+import { getOrder, getOrderData } from "API/trendProductAPI";
 import React from "react";
 
 export const SaleandOrderContext = React.createContext();
 
 export const SaleandOrderProvider = ({ children }) => {
+  const [orders, setOrders] = React.useState([]);
+  const [totalSalePrice, setTotalSalePrice] = React.useState(0);
+
+    React.useEffect(() => {
+        (async () => {
+            try {
+                const orderAll = await getOrderData();
+                setOrders(orderAll);
+            } catch (error) {
+                console.log(error);
+            }
+        })();
+    }, []);
+
+    React.useEffect(() => {
+      let totalItemPrice,totalOrderPrice;
+
+      totalItemPrice = orders.map((orderItem) => orderItem.items.map((itemPrice) => itemPrice.price).reduce((a, b) => a + b, 0))
+      totalOrderPrice = totalItemPrice.reduce((a, b) => a + b, 0);
+      setTotalSalePrice(totalOrderPrice.toFixed(2));
+    },[orders]);
+
+
+
   const labels = [
     "01 Feb",
     "02 Feb",
@@ -94,6 +119,9 @@ export const SaleandOrderProvider = ({ children }) => {
 
   // ORDER
 
+  
+
+
   const ordersData = {
     labels,
     datasets: [
@@ -165,6 +193,8 @@ export const SaleandOrderProvider = ({ children }) => {
     subSalesOptions,
     ProductDataOptions,
     orderProductData,
+    orders,
+    totalSalePrice
   };
 
   return (

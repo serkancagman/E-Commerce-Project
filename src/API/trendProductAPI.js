@@ -88,3 +88,11 @@ export const getOrder = async (input) => {
   
   return data;
 }
+// GET ORDER DATA
+export const getOrderData = async () => {
+  const { data } = await axios.get(
+    `${process.env.REACT_APP_BACKEND_ENDPOINT}/order`
+  );
+  console.log(data);
+  return data;
+}

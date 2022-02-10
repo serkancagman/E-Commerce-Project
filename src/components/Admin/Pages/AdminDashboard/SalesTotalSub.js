@@ -5,7 +5,7 @@ import { Line } from 'react-chartjs-2';
 import { Link } from 'react-router-dom';
 import {BsCreditCard2Front} from 'react-icons/bs';
 const SalesTotalSub = () => {
-    const {saleMiniOptions,subSalesData,subSalesOptions} = React.useContext(SaleandOrderContext);
+    const {totalSalePrice,subSalesData,subSalesOptions} = React.useContext(SaleandOrderContext);
 
 
   return (
@@ -41,7 +41,7 @@ const SalesTotalSub = () => {
       </div>
       <h5 className={adminStyle.ordersTitle}>Sales</h5>
       <div className={adminStyle.ordersValueFlex}>
-        <h6 className={adminStyle.orderInnerValue}>$3.759,00</h6>
+        <h6 className={adminStyle.orderInnerValue}>${totalSalePrice}</h6>
         <div className={adminStyle.orderInnerChart}>
           <Line options={subSalesOptions} data={subSalesData} />
         </div>
