@@ -9,7 +9,7 @@ export const AuthLoginProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(getToken ? true : false);
   const [user, setUser] = React.useState(null);
   const [isAdmin, setIsAdmin] = React.useState(getRole || null);
-  
+ 
   const navigate = useNavigate()
   React.useEffect(() => {
     (async () => {
@@ -25,6 +25,11 @@ export const AuthLoginProvider = ({ children }) => {
     })();
   }, []);
 
+
+ 
+
+
+  
   const loggedUser = (data) => {
     setIsLoggedIn(true);
     setUser(data.user);
@@ -55,7 +60,8 @@ export const AuthLoginProvider = ({ children }) => {
     loggedUser,
     isAdmin,
     logoutCurrentUser,
-    handleLogout
+    handleLogout,
+    setIsAdmin
   };
 
   return (

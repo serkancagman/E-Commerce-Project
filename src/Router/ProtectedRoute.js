@@ -9,8 +9,12 @@ export const ProtectedRoute = ({children}) => {
 };
 
 
+
 export  const ProtectedAdminRoute = ({children}) => {
   const { isAdmin } = React.useContext(AuthLoginContext)
   return  isAdmin !== "admin" ? <Navigate to="/" /> : children;
 }
-
+export const ProtectedAdminLogin = ({children}) => {
+  const { isAdmin } = React.useContext(AuthLoginContext)
+  return  isAdmin === "admin" ? <Navigate to="/admin/dashboard" /> : children ;
+}

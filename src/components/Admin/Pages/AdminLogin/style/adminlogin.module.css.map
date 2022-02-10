@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAQA,AAAA,WAAW,CAAA;EACP,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;EACvB,cAAc,EAAE,MAAM;CAEzB;;AACD,AAAA,kBAAkB,CAAA;EACd,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;CAEf;;AACD,AAAA,UAAU,CAAA;EACN,MAAM,EAAE,MAAM;EACd,KAAK,EAAE,KAAK;CACf;;AAED,AAAA,oBAAoB,CAAA;EAChB,gBAAgB,EAzBN,OAAO;EA0BjB,KAAK,EAAE,IAAI;CACd;;AACD,AAAA,gBAAgB,CAAA;EACZ,aAAa,EAAE,cAAc;CAChC",
+    "sources": [
+        "adminlogin.module.scss"
+    ],
+    "names": [],
+    "file": "adminlogin.module.css"
+}

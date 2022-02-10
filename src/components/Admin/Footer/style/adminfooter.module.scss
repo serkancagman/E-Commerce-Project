@@ -1,0 +1,29 @@
+$mainColor: #263c97;
+$secondColor: #37a0bd;
+$transition: all 0.3s ease-in-out;
+$hoverColor: $secondColor !important;
+$borderBottom: 1px solid #ebebeb;
+
+
+
+.footerMain{
+    background-color: transparent;
+    padding: 1rem 0;
+}
+
+.footerNavItem{
+    list-style: none;
+    margin: 0 0.5rem;
+
+    .footerNavLink{
+        text-decoration: none;
+        color: #666;
+
+        &:hover{
+            color: $secondColor;
+        }
+    }
+}
+.copySpan{
+    color: $secondColor;
+}

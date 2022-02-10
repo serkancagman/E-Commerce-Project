@@ -1,0 +1,32 @@
+$mainColor: #263c97;
+$secondColor: #37a0bd;
+$transition: all 0.3s ease-in-out;
+$hoverColor: $secondColor !important;
+$borderBottom: 1px solid #ebebeb;
+
+
+
+.adminLogin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  
+}
+.adminLoginWrapper{
+    width: 100%;
+    height: 100%;
+   
+}
+.adminLogo{
+    margin: 1rem 0;
+    width: 100px;
+}
+
+.adminLoginSubmitBtn{
+    background-color: $secondColor;
+    color: #fff;
+}
+.adminLoginInput{
+    border-radius: 5px !important;
+}

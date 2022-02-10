@@ -1,6 +1,6 @@
 import AdminNav from "components/Admin/Nav/AdminNav";
 import React from "react";
-import AdminStyle from "components/Admin/style/admin.module.css";
+import AdminStyle from "components/Admin/style/admin.css";
 
 
 import AdminHeader from "components/Admin/Header/AdminHeader";
@@ -9,7 +9,7 @@ const Admin = () => {
 
 
   return (
-    <main className={AdminStyle.MainStyle}>
+    <main className="adminMain">
       <AdminHeader />
       <div className="container-fluid">
         
