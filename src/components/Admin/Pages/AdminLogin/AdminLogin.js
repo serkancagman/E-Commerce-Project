@@ -3,12 +3,11 @@ import adminStyle from "./style/adminlogin.module.css";
 import adminLogo from "images/adminlogo.png";
 import { useFormik } from "formik";
 import { loginUser } from "API/trendProductAPI";
-import { Link, useNavigate } from "react-router-dom";
+
 import { validationSchema } from "./AdminLoginValidation";
 import { AuthLoginContext } from "context/AuthLoginContext";
 const AdminLogin = () => {
-  const navigateDashboard = useNavigate();
-  const { loggedUser, isAdmin, setIsAdmin, toDashboard } =
+  const { loggedUser, setIsAdmin } =
     React.useContext(AuthLoginContext);
   const { handleChange, handleSubmit, errors, touched, handleBlur } = useFormik(
     {
@@ -26,8 +25,6 @@ const AdminLogin = () => {
 
           loggedUser(sendLoginUser);
           setIsAdmin(sendLoginUser.user.role);
-
-          navigateDashboard("/admin/dashboard");
         } catch (err) {
           bag.setErrors({ wrongInputItem: err.response.data.message });
         }
@@ -45,7 +42,6 @@ const AdminLogin = () => {
                 <h5 className="modal-title" id="exampleModalLabel">
                   Admin Panel
                 </h5>
-              
               </div>
 
               <form onSubmit={handleSubmit}>
@@ -92,7 +88,6 @@ const AdminLogin = () => {
                 </div>
 
                 <div className="text-center my-2">
-                  
                   <button
                     type="submit"
                     className={`btn ${adminStyle.adminLoginSubmitBtn}`}

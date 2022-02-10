@@ -6,7 +6,7 @@ $borderBottom: 1px solid #ebebeb;
 
 .AdminInfo {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   background-color: #fff;
   width: 100%;
@@ -36,7 +36,7 @@ $borderBottom: 1px solid #ebebeb;
 
   .navItem {
     list-style: none;
-    margin: 0.5rem 0;
+    margin: 0.5rem;
 
     .navLink {
       color: #000;
@@ -44,7 +44,7 @@ $borderBottom: 1px solid #ebebeb;
       display: block;
       padding: 1rem 0;
     padding-left: 2rem;
-      font-size: 1.1rem;
+      font-size: .9rem;
       &:hover {
         color: $secondColor !important;
       }

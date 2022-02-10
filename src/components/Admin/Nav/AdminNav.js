@@ -1,5 +1,6 @@
 import React from "react";
 import navStyle from "./style/adminnav.module.css";
+import "../style/admin.css"
 import {Link,NavLink} from "react-router-dom";
 import {
   BsBarChart,
