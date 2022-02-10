@@ -1,6 +1,6 @@
 import React from "react";
 import navStyle from "./style/adminnav.module.css";
-import {Link} from "react-router-dom";
+import {Link,NavLink} from "react-router-dom";
 import {
   BsBarChart,
   BsFillPersonLinesFill,
@@ -32,22 +32,22 @@ const AdminNav = () => {
        
         <h6 className={navStyle.navSubHeader}>E-commerce</h6>
         <li className={navStyle.navItem}>
-          <Link to="/admin" className={navStyle.navLink}>
+          <NavLink to="/admin/dashboard" className={navStyle.navLink}>
             <BsBarChart className="me-2" size={20} /> Dashboard
-          </Link>
+          </NavLink>
         </li>
         <li className={`dropdown ${navStyle.navItem}`}>
-          <Link to="/" className={navStyle.navLink}>
+          <NavLink   to="/admin/orders" className={navStyle.navLink}>
             <RiBillLine className="me-2" size={20} />
             Orders
-          </Link>
+          </NavLink>
         </li>
         <li className={navStyle.navItem}>
-          <Link to="/" className={navStyle.navLink}>
+          <NavLink to="/admin/products" className={navStyle.navLink}>
             {" "}
             <BsTruck className="me-2" size={20} />
             Products
-          </Link>
+          </NavLink>
         </li>
         <li className={navStyle.navItem}>
           <Link to="/" className={navStyle.navLink}>

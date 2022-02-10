@@ -1,0 +1,23 @@
+.footerMain {
+  background-color: transparent;
+  padding: 1rem 0;
+}
+
+.footerNavItem {
+  list-style: none;
+  margin: 0 0.5rem;
+}
+
+.footerNavItem .footerNavLink {
+  text-decoration: none;
+  color: #666;
+}
+
+.footerNavItem .footerNavLink:hover {
+  color: #37a0bd;
+}
+
+.copySpan {
+  color: #37a0bd;
+}
+/*# sourceMappingURL=adminfooter.module.css.map */

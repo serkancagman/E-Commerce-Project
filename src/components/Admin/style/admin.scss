@@ -1,0 +1,29 @@
+$mainColor: #263c97;
+$secondColor: #37a0bd;
+$transition: all 0.3s ease-in-out;
+$hoverColor: $secondColor !important;
+$borderBottom: 1px solid #ebebeb;
+
+
+
+
+
+.adminMain{
+    background-color: #F4F4FF;
+}
+
+.active {
+    color: $secondColor;
+    text-decoration: none;
+    background-color: #b9dbe4;
+    border-radius: 50px;
+    display: block;
+    padding: 1rem 0;
+    padding-left: 2rem;
+    font-size: 1.1rem;
+    border-left: 10px solid $secondColor;
+    border-right: 10px solid $secondColor;
+    &:hover {
+      color: $secondColor !important;
+    }
+  }

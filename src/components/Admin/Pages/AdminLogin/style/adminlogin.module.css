@@ -1,0 +1,35 @@
+.adminLogin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.adminLoginWrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.adminLogo {
+  margin: 1rem 0;
+  width: 100px;
+}
+
+.adminLoginSubmitBtn {
+  background-color: #37a0bd;
+  color: #fff;
+}
+
+.adminLoginInput {
+  border-radius: 5px !important;
+}
+/*# sourceMappingURL=adminlogin.module.css.map */

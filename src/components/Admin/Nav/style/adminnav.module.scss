@@ -36,14 +36,14 @@ $borderBottom: 1px solid #ebebeb;
 
   .navItem {
     list-style: none;
-    padding-left: 2rem;
     margin: 0.5rem 0;
 
     .navLink {
       color: #000;
       text-decoration: none;
       display: block;
-      padding: 0.5rem 0;
+      padding: 1rem 0;
+    padding-left: 2rem;
       font-size: 1.1rem;
       &:hover {
         color: $secondColor !important;
