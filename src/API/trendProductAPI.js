@@ -93,6 +93,16 @@ export const getOrderData = async () => {
   const { data } = await axios.get(
     `${process.env.REACT_APP_BACKEND_ENDPOINT}/order`
   );
-  console.log(data);
+ 
+  return data;
+}
+
+
+// DELETE PRODUCT API
+export const deleteProduct = async (product_id) => {
+  const { data } = await axios.delete(
+    `${process.env.REACT_APP_BACKEND_ENDPOINT}/product/${product_id}`
+  );
+  
   return data;
 }

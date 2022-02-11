@@ -25,21 +25,22 @@ export const VisitorChannel = () => {
       ];
       
       const totalData = (chartData) => {
-        let total, title, rasyonel, color, final;
+        let  total, title, rasyonel, color, final;
       
         total = chartData.reduce((acc, curr) => acc + curr.value, 0);
         final = [];
-        chartData.map((item) => {
+        chartData.forEach((item) => {
           rasyonel = (100 * item.value) / total;
           title = item.title;
           color = item.color;
           final = [...final, { title: title, value: rasyonel, color: color }];
+          
         });
-        console.log(final);
+        
         return final;
       };
       
-     const getChart = totalData(channelData).map((item) => item);
+     const getChart = totalData(channelData)
      const doughnutData = {
         datasets: [
           {

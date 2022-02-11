@@ -56,7 +56,8 @@ $borderBottom: 1px solid #ebebeb;
 }
 .orderTableBody {
   background-color: #fff;
-  
+  position: relative;
+ 
   
 }
 .ordersTableTH {
@@ -93,4 +94,7 @@ $borderBottom: 1px solid #ebebeb;
 .bodyTR{
   
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.alert{
+  position: absolute;
 }

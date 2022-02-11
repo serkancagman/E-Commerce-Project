@@ -7,7 +7,7 @@ import { loginUser } from "API/trendProductAPI";
 import { validationSchema } from "./AdminLoginValidation";
 import { AuthLoginContext } from "context/AuthLoginContext";
 const AdminLogin = () => {
-  const { loggedUser, setIsAdmin } =
+  const { loggedUser,setUser } =
     React.useContext(AuthLoginContext);
   const { handleChange, handleSubmit, errors, touched, handleBlur } = useFormik(
     {
@@ -24,7 +24,8 @@ const AdminLogin = () => {
           });
 
           loggedUser(sendLoginUser);
-          setIsAdmin(sendLoginUser.user.role);
+          
+         
         } catch (err) {
           bag.setErrors({ wrongInputItem: err.response.data.message });
         }

@@ -9,6 +9,7 @@ import {ProtectedAdminRoute,ProtectedRoute, ProtectedAdminLogin} from "./Protect
 import AdminLogin from "components/Admin/Pages/AdminLogin/AdminLogin";
 import AdminDashboardPage from "components/Pages/AdminPages/AdminDashboardPage";
 import AdminOrdersPage from "components/Pages/AdminPages/AdminOrdersPage";
+import AdminProductsPage from "components/Pages/AdminPages/AdminProductsPage";
 
 const MainRouter = () => {
 
@@ -24,7 +25,9 @@ const MainRouter = () => {
         <Route path="/admin" element={<ProtectedAdminLogin><AdminLogin /></ProtectedAdminLogin>} />
         <Route path="/admin/dashboard" element={<ProtectedAdminRoute><AdminDashboardPage /></ProtectedAdminRoute>}/>
         <Route path="/admin/orders" element={<ProtectedAdminRoute><AdminOrdersPage/></ProtectedAdminRoute>}/>
-        <Route path="/admin/products" element={<ProtectedAdminRoute><AdminDashboardPage /></ProtectedAdminRoute>}/>
+      
+        <Route path="/admin/products/:product_id" element={<ProtectedAdminRoute><AdminDashboardPage /></ProtectedAdminRoute>}/>
+        <Route path="/admin/products" element={<ProtectedAdminRoute><AdminProductsPage /></ProtectedAdminRoute>}/>
         <Route path="/cartcheckout" element={<Checkout />} /> 
       </Routes>
     </>

@@ -16,7 +16,7 @@ const ProductSlider = ({ data, loading, header, error }) => {
   if (error) return "An error has occurred: " + error.message;
 
   return (
-    <section className="py-4" id="trendProduct">
+    <section className="pt-4" id="trendProduct">
       <div className="container-fluid">
         <div className="trend-area">
           <div className="trend-header-area d-flex justify-content-between align-items-center">

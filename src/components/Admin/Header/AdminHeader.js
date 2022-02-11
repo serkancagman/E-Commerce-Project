@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Logo from "images/adminlogo.png";
 import { BsSearch, BsPlusCircle, BsCart2 } from "react-icons/bs";
 import { MdNotifications } from "react-icons/md";
-const AdminHeader = () => {
+const AdminHeader = ({header}) => {
   return (
     <header className={`py-3 mb-2 ${AdminStyle.MainHeader}`}>
       <div className="container-fluid">
@@ -23,7 +23,7 @@ const AdminHeader = () => {
             <div
               className={`d-flex justify-content-center align-items-center ${AdminStyle.searchWrapper}`}
             >
-              <span className={AdminStyle.searchText}>Overview</span>
+              <span className={AdminStyle.searchText}>{header}</span>
               <form className="w-100">
                 <div className="input-group">
                   <input
@@ -58,7 +58,7 @@ const AdminHeader = () => {
               </div>
               <Link to="/admin/profile" className={AdminStyle.addProductLink}>
                 <button className={`btn ms-3 ${AdminStyle.addProductBtn}`}>
-                  <BsPlusCircle className="" />
+                  <BsPlusCircle />
                   <span className="mx-2">Add Product</span>
                 </button>
               </Link>

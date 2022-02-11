@@ -9,7 +9,7 @@ import PremiumPic5 from "../../images/productMain6.jpg";
 import { Link } from "react-router-dom";
 export const Premium = () => {
   return (
-    <section className="py-3">
+    <section id="premiumProducts" className="py-3">
       <div className="container-fluid">
         <div className="row g-4 justify-content-center align-items-center">
           <div className="col-md-3 col-lg-3">

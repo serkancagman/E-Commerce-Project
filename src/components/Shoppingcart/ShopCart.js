@@ -2,7 +2,6 @@ import React from "react";
 import "./style/shopcart.css";
 import { GrFormClose } from "react-icons/gr";
 import { Link } from "react-router-dom";
-import cartImg from "../../images/cartImg.jpg";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import HeaderContext from "context/HeaderContext";
 import { ShopCartContext } from "context/ShopCartContext";
@@ -42,6 +41,7 @@ export const ShopCart = () => {
                           <img
                             className="cartItemImg"
                             src={cartProduct.photos[0]}
+                            alt="..."
                           />
                         </Link>
                         <div className="cartProductNames mx-1">

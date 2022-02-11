@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import { trendProductAPI } from "../../API/trendProductAPI";
 import ProductSlider from "components/ProductSlider/ProductSlider";
-import { SaleTrend } from "../SaleTrend/SaleTrend";
+
 
 export const SpecialProducts = () => {
   const {
