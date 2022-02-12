@@ -9,7 +9,7 @@ import { AuthLoginContext } from "context/AuthLoginContext";
 const MainProfile = () => {
 
 
-    const {handleLogout, user } = React.useContext(AuthLoginContext);
+    const {handleLogout} = React.useContext(AuthLoginContext);
   return (
     <div className="col-md-9 h-100 col-lg-9">
       <div className="profileContent">

@@ -1,4 +1,4 @@
-import { getOrder, getOrderData } from "API/trendProductAPI";
+import { getOrderData } from "API/trendProductAPI";
 import React from "react";
 
 export const SaleandOrderContext = React.createContext();
@@ -6,25 +6,41 @@ export const SaleandOrderContext = React.createContext();
 export const SaleandOrderProvider = ({ children }) => {
   const [orders, setOrders] = React.useState([]);
   const [totalSalePrice, setTotalSalePrice] = React.useState(0);
+  const [totalOrderItem, setTotalOrderItem] = React.useState(0);
+  const getOrder = async () => {
+    try {
+        const orderAll = await getOrderData();
+        setOrders(orderAll);
+    } catch (error) {
+        console.log(error);
+    }}
+    
+      
+      React.useEffect(() => {
+        getOrder();
+       setInterval(() => {
+        getOrder();
+       }, 60000);
+          
+      }, []);
+      
+      React.useEffect(() => {
+        let totalItemPrice,totalOrderPrice,totalOrderPacket;
 
-    React.useEffect(() => {
-        (async () => {
-            try {
-                const orderAll = await getOrderData();
-                setOrders(orderAll);
-            } catch (error) {
-                console.log(error);
-            }
-        })();
-    }, []);
+        totalItemPrice = orders.map((orderItem) => orderItem.items.map((itemPrice) => itemPrice.price).reduce((a, b) => a + b, 0))
+        totalOrderPrice = totalItemPrice.reduce((a, b) => a + b, 0);
+        totalOrderPacket = orders.map((orderItem) => orderItem.items.length).reduce((a, b) => a + b, 0);
+        setTotalOrderItem(totalOrderPacket);
+        setTotalSalePrice(totalOrderPrice.toFixed(2));
+      },[orders]);
 
-    React.useEffect(() => {
-      let totalItemPrice,totalOrderPrice;
 
-      totalItemPrice = orders.map((orderItem) => orderItem.items.map((itemPrice) => itemPrice.price).reduce((a, b) => a + b, 0))
-      totalOrderPrice = totalItemPrice.reduce((a, b) => a + b, 0);
-      setTotalSalePrice(totalOrderPrice.toFixed(2));
-    },[orders]);
+
+    
+     
+  
+
+   
 
 
 
@@ -194,7 +210,8 @@ export const SaleandOrderProvider = ({ children }) => {
     ProductDataOptions,
     orderProductData,
     orders,
-    totalSalePrice
+    totalSalePrice,
+    totalOrderItem
   };
 
   return (

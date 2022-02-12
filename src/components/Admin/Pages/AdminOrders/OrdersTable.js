@@ -1,4 +1,3 @@
-import { getOrderData } from "API/trendProductAPI";
 import { SaleandOrderContext } from "context/AdminContext/SaleandOrderContext";
 import React from "react";
 import moment from "moment";
@@ -24,7 +23,7 @@ const OrdersTable = () => {
         </tr>
       </thead>
       <tbody className={orderStyle.orderTableBody}>
-        {orders.map(order => {
+        {orders.length > 0 ? orders.map(order => {
             let totalPrice = order.items.map(item => item.price).reduce((a,b) => a + b, 0);
             let orderId = order._id.slice(-2)
             return (
@@ -61,7 +60,12 @@ const OrdersTable = () => {
           </td>
         </tr>
             )
-        })}
+        }) : 
+            <div className={`alert alert-warning mb-0 w-100 text-center ${orderStyle.alert}`} role="alert">
+            NO ORDERS YET
+        </div>
+        
+      }
       </tbody>
     </table>
   );

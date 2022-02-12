@@ -5,6 +5,7 @@ import { BsArrowUp } from "react-icons/bs";
 import { MdPriceCheck } from "react-icons/md";
 import { Line } from "react-chartjs-2";
 import { SaleandOrderContext } from "context/AdminContext/SaleandOrderContext";
+import { Link } from "react-router-dom";
 
 
 const SalesChart = () => {
@@ -39,14 +40,14 @@ const SalesChart = () => {
             aria-labelledby="dropdownMenuButton1"
           >
             <li>
-              <a className="dropdown-item" href="#">
+              <Link className="dropdown-item" to="/#">
                 View Detail
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="dropdown-item" href="#">
+              <Link className="dropdown-item" to="/#">
                 Download
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const OrderPagination = () => {
   return (
     <nav aria-label="Page navigation example">
-  <ul className="pagination justify-content-center my-3">
+  <ul className="pagination justify-content-center mt-5">
     <li className="page-item">
       <Link className="page-link" to="/#" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>

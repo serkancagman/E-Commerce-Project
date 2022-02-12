@@ -5,10 +5,12 @@ export const AuthLoginContext = React.createContext();
 
 export const AuthLoginProvider = ({ children }) => {
   const getToken = localStorage.getItem("refresh-token")
-  const getRole = localStorage.getItem("role")
   const [isLoggedIn, setIsLoggedIn] = React.useState(getToken ? true : false);
+  const adminToken ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjIwNjQyMzZmODMzNDMxOTdiNjVmN2NhIiwiaWF0IjoxNjQ0NTc3MzM0LCJleHAiOjE2NjAxMjkzMzQsImlzcyI6ImVjb21tZXJjZS5hcHAifQ.OoqDkORJsftNQFGYmFxsvahrSUHckLtzjcX9YcbYIAY"
+  const getLocalToken = localStorage.getItem("refresh-token")
+  const [isAdmin, setIsAdmin] = React.useState(adminToken === getLocalToken ? true : false);
   const [user, setUser] = React.useState(null);
-  const [isAdmin, setIsAdmin] = React.useState(getRole || null);
+  
  
   const navigate = useNavigate()
   React.useEffect(() => {
@@ -36,7 +38,7 @@ export const AuthLoginProvider = ({ children }) => {
     
     localStorage.setItem("access-token", data.accessToken);
     localStorage.setItem("refresh-token", data.refreshToken);
-    localStorage.setItem("role", data.user.role);
+    
   };
 
   const logoutCurrentUser = async (routeToHome) => {
@@ -44,7 +46,7 @@ export const AuthLoginProvider = ({ children }) => {
     setUser(null);
     localStorage.removeItem("access-token");
     localStorage.removeItem("refresh-token");
-    localStorage.removeItem("role");
+    
     await logoutUser();
     routeToHome();
   };
@@ -58,10 +60,10 @@ export const AuthLoginProvider = ({ children }) => {
     isLoggedIn,
     user,
     loggedUser,
-    isAdmin,
     logoutCurrentUser,
     handleLogout,
-    setIsAdmin
+    isAdmin
+   
   };
 
   return (

@@ -20,7 +20,7 @@ export const FeaturedProducts = () => {
   if (error) return "An error has occurred: " + error.message;
 
   return (
-    <section>
+    <section id="featuredProducts">
       <div className="container-fluid">
         <div className="trend-header-area d-flex justify-content-between align-items-center">
           <span className="trend-header">Top Featured Products</span>

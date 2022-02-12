@@ -6,7 +6,7 @@ import AdminDashboard from "components/Admin/Pages/AdminDashboard/AdminDashboard
 const AdminDashboardPage = () => {
   return (
     <main className="adminMain">
-      <AdminHeader />
+      <AdminHeader header="Overview" />
       <div className="container-fluid">
         <AdminNav />
         <AdminDashboard />

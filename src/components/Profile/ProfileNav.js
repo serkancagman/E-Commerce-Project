@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "./style/profile.css";
 
 const Profile = () => {
-  const {handleLogout, user } = React.useContext(AuthLoginContext);
+  const {handleLogout} = React.useContext(AuthLoginContext);
    
   
     

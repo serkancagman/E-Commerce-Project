@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAKA,AAAA,YAAY,CAAA;EACR,WAAW,EAAE,KAAK;CACrB",
+    "sources": [
+        "adminproducts.module.scss"
+    ],
+    "names": [],
+    "file": "adminproducts.module.css"
+}

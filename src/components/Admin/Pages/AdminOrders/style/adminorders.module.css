@@ -63,6 +63,7 @@
 
 .orderTableBody {
   background-color: #fff;
+  position: relative;
 }
 
 .ordersTableTH {
@@ -101,5 +102,9 @@
 .bodyTR {
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
           box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.alert {
+  position: absolute;
 }
 /*# sourceMappingURL=adminorders.module.css.map */
