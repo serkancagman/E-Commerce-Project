@@ -34,7 +34,7 @@ export const SaleandOrderProvider = ({ children }) => {
         setTotalSalePrice(totalOrderPrice.toFixed(2));
       },[orders]);
 
-
+     
 
     
      

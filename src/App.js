@@ -1,6 +1,5 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import { HeaderProvider } from "./context/HeaderContext";
-
 import { ReactQueryDevtools } from "react-query/devtools";
 import MainRouter from "Router/MainRouter";
 import { ProductProvider } from "context/ProductContext";

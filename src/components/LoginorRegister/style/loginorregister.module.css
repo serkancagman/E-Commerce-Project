@@ -1,0 +1,53 @@
+.registerHeader {
+  text-align: center;
+  font-size: 40px;
+  margin: 1rem 0;
+  font-weight: 600;
+}
+
+.registerSubHeader {
+  font-weight: 500;
+  display: block;
+  font-size: 20px;
+}
+
+.registerForm {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.useSocialGoogle {
+  padding: 1rem;
+  cursor: pointer;
+  margin: 1rem .5rem;
+  background-color: #DB4437;
+  border-radius: 10px;
+}
+
+.useSocialGoogle .socialIcon {
+  color: #fff;
+  margin: 0 .5rem;
+}
+
+.useSocialTitle {
+  color: #fff;
+}
+
+.useSocialFacebook {
+  background-color: #4267B2;
+  padding: 1rem;
+  margin: 1rem .5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.useSocialFacebook .socialIcon {
+  color: #fff;
+  margin: 0 .5rem;
+}
+/*# sourceMappingURL=loginorregister.module.css.map */
