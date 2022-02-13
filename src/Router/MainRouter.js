@@ -10,6 +10,8 @@ import AdminLogin from "components/Admin/Pages/AdminLogin/AdminLogin";
 import AdminDashboardPage from "components/Pages/AdminPages/AdminDashboardPage";
 import AdminOrdersPage from "components/Pages/AdminPages/AdminOrdersPage";
 import AdminProductsPage from "components/Pages/AdminPages/AdminProductsPage";
+import RegisterPage from "components/Pages/RegisterPage";
+
 
 const MainRouter = () => {
 
@@ -19,13 +21,14 @@ const MainRouter = () => {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="register" element={<RegisterPage/>} />
         <Route path="/product/:product_id" element={<ProductInnerPage />} />
         <Route path="/computer&laptops" element={<ComputerCategory />} />
         <Route path="/profile" element={<ProtectedRoute> <ProfileMainPage /> </ProtectedRoute>}/>
         <Route path="/admin" element={<ProtectedAdminLogin><AdminLogin /></ProtectedAdminLogin>} />
         <Route path="/admin/dashboard" element={<ProtectedAdminRoute><AdminDashboardPage /></ProtectedAdminRoute>}/>
         <Route path="/admin/orders" element={<ProtectedAdminRoute><AdminOrdersPage/></ProtectedAdminRoute>}/>
-      
+
         <Route path="/admin/products/:product_id" element={<ProtectedAdminRoute><AdminDashboardPage /></ProtectedAdminRoute>}/>
         <Route path="/admin/products" element={<ProtectedAdminRoute><AdminProductsPage /></ProtectedAdminRoute>}/>
         <Route path="/cartcheckout" element={<Checkout />} /> 

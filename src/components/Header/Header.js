@@ -8,7 +8,6 @@ import { FiLogOut, FiUser } from "react-icons/fi";
 import Navbar from "./Navbar";
 import { AsideMenu } from "./AsideMenu";
 import { Link } from "react-router-dom";
-import { LoginOrRegister } from "../LoginandRegister/LoginOrRegister";
 import { ShopCart } from "../Shoppingcart/ShopCart";
 import HeaderContext from "../../context/HeaderContext";
 import { AuthLoginContext } from "context/AuthLoginContext";
@@ -247,11 +246,6 @@ export const Header = () => {
           className={`aside-bg${shopCart ? " aside-bg-on" : ""}`}
         ></div>
       </header>
-      {userForm && <LoginOrRegister />}
-      <div
-        onClick={() => setUserForm(false)}
-        className={`loginFormDark ${userForm ? " showDarkForm" : " "}`}
-      ></div>
     </>
   );
 };

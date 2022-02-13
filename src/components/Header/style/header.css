@@ -310,7 +310,7 @@ body {
 }
 
 .navbar-nav {
-  width: 716px;
+  width: 750px;
   height: 55px;
   position: relative;
   -webkit-box-align: center;
@@ -379,6 +379,7 @@ body {
 }
 
 .promotion-title {
+  width: 360px;
   font-size: 15px;
   color: #fff;
 }
