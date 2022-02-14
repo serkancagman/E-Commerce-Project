@@ -1,8 +1,15 @@
-
-
-
-
-
-.mainSection{
-    margin-left: 350px;
+$secondColor: #37a0bd;
+.mainSection {
+  margin-left: 350px;
+}
+.breadLink {
+  color: $secondColor;
+  text-decoration: none;
+}
+.lastCrumb {
+  color: #666;
+}
+.crumbIcon {
+  font-size: 18px;
+  margin-right: 10px;
 }

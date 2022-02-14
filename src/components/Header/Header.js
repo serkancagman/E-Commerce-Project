@@ -15,8 +15,6 @@ import { ShopCartContext } from "context/ShopCartContext";
 export const Header = () => {
   const {
     setSelected,
-    setUserForm,
-    userForm,
     selected,
     currency,
     shopCart,
@@ -210,17 +208,17 @@ export const Header = () => {
                 </>
               ) : (
                 <>
-                  <div
-                    onClick={() => setUserForm(!userForm)}
+                  <Link to="/login"
+                    
                     className="login-menu defaultLogin"
                   >
                     <FiUser className="userIcon" size={35} color="#fff" />
 
                     <div className="login-or-register">
-                      <span className="login-header">Sign in</span>
+                      <span className="login-header">Login</span>
                       <span className="register-header">Create an Account</span>
                     </div>
-                  </div>
+                  </Link>
                 </>
               )}
               <div onClick={showCart} className="my-cart">

@@ -26,7 +26,7 @@ $borderBottom: 1px solid #ebebeb;
     font-size: 20px;
 }
 .registerForm{
-   width: 100%;
+   width: 50%;
     display: flex;
     justify-content: center;
 }
@@ -55,4 +55,8 @@ $borderBottom: 1px solid #ebebeb;
         color: #fff;
         margin: 0 .5rem;
     }
+}
+
+.register{
+    width: 100%;
 }

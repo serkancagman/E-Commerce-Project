@@ -1,0 +1,29 @@
+
+
+
+.newProduct{
+    margin-left: 350px;
+}
+
+.newProductHeader{
+    margin:1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.addTitle{
+    font-size: 23px;
+    border-bottom: 1px solid #238de5;
+}
+.addIcon{
+    font-size: 25px;
+    margin: 0 .5rem;
+}
+.newProductForm{
+    width: 100%;
+    display: block;
+}
+.addIconBtn{
+    font-size: 18px;
+    margin-left: .5rem;
+}
