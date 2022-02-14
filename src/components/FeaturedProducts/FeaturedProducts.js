@@ -42,18 +42,14 @@ export const FeaturedProducts = () => {
                           className="featured-product"
                           to={`/product/${featuredData._id}`}
                         >
-                          <picture>
-                            <source
-                              srcSet={featuredData.photos[1]}
-                              type="image/webp"
-                            />
+                          
                             <img
                               alt="..."
                               className="img-fluid"
                               src={featuredData.photos[0]}
                               type="image/vnd.ms-photo"
                             />
-                          </picture>
+                     
 
                           <div className="show-product">
                             <FaRegEye

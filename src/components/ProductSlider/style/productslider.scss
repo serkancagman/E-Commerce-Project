@@ -33,7 +33,7 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
   background-color: #fff !important;
 }
 .trendSwiper{
-  padding: 25px 10px !important;
+  padding: 25px 20px !important;
 }
 .show-more {
   color: #263c97;
@@ -44,12 +44,11 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 !important;
-  width: 100%;
+  margin: 0 .5rem !important;
+  height: 100%;
+  width: 230px;
   transform: translateY(0);
   transition: all 0.2s linear;
-
-  border: 1px solid #94949446;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   &:hover {
@@ -59,14 +58,19 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
   }
   .product-img {
     position: relative;
-    width: 100% !important;
-
+      width: 100%;
+      background-color: #fff;
     &:hover {
       .show-product {
         opacity: 1 !important;
         
       }
     }
+  }
+  .productMainImg{
+    height: 220px;
+    object-fit: contain;
+    width: 100%;
   }
   .product-titles {
     background-color: #f0f0f0;
@@ -80,7 +84,7 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
     font-size: 14px;
     width: 100%;
     font-weight: 600;
-    margin: 10px 20px;
+   
     text-decoration: none;
     color: #000;
   }

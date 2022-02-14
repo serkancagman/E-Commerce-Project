@@ -106,3 +106,11 @@ export const deleteProduct = async (product_id) => {
   
   return data;
 }
+// ADD PRODUCT
+export const addProduct = async (productData) => {
+  const { data } = await axios.post(
+    `${process.env.REACT_APP_BACKEND_ENDPOINT}/product`,productData
+  );
+  
+  return data;
+}

@@ -35,7 +35,7 @@
 }
 
 .trendSwiper {
-  padding: 25px 10px !important;
+  padding: 25px 20px !important;
 }
 
 .show-more {
@@ -55,13 +55,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 !important;
-  width: 100%;
+  margin: 0 .5rem !important;
+  height: 100%;
+  width: 230px;
   -webkit-transform: translateY(0);
           transform: translateY(0);
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
-  border: 1px solid #94949446;
   -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
           box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
@@ -75,11 +75,19 @@
 
 .product-box .product-img {
   position: relative;
-  width: 100% !important;
+  width: 100%;
+  background-color: #fff;
 }
 
 .product-box .product-img:hover .show-product {
   opacity: 1 !important;
+}
+
+.product-box .productMainImg {
+  height: 220px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
 }
 
 .product-box .product-titles {
@@ -101,7 +109,6 @@
   font-size: 14px;
   width: 100%;
   font-weight: 600;
-  margin: 10px 20px;
   text-decoration: none;
   color: #000;
 }

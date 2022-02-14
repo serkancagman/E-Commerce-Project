@@ -157,18 +157,14 @@ const MainCategory = ({
                             <article className="product-box">
                               <div className="product-img">
                                 <Link to={`/product/${mainData._id}`}>
-                                  <picture>
-                                    <source
-                                      srcSet={mainData.photos[1]}
-                                      type="image/webp"
-                                    />
+                                  
                                     <img
                                       className="img-fluid"
                                       src={mainData.photos[0]}
                                       type="image/vnd.ms-photo"
                                       alt="..."
                                     />
-                                  </picture>
+                                
                                   <div className="show-product">
                                     <FaRegEye
                                       color="#E91E63"

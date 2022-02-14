@@ -25,11 +25,11 @@ const ProductSlider = ({ data, loading, header, error }) => {
               Show More <BsArrowRight color="#263c97" />
             </Link>
           </div>
-          <div className="trends-main py-2">
+          <div className="trends-main px-1 py-2">
             <div className="trend-inner  d-flex align-items-center">
               <Swiper
-                slidesPerView={5}
-                spaceBetween={50}
+                slidesPerView={6}
+                
                 loop={true}
                 cssMode={true}
                 
@@ -39,23 +39,28 @@ const ProductSlider = ({ data, loading, header, error }) => {
                 breakpoints={{
                   275: {
                     slidesPerView: 1,
-                    spaceBetween: 30,
+                  
                   },
                   640: {
                     slidesPerView: 2,
-                    spaceBetween: 30,
+                    
                   },
                   768: {
-                    slidesPerView: 3,
+                    slidesPerView: 4,
                   },
                   700: {
-                    slidesPerView: 3,
+                    slidesPerView: 4,
+                    
                   },
                   1024: {
-                    slidesPerView: 4,
+                    spaceBetween: 20,
+                    slidesPerView: 5,
                   },
                   1200: {
                     slidesPerView: 5,
+                  },
+                  1500: {
+                    slidesPerView: 6,
                   },
                 }}
                 className="mySwiper trendSwiper my-3"
@@ -69,18 +74,14 @@ const ProductSlider = ({ data, loading, header, error }) => {
                       <article className="product-box">
                         <div className="product-img">
                           <Link to={`/product/${trendData._id}`}>
-                            <picture>
-                              <source
-                                srcSet={trendData.photos[1]}
-                                type="image/webp"
-                              />
+                            
                               <img
-                                className="img-fluid"
+                                className="img-fluid productMainImg"
                                 src={trendData.photos[0]}
                                 type="image/vnd.ms-photo"
                                 alt="..."
                               />
-                            </picture>
+                          
                             <div className="show-product">
                               <FaRegEye
                                 color="#E91E63"
