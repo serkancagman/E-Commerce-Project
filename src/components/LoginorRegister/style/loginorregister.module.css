@@ -12,7 +12,7 @@
 }
 
 .registerForm {
-  width: 100%;
+  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,5 +49,9 @@
 .useSocialFacebook .socialIcon {
   color: #fff;
   margin: 0 .5rem;
+}
+
+.register {
+  width: 100%;
 }
 /*# sourceMappingURL=loginorregister.module.css.map */

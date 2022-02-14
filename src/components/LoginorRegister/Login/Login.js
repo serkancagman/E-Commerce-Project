@@ -1,58 +1,57 @@
-import React from "react";
+import React from 'react'
 import RegisterStyle from "../style/loginorregister.module.css";
 import { useFormik } from "formik";
 import { BsGoogle } from "react-icons/bs";
-import validationSchema from "./RegisterValidation";
-import { Form, Input, Alert, Checkbox, Button } from "antd";
+import validationSchema from "./LoginValidation";
+import { Form, Input, Alert, Button } from "antd";
 import { Link } from "react-router-dom";
-import { registerUser } from "API/trendProductAPI";
+import { loginUser } from 'API/trendProductAPI';
 import { FaFacebookF } from "react-icons/fa";
-import { AuthLoginContext } from "context/AuthLoginContext";
-const Register = () => {
-  const {loggedUser} = React.useContext(AuthLoginContext);
-  const [checkPrivacy, setCheckPrivacy] = React.useState(true);
-  const { handleChange, handleSubmit, errors, touched, handleBlur } = useFormik(
-    {
-      initialValues: {
-        email: "",
-        password: "",
-        passwordConfirm: "",
-      },
-      validationSchema,
-      onSubmit: async (values, bag) => {
-        try {
-          const sendRegisterData = await registerUser({
-            email: values.email,
-            password: values.password,
-          });
-          loggedUser(sendRegisterData);
-          console.log(sendRegisterData);
-        } catch (err) {
-          bag.setErrors({ serverError: err.response.data.message });
+import { AuthLoginContext } from 'context/AuthLoginContext';
+
+const Login = () => {
+    const {loggedUser} = React.useContext(AuthLoginContext);
+    const { handleChange, handleSubmit, errors, touched, handleBlur } = useFormik(
+        {
+          initialValues: {
+            email: "",
+            password: "",
+            passwordConfirm: "",
+          },
+          validationSchema,
+          onSubmit: async (values, bag) => {
+            try {
+              const sendLoginData = await loginUser({
+                email: values.email,
+                password: values.password,
+              });
+              loggedUser(sendLoginData);
+              console.log(sendLoginData);
+            } catch (err) {
+              bag.setErrors({ serverError: err.response.data.message });
+            }
+          },
         }
-      },
-    }
-  );
+      );
 
-  const formItemLayout = {
-    labelCol: {
-      xs: {
-        span: 24,
-      },
-      sm: {
-        span: 6,
-      },
-    },
-    wrapperCol: {
-      xs: {
-        span: 24,
-      },
-      sm: {
-        span: 14,
-      },
-    },
-  };
-
+      const formItemLayout = {
+        labelCol: {
+          xs: {
+            span: 24,
+          },
+          sm: {
+            span: 6,
+          },
+        },
+        wrapperCol: {
+          xs: {
+            span: 24,
+          },
+          sm: {
+            span: 14,
+          },
+        },
+      };
   return (
     <section id="userLogin" className="py-4">
       {errors.serverError && (
@@ -65,7 +64,7 @@ const Register = () => {
           <div className="col-md-12 col-lg-12">
             <div className={RegisterStyle.register}>
               <div className={RegisterStyle.registerHeader}>
-                Sign Up{" "}
+                Login{" "}
                 <span className={RegisterStyle.registerSubHeader}>
                   Don't miss the best prices.
                 </span>
@@ -73,7 +72,7 @@ const Register = () => {
               <div className={RegisterStyle.registerForm}>
                 <Form
                   onSubmitCapture={handleSubmit}
-                  className=""
+                  
                   {...formItemLayout}
                 >
                   <div className="d-flex justify-content-center">
@@ -83,7 +82,7 @@ const Register = () => {
                         className={RegisterStyle.socialIcon}
                       />
                       <span className={RegisterStyle.useSocialTitle}>
-                        Register with Google
+                        Login with Google
                       </span>
                     </div>
                     <div className={RegisterStyle.useSocialFacebook}>
@@ -92,7 +91,7 @@ const Register = () => {
                         className={RegisterStyle.socialIcon}
                       />
                       <span className={RegisterStyle.useSocialTitle}>
-                        Register with Google
+                        Login with Google
                       </span>
                     </div>
                   </div>
@@ -125,51 +124,24 @@ const Register = () => {
                       name="password"
                     />
                   </Form.Item>
-                  <Form.Item
-                    onChange={handleChange}
-                    help={
-                      errors.passwordConfirm &&
-                      touched.passwordConfirm &&
-                      errors.passwordConfirm
-                    }
-                    validateStatus={
-                      errors.passwordConfirm &&
-                      touched.passwordConfirm &&
-                      "error"
-                    }
-                    label="Password Confirm"
-                  >
-                    <Input.Password
-                      name="passwordConfirm"
-                      onBlur={handleBlur}
-                    />
-                  </Form.Item>
                   <div className="d-flex justify-content-center">
-                    <div className="">
-                      <Checkbox
-                        className="mb-3"
-                        onChange={() => setCheckPrivacy(!checkPrivacy)}
-                      >
-                        I agree to Alisya Shop Conditions of Use and{" "}
-                        <Link to="/">Privacy Notice.</Link>
-                      </Checkbox>
+                    <div className="w-50">
                     </div>
                   </div>
                   <div className="d-flex justify-content-center my-2">
                     <Button
                       onClick={handleSubmit}
-                      disabled={checkPrivacy}
                       type="primary"
                     >
-                      Create Account
+                      Login
                     </Button>
                   </div>
                 </Form>
               </div>
               <h6 className="text-center my-3">
-                Have you already an account ?{" "}
-                <Link to="/login" className="text-decoration-none">
-                  Login.
+              Don't have an account ?{" "}
+                <Link to="/signup" className="text-decoration-none">
+                  Sign up.
                 </Link>
               </h6>
             </div>
@@ -177,7 +149,7 @@ const Register = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Register;
+export default Login

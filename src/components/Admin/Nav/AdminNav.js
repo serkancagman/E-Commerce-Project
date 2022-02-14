@@ -8,6 +8,7 @@ import {
   BsTruck,
   BsWallet2,
 } from "react-icons/bs";
+import { IoIosAddCircleOutline } from "react-icons/io";
 import { RiBillLine } from "react-icons/ri";
 const AdminNav = () => {
 
@@ -51,10 +52,10 @@ const AdminNav = () => {
           </NavLink>
         </li>
         <li className={navStyle.navItem}>
-          <Link to="/" className={navStyle.navLink}>
-            <BsWallet2 className="me-2" size={20} />
-            Buyer
-          </Link>
+          <NavLink to="/admin/add/products" className={navStyle.navLink}>
+            <IoIosAddCircleOutline className="me-2" size={20} />
+            Add Product
+          </NavLink>
         </li>
         <li className={navStyle.navItem}>
           <Link to="/" className={navStyle.navLink}>

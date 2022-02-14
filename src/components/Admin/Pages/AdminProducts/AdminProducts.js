@@ -2,9 +2,11 @@ import React from "react";
 import productStyle from "./style/adminproducts.module.css";
 import "antd/dist/antd.min.css";
 import { Table, Popconfirm } from "antd";
+import { BsBarChart } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import { deleteProduct, getProductByCategory } from "API/trendProductAPI";
+import AdminFooter from "components/Admin/Footer/AdminFooter";
 
 const AdminProducts = () => {
   const { data, isError, isLoading, error } = useQuery(
@@ -71,13 +73,30 @@ const AdminProducts = () => {
         ),
       },
     ];
-  }, []);
+  }, [deleteMutation]);
 
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error: {error.message}</div>;
   return (
     <section id="adminProducts" className={productStyle.mainSection}>
+       <nav aria-label="breadcrumb">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item">
+            <BsBarChart className={productStyle.crumbIcon} />
+            <Link className={productStyle.breadLink} to="/admin/dashboard">
+              Admin
+            </Link>
+          </li>
+          <li
+            className={`breadcrumb-item ${productStyle.lastCrumb}`}
+            aria-current="page"
+          >
+            Products
+          </li>
+        </ol>
+      </nav>
       <Table columns={columns} dataSource={data} rowKey="_id" />
+      <AdminFooter/>
     </section>
   );
 };
