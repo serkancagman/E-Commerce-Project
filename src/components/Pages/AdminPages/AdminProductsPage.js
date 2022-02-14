@@ -1,6 +1,6 @@
 import AdminHeader from 'components/Admin/Header/AdminHeader'
 import AdminNav from 'components/Admin/Nav/AdminNav'
-import AdminProducts from 'components/Admin/Pages/AdminProducts/AdminProducts'
+import AdminProducts from 'components/Admin/AdminComponents/AdminProducts/AdminProducts'
 import React from 'react'
 
 const AdminProductsPage = () => {

@@ -25,7 +25,7 @@ const AdminProducts = () => {
         title: "ID",
         dataIndex: "_id",
         key: "_id",
-        render: (idTitle) => <a href={idTitle}>Go Product</a>,
+        render: (idTitle) => <a href={`/admin/products/${idTitle}`}>Go Product</a>,
       },
       {
         title: "Picture",

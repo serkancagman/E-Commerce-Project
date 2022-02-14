@@ -2,7 +2,7 @@ import AdminFooter from "components/Admin/Footer/AdminFooter";
 import React from "react";
 import { Form, Input, Button, InputNumber } from "antd";
 import { MinusCircleOutlined } from "@ant-design/icons";
-import addStyle from "./adminaddproduct.module.css";
+import addStyle from "./style/adminaddproduct.module.css";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { useFormik } from "formik";
 import { addProduct } from "API/trendProductAPI";
