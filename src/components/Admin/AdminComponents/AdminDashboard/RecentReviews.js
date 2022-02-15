@@ -44,7 +44,7 @@ const RecentReviews = () => {
       ];
       
   return (
-    <div className="col-md-4 col-lg-4">
+    <div className="col-md-6 col-lg-4">
       <div className={adminStyle.ordersValueWrapper}>
         <div className={adminStyle.ordersHeader}>
           <h5 className={adminStyle.ordersTitle}>Recent Reviews</h5>

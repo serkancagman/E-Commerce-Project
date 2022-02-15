@@ -272,11 +272,20 @@
     font-size: 20px !important;
   }
   .eye-icon {
-    width: 50px !important;
-    height: 50px !important;
+    width: 30px !important;
+    height: 30px !important;
   }
   .trendLinkHeader {
     font-size: 20px !important;
+  }
+  .product-box {
+    width: 100% !important;
+  }
+  .productMainImg {
+    height: 250px !important;
+    -o-object-fit: contain;
+       object-fit: contain;
+    width: 100%;
   }
 }
 

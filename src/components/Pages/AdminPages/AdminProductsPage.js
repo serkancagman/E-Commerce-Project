@@ -8,8 +8,11 @@ const AdminProductsPage = () => {
     <main className='adminMain'>
         <AdminHeader header="Products" />
         <div className="container-fluid">
-            <AdminNav />
+          <div className="row justify-content-center">
+          <AdminNav />
             <AdminProducts/>
+          </div>
+   
         </div>
     </main>
   )

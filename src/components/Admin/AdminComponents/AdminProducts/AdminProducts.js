@@ -76,9 +76,9 @@ const AdminProducts = () => {
   }, [deleteMutation]);
 
   if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error: {error.message}</div>;
+  if (isError) return <div className="lds-hourglass"></div>;
   return (
-    <section id="adminProducts" className={productStyle.mainSection}>
+    <div id="adminProducts" className="col-md-12 col-lg-10">
        <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
@@ -97,7 +97,7 @@ const AdminProducts = () => {
       </nav>
       <Table columns={columns} dataSource={data} rowKey="_id" />
       <AdminFooter/>
-    </section>
+    </div>
   );
 };
 

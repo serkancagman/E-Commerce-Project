@@ -8,7 +8,7 @@ export const AuthLoginProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(getToken ? true : false);
   const adminToken ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjIwOTA0ZGQxMTUzYzA5MzM1MWExMzJhIiwiaWF0IjoxNjQ0ODMyMzIyLCJleHAiOjE2NjAzODQzMjIsImlzcyI6ImVjb21tZXJjZS5hcHAifQ.t5PUodSZhUjHbdlD_KoMagynvrprcYYT8sK-4lFfXf4"
   const getLocalToken = localStorage.getItem("refresh-token")
-  const [isAdmin, setIsAdmin] = React.useState(adminToken === getLocalToken ? true : false);
+  const isAdmin = adminToken === getLocalToken ? true : false
   const [user, setUser] = React.useState(null);
   
  
@@ -17,7 +17,7 @@ export const AuthLoginProvider = ({ children }) => {
     (async () => {
       try {
         const me = await getMe();
-        console.log(me);
+        
   
         setIsLoggedIn(true);
         setUser(me);

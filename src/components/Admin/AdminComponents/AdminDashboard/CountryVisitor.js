@@ -38,7 +38,7 @@ const CountryVisitor = () => {
 
 
 
-  return         <div className="col-md-4 col-lg-4">
+  return         <div className="col-md-6 col-lg-4">
   <div className={adminStyle.contriesHeaderWrapper}>
     <h5 className={adminStyle.chartTitle}>
       Your Top Countries

@@ -21,45 +21,47 @@ const AdminOrders = () => {
     date: moment(order.createdAt).format("DD/MM/YYYY"),
   }})
     
-  const columns = [
-    {
-      title: 'Order ID',
-      dataIndex: 'orderId',
-      key: 'orderId',
-      render: (text, record) => (<Link to={`/admin/orders/${record.key}`} className={orderStyle.itemId} >#{text}</Link>),
-    },
-    {
-      title: 'User',
-      dataIndex: 'user',
-      key: 'user',
-    },
-    {
-      title: 'Total Price',
-      dataIndex: "total",
-      key: "total",
-      render: (total) => <span>${total}</span>,
-      
-    },
-    {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
-    },
-    {
-      title: 'Status',
-      dataIndex: 'status',
-      key: 'status',
-      render: (status) => <span className="text-success">{status}</span>,
-    },
-    {
-      title: 'Order Date',
-      dataIndex: 'date',
-      key: 'date',
-    },
-  ];
+  const columns = React.useMemo(()=>{
+    return [
+      {
+        title: 'Order ID',
+        dataIndex: 'orderId',
+        key: 'orderId',
+        render: (text, record) => (<Link to={`/admin/orders/${record.key}`} className={orderStyle.itemId} >#{text}</Link>),
+      },
+      {
+        title: 'User',
+        dataIndex: 'user',
+        key: 'user',
+      },
+      {
+        title: 'Total Price',
+        dataIndex: "total",
+        key: "total",
+        render: (total) => <span>${total}</span>,
+        
+      },
+      {
+        title: 'Address',
+        dataIndex: 'address',
+        key: 'address',
+      },
+      {
+        title: 'Status',
+        dataIndex: 'status',
+        key: 'status',
+        render: (status) => <span className="text-success">{status}</span>,
+      },
+      {
+        title: 'Order Date',
+        dataIndex: 'date',
+        key: 'date',
+      },
+    ];
+  },[]) 
 
   return (
-    <section className={orderStyle.ordersMain}>
+    <div className="col-lg-10 col-md-12">
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
@@ -78,7 +80,7 @@ const AdminOrders = () => {
       </nav>
       <Table columns={columns} dataSource={tableData} rowKey={orders._id} />
       <AdminFooter/>
-    </section>
+    </div>
   );
 };
 

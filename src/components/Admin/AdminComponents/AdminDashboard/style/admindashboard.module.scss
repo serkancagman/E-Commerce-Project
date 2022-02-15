@@ -89,7 +89,7 @@ $borderBottom: 1px solid #ebebeb;
   align-items: center;
 
   .doghnutInner {
-    width: 200px;
+    width: 30%;
   }
 }
 
@@ -130,6 +130,7 @@ $borderBottom: 1px solid #ebebeb;
   border: 1px solid $secondColor;
   padding: 0.5rem;
   border-radius: 5px;
+  margin: .5rem 0;
   color: $secondColor;
   transition: $transition;
 
@@ -398,11 +399,24 @@ $borderBottom: 1px solid #ebebeb;
   position: absolute;
   left: 0;
   top: 0;
-
+  right: 0;
+  width: 100%;
+  padding: 0 10px;
   height: 5px;
   border-radius: 5px;
 }
 .activityOverviewHeader {
   margin: 1rem 0;
   font-size: 1.25rem;
+}
+
+@media screen and (max-width:1199.99px) {
+  .ChannelPercent{
+    font-size: 16px !important;
+  }.getDataBtn{
+    font-size: 15px !important;
+    margin: 0 !important;
+  }.Channelname{
+    margin: 0 1rem !important;
+  }
 }

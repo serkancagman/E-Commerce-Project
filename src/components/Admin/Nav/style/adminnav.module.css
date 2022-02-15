@@ -66,16 +66,12 @@
 }
 
 .adminNavigation {
-  position: fixed;
-  left: 0;
-  top: 102px;
-  width: 350px;
-  padding: 0 0.5rem;
+  width: 100%;
 }
 
 .fixedNav {
   overflow-y: scroll;
-  height: 670px;
+  height: 100%;
 }
 
 .fixedNav::-webkit-scrollbar {
@@ -96,5 +92,58 @@
 .fixedNav::-webkit-scrollbar-thumb {
   background-color: #37a0bd;
   border-radius: 10px;
+}
+
+.hamburgerBtn {
+  display: none;
+  background-color: #37a0bd;
+  color: #fff;
+}
+
+.normalNav {
+  display: block;
+}
+
+.mobileNav {
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: absolute;
+  z-index: 999;
+  background-color: #f4f4ff;
+  width: 100%;
+  left: 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .normalNav {
+    display: none !important;
+  }
+  .leftMenu {
+    display: none !important;
+  }
+  .hamburgerBtn {
+    display: block !important;
+  }
+  .AdminInfo {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mobileHeader {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+  }
+  .mobileHeader div {
+    margin: 2px 0;
+  }
 }
 /*# sourceMappingURL=adminnav.module.css.map */

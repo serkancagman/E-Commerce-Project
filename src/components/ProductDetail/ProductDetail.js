@@ -14,16 +14,22 @@ import { BiMoviePlay } from "react-icons/bi";
 import adsBanner from "images/adsImage.jpg";
 import loaderImg from "images/loaderCircle.gif";
 import { ShopCartContext } from "context/ShopCartContext";
-
+import { Modal } from "antd";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 const ProductDetail = () => {
+  const [isModalVisible, setIsModalVisible] = React.useState(false);
+  const [isShowReview, setIsShowReview] = React.useState(false);
   const { addToCart, cartItems } = React.useContext(ShopCartContext);
+  const [currentPic, setCurrentPic] = React.useState();
+  const [currentPicIndex, setCurrentPicIndex] = React.useState(0);
 
-  const [showReview, setShowReview] = React.useState(false);
   const { quantity, setQuantity, handleQuantityChange } =
     React.useContext(ProductContext);
-
   const { product_id } = useParams();
-
   const findItem = cartItems.find((item) => item._id === product_id);
 
   const { data, isLoading, error } = useQuery(["product", product_id], () =>
@@ -37,9 +43,52 @@ const ProductDetail = () => {
       </div>
     );
   }
+
   if (error) {
     return <div>An error has occurred: {error.message}</div>;
   }
+
+  const handleLittlePic = (index) => {
+    if (index === 0) {
+      setCurrentPic(data.photos[0]);
+      setCurrentPicIndex(0);
+    } else if (index === 1) {
+      setCurrentPic(data.photos[1]);
+      setCurrentPicIndex(1);
+    } else if (index === 2) {
+      setCurrentPic(data.photos[2]);
+      setCurrentPicIndex(2);
+    } else if (index === 3) {
+      setCurrentPic(data.photos[3]);
+      setCurrentPicIndex(3);
+    } else if (index === 4) {
+      setCurrentPic(data.photos[4]);
+      setCurrentPicIndex(4);
+    }
+  };
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+  const showReview = () => {
+    setIsShowReview(true);
+  };
+
+  const reviewOff = () => {
+    setIsShowReview(false);
+  };
+
+  const handleCancelReview = () => {
+    setIsShowReview(false);
+  };
 
   return (
     <>
@@ -49,52 +98,34 @@ const ProductDetail = () => {
             <div className="row g-3 ">
               <div className="col-lg-4 col-md-6">
                 <div className="productDetailImg position-relative">
-                  <picture>
-                    <source srcSet={data.photos[1]} type="image/webp" />
-                    <img
-                      className="img-fluid"
-                      src={data.photos[0]}
-                      type="image/vnd.ms-photo"
-                      alt="..."
-                    />
-                  </picture>
-                  <span className="enlargeIcon">
+                  <img
+                    className="img-fluid showImage"
+                    src={currentPic || data.photos[0]}
+                    type="image/vnd.ms-photo"
+                    alt="..."
+                  />
+
+                  <span onClick={showModal} className="enlargeIcon">
                     <ImEnlarge color="red" />
                   </span>
                 </div>
-                <div className="productDetailImages d-flex justify-content-center align-items-center">
-                  <div className="productDetailImagesInner">
-                    <img
-                      className="productLittleImg"
-                      width={100}
-                      src={data.photos[0]}
-                      alt="..."
-                    />
-                  </div>
-                  <div className="productDetailImagesInner">
-                    <img
-                      className="productLittleImg"
-                      width={100}
-                      src={data.photos[0]}
-                      alt="..."
-                    />
-                  </div>
-                  <div className="productDetailImagesInner">
-                    <img
-                      className="productLittleImg"
-                      width={100}
-                      src={data.photos[0]}
-                      alt="..."
-                    />
-                  </div>
-                  <div className="productDetailImagesInner">
-                    <img
-                      className="productLittleImg"
-                      width={100}
-                      src={data.photos[0]}
-                      alt="..."
-                    />
-                  </div>
+                <div className="productDetailImages py-1 d-flex justify-content-center align-items-center">
+                  {data.photos.map((photo, index) => (
+                    <div
+                      key={index}
+                      onClick={() => handleLittlePic(index)}
+                      className={`moreProductPictures ${
+                        currentPicIndex === index && "currentPic"
+                      }`}
+                    >
+                      <img
+                        className="productLittleImg img-fluid"
+                        width={100}
+                        src={photo}
+                        alt="..."
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
               <div className="col-lg-5 col-md-6">
@@ -203,7 +234,7 @@ const ProductDetail = () => {
                     </div>
                     <button
                       className="writeRewiew"
-                      onClick={() => setShowReview(true)}
+                      onClick={showReview}
                     >
                       <HiPencil /> Write your review
                     </button>
@@ -235,15 +266,24 @@ const ProductDetail = () => {
             </div>
           </div>
         </div>
-        <WriteReview
-          showReview={showReview}
-          setShowReview={setShowReview}
-          productData={data}
-        />
-        <div
-          onClick={() => setShowReview(false)}
-          className={`reviewBg ${showReview ? " showReviewBg" : " "}`}
-        ></div>
+        <Modal footer={null} width={"80%"} title={data.title} visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+        <Swiper
+        pagination={{
+          type: "progressbar",
+        }}
+        navigation={true}
+        modules={[Pagination, Navigation]}
+        className="mySwiper"
+        
+      >
+        {data.photos.map((photo, index) => (
+          <SwiperSlide className="text-center" key={index}>
+            <img className="img-fluid bigProductImage" src={photo} alt="..." />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      </Modal>
+      <WriteReview productData={data} isShowReview={isShowReview} showReview={showReview} reviewOff={reviewOff} handleCancelReview={handleCancelReview} />
       </section>
     </>
   );

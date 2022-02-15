@@ -1,13 +1,12 @@
 import React from "react";
 import { BsStar } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
-const WriteReview = ({ productData,showReview, setShowReview }) => {
+import Modal from "antd/lib/modal/Modal";
+const WriteReview = ({ productData, isShowReview, reviewOff, handleCancelReview }) => {
   return (
-    <div className={`Review ${showReview ? "showReview" : ""}`}>
+    <Modal footer={null} title="Write your review" visible={isShowReview} onOk={reviewOff} onCancel={handleCancelReview} >
       <div className="reviewWrapper">
-        <div className="reviewHeader">
-          <h5>Write your review</h5>
-        </div>
+        
         <form className="text-center">
           <div className="reviewProduct d-flex justify-content-center align-items-center">
             <img width={100} src={productData.photos[0]} alt="..." />
@@ -62,11 +61,9 @@ const WriteReview = ({ productData,showReview, setShowReview }) => {
             <button type="submit" className="btn sendReview my-3">SEND</button>
 
         </form>
-        <span onClick={() => setShowReview(false)} className="closeReview">
-            <AiOutlineClose />
-        </span>
+        
       </div>
-    </div>
+      </Modal>
   );
 };
 

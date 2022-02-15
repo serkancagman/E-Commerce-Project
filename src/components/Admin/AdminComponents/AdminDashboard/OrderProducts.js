@@ -7,7 +7,7 @@ const OrderProducts = () => {
   const { ProductDataOptions, orderProductData, totalOrderItem } =
     React.useContext(SaleandOrderContext);
   return (
-    <div className="col-md-4 col-lg-4">
+    <div className="col-md-6 col-lg-4">
       <div className={adminStyle.productSaleChart}>
         <div className={adminStyle.productSaleInner}>
           <div className={adminStyle.productSaleIcon}>

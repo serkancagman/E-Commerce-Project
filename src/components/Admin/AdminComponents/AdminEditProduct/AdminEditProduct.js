@@ -1,4 +1,4 @@
-import { getProductDetail } from "API/trendProductAPI";
+import { getProductDetail, updateProduct } from "API/trendProductAPI";
 import AdminFooter from "components/Admin/Footer/AdminFooter";
 import React from "react";
 import { Form, Input, Button } from "antd";
@@ -10,6 +10,7 @@ import validationSchema from "./EditProductValidation";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { AiOutlineEdit } from "react-icons/ai";
+import { GrDocumentUpdate } from "react-icons/gr";
 const AdminEditProduct = () => {
   const { product_id } = useParams();
   const { data, isLoading, error } = useQuery(
@@ -44,8 +45,22 @@ const AdminEditProduct = () => {
     },
   };
 
-  const handleSubmit = (values) => {
+  const handleSubmit = async (values) => {
     console.log(values);
+    try {
+      const updateData = await updateProduct(
+        {
+          title: values.title,
+          price: values.price,
+          description: values.description,
+          photos: values.photos,
+        },
+        product_id
+      );
+      console.log(updateData);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -68,7 +83,7 @@ const AdminEditProduct = () => {
         handleSubmit,
         isSubmitting,
       }) => (
-        <section id="editProduct" className={addStyle.newProduct}>
+        <section id="editProduct" className="col-md-12 col-lg-10">
           <div className={addStyle.newProductHeader}>
             <span className={addStyle.addTitle}>Edit Product</span>
             <AiOutlineEdit className={addStyle.addIcon} />
@@ -122,12 +137,9 @@ const AdminEditProduct = () => {
                 />
               </Form.Item>
               <Form.List name="names">
-                { (fields, { add, remove }, { errors }) => (
-                   
+                {(fields, { add, remove }, { errors }) => (
                   <>
-                    {fields.map((field, index) => (
-                      
-                      
+                    {values.photos.map((field, index) => (
                       <Form.Item
                         label="Product Image"
                         required={false}
@@ -164,8 +176,8 @@ const AdminEditProduct = () => {
               </Form.List>
               <div className="text-center w-100">
                 <Button onClick={handleSubmit} type="primary">
-                  Add a new product{" "}
-                  <IoIosAddCircleOutline className={addStyle.addIconBtn} />{" "}
+                  Update Product{" "}
+                  <GrDocumentUpdate style={{color:"#fff"}} className="text-light ms-2" />
                 </Button>
               </div>
             </Form>

@@ -10,7 +10,7 @@ const SalesTotalSub = () => {
 
   return (
 
-    <div className="col-md-4 col-lg-4">
+    <div className="col-md-6 col-lg-4">
     <div className={adminStyle.ordersValueWrapper}>
       <div className={adminStyle.ordersHeader}>
         <BsCreditCard2Front className={adminStyle.ordersIcon} />

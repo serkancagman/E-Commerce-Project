@@ -9,8 +9,11 @@ const AdminOrdersPage = () => {
     <main className='adminMain'>
         <AdminHeader header="Orders" />
         <div className="container-fluid">
-            <AdminNav />
+          <div className="row justify-content-center">
+          <AdminNav />
             <AdminOrders/>
+          </div>
+           
         </div>
     </main>
   )
