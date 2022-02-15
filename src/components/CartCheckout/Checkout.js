@@ -1,66 +1,37 @@
 import { getOrder } from "API/trendProductAPI";
+import checkoutStyle from "./style/checkout.module.css";
 import { FooterMain } from "components/Footer/FooterMain";
 import { Header } from "components/Header/Header";
 import { ShopCartContext } from "context/ShopCartContext";
 import React from "react";
-
+import 'antd/dist/antd.css';
+import { Steps } from 'antd';
+import { ShoppingCartOutlined, SolutionOutlined, LoadingOutlined, SmileOutlined } from '@ant-design/icons';
+import { MdOutlineHomeWork } from "react-icons/md";
+import { BsCart3 } from "react-icons/bs";
+import { RiSecurePaymentLine } from "react-icons/ri";
 const Checkout = () => {
   const { cartItems, setCartItems } = React.useContext(ShopCartContext);
 
-  const [address, setAddress] = React.useState("");
-
-  const handleAdress = (e) => {
-    setAddress(e.target.value);
-  };
-
-  const submitForm = async (e) => {
-    e.preventDefault();
-
-    const cartIds = cartItems.map((item) => item._id);
-
-    const input = {
-      address,
-      items: JSON.stringify(cartIds),
-    };
-
-    if (cartItems.length === 0) {
-      alert("Your cart is empty");
-      return;
-    }
-
-    const responseDB = await getOrder(input);
-    console.log(responseDB);
-    setCartItems([]);
-  };
+  
 
   return (
     <>
       <Header />
       <section className="checkoutMain">
-        <div className="container-fluid">
-          <div className="col-md-12">
-            <h2>Write your adress</h2>
-            <form onSubmit={(e) => submitForm(e)}>
-              <div className="form-floating">
-                <textarea
-                  className="form-control"
-                  placeholder="Your Adress"
-                  id="floatingTextarea2"
-                  style={{ height: "100px" }}
-                  value={address}
-                  onChange={(e) => handleAdress(e)}
-                ></textarea>
-                <label htmlFor="floatingTextarea2">Comments</label>
-              </div>
-
-              <button
-                type="submit"
-                onClick={submitForm}
-                className="btn btn-primary"
-              >
-                Submit
-              </button>
-            </form>
+        <div className="container">
+          <div className={checkoutStyle.checkoutWrapper}>
+            <div className={checkoutStyle.checkoutHeader}>
+              <h3 className={checkoutStyle.checkoutTitle}>Check Your Basket.</h3>
+                </div>
+                <div className={checkoutStyle.stepWrapper}>
+                <Steps>
+    <Steps.Step status="finish" title="Check Products" style={{color:"#000"}} icon={<BsCart3 />} />
+    <Steps.Step status="finish" title="Order Address" icon={<MdOutlineHomeWork />} />
+    <Steps.Step status="finish" title="Pay" icon={<RiSecurePaymentLine />} />
+    <Steps.Step status="wait" title="Done" icon={<SmileOutlined />} />
+  </Steps>
+                </div>
           </div>
         </div>
       </section>
