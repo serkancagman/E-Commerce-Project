@@ -119,3 +119,18 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
 .BasketProductLengthValue{
     margin: 0;
 }
+
+
+// ADDRESS
+.addressWrapper{
+    padding: 0 3rem;
+}
+.addressButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.checkoutBackBtn{
+    border-color: $maincolor !important;
+    color: $maincolor !important;
+}

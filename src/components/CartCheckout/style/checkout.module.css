@@ -136,4 +136,25 @@
 .BasketProductLengthValue {
   margin: 0;
 }
+
+.addressWrapper {
+  padding: 0 3rem;
+}
+
+.addressButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkoutBackBtn {
+  border-color: #263c97 !important;
+  color: #263c97 !important;
+}
 /*# sourceMappingURL=checkout.module.css.map */

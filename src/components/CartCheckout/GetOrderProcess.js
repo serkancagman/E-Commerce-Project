@@ -1,8 +1,8 @@
 import React from "react";
 import Checkout from "./Checkout";
-import { Steps} from "antd";
+import { Steps } from "antd";
 import { SmileOutlined } from "@ant-design/icons";
-import { MdOutlineHomeWork} from "react-icons/md";
+import { MdOutlineHomeWork } from "react-icons/md";
 import checkoutStyle from "./style/checkout.module.css";
 import { BsCart3 } from "react-icons/bs";
 import { Header } from "components/Header/Header";
@@ -10,13 +10,33 @@ import AddressInformation from "./AddressInformation";
 import { RiSecurePaymentLine } from "react-icons/ri";
 import { FooterMain } from "components/Footer/FooterMain";
 const GetOrderProcess = () => {
-    const stepStatus = {
-        "checkout": false,
-        "address": false,
-        "payment": false,
-        "confirm": false,
+  let stepStatus = {
+    checkout: "process",
+    address: "wait",
+    payment: "wait",
+    confirm: "wait",
+  };
+  const [step, setStep] = React.useState(stepStatus);
+  const [getStep, setGetStep] = React.useState(0);
+  console.log(step);
+
+  React.useEffect(() => {
+    const handleSteps = (getStep) => {
+      if (getStep === 1) {
+        stepStatus.checkout = "finish";
+        stepStatus.address = "process";
+        setStep(stepStatus);
+      } else if (getStep === 2) {
+        stepStatus.address = "finish";
+        stepStatus.payment = "process";
+        setStep(stepStatus);
+      } else if (getStep === 3) {
+        stepStatus.payment = "finish";
+        stepStatus.confirm = "finish";
       }
-      const [step, setStep] = React.useState(stepStatus);
+    };
+    handleSteps(getStep);
+  }, [getStep]);
   return (
     <>
       <Header />
@@ -26,31 +46,29 @@ const GetOrderProcess = () => {
             <div className={checkoutStyle.stepWrapper}>
               <Steps className="mb-5">
                 <Steps.Step
-                  status={step.checkout === true ? "finish" : "process"}
+                  status={step.checkout}
                   title="Check Products"
-                  style={{ color: "#000" }}
                   icon={<BsCart3 />}
                 />
                 <Steps.Step
-                  status={step.address === true ? "finish" : "process"}
+                  status={step.address}
                   title="Order Address"
                   icon={<MdOutlineHomeWork />}
                 />
                 <Steps.Step
-                  status="wait"
+                  status={step.payment}
                   title="Payment"
                   icon={<RiSecurePaymentLine />}
                 />
                 <Steps.Step
-                  status="wait"
+                  status={step.confirm}
                   title="Done"
                   icon={<SmileOutlined />}
                 />
               </Steps>
             </div>
-            {step.checkout !== true && <Checkout setStep={setStep}/>}
-            {step.address !== true && <AddressInformation setStep={setStep}/>}
-            
+            {step.checkout === "process" && <Checkout setStep={setGetStep} />}
+            {step.address === "process" && <AddressInformation setStep={setGetStep} />}
           </div>
         </div>
       </section>

@@ -72,4 +72,8 @@ body {
 .ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon {
   color: #16bcdc !important;
 }
+
+.ant-steps-item-custom.ant-steps-item-process .ant-steps-item-icon > .ant-steps-icon {
+  color: #16bcdc !important;
+}
 /*# sourceMappingURL=main.css.map */

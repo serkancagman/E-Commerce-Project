@@ -101,7 +101,7 @@ const Checkout = ({ setStep }) => {
             </div>
             <div className="d-flex mt-5 justify-content-end">
               <Button
-                onClick={() => setStep({ checkout: true })}
+                onClick={() => setStep(1)}
                 className={checkoutStyle.continueBtn}
               >
                 Accept & Continue
