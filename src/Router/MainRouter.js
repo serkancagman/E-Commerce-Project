@@ -14,6 +14,7 @@ import RegisterPage from "components/Pages/RegisterPage";
 import LoginPage from "components/Pages/LoginPage";
 import AdminAddProductPage from "components/Pages/AdminPages/AdminAddProductPage";
 import AdminEditProductPage from "components/Pages/AdminPages/AdminEditProductPage";
+import GetOrderProcess from "components/CartCheckout/GetOrderProcess";
 
 
 const MainRouter = () => {
@@ -35,7 +36,7 @@ const MainRouter = () => {
         <Route path="/admin/products/:product_id" element={<ProtectedAdminRoute><AdminEditProductPage /></ProtectedAdminRoute>}/>
         <Route path="/admin/products" element={<ProtectedAdminRoute><AdminProductsPage /></ProtectedAdminRoute>}/>
         <Route path="/admin/add/products" element={<ProtectedAdminRoute><AdminAddProductPage /></ProtectedAdminRoute>}/>
-        <Route path="/cartcheckout" element={<Checkout />} /> 
+        <Route path="/cartcheckout" element={<GetOrderProcess />} /> 
       </Routes>
     </>
   );

@@ -64,4 +64,12 @@ body {
             transform: rotate(1800deg);
   }
 }
+
+.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title:after {
+  background-color: #16bcdc !important;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon {
+  color: #16bcdc !important;
+}
 /*# sourceMappingURL=main.css.map */

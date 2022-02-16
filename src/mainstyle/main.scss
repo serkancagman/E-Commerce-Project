@@ -1,6 +1,11 @@
 @import "./variables.scss";
-
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+$maincolor: #263c97;
+$secondcolor: #16bcdc;
+$transition: all 0.3s linear;
+$navBorder: 1px solid rgba(255, 255, 255, 0.164);
+
 
 body {
   font-family: "Rubik", sans-serif;
@@ -37,4 +42,15 @@ body {
   100% {
     transform: rotate(1800deg);
   }
+}
+
+
+
+// CART CHECKOUT STEP COMPONENT
+
+.ant-steps-item-finish>.ant-steps-item-container>.ant-steps-item-content>.ant-steps-item-title:after {
+  background-color: $secondcolor !important;
+}
+.ant-steps-item-finish .ant-steps-item-icon>.ant-steps-icon{
+  color: $secondcolor !important;
 }
