@@ -15,7 +15,7 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
 .productLittleImg {
   
   cursor: pointer;
-  margin: 0 5px;
+  
   width: 100%;
 }
 .enlargeIcon {
@@ -38,6 +38,11 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
 }
 .productDetailImg{
   border-bottom: 1px solid #94949446;
+  width: 100%;
+  text-align: center;
+}
+.showImage{
+  width: 80%;
 }
 .productDetailPrice {
   color: $secondcolor;
@@ -356,4 +361,23 @@ font-weight: 600;
   &:hover{
     color: #fff !important;
   }
+}
+
+.moreProductPictures{
+  border: 2px solid transparent;
+  border-radius: 5px;
+  width: 100px;
+  margin: 0 2px ;
+  transition: $transition;
+}
+
+.currentPic{
+  border: 2px solid $secondcolor !important;
+}
+
+.bigProductImage{
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+  object-fit: cover;
 }

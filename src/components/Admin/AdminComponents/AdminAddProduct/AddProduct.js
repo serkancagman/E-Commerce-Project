@@ -1,8 +1,8 @@
 import AdminFooter from "components/Admin/Footer/AdminFooter";
 import React from "react";
-import { Form, Input, Button, InputNumber } from "antd";
+import { Form, Input, Button } from "antd";
 import { MinusCircleOutlined } from "@ant-design/icons";
-import addStyle from "./adminaddproduct.module.css";
+import addStyle from "./style/adminaddproduct.module.css";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { useFormik } from "formik";
 import { addProduct } from "API/trendProductAPI";
@@ -25,7 +25,7 @@ const AddProduct = () => {
             description: values.description,
             photos: JSON.stringify(values.photos),
           });
-          console.log(addProduct);
+          console.log(addProductData);
         } catch (err) {
           console.log(err);
         }
@@ -52,7 +52,7 @@ const AddProduct = () => {
     },
   };
   return (
-    <section className={addStyle.newProduct}>
+    <div className="col-lg-10 col-md-12">
       <div className={addStyle.newProductHeader}>
         <span className={addStyle.addTitle}>Add a new product</span>
         <IoIosAddCircleOutline className={addStyle.addIcon} />
@@ -147,7 +147,7 @@ const AddProduct = () => {
       </div>
 
       <AdminFooter />
-    </section>
+    </div>
   );
 };
 

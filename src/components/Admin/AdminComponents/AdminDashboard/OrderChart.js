@@ -32,7 +32,7 @@ const OrderChart = () => {
       );
       ChartJS.register(CategoryScale, LinearScale, PointElement, BarElement);
   return (
-    <div className="col-md-4 col-lg-4">
+    <div className="col-md-6 col-lg-4">
       <div className={adminStyle.ordersValueWrapper}>
         <div className={adminStyle.ordersHeader}>
           <BsBasket className={adminStyle.ordersIcon} />

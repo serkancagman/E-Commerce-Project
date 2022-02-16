@@ -1,5 +1,5 @@
 import React from "react";
-import adminStyle from "components/Admin/Pages/AdminDashboard/style/admindashboard.module.css";
+import adminStyle from "./style/admindashboard.module.css";
 import { Doughnut } from "react-chartjs-2";
 import { AiOutlineQuestionCircle,AiOutlineDownload } from "react-icons/ai";
 import { Link } from "react-router-dom";

@@ -224,10 +224,18 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
   font-size: 20px !important;
 }
 .eye-icon{
-  width: 50px !important;
-  height: 50px !important;
+  width: 30px !important;
+  height: 30px !important;
 }.trendLinkHeader{
   font-size: 20px !important;
+}
+.product-box{
+  width: 100% !important;
+  
+}.productMainImg{
+  height: 250px !important;
+  object-fit: contain;
+  width: 100%;
 }
 }
 @media screen and (max-width:768px){

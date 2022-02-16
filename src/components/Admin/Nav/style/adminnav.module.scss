@@ -58,16 +58,12 @@ $borderBottom: 1px solid #ebebeb;
 }
 
 .adminNavigation {
-  position: fixed;
-  left: 0;
-  top: 102px;
-
-  width: 350px;
-  padding: 0 0.5rem;
+  
+  width: 100%;
 }
 .fixedNav {
   overflow-y: scroll;
-  height: 670px;
+  height: 100%;
   &::-webkit-scrollbar {
     display: none;
     width: 7px;
@@ -87,3 +83,50 @@ $borderBottom: 1px solid #ebebeb;
     border-radius: 10px;
   }
 } 
+.hamburgerBtn{
+  display: none;
+  background-color: #37a0bd;
+  color: #fff;
+}
+.normalNav{
+  display: block;
+}
+.mobileNav{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: absolute;
+  z-index: 999;
+  background-color: #f4f4ff;
+  width: 100%;
+  left: 0;
+}
+
+@media screen and (max-width:1200px){
+  .normalNav {
+    display: none !important;
+  }
+  .leftMenu{
+    display: none !important;
+  }
+  .hamburgerBtn{
+    display: block !important;
+  }
+ .AdminInfo{
+   display: none !important;
+ }
+  
+}
+
+@media screen and (max-width:768px){
+
+.mobileHeader{
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  div{
+    margin: 2px 0;
+   
+  }
+}
+  
+}

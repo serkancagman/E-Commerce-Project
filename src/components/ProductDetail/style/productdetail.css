@@ -9,7 +9,6 @@
 
 .productLittleImg {
   cursor: pointer;
-  margin: 0 5px;
   width: 100%;
 }
 
@@ -37,6 +36,12 @@
 
 .productDetailImg {
   border-bottom: 1px solid #94949446;
+  width: 100%;
+  text-align: center;
+}
+
+.showImage {
+  width: 80%;
 }
 
 .productDetailPrice {
@@ -410,5 +415,26 @@
 
 .removeFromBasket:hover {
   color: #fff !important;
+}
+
+.moreProductPictures {
+  border: 2px solid transparent;
+  border-radius: 5px;
+  width: 100px;
+  margin: 0 2px;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.currentPic {
+  border: 2px solid #16bcdc !important;
+}
+
+.bigProductImage {
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=productdetail.css.map */

@@ -1,15 +1,20 @@
 import React from "react";
 import AdminStyle from "./style/adminheader.module.css";
-import { Link } from "react-router-dom";
+import navStyle from "../Nav/style/adminnav.module.css";
+import { Link,NavLink } from "react-router-dom";
 import Logo from "images/adminlogo.png";
-import { BsSearch, BsPlusCircle, BsCart2 } from "react-icons/bs";
+import { BsSearch, BsPlusCircle, BsCart2, BsBarChart, BsTruck, BsFillPersonLinesFill } from "react-icons/bs";
 import { MdNotifications } from "react-icons/md";
+import { RiBillLine } from "react-icons/ri";
+import { IoIosAddCircleOutline } from "react-icons/io";
+import { GiHamburgerMenu } from "react-icons/gi";
 const AdminHeader = ({header}) => {
   return (
     <header className={`py-3 mb-2 ${AdminStyle.MainHeader}`}>
       <div className="container-fluid">
-        <div className="row justify-content-between align-items-center">
-          <div className="col-md-3 col-lg-3">
+        <div className={`row justify-content-between align-items-center ${navStyle.mobileHeader}`}>
+          <div className="col-md-3 col-lg-3 position-relative">
+            <div className="d-flex justify-content-between align-items-center">
             <Link to="/admin" className={`navbar-brand ${AdminStyle.navBrand}`}>
               <img
                 className={`img-fluid ${AdminStyle.logo}`}
@@ -17,6 +22,49 @@ const AdminHeader = ({header}) => {
                 alt="logo"
               />
             </Link>
+            
+            <button class={`btn ${navStyle.hamburgerBtn}`} type="button" data-bs-toggle="collapse" data-bs-target="#adminMobileNav" aria-expanded="false" aria-controls="collapseExample">
+      <GiHamburgerMenu/>
+  </button>
+  </div>
+
+  <div id="adminMobileNav" className="navbar-collapse collapse">
+    <div className="w-100">
+    <ul className={`${navStyle.navbarNav} ${navStyle.mobileNav}`}>
+        <h6 className={navStyle.navSubHeader}>E-commerce</h6>
+        <li className={navStyle.navItem}>
+          <NavLink to="/admin/dashboard" className={navStyle.navLink}>
+            <BsBarChart className="me-2" size={20} /> Dashboard
+          </NavLink>
+        </li>
+        <li className={`dropdown ${navStyle.navItem}`}>
+          <NavLink   to="/admin/orders" className={navStyle.navLink}>
+            <RiBillLine className="me-2" size={20} />
+            Orders
+          </NavLink>
+        </li>
+        <li className={navStyle.navItem}>
+          <NavLink to="/admin/products" className={navStyle.navLink}>
+            {" "}
+            <BsTruck className="me-2" size={20} />
+            Products
+          </NavLink>
+        </li>
+        <li className={navStyle.navItem}>
+          <NavLink to="/admin/add/products" className={navStyle.navLink}>
+            <IoIosAddCircleOutline className="me-2" size={20} />
+            Add Product
+          </NavLink>
+        </li>
+        <li className={navStyle.navItem}>
+          <Link to="/" className={navStyle.navLink}>
+            <BsFillPersonLinesFill className="me-2" size={20} />
+            Customers
+          </Link>
+        </li>
+      </ul>
+    </div>
+    </div>
           </div>
 
           <div className="col-md-6 col-lg-6">

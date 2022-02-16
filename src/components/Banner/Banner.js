@@ -16,7 +16,7 @@ export const Banner = () => {
         <div className="row justify-content-center align-items-center">
           <div className="col-lg-7 col-md-12">
             <Swiper
-              pagination={true}
+              
               slidesPerView={1}
               spaceBetween={35}
               autoplay={{ delay: 5000 }}

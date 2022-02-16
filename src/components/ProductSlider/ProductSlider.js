@@ -33,20 +33,20 @@ const ProductSlider = ({ data, loading, header, error }) => {
                 loop={true}
                 cssMode={true}
                 
-                pagination
+                
                 navigation
                 loopFillGroupWithBlank={true}
                 breakpoints={{
                   275: {
                     slidesPerView: 1,
-                  
+                    spaceBetween: 10,
                   },
                   640: {
                     slidesPerView: 2,
                     
                   },
                   768: {
-                    slidesPerView: 4,
+                    slidesPerView: 3,
                   },
                   700: {
                     slidesPerView: 4,

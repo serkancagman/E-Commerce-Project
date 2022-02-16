@@ -114,7 +114,7 @@
 }
 
 .doughnutChart .doghnutInner {
-  width: 200px;
+  width: 30%;
 }
 
 .doughnutTitle {
@@ -167,6 +167,7 @@
   border: 1px solid #37a0bd;
   padding: 0.5rem;
   border-radius: 5px;
+  margin: .5rem 0;
   color: #37a0bd;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -549,6 +550,9 @@
   position: absolute;
   left: 0;
   top: 0;
+  right: 0;
+  width: 100%;
+  padding: 0 10px;
   height: 5px;
   border-radius: 5px;
 }
@@ -556,5 +560,18 @@
 .activityOverviewHeader {
   margin: 1rem 0;
   font-size: 1.25rem;
+}
+
+@media screen and (max-width: 1199.99px) {
+  .ChannelPercent {
+    font-size: 16px !important;
+  }
+  .getDataBtn {
+    font-size: 15px !important;
+    margin: 0 !important;
+  }
+  .Channelname {
+    margin: 0 1rem !important;
+  }
 }
 /*# sourceMappingURL=admindashboard.module.css.map */

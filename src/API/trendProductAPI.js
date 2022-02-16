@@ -114,3 +114,13 @@ export const addProduct = async (productData) => {
   
   return data;
 }
+
+// UPDATE PRODUCT API
+
+    export const updateProduct = async (productData,product_id) => {
+      const { data } = await axios.put(
+        `${process.env.REACT_APP_BACKEND_ENDPOINT}/product/${product_id}`,productData
+      );
+      
+      return data;
+    }

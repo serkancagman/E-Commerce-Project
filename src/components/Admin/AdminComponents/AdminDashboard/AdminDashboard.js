@@ -1,5 +1,4 @@
 import React from "react";
-import adminStyle from "./style/admindashboard.module.css";
 import SalesChart from "./SalesChart";
 import { VisitorChannel } from "./VisitorChannel";
 import OrderChart from "./OrderChart";
@@ -13,7 +12,7 @@ import AdminFooter from "components/Admin/Footer/AdminFooter";
 const AdminDashboard = () => {
   return (
     <>
-    <section className={adminStyle.dashboardMain}>
+    <div className="col-md-12 col-lg-10">
       <div className="row justify-content-between g-4 flex-wrap">
         <SalesChart />
         <VisitorChannel />
@@ -26,7 +25,7 @@ const AdminDashboard = () => {
         <ActivityOverview/>
         <AdminFooter/>
       </div>
-    </section>
+    </div>
     
     </>
   );

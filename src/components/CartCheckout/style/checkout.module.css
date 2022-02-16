@@ -1,0 +1,139 @@
+.checkoutTitle {
+  display: inline-block;
+}
+
+.stepWrapper {
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.checkoutWrapper {
+  background-color: #fff;
+  margin: 2rem 0;
+  padding: 2rem;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.basketProductName {
+  font-size: .8rem;
+  font-weight: bold;
+  min-height: 40px;
+  display: block;
+}
+
+.basketProduct {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+          box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  width: 100%;
+  margin: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+.basketImg {
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.basketProductImg {
+  width: 100px;
+}
+
+.basketProductInfo {
+  width: 100%;
+  padding: 10px;
+  text-align: start;
+  height: 100%;
+  background-color: rgba(240, 240, 240, 0.486);
+}
+
+.basketProductPrice {
+  font-size: 15px;
+}
+
+.priceValue {
+  font-weight: 550;
+  color: #16bcdc !important;
+}
+
+.removeCartBtn {
+  color: #fff !important;
+  background-color: #c21212 !important;
+  border-color: #c21212 !important;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.basketProductQuantity {
+  margin: 0 !important;
+}
+
+.checkoutSummaryItemTitle {
+  font-size: 15px;
+  margin: 0 !important;
+}
+
+.checkoutSummaryItemValue {
+  margin: 0 !important;
+  font-size: 15px;
+  font-weight: bold;
+  color: #16bcdc !important;
+}
+
+.checkoutSummary {
+  padding: 0 1rem;
+}
+
+.checkoutSummaryItemTotal {
+  margin: 0;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.checkoutSummaryItemTotalValue {
+  margin: 0 !important;
+  font-weight: bold;
+  font-size: 16px;
+  color: #16bcdc !important;
+}
+
+.summaryItem {
+  padding: 10px 0;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.summaryItem:last-child {
+  border-bottom: none;
+}
+
+.continueBtn {
+  color: #fff !important;
+  background-color: #263c97 !important;
+  border-radius: 5px;
+  border-color: #16bcdc !important;
+  outline: 1;
+}
+
+.BasketProductLength {
+  margin: 1rem 0;
+}
+
+.BasketProductLengthValue {
+  margin: 0;
+}
+/*# sourceMappingURL=checkout.module.css.map */
