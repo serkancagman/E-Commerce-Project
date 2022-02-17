@@ -1,11 +1,12 @@
 import { getOrder } from "API/trendProductAPI";
-import checkoutStyle from "./style/checkout.module.css";
+import checkoutStyle from "../style/checkout.module.css";
 import { Button } from "antd";
 import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 import { ShopCartContext } from "context/ShopCartContext";
 import React from "react";
 import { Link } from "react-router-dom";
 import "antd/dist/antd.css";
+import ContentLoader from "react-content-loader";
 
 const Checkout = ({ setStep }) => {
   const { cartItems, addToCart, setCartItems, cartSub, shipping, cartTotal } =
