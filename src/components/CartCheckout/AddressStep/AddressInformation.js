@@ -3,16 +3,12 @@ import { Button, Form, Input, Select } from "antd";
 import addressStyle from "../style/checkout.module.css";
 import { countryCode } from "components/Helpers/PhoneCountryCode";
 import Checkbox from "antd/lib/checkbox/Checkbox";
-<<<<<<< HEAD:src/components/CartCheckout/AddressInformation.js
 import { useFormik } from "formik";
 import validationSchema from "./AddressValidation";
 import Lottie from "lottie-react";
 import checkoutAnimation from "./Progress/checkoutAnimation.json";
 import { ToOrderContext } from "context/ToOrderContext";
 const AdressInformation = () => {
-=======
-const AdressInformation = ({ setStep }) => {
->>>>>>> product-slider:src/components/CartCheckout/AddressStep/AddressInformation.js
   const { Option } = Select;
   const [livePhoneCode, setLivePhoneCode] = React.useState("");
   const [liveCountryName, setLiveCountryName] = React.useState("");
@@ -51,7 +47,7 @@ const AdressInformation = ({ setStep }) => {
       },
     });
 
-<<<<<<< HEAD:src/components/CartCheckout/AddressInformation.js
+
 
      
   React.useEffect(() => {
@@ -62,8 +58,6 @@ const AdressInformation = ({ setStep }) => {
     setLiveCountryName(getCountryName.length > 0 && getCountryName[0].name);
   }, [livePhoneCode]);
 
-=======
->>>>>>> product-slider:src/components/CartCheckout/AddressStep/AddressInformation.js
   const handleCheckbox = (value) => {
     value === true ? setCheckedBill(true) : setCheckedBill(false);
   };
@@ -122,16 +116,12 @@ const AdressInformation = ({ setStep }) => {
             </Form.Item>
           </div>
           <div className="col-md-12 col-lg-6">
-<<<<<<< HEAD:src/components/CartCheckout/AddressInformation.js
+
             <Form.Item help={errors.phone && touched.phone && errors.phone} validateStatus={errors.phone && touched.phone && "error"} label="Phone Number">
               <Input
                 name="phone"
                 onChange={handleChange}
-=======
-            <Form.Item label="Phone Number">
-              <Input
-                name="phone"
->>>>>>> product-slider:src/components/CartCheckout/AddressStep/AddressInformation.js
+
                 addonBefore={prefixSelector}
                 style={{
                   width: "100%",
@@ -141,7 +131,7 @@ const AdressInformation = ({ setStep }) => {
           </div>
           <div className="col-md-12 col-lg-6">
             <Form.Item label="Country">
-<<<<<<< HEAD:src/components/CartCheckout/AddressInformation.js
+
               <Select
                 name="country"
                 onChange={(value) => setLiveCountryName(value)}
@@ -152,13 +142,7 @@ const AdressInformation = ({ setStep }) => {
                 {countryCode.map((code, index) => {
                   return (
                     <Option
-=======
-              <Select showSearch style={{ width: "100%" }}>
-                {countryCode.map((code, index) => {
-                  return (
-                    <Option
-                      selected={code.dial_code === "+90"}
->>>>>>> product-slider:src/components/CartCheckout/AddressStep/AddressInformation.js
+
                       key={index}
                       value={code.name}
                     >{` ${code.flag} ${code.name}`}</Option>
@@ -168,7 +152,7 @@ const AdressInformation = ({ setStep }) => {
             </Form.Item>
           </div>
           <div className="col-md-12 col-lg-6">
-<<<<<<< HEAD:src/components/CartCheckout/AddressInformation.js
+
             <Form.Item help={errors.city && touched.city && errors.city} validateStatus={errors.city && touched.city && "error"} label="City">
               <Input name="city" onChange={handleChange} />
             </Form.Item>
@@ -191,15 +175,11 @@ const AdressInformation = ({ setStep }) => {
                 showCount
                 maxLength={200}
               />
-=======
-            <Form.Item label="City">
-              <Input />
             </Form.Item>
           </div>
           <div className="col-md-12 col-lg-12">
             <Form.Item label="Address">
               <Input.TextArea name="address" showCount maxLength={200} />
->>>>>>> product-slider:src/components/CartCheckout/AddressStep/AddressInformation.js
             </Form.Item>
           </div>
           <div className="col-lg-12">
@@ -217,7 +197,6 @@ const AdressInformation = ({ setStep }) => {
           </div>
           {checkedBill && (
             <div className="col-md-12 col-lg-12">
-<<<<<<< HEAD:src/components/CartCheckout/AddressInformation.js
               <Form.Item help={errors.billAddress && touched.billAddress && errors.billAddress} validateStatus={errors.billAddress && touched.billAddress && "error"} label="Bill Address">
                 <Input.TextArea
                   name="billAddress"
@@ -225,32 +204,19 @@ const AdressInformation = ({ setStep }) => {
                   showCount
                   maxLength={200}
                 />
-=======
-              <Form.Item label="Bill Address">
-                <Input.TextArea name="address" showCount maxLength={200} />
->>>>>>> product-slider:src/components/CartCheckout/AddressStep/AddressInformation.js
               </Form.Item>
             </div>
           )}
           <div className="col-lg-12">
             <div className={addressStyle.addressButtons}>
-<<<<<<< HEAD:src/components/CartCheckout/AddressInformation.js
+
               <Button className={addressStyle.checkoutBackBtn}>
                 Back to Check Products
               </Button>
               <Button
               type="submit"
                 onClick={handleSubmit}
-=======
-              <Button
-                onClick={() => setStep(0)}
-                className={addressStyle.checkoutBackBtn}
-              >
-                Back to Check Products
-              </Button>
-              <Button
-                onClick={() => setStep(2)}
->>>>>>> product-slider:src/components/CartCheckout/AddressStep/AddressInformation.js
+
                 className={`mx-1 ${addressStyle.continueBtn}`}
               >
                 Save Address & Continue
