@@ -1,17 +1,21 @@
 import { getOrder } from "API/trendProductAPI";
-import checkoutStyle from "./style/checkout.module.css";
+import checkoutStyle from "../style/checkout.module.css";
 import { Button } from "antd";
 import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 import { ShopCartContext } from "context/ShopCartContext";
 import React from "react";
 import { Link } from "react-router-dom";
 import "antd/dist/antd.css";
+<<<<<<< HEAD:src/components/CartCheckout/Checkout.js
 import { ToOrderContext } from "context/ToOrderContext";
 import Lottie from "lottie-react";
 import checkoutAnimation from "./Progress/checkoutAnimation.json";
 const Checkout = () => {
   const [checkoutLoader, setCheckoutLoader] = React.useState(false);
   const { setGetStep } = React.useContext(ToOrderContext);
+=======
+import ContentLoader from "react-content-loader";
+>>>>>>> product-slider:src/components/CartCheckout/CheckoutProductStep/Checkout.js
 
   const { cartItems, addToCart, setCartItems, cartSub, shipping, cartTotal } =
     React.useContext(ShopCartContext);

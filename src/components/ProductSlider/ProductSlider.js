@@ -7,11 +7,29 @@ import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { FaRegEye } from "react-icons/fa";
 import { ShopCartContext } from "context/ShopCartContext";
+import ContentLoader from "react-content-loader";
 import "./style/productslider.css";
+import { MobileProductSLiderSkeleton, ProductSkeleton } from "components/Loader/SkeletonLoader";
 const ProductSlider = ({ data, loading, header, error }) => {
   SwiperCore.use([FreeMode, Pagination, Navigation, Autoplay, Mousewheel]);
   const { addToCart, cartItems } = React.useContext(ShopCartContext);
-  if (loading) return "Loading...";
+  if (loading){
+    if(window.innerWidth <= 414){
+      return (
+        <div className="container-fluid my-2">
+          <div className="h-100 d-flex justify-content-center pe-2 w-100">
+          <MobileProductSLiderSkeleton/>
+        </div>
+          </div>
+      )
+    }else{
+      return(
+        <div className="d-flex justify-content-center w-100">
+          <ProductSkeleton/>
+        </div>
+      )
+    }
+  }
 
   if (error) return "An error has occurred: " + error.message;
 

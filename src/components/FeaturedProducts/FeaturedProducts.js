@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { trendProductAPI } from "../../API/trendProductAPI";
 import { useQuery } from "react-query";
 import { ShopCartContext } from "context/ShopCartContext";
+import { MobileProductSLiderSkeleton, TopFeaturedSKeleton } from "components/Loader/SkeletonLoader";
 export const FeaturedProducts = () => {
 
   const {addToCart, cartItems} = React.useContext(ShopCartContext);
@@ -15,8 +16,23 @@ export const FeaturedProducts = () => {
     isLoading
   } = useQuery("repoData", trendProductAPI)
 
-  if (isLoading) return "Loading...";
-
+  if (isLoading){
+    if(window.innerWidth <= 414){
+      return (
+        <div className="container-fluid my-2">
+          <div className="h-100 d-flex justify-content-center pe-2 w-100">
+          <MobileProductSLiderSkeleton/>
+        </div>
+          </div>
+      )
+    }else{
+      return(
+        <div className="d-flex justify-content-center w-100">
+          <TopFeaturedSKeleton/>
+        </div>
+      )
+    }
+  }
   if (error) return "An error has occurred: " + error.message;
 
   return (
