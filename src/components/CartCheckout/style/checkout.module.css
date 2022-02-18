@@ -9,6 +9,7 @@
 
 .checkoutWrapper {
   background-color: #fff;
+  position: relative;
   margin: 2rem 0;
   padding: 2rem;
   -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -26,7 +27,6 @@
   -webkit-box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
           box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   width: 100%;
-  margin: 0 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -137,6 +137,27 @@
   margin: 0;
 }
 
+.checkoutWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.checkoutLoader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  z-index: 9;
+  background-color: rgba(255, 255, 255, 0.788);
+}
+
+.checkoutAnimation {
+  width: 150px;
+}
+
 .addressWrapper {
   padding: 0 3rem;
 }
@@ -156,5 +177,24 @@
 .checkoutBackBtn {
   border-color: #263c97 !important;
   color: #263c97 !important;
+}
+
+@media screen and (max-width: 414px) {
+  .addressWrapper {
+    padding: 0 !important;
+  }
+  .addressButtons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .continueBtn {
+    width: 100%;
+    margin: .5rem 0;
+  }
+  .checkoutBackBtn {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=checkout.module.css.map */
