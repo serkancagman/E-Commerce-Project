@@ -4,9 +4,9 @@ import addressStyle from "../style/checkout.module.css";
 import { countryCode } from "components/Helpers/PhoneCountryCode";
 import Checkbox from "antd/lib/checkbox/Checkbox";
 import { useFormik } from "formik";
-import validationSchema from "./AddressValidation";
+import validationSchema from "../AddressValidation";
 import Lottie from "lottie-react";
-import checkoutAnimation from "./Progress/checkoutAnimation.json";
+import checkoutAnimation from "../Progress/checkoutAnimation.json";
 import { ToOrderContext } from "context/ToOrderContext";
 const AdressInformation = () => {
   const { Option } = Select;

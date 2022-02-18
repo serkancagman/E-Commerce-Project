@@ -14,44 +14,6 @@ import Payment from "./Payment";
 const GetOrderProcess = () => {
 
   const {step} = React.useContext(ToOrderContext)
-
-  let stepStatus = {
-    checkout: "process",
-    address: "wait",
-    payment: "wait",
-    confirm: "wait",
-  };
-  const [step, setStep] = React.useState(stepStatus);
-  const [getStep, setGetStep] = React.useState(0);
-  console.log(step);
-
-  React.useEffect(() => {
-    const handleSteps = (getStep) => {
-      if(getStep === 0){
-        setStep({
-          checkout: "process",
-          address: "wait",
-          payment: "wait",
-          confirm: "wait",
-        });
-      }
-      if (getStep === 1) {
-        stepStatus.checkout = "finish";
-        stepStatus.address = "process";
-        setStep(stepStatus);
-      } else if (getStep === 2) {
-        stepStatus.checkout = "finish";
-        stepStatus.address = "finish";
-        stepStatus.payment = "process";
-        setStep(stepStatus);
-      } else if (getStep === 3) {
-        stepStatus.payment = "finish";
-        stepStatus.confirm = "finish";
-      }
-    };
-    handleSteps(getStep);
-  }, [getStep]);
-
   return (
     <>
       <Header />
