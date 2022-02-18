@@ -9,7 +9,7 @@ import "antd/dist/antd.css";
 
 import { ToOrderContext } from "context/ToOrderContext";
 import Lottie from "lottie-react";
-import checkoutAnimation from "./Progress/checkoutAnimation.json";
+import checkoutAnimation from "../Progress/checkoutAnimation.json";
 const Checkout = () => {
   const [checkoutLoader, setCheckoutLoader] = React.useState(false);
   const { setGetStep } = React.useContext(ToOrderContext);
