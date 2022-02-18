@@ -4,7 +4,7 @@ import addressStyle from "../style/checkout.module.css";
 import { countryCode } from "components/Helpers/PhoneCountryCode";
 import Checkbox from "antd/lib/checkbox/Checkbox";
 import { useFormik } from "formik";
-import validationSchema from "../AddressValidation";
+import validationSchema from "./AddressValidation";
 import Lottie from "lottie-react";
 import checkoutAnimation from "../Progress/checkoutAnimation.json";
 import { ToOrderContext } from "context/ToOrderContext";
@@ -175,11 +175,6 @@ const AdressInformation = () => {
                 showCount
                 maxLength={200}
               />
-            </Form.Item>
-          </div>
-          <div className="col-md-12 col-lg-12">
-            <Form.Item label="Address">
-              <Input.TextArea name="address" showCount maxLength={200} />
             </Form.Item>
           </div>
           <div className="col-lg-12">

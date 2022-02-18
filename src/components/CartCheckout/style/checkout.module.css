@@ -17,7 +17,7 @@
 }
 
 .basketProductName {
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: bold;
   min-height: 40px;
   display: block;
@@ -191,10 +191,216 @@
   }
   .continueBtn {
     width: 100%;
-    margin: .5rem 0;
+    margin: 0.5rem 0;
   }
   .checkoutBackBtn {
     width: 100%;
   }
+}
+
+.paymentHeader {
+  width: 120px;
+}
+
+.payCounter {
+  font-size: 21px;
+  margin: 0 1rem;
+  font-weight: 600;
+}
+
+.paymentCard {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.paymentCardInner {
+  width: 370px;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+.paymentCardArea {
+  background-image: radial-gradient(circle farthest-corner at 10% 20%, #61baff 0%, #a6effd 90.1%);
+  -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.paymentCardBack {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle farthest-corner at 10% 20%, #61baff 0%, #a6effd 90.1%);
+  -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.paymentCardBackInner {
+  padding: 1rem 0;
+}
+
+.paymentCardChip {
+  width: 60px;
+}
+
+.contactlessIcon {
+  background-color: transparent;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  width: 50px;
+}
+
+.cardNumberArea {
+  text-align: start;
+  margin: 0.5rem 0;
+}
+
+.cardNumberShow {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 25px;
+  font-weight: bold;
+  color: #333;
+  width: 100%;
+}
+
+.cardNumberShow::-webkit-input-placeholder {
+  font-size: 35px;
+}
+
+.cardNumberShow:-ms-input-placeholder {
+  font-size: 35px;
+}
+
+.cardNumberShow::-ms-input-placeholder {
+  font-size: 35px;
+}
+
+.cardNumberShow::placeholder {
+  font-size: 35px;
+}
+
+.cardTitles {
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.cardNameShow {
+  border: none;
+  outline: none;
+  font-weight: bold;
+  color: #333;
+  background-color: transparent;
+  font-size: 16px;
+  width: 100%;
+}
+
+.cardNameShow::-webkit-input-placeholder {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cardNameShow:-ms-input-placeholder {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cardNameShow::-ms-input-placeholder {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cardNameShow::placeholder {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cardExpireShow {
+  width: 100px;
+  border: none;
+  font-weight: bold;
+  color: #333;
+  outline: none;
+  background-color: transparent;
+  font-size: 16px;
+}
+
+.cardExpireShow::-webkit-input-placeholder {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cardExpireShow:-ms-input-placeholder {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cardExpireShow::-ms-input-placeholder {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cardExpireShow::placeholder {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.paymentCardCVVArea {
+  margin: 1.5rem 0;
+  padding: 1rem 0;
+  width: 100%;
+  background-color: rgba(243, 243, 243, 0.486);
+}
+
+.cardCVV {
+  border: none;
+  outline: none;
+  font-weight: bold;
+  color: #333;
+  background-color: transparent;
+  font-size: 16px;
+  width: 60px;
+  text-align: center;
+}
+
+.cardCVV::-webkit-input-placeholder {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cardCVV:-ms-input-placeholder {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cardCVV::-ms-input-placeholder {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cardCVV::placeholder {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.paymentCardCVVFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=checkout.module.css.map */

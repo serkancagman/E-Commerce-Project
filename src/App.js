@@ -7,7 +7,7 @@ import { AuthLoginProvider } from "context/AuthLoginContext";
 import { ShopCartProvider } from "context/ShopCartContext";
 import { SaleandOrderProvider } from "context/AdminContext/SaleandOrderContext";
 import { ToOrderProvider } from "context/ToOrderContext";
-
+import { PaymentFormProvider } from "context/PaymentFormContext";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -27,7 +27,9 @@ function App() {
             <HeaderProvider>
               <SaleandOrderProvider>
                 <ToOrderProvider>
+                  <PaymentFormProvider>
                 <MainRouter />
+                </PaymentFormProvider>
                 </ToOrderProvider>
               </SaleandOrderProvider>
             </HeaderProvider>

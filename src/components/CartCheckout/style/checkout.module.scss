@@ -1,175 +1,295 @@
-
 $maincolor: #263c97;
 $secondcolor: #16bcdc;
 $transition: all 0.3s linear;
 $navBorder: 1px solid rgba(255, 255, 255, 0.164);
 
-
-
-
-
-.checkoutTitle{
-    display: inline-block;
-    
+.checkoutTitle {
+  display: inline-block;
 }
-.stepWrapper{
-    margin: 1rem 0;
-    width: 100%;
+.stepWrapper {
+  margin: 1rem 0;
+  width: 100%;
 }
-.checkoutWrapper{
-    background-color: #fff;
-    position: relative;
-    margin: 2rem 0;
-    padding: 2rem;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+.checkoutWrapper {
+  background-color: #fff;
+  position: relative;
+  margin: 2rem 0;
+  padding: 2rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.basketProductName{
-    font-size: .8rem;
-    font-weight: bold;
-    min-height: 40px;
-    display: block;
+.basketProductName {
+  font-size: 0.8rem;
+  font-weight: bold;
+  min-height: 40px;
+  display: block;
 }
-.basketProduct{
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
+.basketProduct {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
-.basketImg{
-    width: 100%;
-    height: auto;
-    object-fit: contain;
+.basketImg {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
-.basketProductImg{
-    width: 100px;
+.basketProductImg {
+  width: 100px;
 }
-.basketProductInfo{
-    width:100%;
-    padding: 10px;
-    text-align: start;
-    height: 100%;
-    background-color: rgba(240, 240, 240, 0.486);
+.basketProductInfo {
+  width: 100%;
+  padding: 10px;
+  text-align: start;
+  height: 100%;
+  background-color: rgba(240, 240, 240, 0.486);
 }
-.basketProductPrice{
-    font-size: 15px;
+.basketProductPrice {
+  font-size: 15px;
 }
-.priceValue{
-    font-weight: 550;
-    color:$secondcolor !important;
-}
-
-.removeCartBtn{
-    color: #fff !important;
-    background-color: rgb(194, 18, 18) !important;
-    border-color: rgb(194, 18, 18) !important;
-    border-radius: 5px;
-    font-size: 13px;
-   
-}
-.basketProductQuantity{
-    margin: 0 !important;
-}
-.checkoutSummaryItemTitle{
-    font-size: 15px;
-    margin: 0 !important;
-}
-.checkoutSummaryItemValue{
-    margin: 0 !important;
-    font-size: 15px;
-    font-weight: bold;
-    color:$secondcolor !important;
-}
-.checkoutSummary{
-    padding: 0 1rem;
-}
-.checkoutSummaryItemTotal{
-    margin: 0;
-    font-weight: bold;
-    font-size: 17px;
-}
-.checkoutSummaryItemTotalValue{
-    margin: 0 !important;
-    font-weight: bold;
-    font-size: 16px;
-    color:$secondcolor !important;
-}
-.summaryItem{
-    padding: 10px 0;
-    border-bottom: 1px solid rgb(235, 235, 235);
-    &:last-child{
-        border-bottom: none;
-    }
+.priceValue {
+  font-weight: 550;
+  color: $secondcolor !important;
 }
 
-.continueBtn{
-    color: #fff !important;
-    background-color: $maincolor !important;
-    border-radius: 5px;
-    border-color: $secondcolor !important;
-    outline: 1;
+.removeCartBtn {
+  color: #fff !important;
+  background-color: rgb(194, 18, 18) !important;
+  border-color: rgb(194, 18, 18) !important;
+  border-radius: 5px;
+  font-size: 13px;
+}
+.basketProductQuantity {
+  margin: 0 !important;
+}
+.checkoutSummaryItemTitle {
+  font-size: 15px;
+  margin: 0 !important;
+}
+.checkoutSummaryItemValue {
+  margin: 0 !important;
+  font-size: 15px;
+  font-weight: bold;
+  color: $secondcolor !important;
+}
+.checkoutSummary {
+  padding: 0 1rem;
+}
+.checkoutSummaryItemTotal {
+  margin: 0;
+  font-weight: bold;
+  font-size: 17px;
+}
+.checkoutSummaryItemTotalValue {
+  margin: 0 !important;
+  font-weight: bold;
+  font-size: 16px;
+  color: $secondcolor !important;
+}
+.summaryItem {
+  padding: 10px 0;
+  border-bottom: 1px solid rgb(235, 235, 235);
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
-.BasketProductLength{
-    margin: 1rem 0;
+.continueBtn {
+  color: #fff !important;
+  background-color: $maincolor !important;
+  border-radius: 5px;
+  border-color: $secondcolor !important;
+  outline: 1;
 }
-.BasketProductLengthValue{
-    margin: 0;
+
+.BasketProductLength {
+  margin: 1rem 0;
 }
-.checkoutWrapper{
-    position: relative;
-    width: 100%;
+.BasketProductLengthValue {
+  margin: 0;
 }
-.checkoutLoader{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    bottom: 0; 
-    right: 0;
-    z-index: 9;
-    background-color: rgba(255, 255, 255, 0.788);
+.checkoutWrapper {
+  position: relative;
+  width: 100%;
 }
-.checkoutAnimation{
-    width: 150px;
+.checkoutLoader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  z-index: 9;
+  background-color: rgba(255, 255, 255, 0.788);
+}
+.checkoutAnimation {
+  width: 150px;
 }
 // ADDRESS
-.addressWrapper{
-    padding: 0 3rem;
+.addressWrapper {
+  padding: 0 3rem;
 }
-.addressButtons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    
+.addressButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.checkoutBackBtn{
-    border-color: $maincolor !important;
-    color: $maincolor !important;
+.checkoutBackBtn {
+  border-color: $maincolor !important;
+  color: $maincolor !important;
 }
-
-
 
 // RESPONSIVE
 
-@media screen and (max-width:414px) {
+@media screen and (max-width: 414px) {
+  .addressWrapper {
+    padding: 0 !important;
+  }
+  .addressButtons {
+    flex-direction: column-reverse;
+  }
+  .continueBtn {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+  .checkoutBackBtn {
+    width: 100%;
+  }
+}
 
-    .addressWrapper{
-        padding: 0 !important;
-    }
-    .addressButtons{
-        flex-direction: column-reverse;
-    }
-    .continueBtn{
-        width: 100%;
-        margin: .5rem 0;
-    }
-    .checkoutBackBtn{
-        width: 100%;
-    }
+//PAYMENT
+.paymentHeader {
+  width: 120px;
+}
+.payCounter {
+  font-size: 21px;
+  margin: 0 1rem;
+  font-weight: 600;
+}
+.paymentCard {
+  width: 100%;
+  height: 100%;
+
+  text-align: center;
+}
+
+.paymentCardInner {
+  width: 370px;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+}
+.paymentCardArea {
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(97, 186, 255, 1) 0%,
+    rgba(166, 239, 253, 1) 90.1%
+  );
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  padding: 1rem;
+}
+.paymentCardBack {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(97, 186, 255, 1) 0%,
+    rgba(166, 239, 253, 1) 90.1%
+  );
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  z-index: -1;
+}
+.paymentCardBackInner {
+  padding: 1rem 0;
+}
+.paymentCardChip {
+  width: 60px;
+}
+.contactlessIcon {
+  background-color: transparent;
+  filter: invert(1);
+  width: 50px;
+}
+.cardNumberArea {
+  text-align: start;
+  margin: 0.5rem 0;
+}
+.cardNumberShow {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 25px;
+  font-weight: bold;
+  color: #333;
+  width: 100%;
+  &::placeholder {
+    font-size: 35px;
+  }
+}
+.cardTitles {
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+}
+.cardNameShow {
+  border: none;
+  outline: none;
+  font-weight: bold;
+  color: #333;
+  background-color: transparent;
+  font-size: 16px;
+  width: 100%;
+  &::placeholder {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+.cardExpireShow {
+  width: 100px;
+  border: none;
+  font-weight: bold;
+  color: #333;
+  outline: none;
+  background-color: transparent;
+  font-size: 16px;
+  &::placeholder {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+.paymentCardCVVArea {
+  margin: 1.5rem 0;
+  padding: 1rem 0;
+  width: 100%;
+  background-color: rgba(243, 243, 243, 0.486);
+}
+.cardCVV {
+  border: none;
+  outline: none;
+  font-weight: bold;
+  color: #333;
+  background-color: transparent;
+  font-size: 16px;
+  width: 60px;
+  &::placeholder {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  text-align: center;
+}
+.paymentCardCVVFlex {
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }

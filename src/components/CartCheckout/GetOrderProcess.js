@@ -10,7 +10,7 @@ import AddressInformation from "./AddressStep/AddressInformation";
 import { RiSecurePaymentLine } from "react-icons/ri";
 import { FooterMain } from "components/Footer/FooterMain";
 import { ToOrderContext } from "context/ToOrderContext";
-import Payment from "./Payment";
+import Payment from "./Payment/Payment";
 const GetOrderProcess = () => {
 
   const {step} = React.useContext(ToOrderContext)
