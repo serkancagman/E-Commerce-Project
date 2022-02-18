@@ -9,7 +9,10 @@ import { Header } from "components/Header/Header";
 import AddressInformation from "./AddressStep/AddressInformation";
 import { RiSecurePaymentLine } from "react-icons/ri";
 import { FooterMain } from "components/Footer/FooterMain";
+import { ToOrderContext } from "context/ToOrderContext";
+import Payment from "./Payment";
 const GetOrderProcess = () => {
+
   let stepStatus = {
     checkout: "process",
     address: "wait",
@@ -46,6 +49,9 @@ const GetOrderProcess = () => {
     };
     handleSteps(getStep);
   }, [getStep]);
+
+  const {step} = React.useContext(ToOrderContext)
+
   return (
     <>
       <Header />
@@ -76,8 +82,9 @@ const GetOrderProcess = () => {
                 />
               </Steps>
             </div>
-            {step.checkout === "process" && <Checkout setStep={setGetStep} />}
-            {step.address === "process" && <AddressInformation setStep={setGetStep} />}
+            {step.checkout === "process" && <Checkout/>}
+            {step.address === "process" && <AddressInformation/>}
+            {step.payment === "process" && <Payment/>}
           </div>
         </div>
       </section>
