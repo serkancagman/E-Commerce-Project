@@ -1,12 +1,12 @@
 import React from "react";
 import { Button, Form, Input, Select } from "antd";
-import addressStyle from "./style/checkout.module.css";
+import addressStyle from "../style/checkout.module.css";
 import { countryCode } from "components/Helpers/PhoneCountryCode";
 import Checkbox from "antd/lib/checkbox/Checkbox";
 import { useFormik } from "formik";
-import validationSchema from "./AddressValidation";
+import validationSchema from "../AddressValidation";
 import Lottie from "lottie-react";
-import checkoutAnimation from "./Progress/checkoutAnimation.json";
+import checkoutAnimation from "../Progress/checkoutAnimation.json";
 import { ToOrderContext } from "context/ToOrderContext";
 const AdressInformation = () => {
   const { Option } = Select;
@@ -46,6 +46,7 @@ const AdressInformation = () => {
       
       },
     });
+
 
 
      
@@ -115,10 +116,12 @@ const AdressInformation = () => {
             </Form.Item>
           </div>
           <div className="col-md-12 col-lg-6">
+
             <Form.Item help={errors.phone && touched.phone && errors.phone} validateStatus={errors.phone && touched.phone && "error"} label="Phone Number">
               <Input
                 name="phone"
                 onChange={handleChange}
+
                 addonBefore={prefixSelector}
                 style={{
                   width: "100%",
@@ -128,6 +131,7 @@ const AdressInformation = () => {
           </div>
           <div className="col-md-12 col-lg-6">
             <Form.Item label="Country">
+
               <Select
                 name="country"
                 onChange={(value) => setLiveCountryName(value)}
@@ -138,6 +142,7 @@ const AdressInformation = () => {
                 {countryCode.map((code, index) => {
                   return (
                     <Option
+
                       key={index}
                       value={code.name}
                     >{` ${code.flag} ${code.name}`}</Option>
@@ -147,6 +152,7 @@ const AdressInformation = () => {
             </Form.Item>
           </div>
           <div className="col-md-12 col-lg-6">
+
             <Form.Item help={errors.city && touched.city && errors.city} validateStatus={errors.city && touched.city && "error"} label="City">
               <Input name="city" onChange={handleChange} />
             </Form.Item>
@@ -169,6 +175,11 @@ const AdressInformation = () => {
                 showCount
                 maxLength={200}
               />
+            </Form.Item>
+          </div>
+          <div className="col-md-12 col-lg-12">
+            <Form.Item label="Address">
+              <Input.TextArea name="address" showCount maxLength={200} />
             </Form.Item>
           </div>
           <div className="col-lg-12">
@@ -198,12 +209,14 @@ const AdressInformation = () => {
           )}
           <div className="col-lg-12">
             <div className={addressStyle.addressButtons}>
+
               <Button className={addressStyle.checkoutBackBtn}>
                 Back to Check Products
               </Button>
               <Button
               type="submit"
                 onClick={handleSubmit}
+
                 className={`mx-1 ${addressStyle.continueBtn}`}
               >
                 Save Address & Continue

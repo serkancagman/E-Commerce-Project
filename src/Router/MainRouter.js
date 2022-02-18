@@ -2,7 +2,7 @@ import ComputerCategory from "components/Pages/ComputerCategory";
 import { Home } from "components/Pages/Home";
 import ProductInnerPage from "components/Pages/ProductInnerPage";
 import ProfileMainPage from "components/Pages/ProfileMainPage";
-import Checkout from "components/CartCheckout/Checkout";
+import Checkout from "components/CartCheckout/CheckoutProductStep/Checkout";
 import React from "react";
 import { Routes, Route} from "react-router-dom";
 import {ProtectedAdminRoute,ProtectedRoute, ProtectedAdminLogin,ProtectedLoginRegisterRoute} from "./ProtectedRoute";
