@@ -1,6 +1,7 @@
 import React from "react";
 import { Navigate, } from "react-router-dom";
 import { AuthLoginContext } from "context/AuthLoginContext";
+import { ShopCartContext } from "context/ShopCartContext";
 
 export const ProtectedRoute = ({children}) => {
   const { isLoggedIn } = React.useContext(AuthLoginContext);
@@ -21,4 +22,8 @@ export const ProtectedAdminLogin = ({children}) => {
 export const ProtectedLoginRegisterRoute = ({children}) => {
   const { isLoggedIn } = React.useContext(AuthLoginContext);
   return isLoggedIn ? <Navigate to="/" /> : children;
+}
+export const ProtectedCartRoute = ({children}) => {
+  const { cartItems } = React.useContext(ShopCartContext);
+  return cartItems.length > 0 ? children : <Navigate to="/" />;
 }

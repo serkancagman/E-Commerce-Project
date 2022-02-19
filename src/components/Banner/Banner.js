@@ -7,7 +7,6 @@ import "swiper/css/effect-creative";
 import SwiperCore, { Pagination } from "swiper";
 import "swiper/css";
 import { Link } from "react-router-dom";
-import { BannerSkeleton } from "components/Loader/SkeletonLoader";
 
 SwiperCore.use([Pagination]);
 export const Banner = () => {

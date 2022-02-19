@@ -7,7 +7,7 @@ import { loginUser } from "API/trendProductAPI";
 import { validationSchema } from "./AdminLoginValidation";
 import { AuthLoginContext } from "context/AuthLoginContext";
 const AdminLogin = () => {
-  const { loggedUser,setUser } =
+  const { loggedUser} =
     React.useContext(AuthLoginContext);
   const { handleChange, handleSubmit, errors, touched, handleBlur } = useFormik(
     {

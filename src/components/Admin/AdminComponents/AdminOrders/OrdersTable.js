@@ -6,10 +6,7 @@ import orderStyle from "./style/adminorders.module.css";
 const OrdersTable = () => {
 
     const {orders} = React.useContext(SaleandOrderContext);
-    
-        
-    
-    console.log(orders);
+
   return (
     <table className={orderStyle.orderTable}>
       <thead className={orderStyle.orderTableHeader}>

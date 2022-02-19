@@ -2,10 +2,9 @@ import ComputerCategory from "components/Pages/ComputerCategory";
 import { Home } from "components/Pages/Home";
 import ProductInnerPage from "components/Pages/ProductInnerPage";
 import ProfileMainPage from "components/Pages/ProfileMainPage";
-import Checkout from "components/CartCheckout/CheckoutProductStep/Checkout";
 import React from "react";
 import { Routes, Route} from "react-router-dom";
-import {ProtectedAdminRoute,ProtectedRoute, ProtectedAdminLogin,ProtectedLoginRegisterRoute} from "./ProtectedRoute";
+import {ProtectedAdminRoute,ProtectedRoute, ProtectedAdminLogin,ProtectedLoginRegisterRoute, ProtectedCartRoute} from "./ProtectedRoute";
 import AdminLogin from "components/Admin/AdminComponents/AdminLogin/AdminLogin";
 import AdminDashboardPage from "components/Pages/AdminPages/AdminDashboardPage";
 import AdminOrdersPage from "components/Pages/AdminPages/AdminOrdersPage";
@@ -36,7 +35,7 @@ const MainRouter = () => {
         <Route path="/admin/products/:product_id" element={<ProtectedAdminRoute><AdminEditProductPage /></ProtectedAdminRoute>}/>
         <Route path="/admin/products" element={<ProtectedAdminRoute><AdminProductsPage /></ProtectedAdminRoute>}/>
         <Route path="/admin/add/products" element={<ProtectedAdminRoute><AdminAddProductPage /></ProtectedAdminRoute>}/>
-        <Route path="/cartcheckout" element={<GetOrderProcess />} /> 
+        <Route path="/cartcheckout" element={<ProtectedCartRoute><GetOrderProcess /></ProtectedCartRoute>} /> 
       </Routes>
     </>
   );

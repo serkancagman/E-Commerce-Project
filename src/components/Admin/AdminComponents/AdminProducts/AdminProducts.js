@@ -1,6 +1,5 @@
 import React from "react";
 import productStyle from "./style/adminproducts.module.css";
-import "antd/dist/antd.min.css";
 import { Table, Popconfirm } from "antd";
 import { BsBarChart } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -9,7 +8,7 @@ import { deleteProduct, getProductByCategory } from "API/trendProductAPI";
 import AdminFooter from "components/Admin/Footer/AdminFooter";
 
 const AdminProducts = () => {
-  const { data, isError, isLoading, error } = useQuery(
+  const { data, isError, isLoading } = useQuery(
     "admin:products",
     getProductByCategory
   );

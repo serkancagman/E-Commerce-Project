@@ -1,6 +1,5 @@
 import React from "react";
 import { BsStar } from "react-icons/bs";
-import { AiOutlineClose } from "react-icons/ai";
 import Modal from "antd/lib/modal/Modal";
 const WriteReview = ({ productData, isShowReview, reviewOff, handleCancelReview }) => {
   return (

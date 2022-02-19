@@ -7,7 +7,6 @@ import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { FaRegEye } from "react-icons/fa";
 import { ShopCartContext } from "context/ShopCartContext";
-import ContentLoader from "react-content-loader";
 import "./style/productslider.css";
 import { MobileProductSLiderSkeleton, ProductSkeleton } from "components/Loader/SkeletonLoader";
 const ProductSlider = ({ data, loading, header, error }) => {
