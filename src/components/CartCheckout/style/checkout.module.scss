@@ -311,3 +311,127 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
 .paymentAnimation{
   width: 300px;
 }
+
+
+// SUCCESS ORDER
+
+.orderSuccessWrapper{
+  width: 100%;
+  display: block;
+  
+}
+.orderSuccessInner{
+  padding: 1rem;
+}
+
+.orderSuccessHeader{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.successIcon{
+  width: 90px;
+  margin-bottom: 1rem;
+}
+
+.successOrderIDTitle{
+  text-align: center;
+  color: $secondcolor;
+}
+.orderID{
+  color: #000;
+}
+.orderSuccessAddress{
+  width: 100%;
+}
+.orderSuccessAddressTitle{
+  padding: 1rem .5rem;
+  display: block;
+}
+.orderSuccessAddressInner{
+  border: 1px solid rgb(235, 235, 235);
+}
+.orderSuccessAddressList{
+  margin: 0;
+  padding: .5rem 1rem;
+}
+.orderAddressList{
+  list-style: none;
+  padding:.5rem 0;
+  border-bottom: 1px solid rgb(235, 235, 235);
+
+  &:last-child{
+    border-bottom: none;
+  }
+}
+.addressTitle{
+  font-weight: 550;
+  display: inline-block;
+  margin-right: .5rem;
+  color: $secondcolor;
+}
+.orderSuccessProducts{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.orderSuccessProductsTitle{
+  padding: 1rem .5rem;
+}
+.orderSuccessProductImage{
+  width: 60px;
+}
+.orderSuccesProductList{
+  margin: 0;
+  padding: 0;
+}
+.orderSuccessProductsInner{
+  border: 1px solid rgb(235, 235, 235);
+  padding: .5rem;
+  
+}
+.orderSuccessProductListItem{
+  list-style: none;
+  width: 100%;
+  margin-bottom: .5rem;
+  border-bottom: 1px solid rgb(235, 235, 235);
+
+  &:last-child{
+    border-bottom: none;
+  }
+}
+.orderSuccessProductTitle{
+  font-weight: 550;
+  display: inline-block;
+  margin-left: .5rem;
+  color: $secondcolor;
+}
+
+.orderSuccessTotal{
+  text-align: end;
+}
+.orderSuccessTotalTitle{
+  font-weight: 550;
+  font-size: 17px;
+
+  .orderProductTotal{
+    
+    color: $secondcolor;
+  }
+}
+.orderSuccessButton{
+  text-align: center;
+  margin: 1rem 0;
+}
+.orderSuccessButtonInner{
+  background-color: $secondcolor;
+  &:hover{
+    .orderSuccessButtonText{
+      color: $secondcolor !important;
+    }
+  }
+}
+.orderSuccessButtonText{
+  color: #fff;
+}

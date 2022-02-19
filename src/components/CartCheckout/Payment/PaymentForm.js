@@ -1,5 +1,6 @@
 import { Button, Checkbox, Form, Input } from "antd";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import payStyle from "../style/checkout.module.css";
 import { useFormik } from "formik";
 import { PaymentFormContext } from "context/PaymentFormContext";
@@ -9,9 +10,9 @@ import { getOrder } from "API/trendProductAPI";
 import { ToOrderContext } from "context/ToOrderContext";
 import { ShopCartContext } from "context/ShopCartContext";
 const PaymentForm = () => {
-  
+  const navigate = useNavigate();
   const {cartItems,setCartItems} = React.useContext(ShopCartContext)
-  const {orderAddress,setGetStep,setPaymentStatus,setPayProcess} = React.useContext(ToOrderContext)
+  const {orderAddress,setOrderIsSuccess ,setPaymentStatus,setPayProcess, setOrderID} = React.useContext(ToOrderContext)
   const { setCardType,paymentFormItem, setPaymentFormItem } =
     React.useContext(PaymentFormContext);
 
@@ -35,19 +36,20 @@ const PaymentForm = () => {
       onSubmit: async () => {
           try{
               const getNewOrder = await getOrder(input)
-              console.log(getNewOrder)
-              setCartItems([])
               
               setPayProcess(true)
+              setOrderID(getNewOrder._id)
               setTimeout(() => {
                 setPayProcess(false)
                 setPaymentStatus(true)
                 
               }, 5000);
               setTimeout(() => {
-                setGetStep(3)
                 
-              }, 6000);
+                setOrderIsSuccess(true)
+                navigate("/order-success")
+                setCartItems([])
+              }, 7000);
           }catch(e){
             console.log(e);
           }
