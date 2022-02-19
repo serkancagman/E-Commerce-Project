@@ -425,4 +425,150 @@
 .paymentAnimation {
   width: 300px;
 }
+
+.orderSuccessWrapper {
+  width: 100%;
+  display: block;
+}
+
+.orderSuccessInner {
+  padding: 1rem;
+}
+
+.orderSuccessHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.successIcon {
+  width: 90px;
+  margin-bottom: 1rem;
+}
+
+.successOrderIDTitle {
+  text-align: center;
+  color: #16bcdc;
+}
+
+.orderID {
+  color: #000;
+}
+
+.orderSuccessAddress {
+  width: 100%;
+}
+
+.orderSuccessAddressTitle {
+  padding: 1rem .5rem;
+  display: block;
+}
+
+.orderSuccessAddressInner {
+  border: 1px solid #ebebeb;
+}
+
+.orderSuccessAddressList {
+  margin: 0;
+  padding: .5rem 1rem;
+}
+
+.orderAddressList {
+  list-style: none;
+  padding: .5rem 0;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.orderAddressList:last-child {
+  border-bottom: none;
+}
+
+.addressTitle {
+  font-weight: 550;
+  display: inline-block;
+  margin-right: .5rem;
+  color: #16bcdc;
+}
+
+.orderSuccessProducts {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.orderSuccessProductsTitle {
+  padding: 1rem .5rem;
+}
+
+.orderSuccessProductImage {
+  width: 60px;
+}
+
+.orderSuccesProductList {
+  margin: 0;
+  padding: 0;
+}
+
+.orderSuccessProductsInner {
+  border: 1px solid #ebebeb;
+  padding: .5rem;
+}
+
+.orderSuccessProductListItem {
+  list-style: none;
+  width: 100%;
+  margin-bottom: .5rem;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.orderSuccessProductListItem:last-child {
+  border-bottom: none;
+}
+
+.orderSuccessProductTitle {
+  font-weight: 550;
+  display: inline-block;
+  margin-left: .5rem;
+  color: #16bcdc;
+}
+
+.orderSuccessTotal {
+  text-align: end;
+}
+
+.orderSuccessTotalTitle {
+  font-weight: 550;
+  font-size: 17px;
+}
+
+.orderSuccessTotalTitle .orderProductTotal {
+  color: #16bcdc;
+}
+
+.orderSuccessButton {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.orderSuccessButtonInner {
+  background-color: #16bcdc;
+}
+
+.orderSuccessButtonInner:hover .orderSuccessButtonText {
+  color: #16bcdc !important;
+}
+
+.orderSuccessButtonText {
+  color: #fff;
+}
 /*# sourceMappingURL=checkout.module.css.map */

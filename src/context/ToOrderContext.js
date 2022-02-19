@@ -4,8 +4,11 @@ export const ToOrderContext = React.createContext();
 
 export const ToOrderProvider = ({ children }) => {
   const [orderAddress, setOrderAddress] = React.useState({});
+  const [orderIsSuccess, setOrderIsSuccess] = React.useState(false);
   const [paymentStatus, setPaymentStatus] = React.useState(false);
   const [payProcess, setPayProcess] = React.useState(false);
+  const [orderID, setOrderID] = React.useState("");
+  const [totalProducts, setTotalProducts] = React.useState([]);
   const [step, setStep] = React.useState({
     checkout: "process",
     address: "wait",
@@ -54,6 +57,13 @@ export const ToOrderProvider = ({ children }) => {
     setPaymentStatus,
     payProcess,
     setPayProcess,
+    setOrderIsSuccess,
+    orderIsSuccess,
+    totalProducts,
+    setTotalProducts,
+    orderID,
+    setOrderID,
+
   };
 
   return (
