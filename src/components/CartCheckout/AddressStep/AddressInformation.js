@@ -13,9 +13,8 @@ const AdressInformation = () => {
   const [livePhoneCode, setLivePhoneCode] = React.useState("");
   const [liveCountryName, setLiveCountryName] = React.useState("");
   const [checkedBill, setCheckedBill] = React.useState(false);
-  const [checkedShip, setCheckedShip] = React.useState(false);
   const [checkoutLoader, setCheckoutLoader] = React.useState(false);
-  const { orderAddress, setOrderAddress,setGetStep } = React.useContext(ToOrderContext);
+  const { setOrderAddress,setGetStep } = React.useContext(ToOrderContext);
 
   const { handleBlur, handleChange, handleSubmit, values, errors, touched } =
     useFormik({

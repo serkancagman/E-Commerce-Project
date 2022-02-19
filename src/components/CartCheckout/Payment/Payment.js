@@ -1,47 +1,75 @@
 import React from "react";
 import securePay from "images/securePay.png";
 import payStyle from "../style/checkout.module.css";
-import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import cardChip from "images/creditCardChip.png";
 import contacless from "images/contactless.png";
 import PaymentForm from "./PaymentForm";
+import masterCardSVG from "images/mastercard.svg";
+import maestroCardSVG from "images/maestro.svg";
+import Lottie from "lottie-react";
+import dinersCardSVG from "images/diners.svg";
+import { ToOrderContext } from "context/ToOrderContext";
+import visaCardSVG from "images/visa.svg";
+import paymentSuccess from "../Progress/paymentSuccess.json";
+import paymentProcess from "../Progress/payProcess.json";
 import { PaymentFormContext } from "context/PaymentFormContext";
 const Payment = () => {
-  const {paymentFormItem, setPaymentFormItem} = React.useContext(PaymentFormContext)
-  const [payTime, setPayTime] = React.useState(false);
+  const { paymentFormItem, cardType } = React.useContext(PaymentFormContext);
+  const {paymentStatus, payProcess} = React.useContext(ToOrderContext)
+  const [cardIcon, setCardIcon] = React.useState();
 
-  const formatRemainingTime = (time) => {
-    const minutes = Math.floor((time % 3600) / 60);
-    const seconds = time % 60;
 
-    return `${minutes}:${String(seconds)}`;
-  };
-
-  const renderTime = ({ remainingTime }) => {
-    if (remainingTime === 0) {
-      return <div className="timer">end</div>;
+  React.useEffect(() => {
+    if (cardType === "Mastercard") {
+      setCardIcon(masterCardSVG);
+    } else if (cardType === "Visa") {
+      setCardIcon(visaCardSVG);
+    } else if (cardType === "Maestro") {
+      setCardIcon(maestroCardSVG);
+    } else if (cardType === "Diners Club") {
+      setCardIcon(dinersCardSVG);
+    } else if (cardType === "") {
+      setCardIcon("");
     }
-    return formatRemainingTime(remainingTime);
-  };
+  }, [cardType]);
+
   return (
     <div className={payStyle.paymentWrapper}>
+      {paymentStatus && (
+          <div className={payStyle.payTimeOut}>
+            <div className="d-flex justify-content-center align-items-center h-100 flex-column">
+              <div className={payStyle.paymentAnimation}>
+                <Lottie
+                  width="100%"
+                  delay={1000}
+                  loop="false"
+                  animationData={paymentSuccess}
+                />
+              </div>
+            </div>
+          </div>
+        )}
+        {payProcess && (
+          <div className={payStyle.payTimeOut}>
+            <div className="d-flex justify-content-center align-items-center h-100 flex-column">
+              <div className={payStyle.paymentAnimation}>
+                <Lottie
+                  width="100"
+                  delay={1000}
+                  loop="false"
+                  animationData={paymentProcess}
+                />
+              </div>
+            </div>
+          </div>
+        )}
       <div className="container-xxl">
         <div className="d-flex justify-content-center mb-4 align-items-center">
           <div className={payStyle.paymentHeader}>
             <img className="img-fluid" src={securePay} alt="..." />
           </div>
-          <div className={payStyle.payCounter}>
-          <CountdownCircleTimer
-    isPlaying
-    duration={300}
-    size={80}
-    strokeWidth={5}
-    colors={['#004777', '#F7B801', '#A30000', '#A30000']}
-    colorsTime={[7, 5, 2, 0]}
-  >
-    {renderTime}
-  </CountdownCircleTimer>
-          </div>
+        
+          
         </div>
         <div className="row justify-content-center g-3">
           <div className="col-lg-6 col-md-12 text-center">
@@ -51,14 +79,23 @@ const Payment = () => {
                   <div className="d-flex flex-column justify-content-center">
                     <div className="d-flex justify-content-between m-2 align-items-center">
                       <div className={payStyle.paymentCardChip}>
-                        <img className="img-fluid" src={cardChip} alt=".." />
+                        <div className="d-flex  align-items-center">
+                          <img className="img-fluid" src={cardChip} alt=".." />
+                          <img
+                            className={payStyle.contactlessIcon}
+                            alt="..."
+                            src={contacless}
+                          />
+                        </div>
                       </div>
 
-                      <img
-                        className={payStyle.contactlessIcon}
-                        alt="..."
-                        src={contacless}
-                      />
+                      {cardType && (
+                        <img
+                          className={payStyle.cardBrandIcon}
+                          src={cardIcon}
+                          alt="..."
+                        />
+                      )}
                     </div>
                     <div className={payStyle.cardNumberArea}>
                       <label
@@ -90,7 +127,11 @@ const Payment = () => {
                           id="cardNameShow"
                           placeholder="NAME SURNAME"
                           disabled
-                          value={paymentFormItem.paymentForm.fullName ? paymentFormItem.paymentForm.fullName : ""}
+                          value={
+                            paymentFormItem.paymentForm.fullName === " "
+                              ? ""
+                              : paymentFormItem.paymentForm.fullName
+                          }
                         />
                       </div>
 
@@ -139,7 +180,7 @@ const Payment = () => {
             </div>
           </div>
           <div className="col-lg-6 col-md-12">
-            <PaymentForm/>
+            <PaymentForm />
           </div>
         </div>
       </div>

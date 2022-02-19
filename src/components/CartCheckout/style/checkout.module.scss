@@ -181,7 +181,6 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
 
 .paymentCardInner {
   width: 370px;
-  height: 100%;
   position: relative;
   z-index: 0;
 }
@@ -219,7 +218,7 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
 .contactlessIcon {
   background-color: transparent;
   filter: invert(1);
-  width: 50px;
+  width: 30px;
 }
 .cardNumberArea {
   text-align: start;
@@ -290,6 +289,25 @@ $navBorder: 1px solid rgba(255, 255, 255, 0.164);
 }
 .paymentCardCVVFlex {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
+}
+.cardBrandIcon {
+  width: 90px;
+}
+.payTimeOut{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  z-index: 9;
+}
+.paymentWrapper{
+  width: 100%;
+  display: block;
+}
+.paymentAnimation{
+  width: 300px;
 }

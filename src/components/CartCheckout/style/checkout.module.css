@@ -216,7 +216,6 @@
 
 .paymentCardInner {
   width: 370px;
-  height: 100%;
   position: relative;
   z-index: 0;
 }
@@ -254,7 +253,7 @@
   background-color: transparent;
   -webkit-filter: invert(1);
           filter: invert(1);
-  width: 50px;
+  width: 30px;
 }
 
 .cardNumberArea {
@@ -398,9 +397,32 @@
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
-          justify-content: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.cardBrandIcon {
+  width: 90px;
+}
+
+.payTimeOut {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 9;
+}
+
+.paymentWrapper {
+  width: 100%;
+  display: block;
+}
+
+.paymentAnimation {
+  width: 300px;
 }
 /*# sourceMappingURL=checkout.module.css.map */

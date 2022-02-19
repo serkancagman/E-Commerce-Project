@@ -1,4 +1,4 @@
-import { getOrder } from "API/trendProductAPI";
+
 import checkoutStyle from "../style/checkout.module.css";
 import { Button } from "antd";
 import { MdOutlineRemoveShoppingCart } from "react-icons/md";
@@ -14,7 +14,7 @@ const Checkout = () => {
   const { setGetStep } = React.useContext(ToOrderContext);
 
 
-  const { cartItems, addToCart, setCartItems, cartSub, shipping, cartTotal } =
+  const { cartItems, addToCart, cartSub, shipping, cartTotal } =
     React.useContext(ShopCartContext);
   console.log(cartItems);
 
