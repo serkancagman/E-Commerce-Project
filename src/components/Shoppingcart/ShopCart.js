@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import HeaderContext from "context/HeaderContext";
 import { ShopCartContext } from "context/ShopCartContext";
+import { Button } from "antd";
 export const ShopCart = () => {
   const { shopCart, showCart } = React.useContext(HeaderContext);
   const { cartItems, addToCart, cartSub, shipping, cartTotal } =
@@ -35,7 +36,7 @@ export const ShopCart = () => {
                     >
                       <div className="cartProductInfo">
                         <Link
-                          className="cartProductImg"
+                          className="cartProductImg d-block mx-auto"
                           to={`/product/${cartProduct._id}`}
                         >
                           <img
@@ -58,7 +59,7 @@ export const ShopCart = () => {
                         </div>
                         <div
                           onClick={() => addToCart(cartProduct, findItem)}
-                          className="deleteCartProduct"
+                          className="deleteCartProduct me-2"
                         >
                           <RiDeleteBin6Line size={25} />
                         </div>
@@ -90,8 +91,8 @@ export const ShopCart = () => {
                       <span>Taxes: $0.00</span>
                     </div>
                     <div className="goCheck">
-                      <Link to="/cartcheckout" className="checkCart">
-                        CHECKOUT <span>▸</span>
+                      <Link to="/cartcheckout" className="text-decoration-none ">
+                       <Button  type="primary" className="btn-block">Checkout</Button>
                       </Link>
                     </div>
                   </div>
@@ -105,8 +106,8 @@ export const ShopCart = () => {
               </div>
             )}
             <div className="cartCurrency text-center">
-              <span className="currencyType">EUR</span>
-              <span className="currencyType">USD</span>
+              <Button className="bg-light mx-1">EUR €</Button>
+              <Button className="bg-light mx-1">USD $</Button>
             </div>
           </div>
         </div>

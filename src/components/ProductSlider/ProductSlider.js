@@ -9,6 +9,7 @@ import { FaRegEye } from "react-icons/fa";
 import { ShopCartContext } from "context/ShopCartContext";
 import "./style/productslider.css";
 import { MobileProductSLiderSkeleton, ProductSkeleton } from "components/Loader/SkeletonLoader";
+import { Button,Rate } from "antd";
 const ProductSlider = ({ data, loading, header, error }) => {
   SwiperCore.use([FreeMode, Pagination, Navigation, Autoplay, Mousewheel]);
   const { addToCart, cartItems } = React.useContext(ShopCartContext);
@@ -116,12 +117,16 @@ const ProductSlider = ({ data, loading, header, error }) => {
                             {trendData.title}
                           </Link>
                         </div>
+                        <div className="d-flex my-2 justify-content-start align-items-center">
+                          <Rate className="mx-2" style={{fontSize:"15px"}} count={5} value={4} disabled />
+                          <span style={{fontSize:"13px"}} className="mx-2 mt-1 text-dark fw-bold  d-block">(214)</span>
+                          </div>
                         <div className="product-price my-3 w-100 d-flex justify-content-between align-items-center">
-                          <span className="price mx-2">
+                          <span className="text-dark fw-bold mx-2">
                             ${trendData.price}{" "}
                           </span>
 
-                          <button onClick={()=> addToCart(trendData,findCurrentItem)} className={`buy-btn mx-2 ${findCurrentItem ? "addedBasket" : ""}`}>{findCurrentItem ? "Remove from cart" : "Add to cart"}</button>
+                          <Button onClick={()=> addToCart(trendData,findCurrentItem)} className={`buy-btn mx-2 ${findCurrentItem ? "addedBasket" : ""}`}>{findCurrentItem ? "Remove" : "Add to cart"}</Button>
                         </div>
                       </article>
                     </SwiperSlide>

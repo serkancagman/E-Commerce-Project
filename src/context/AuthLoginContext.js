@@ -6,8 +6,8 @@ export const AuthLoginContext = React.createContext();
 export const AuthLoginProvider = ({ children }) => {
   const getToken = localStorage.getItem("refresh-token")
   const [isLoggedIn, setIsLoggedIn] = React.useState(getToken ? true : false);
-  const adminToken ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjIwOTA0ZGQxMTUzYzA5MzM1MWExMzJhIiwiaWF0IjoxNjQ0ODMyMzIyLCJleHAiOjE2NjAzODQzMjIsImlzcyI6ImVjb21tZXJjZS5hcHAifQ.t5PUodSZhUjHbdlD_KoMagynvrprcYYT8sK-4lFfXf4"
-  const getLocalToken = localStorage.getItem("refresh-token")
+  const adminToken ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjIwOTA0ZGQxMTUzYzA5MzM1MWExMzJhIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQ1MzEzMjEzLCJleHAiOjE2NDYxNzcyMTMsImlzcyI6ImVjb21tZXJjZS5hcHAifQ.FC9qLyjKREZSQ-NmV_5dIB8TCKqBnUePLOOY8eQ8z1Q"
+  const getLocalToken = localStorage.getItem("access-token")
   const isAdmin = adminToken === getLocalToken ? true : false
   const [user, setUser] = React.useState(null);
   

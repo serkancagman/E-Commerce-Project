@@ -59,16 +59,30 @@
   display: flex;
   flex-direction: column;
   .add-cart-btn {
-    color: #fff;
     width: 150px;
-    height: 30px;
-    border-radius: 5px;
-    background-color: $secondcolor;
-    font-weight: 600;
-    border: none;
-    font-size: 13px;
     margin-left: auto;
+    border: 1px solid transparent !important;
+    background-color: $secondcolor;
+    color: #fff;
+    &:hover {
+      background-color: #fff;
+      border: $secondcolor 1px solid !important;
+      color: $secondcolor;
+    }
   }
+}
+.addedBasketItem{
+    width: 150px;
+    margin-left: auto; 
+    background-color: #d02124;
+    color: #fff;
+  
+    &:hover{
+      background-color: transparent !important;
+      color:#d02124 !important;
+      border: 1px solid #d02124 !important;
+    }
+  
 }
 .featured-price {
   font-weight: 600;

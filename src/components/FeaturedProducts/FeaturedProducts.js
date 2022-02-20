@@ -7,6 +7,7 @@ import { trendProductAPI } from "../../API/trendProductAPI";
 import { useQuery } from "react-query";
 import { ShopCartContext } from "context/ShopCartContext";
 import { MobileProductSLiderSkeleton, TopFeaturedSKeleton } from "components/Loader/SkeletonLoader";
+import { Button,Rate } from "antd";
 export const FeaturedProducts = () => {
 
   const {addToCart, cartItems} = React.useContext(ShopCartContext);
@@ -82,16 +83,21 @@ export const FeaturedProducts = () => {
                             {featuredData.title}
                           </Link>
                           <p className="featured-title">
-                            lorem ipsum lorem ipsum
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio molestias qui voluptates labore modi animi magnam explicabo autem rem sunt.
                           </p>
+                          <div className="d-flex align-items-center">
+                          <Rate count={5} value={4} disabled />
+                          <span className="mx-2 mt-1 text-muted d-block">(214)</span>
+                          </div>
                         </div>
                         <div className="featured-bottom text-end">
                           <span className="featured-price py-2">
                             ${featuredData.price}
                           </span>
-                          <button onClick={()=> addToCart(featuredData,filteredItems)} className={`add-cart-btn ${filteredItems ? "addedBasket" : ""}`}>
+                          
+                          <Button onClick={()=> addToCart(featuredData,filteredItems)} className={` ${filteredItems ? "addedBasketItem" : "add-cart-btn"}`}>
                           {filteredItems ? "Remove from cart" : "Add to cart"}
-                          </button>
+                          </Button>
                         </div>
                       </div>
                     </div>

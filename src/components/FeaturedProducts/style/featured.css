@@ -87,15 +87,30 @@
 }
 
 .featured-bottom .add-cart-btn {
-  color: #fff;
   width: 150px;
-  height: 30px;
-  border-radius: 5px;
-  background-color: #16bcdc;
-  font-weight: 600;
-  border: none;
-  font-size: 13px;
   margin-left: auto;
+  border: 1px solid transparent !important;
+  background-color: #16bcdc;
+  color: #fff;
+}
+
+.featured-bottom .add-cart-btn:hover {
+  background-color: #fff;
+  border: #16bcdc 1px solid !important;
+  color: #16bcdc;
+}
+
+.addedBasketItem {
+  width: 150px;
+  margin-left: auto;
+  background-color: #d02124;
+  color: #fff;
+}
+
+.addedBasketItem:hover {
+  background-color: transparent !important;
+  color: #d02124 !important;
+  border: 1px solid #d02124 !important;
 }
 
 .featured-price {

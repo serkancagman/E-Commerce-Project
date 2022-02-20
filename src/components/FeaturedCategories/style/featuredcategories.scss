@@ -21,6 +21,10 @@
 }
 .brand-img {
   cursor: pointer;
+  width: 100px !important; 
+}
+.swiper-wrapper{
+  align-items: center !important;
 }
 .featured-nav {
   padding: 5px;

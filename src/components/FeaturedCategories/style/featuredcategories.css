@@ -23,6 +23,13 @@
 
 .brand-img {
   cursor: pointer;
+  width: 100px !important;
+}
+
+.swiper-wrapper {
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
 }
 
 .featured-nav {

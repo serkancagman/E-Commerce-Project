@@ -5,11 +5,12 @@ import { FeaturedCatItems } from "../Helpers/FeaturedCatItems";
 import { MdStars } from "react-icons/md";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
-import Brand from "../../images/brand.jpg";
-import Brand1 from "../../images/brand1.jpg";
-import Brand2 from "../../images/brand2.jpg";
-import Brand3 from "../../images/brand3.jpg";
-import Brand4 from "../../images/brand4.jpg";
+import apple from "../../images/apple.svg";
+import nike from "../../images/nike.svg";
+import chanel from "../../images/chanel.svg";
+import huawei from "../../images/huawei.svg";
+import samsung from "../../images/samsung.svg";
+import zara from "../../images/zara.svg";
 import "swiper/css";
 import "swiper/css/autoplay";
 import SwiperCore, { FreeMode, Pagination } from "swiper";
@@ -77,7 +78,7 @@ export const FeaturedCategories = () => {
         </div>
         <Swiper
           slidesPerView={6}
-          spaceBetween={35}
+          
           autoplay={{ delay: 3000 }}
           loop={true}
           loopFillGroupWithBlank={true}
@@ -110,28 +111,28 @@ export const FeaturedCategories = () => {
           }}
         >
           <SwiperSlide>
-            <img className="img-fluid brand-img" src={Brand} alt="Loading" />{" "}
+            <img className="img-fluid brand-img" src={apple} alt="Loading" />{" "}
           </SwiperSlide>
           <SwiperSlide>
-            <img className="img-fluid brand-img" src={Brand1} alt="Loading" />
+            <img className="img-fluid brand-img" src={zara} alt="Loading" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className="img-fluid brand-img" src={Brand2} alt="Loading" />
+            <img className="img-fluid brand-img" src={samsung} alt="Loading" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className="img-fluid brand-img" src={Brand3} alt="Loading" />
+            <img className="img-fluid brand-img" src={chanel} alt="Loading" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className="img-fluid brand-img" src={Brand4} alt="Loading" />
+            <img className="img-fluid brand-img" src={huawei} alt="Loading" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className="img-fluid brand-img" src={Brand} alt="Loading" />{" "}
+            <img className="img-fluid brand-img" src={nike} alt="Loading" />{" "}
           </SwiperSlide>
           <SwiperSlide>
-            <img className="img-fluid brand-img" src={Brand1} alt="Loading" />
+            <img className="img-fluid brand-img" src={samsung} alt="Loading" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className="img-fluid brand-img" src={Brand} alt="Loading" />{" "}
+            <img className="img-fluid brand-img" src={zara} alt="Loading" />{" "}
           </SwiperSlide>
         </Swiper>
       </div>
