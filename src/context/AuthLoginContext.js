@@ -5,10 +5,9 @@ export const AuthLoginContext = React.createContext();
 
 export const AuthLoginProvider = ({ children }) => {
   const getToken = localStorage.getItem("refresh-token")
+  const getRole = localStorage.getItem("role")
   const [isLoggedIn, setIsLoggedIn] = React.useState(getToken ? true : false);
-  const adminToken ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjIwOTA0ZGQxMTUzYzA5MzM1MWExMzJhIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQ1MzEzMjEzLCJleHAiOjE2NDYxNzcyMTMsImlzcyI6ImVjb21tZXJjZS5hcHAifQ.FC9qLyjKREZSQ-NmV_5dIB8TCKqBnUePLOOY8eQ8z1Q"
-  const getLocalToken = localStorage.getItem("access-token")
-  const isAdmin = adminToken === getLocalToken ? true : false
+  const isAdmin = getRole === "admin" ? true : false;
   const [user, setUser] = React.useState(null);
   
  
@@ -21,6 +20,7 @@ export const AuthLoginProvider = ({ children }) => {
   
         setIsLoggedIn(true);
         setUser(me);
+        
       } catch (err) {
 
       }
@@ -28,7 +28,6 @@ export const AuthLoginProvider = ({ children }) => {
   }, []);
 
 
- 
 
 
   
@@ -38,6 +37,7 @@ export const AuthLoginProvider = ({ children }) => {
     
     localStorage.setItem("access-token", data.accessToken);
     localStorage.setItem("refresh-token", data.refreshToken);
+    localStorage.setItem("role", data.user.role);
     
   };
 

@@ -3,12 +3,12 @@ import adminStyle from "./style/adminlogin.module.css";
 import adminLogo from "images/adminlogo.png";
 import { useFormik } from "formik";
 import { loginUser } from "API/trendProductAPI";
-
+import { useNavigate } from "react-router-dom";
 import { validationSchema } from "./AdminLoginValidation";
 import { AuthLoginContext } from "context/AuthLoginContext";
 const AdminLogin = () => {
-  const { loggedUser} =
-    React.useContext(AuthLoginContext);
+  const navigate = useNavigate();
+  const { loggedUser } = React.useContext(AuthLoginContext);
   const { handleChange, handleSubmit, errors, touched, handleBlur } = useFormik(
     {
       initialValues: {
@@ -24,8 +24,14 @@ const AdminLogin = () => {
           });
 
           loggedUser(sendLoginUser);
-          
-         
+          console.log(sendLoginUser);
+
+          if (localStorage.getItem("role") === "admin") {
+            navigate("/admin/dashboard");
+          }
+          if (localStorage.getItem("role") !== "admin") {
+            navigate("/");
+          }
         } catch (err) {
           bag.setErrors({ wrongInputItem: err.response.data.message });
         }
@@ -102,7 +108,6 @@ const AdminLogin = () => {
           </div>
         </div>
       </div>
-      ,
     </section>
   );
 };
