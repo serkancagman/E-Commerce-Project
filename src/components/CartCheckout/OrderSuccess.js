@@ -1,5 +1,5 @@
 import React from "react";
-import { Steps,Button } from "antd";
+import { Steps, Button } from "antd";
 import { Link } from "react-router-dom";
 import { SmileOutlined } from "@ant-design/icons";
 import { MdOutlineHomeWork } from "react-icons/md";
@@ -11,10 +11,18 @@ import { FooterMain } from "components/Footer/FooterMain";
 import { ToOrderContext } from "context/ToOrderContext";
 import successIcon from "images/paySuccess.png";
 import { BsPersonLinesFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 const OrderSuccess = () => {
-  const { totalProducts, orderID, orderAddress } =
+  const navigate = useNavigate();
+  const { totalProducts, orderID, orderAddress, setGetStep } =
     React.useContext(ToOrderContext);
-    const orderTotal = totalProducts.reduce((acc, curr) => acc + curr.price, 0);
+  const orderTotal = totalProducts.reduce((acc, curr) => acc + curr.price, 0);
+
+  const handleSubmit = () => {
+    setGetStep(0);
+    navigate("/");
+  };
+
   return (
     <>
       <Header />
@@ -164,26 +172,50 @@ const OrderSuccess = () => {
                         <h4 className={checkoutStyle.orderSuccessProductsTitle}>
                           <BsCart3 size={30} /> Order Products
                         </h4>
-                        <div className={checkoutStyle.orderSuccessProductsInner}>
+                        <div
+                          className={checkoutStyle.orderSuccessProductsInner}
+                        >
                           <ul className={checkoutStyle.orderSuccesProductList}>
                             {totalProducts.map((product, index) => (
-                              <li key={index} className={checkoutStyle.orderSuccessProductListItem}>
-                                    <div className="d-flex justify-content-start">
-                                        <div className={checkoutStyle.orderSuccessProductImage}>
-                                        <img src={product.photos[0]} alt="product" className="img-fluid" />
-                                        </div>
-                                        <div className={checkoutStyle.orderSuccessProductTitle}>
-                                            <h6>{product.title}</h6>
-                                            <p>${product.price}</p>
-                                        </div>
-                                    </div>
-                                </li>
+                              <li
+                                key={index}
+                                className={
+                                  checkoutStyle.orderSuccessProductListItem
+                                }
+                              >
+                                <div className="d-flex justify-content-start">
+                                  <div
+                                    className={
+                                      checkoutStyle.orderSuccessProductImage
+                                    }
+                                  >
+                                    <img
+                                      src={product.photos[0]}
+                                      alt="product"
+                                      className="img-fluid"
+                                    />
+                                  </div>
+                                  <div
+                                    className={
+                                      checkoutStyle.orderSuccessProductTitle
+                                    }
+                                  >
+                                    <h6>{product.title}</h6>
+                                    <p>${product.price}</p>
+                                  </div>
+                                </div>
+                              </li>
                             ))}
                           </ul>
                           <div className={checkoutStyle.orderSuccessTotal}>
-                   
-                                <h6 className={checkoutStyle.orderSuccessTotalTitle}>Total: <span className={checkoutStyle.orderProductTotal}>${orderTotal}</span></h6>
-                       
+                            <h6
+                              className={checkoutStyle.orderSuccessTotalTitle}
+                            >
+                              Total:{" "}
+                              <span className={checkoutStyle.orderProductTotal}>
+                                ${orderTotal}
+                              </span>
+                            </h6>
                           </div>
                         </div>
                       </div>
@@ -191,13 +223,18 @@ const OrderSuccess = () => {
                   </div>
                 </div>
               </div>
-                    <div className={checkoutStyle.orderSuccessButton}>
-                        <Link to="/">
-                            <Button className={checkoutStyle.orderSuccessButtonInner}>
-                                <span className={checkoutStyle.orderSuccessButtonText}>Continue Shopping</span>
-                            </Button>
-                        </Link>
-                    </div>
+              <div className={checkoutStyle.orderSuccessButton}>
+                
+                  <Button
+                    onClick={handleSubmit}
+                    className={checkoutStyle.orderSuccessButtonInner}
+                  >
+                    <span className={checkoutStyle.orderSuccessButtonText}>
+                      Continue Shopping
+                    </span>
+                  </Button>
+            
+              </div>
             </div>
           </div>
         </div>

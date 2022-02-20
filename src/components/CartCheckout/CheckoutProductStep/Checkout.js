@@ -1,5 +1,5 @@
 import checkoutStyle from "../style/checkout.module.css";
-import { Button } from "antd";
+import { Button,Rate } from "antd";
 import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 import { ShopCartContext } from "context/ShopCartContext";
 import React from "react";
@@ -64,12 +64,18 @@ const Checkout = () => {
                         />
                       </div>
                       <div className={checkoutStyle.basketProductInfo}>
+                        <div className={checkoutStyle.basketProductNameWrapper}>
                         <Link
                           to={`/product/${cartProduct._id}`}
                           className={checkoutStyle.basketProductName}
                         >
                           {cartProduct.title}
                         </Link>
+                        </div>
+                        <div className="d-flex my-2 justify-content-start align-items-center">
+                          <Rate className="me-2" style={{fontSize:"15px"}} count={5} value={4} disabled />
+                          <span style={{fontSize:"13px"}} className="mx-2 mt-1 text-dark fw-bold  d-block">(214)</span>
+                          </div>
                         <p className={checkoutStyle.basketProductPrice}>
                           Price:{" "}
                           <span className={checkoutStyle.priceValue}>
