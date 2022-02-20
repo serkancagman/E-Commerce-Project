@@ -19,8 +19,12 @@
 .basketProductName {
   font-size: 0.8rem;
   font-weight: bold;
-  min-height: 40px;
-  display: block;
+  color: #000;
+  text-decoration: none;
+}
+
+.basketProductNameWrapper {
+  min-height: 46px;
 }
 
 .basketProduct {
@@ -272,19 +276,19 @@
 }
 
 .cardNumberShow::-webkit-input-placeholder {
-  font-size: 35px;
+  font-size: 25px;
 }
 
 .cardNumberShow:-ms-input-placeholder {
-  font-size: 35px;
+  font-size: 25px;
 }
 
 .cardNumberShow::-ms-input-placeholder {
-  font-size: 35px;
+  font-size: 25px;
 }
 
 .cardNumberShow::placeholder {
-  font-size: 35px;
+  font-size: 25px;
 }
 
 .cardTitles {
@@ -415,6 +419,18 @@
   height: 100%;
   background-color: white;
   z-index: 9;
+}
+
+.payStatus {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  z-index: 9;
+  background-color: rgba(255, 255, 255, 0.788);
 }
 
 .paymentWrapper {
@@ -570,5 +586,22 @@
 
 .orderSuccessButtonText {
   color: #fff;
+}
+
+@media screen and (max-width: 991.99px) {
+  .paymentCard {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 639.99px) {
+  .paymentCardBack {
+    display: none !important;
+  }
 }
 /*# sourceMappingURL=checkout.module.css.map */

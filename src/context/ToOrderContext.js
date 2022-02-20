@@ -19,6 +19,14 @@ export const ToOrderProvider = ({ children }) => {
 
   React.useEffect(() => {
     const handleSteps = (getStep) => {
+      if(getStep === 0){
+        setStep({
+          checkout: "process",
+          address: "wait",
+          payment: "wait",
+          confirm: "wait",
+        });
+      }
       if (getStep === 1) {
         setStep({
           checkout: "finish",
