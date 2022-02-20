@@ -49,7 +49,11 @@ const PaymentForm = () => {
                 setOrderIsSuccess(true)
                 navigate("/order-success")
                 setCartItems([])
-              }, 7000);
+              }, 6000);
+              setTimeout(() => {
+                setPaymentStatus(false)
+              }
+              , 7000);
           }catch(e){
             console.log(e);
           }
@@ -100,6 +104,7 @@ const PaymentForm = () => {
           help={errors.firstName && touched.firstName && errors.firstName}
           validateStatus={errors.firstName && touched.firstName && "error"}
           label="First Name"
+          className="mx-1"
         >
           <Input
             name="firstName"
@@ -113,6 +118,7 @@ const PaymentForm = () => {
           help={errors.lastName && touched.lastName && errors.lastName}
           validateStatus={errors.lastName && touched.lastName && "error"}
           label="Last Name "
+          className="mx-1"
         >
           <Input
             name="lastName"
@@ -127,6 +133,7 @@ const PaymentForm = () => {
         help={errors.cardNumber && touched.cardNumber && errors.cardNumber}
         validateStatus={errors.cardNumber && touched.cardNumber && "error"}
         label="Card Number"
+        className="mx-1"
       >
         <Input
           onKeyPress={(e) => {
@@ -147,6 +154,7 @@ const PaymentForm = () => {
           help={errors.expireDate && touched.expireDate && errors.expireDate}
           validateStatus={errors.expireDate && touched.expireDate && "error"}
           label="Expiry Date"
+          className="mx-1"
         >
           <Input
             value={paymentFormItem.paymentForm.expireDate}
@@ -158,9 +166,10 @@ const PaymentForm = () => {
           />
         </Form.Item>
         <Form.Item
-          help={errors.cvv && touched.cvv && errors.cvv}
+          
           validateStatus={errors.cvv && touched.cvv && "error"}
           label="CVV"
+          className="mx-1"
         >
           <Input
             onKeyPress={(e) => {

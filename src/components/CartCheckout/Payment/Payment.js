@@ -50,7 +50,7 @@ const Payment = () => {
           </div>
         )}
         {payProcess && (
-          <div className={payStyle.payTimeOut}>
+          <div className={payStyle.payStatus}>
             <div className="d-flex justify-content-center align-items-center h-100 flex-column">
               <div className={payStyle.paymentAnimation}>
                 <Lottie
