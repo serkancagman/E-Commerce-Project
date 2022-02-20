@@ -1,18 +1,14 @@
-import { FooterMain } from 'components/Footer/FooterMain'
-import { Header } from 'components/Header/Header'
-import Register from 'components/LoginorRegister/Register/Register'
-import React from 'react'
+import { Register, Header, FooterMain } from "components";
+import React from "react";
 
 const RegisterPage = () => {
   return (
     <>
-    <Header/>
-
-    <Register/>
-
-    <FooterMain/>
+      <Header />
+      <Register />
+      <FooterMain />
     </>
-  )
-}
+  );
+};
 
-export default RegisterPage
+export default RegisterPage;

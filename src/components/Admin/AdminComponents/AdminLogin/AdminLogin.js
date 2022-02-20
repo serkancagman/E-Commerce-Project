@@ -4,8 +4,8 @@ import adminLogo from "images/adminlogo.png";
 import { useFormik } from "formik";
 import { loginUser } from "API/trendProductAPI";
 import { useNavigate } from "react-router-dom";
-import { validationSchema } from "./AdminLoginValidation";
-import { AuthLoginContext } from "context/AuthLoginContext";
+import { validationSchema } from "Validations/AdminLoginValidation";
+import { AuthLoginContext } from "context";
 const AdminLogin = () => {
   const navigate = useNavigate();
   const { loggedUser } = React.useContext(AuthLoginContext);

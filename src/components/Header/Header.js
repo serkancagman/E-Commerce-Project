@@ -1,18 +1,17 @@
 import React from "react";
 import ReactFlagsSelect from "react-flags-select";
 import "./style/header.css";
-import "./style/headerresponsive.css";
-import Logo from "../../images/logo.png";
+import Logo from "images/logo.png";
 import { BsSearch, BsCart4 } from "react-icons/bs";
 import { FiLogOut, FiUser } from "react-icons/fi";
 import Navbar from "./Navbar";
 import { AsideMenu } from "./AsideMenu";
 import { Link } from "react-router-dom";
-import { ShopCart } from "../Shoppingcart/ShopCart";
-import HeaderContext from "../../context/HeaderContext";
-import { AuthLoginContext } from "context/AuthLoginContext";
-import { ShopCartContext } from "context/ShopCartContext";
-export const Header = () => {
+import { ShopCart } from "components";
+
+import { AuthLoginContext, ShopCartContext, HeaderContext } from "context";
+
+const Header = () => {
   const {
     setSelected,
     selected,
@@ -27,7 +26,7 @@ export const Header = () => {
     littleProfileNav,
   } = React.useContext(HeaderContext);
   const { isLoggedIn, handleLogout } = React.useContext(AuthLoginContext);
-  const {cartItems} = React.useContext(ShopCartContext)
+  const { cartItems } = React.useContext(ShopCartContext);
   const getHandleEUR = () => {
     setCurrency("EUR");
   };
@@ -190,7 +189,7 @@ export const Header = () => {
                           className="dropdown-item signOut"
                           to="#"
                         >
-                        Sign out  <FiLogOut/> 
+                          Sign out <FiLogOut />
                         </Link>
                       </li>
                     </ul>
@@ -208,10 +207,7 @@ export const Header = () => {
                 </>
               ) : (
                 <>
-                  <Link to="/login"
-                    
-                    className="login-menu defaultLogin"
-                  >
+                  <Link to="/login" className="login-menu defaultLogin">
                     <FiUser className="userIcon" size={35} color="#fff" />
 
                     <div className="login-or-register">
@@ -247,3 +243,4 @@ export const Header = () => {
     </>
   );
 };
+export default Header;

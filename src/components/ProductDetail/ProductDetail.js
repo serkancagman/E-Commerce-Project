@@ -5,7 +5,7 @@ import "./style/productdetail.css";
 import { getProductDetail } from "API/trendProductAPI";
 import { ImEnlarge, ImTruck } from "react-icons/im";
 import { Link } from "react-router-dom";
-import { ProductContext } from "context/ProductContext";
+import { ProductContext, ShopCartContext } from "context";
 import { RiShoppingCartFill } from "react-icons/ri";
 import { FaFacebookF, FaTwitter, FaPinterest } from "react-icons/fa";
 import { HiPencil } from "react-icons/hi";
@@ -13,7 +13,6 @@ import WriteReview from "./WriteReview";
 import { BiMoviePlay } from "react-icons/bi";
 import adsBanner from "images/adsImage.jpg";
 import loaderImg from "images/loaderCircle.gif";
-import { ShopCartContext } from "context/ShopCartContext";
 import { Modal } from "antd";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
@@ -232,10 +231,7 @@ const ProductDetail = () => {
                         Pinterest
                       </span>
                     </div>
-                    <button
-                      className="writeRewiew"
-                      onClick={showReview}
-                    >
+                    <button className="writeRewiew" onClick={showReview}>
                       <HiPencil /> Write your review
                     </button>
                   </div>
@@ -266,24 +262,40 @@ const ProductDetail = () => {
             </div>
           </div>
         </div>
-        <Modal footer={null} width={"80%"} title={data.title} visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-        <Swiper
-        pagination={{
-          type: "progressbar",
-        }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
-        
-      >
-        {data.photos.map((photo, index) => (
-          <SwiperSlide className="text-center" key={index}>
-            <img className="img-fluid bigProductImage" src={photo} alt="..." />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      </Modal>
-      <WriteReview productData={data} isShowReview={isShowReview} showReview={showReview} reviewOff={reviewOff} handleCancelReview={handleCancelReview} />
+        <Modal
+          footer={null}
+          width={"80%"}
+          title={data.title}
+          visible={isModalVisible}
+          onOk={handleOk}
+          onCancel={handleCancel}
+        >
+          <Swiper
+            pagination={{
+              type: "progressbar",
+            }}
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            className="mySwiper"
+          >
+            {data.photos.map((photo, index) => (
+              <SwiperSlide className="text-center" key={index}>
+                <img
+                  className="img-fluid bigProductImage"
+                  src={photo}
+                  alt="..."
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </Modal>
+        <WriteReview
+          productData={data}
+          isShowReview={isShowReview}
+          showReview={showReview}
+          reviewOff={reviewOff}
+          handleCancelReview={handleCancelReview}
+        />
       </section>
     </>
   );

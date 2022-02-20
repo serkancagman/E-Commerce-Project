@@ -1,4 +1,4 @@
-import AdminFooter from "components/Admin/Footer/AdminFooter";
+import AdminFooter from "components/Admin/AdminComponents/Footer/AdminFooter";
 import React from "react";
 import { Form, Input, Button } from "antd";
 import { MinusCircleOutlined } from "@ant-design/icons";

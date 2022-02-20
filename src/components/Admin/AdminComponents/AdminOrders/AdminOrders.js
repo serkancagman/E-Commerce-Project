@@ -1,4 +1,4 @@
-import AdminFooter from "components/Admin/Footer/AdminFooter";
+import AdminFooter from "components/Admin/AdminComponents/Footer/AdminFooter";
 import React from "react";
 import { BsBarChart } from "react-icons/bs";
 import { Link } from "react-router-dom";

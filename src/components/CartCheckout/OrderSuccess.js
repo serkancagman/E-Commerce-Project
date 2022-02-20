@@ -1,14 +1,11 @@
 import React from "react";
 import { Steps, Button } from "antd";
-import { Link } from "react-router-dom";
 import { SmileOutlined } from "@ant-design/icons";
 import { MdOutlineHomeWork } from "react-icons/md";
 import checkoutStyle from "./style/checkout.module.css";
 import { BsCart3 } from "react-icons/bs";
-import { Header } from "components/Header/Header";
 import { RiSecurePaymentLine } from "react-icons/ri";
-import { FooterMain } from "components/Footer/FooterMain";
-import { ToOrderContext } from "context/ToOrderContext";
+import { ToOrderContext } from "context";
 import successIcon from "images/paySuccess.png";
 import { BsPersonLinesFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
@@ -25,7 +22,6 @@ const OrderSuccess = () => {
 
   return (
     <>
-      <Header />
       <section className="checkoutMain">
         <div className="container-xxl">
           <div className={checkoutStyle.checkoutWrapper}>
@@ -224,22 +220,19 @@ const OrderSuccess = () => {
                 </div>
               </div>
               <div className={checkoutStyle.orderSuccessButton}>
-                
-                  <Button
-                    onClick={handleSubmit}
-                    className={checkoutStyle.orderSuccessButtonInner}
-                  >
-                    <span className={checkoutStyle.orderSuccessButtonText}>
-                      Continue Shopping
-                    </span>
-                  </Button>
-            
+                <Button
+                  onClick={handleSubmit}
+                  className={checkoutStyle.orderSuccessButtonInner}
+                >
+                  <span className={checkoutStyle.orderSuccessButtonText}>
+                    Continue Shopping
+                  </span>
+                </Button>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <FooterMain />
     </>
   );
 };

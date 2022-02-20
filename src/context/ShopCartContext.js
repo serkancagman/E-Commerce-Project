@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ShopCartContext = React.createContext();
+const ShopCartContext = React.createContext();
 
 export const ShopCartProvider = ({ children }) => {
   const baseCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -41,7 +41,14 @@ export const ShopCartProvider = ({ children }) => {
     setCartTotal(Math.floor(shippingTotal * 100) / 100);
   }, [cartItems, totalPrice]);
 
-  const values = { addToCart, cartItems, cartSub, shipping, cartTotal, setCartItems };
+  const values = {
+    addToCart,
+    cartItems,
+    cartSub,
+    shipping,
+    cartTotal,
+    setCartItems,
+  };
 
   return (
     <ShopCartContext.Provider value={values}>
@@ -49,3 +56,5 @@ export const ShopCartProvider = ({ children }) => {
     </ShopCartContext.Provider>
   );
 };
+
+export default ShopCartContext;

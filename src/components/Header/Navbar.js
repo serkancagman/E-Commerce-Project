@@ -2,17 +2,16 @@ import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsCart4 } from "react-icons/bs";
 import { ElectronicItems } from "./ElectronicItems";
-import Computer from "../../images/computers.jpg";
-import Tablet from "../../images/tablets.jpg";
-import TV from "../../images/tv.jpg";
-import Fashion from "../../images/fashion.jpg";
+import Computer from "images/computers.jpg";
+import Tablet from "images/tablets.jpg";
+import TV from "images/tv.jpg";
+import Fashion from "images/fashion.jpg";
 import Watch from "images/watch.jpg";
 import Mother from "images/mothers-babies.jpg";
 import { Link } from "react-router-dom";
 import { FiUser } from "react-icons/fi";
 import HeaderContext from "context/HeaderContext";
-import { AuthLoginContext } from "context/AuthLoginContext";
-import { ShopCartContext } from "context/ShopCartContext";
+import { AuthLoginContext, ShopCartContext } from "context";
 
 const Navbar = () => {
   const {

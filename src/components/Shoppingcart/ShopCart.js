@@ -3,10 +3,9 @@ import "./style/shopcart.css";
 import { GrFormClose } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import HeaderContext from "context/HeaderContext";
-import { ShopCartContext } from "context/ShopCartContext";
+import { ShopCartContext, HeaderContext } from "context";
 import { Button } from "antd";
-export const ShopCart = () => {
+const ShopCart = () => {
   const { shopCart, showCart } = React.useContext(HeaderContext);
   const { cartItems, addToCart, cartSub, shipping, cartTotal } =
     React.useContext(ShopCartContext);
@@ -91,8 +90,13 @@ export const ShopCart = () => {
                       <span>Taxes: $0.00</span>
                     </div>
                     <div className="goCheck">
-                      <Link to="/cartcheckout" className="text-decoration-none ">
-                       <Button  type="primary" className="btn-block">Checkout</Button>
+                      <Link
+                        to="/cartcheckout"
+                        className="text-decoration-none "
+                      >
+                        <Button type="primary" className="btn-block">
+                          Checkout
+                        </Button>
                       </Link>
                     </div>
                   </div>
@@ -115,3 +119,4 @@ export const ShopCart = () => {
     </aside>
   );
 };
+export default ShopCart;

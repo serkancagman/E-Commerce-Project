@@ -5,7 +5,7 @@ import { BsBarChart } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import { deleteProduct, getProductByCategory } from "API/trendProductAPI";
-import AdminFooter from "components/Admin/Footer/AdminFooter";
+import AdminFooter from "components/Admin/AdminComponents/Footer/AdminFooter";
 
 const AdminProducts = () => {
   const { data, isError, isLoading } = useQuery(

@@ -17,7 +17,7 @@ import SwiperCore, { FreeMode, Pagination } from "swiper";
 
 SwiperCore.use([FreeMode, Pagination, Autoplay]);
 
-export const FeaturedCategories = () => {
+ const FeaturedCategories = () => {
   return (
     <section id="featuredCategories">
       <div className="container-fluid">
@@ -139,3 +139,5 @@ export const FeaturedCategories = () => {
     </section>
   );
 };
+
+export default FeaturedCategories;

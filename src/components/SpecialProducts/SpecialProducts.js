@@ -4,7 +4,7 @@ import { trendProductAPI } from "../../API/trendProductAPI";
 import ProductSlider from "components/ProductSlider/ProductSlider";
 
 
-export const SpecialProducts = () => {
+const SpecialProducts = () => {
   const {
     data,
     error,
@@ -23,3 +23,4 @@ export const SpecialProducts = () => {
     </>
   );
 };
+export default SpecialProducts;

@@ -1,33 +1,42 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay, FreeMode, Mousewheel, Navigation, Pagination } from "swiper";
+import SwiperCore, {
+  Autoplay,
+  FreeMode,
+  Mousewheel,
+  Navigation,
+  Pagination,
+} from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { FaRegEye } from "react-icons/fa";
-import { ShopCartContext } from "context/ShopCartContext";
+import { ShopCartContext } from "context";
 import "./style/productslider.css";
-import { MobileProductSLiderSkeleton, ProductSkeleton } from "components/Loader/SkeletonLoader";
-import { Button,Rate } from "antd";
+import {
+  MobileProductSLiderSkeleton,
+  ProductSkeleton,
+} from "components/Loader/SkeletonLoader";
+import { Button, Rate } from "antd";
 const ProductSlider = ({ data, loading, header, error }) => {
   SwiperCore.use([FreeMode, Pagination, Navigation, Autoplay, Mousewheel]);
   const { addToCart, cartItems } = React.useContext(ShopCartContext);
-  if (loading){
-    if(window.innerWidth <= 414){
+  if (loading) {
+    if (window.innerWidth <= 414) {
       return (
         <div className="container-fluid my-2">
           <div className="h-100 d-flex justify-content-center pe-2 w-100">
-          <MobileProductSLiderSkeleton/>
-        </div>
+            <MobileProductSLiderSkeleton />
           </div>
-      )
-    }else{
-      return(
-        <div className="d-flex justify-content-center w-100">
-          <ProductSkeleton/>
         </div>
-      )
+      );
+    } else {
+      return (
+        <div className="d-flex justify-content-center w-100">
+          <ProductSkeleton />
+        </div>
+      );
     }
   }
 
@@ -47,11 +56,8 @@ const ProductSlider = ({ data, loading, header, error }) => {
             <div className="trend-inner  d-flex align-items-center">
               <Swiper
                 slidesPerView={6}
-                
                 loop={true}
                 cssMode={true}
-                
-                
                 navigation
                 loopFillGroupWithBlank={true}
                 breakpoints={{
@@ -61,14 +67,12 @@ const ProductSlider = ({ data, loading, header, error }) => {
                   },
                   640: {
                     slidesPerView: 2,
-                    
                   },
                   768: {
                     slidesPerView: 3,
                   },
                   700: {
                     slidesPerView: 4,
-                    
                   },
                   1024: {
                     spaceBetween: 20,
@@ -84,22 +88,22 @@ const ProductSlider = ({ data, loading, header, error }) => {
                 className="mySwiper trendSwiper my-3"
               >
                 {data.map((trendData, i) => {
-                  
-                  const findCurrentItem = cartItems.find((item) => item._id === trendData._id);
-                  
+                  const findCurrentItem = cartItems.find(
+                    (item) => item._id === trendData._id
+                  );
+
                   return (
                     <SwiperSlide key={i}>
                       <article className="product-box">
                         <div className="product-img">
                           <Link to={`/product/${trendData._id}`}>
-                            
-                              <img
-                                className="img-fluid productMainImg"
-                                src={trendData.photos[0]}
-                                type="image/vnd.ms-photo"
-                                alt="..."
-                              />
-                          
+                            <img
+                              className="img-fluid productMainImg"
+                              src={trendData.photos[0]}
+                              type="image/vnd.ms-photo"
+                              alt="..."
+                            />
+
                             <div className="show-product">
                               <FaRegEye
                                 color="#E91E63"
@@ -118,15 +122,35 @@ const ProductSlider = ({ data, loading, header, error }) => {
                           </Link>
                         </div>
                         <div className="d-flex my-2 justify-content-start align-items-center">
-                          <Rate className="mx-2" style={{fontSize:"15px"}} count={5} value={4} disabled />
-                          <span style={{fontSize:"13px"}} className="mx-2 mt-1 text-dark fw-bold  d-block">(214)</span>
-                          </div>
+                          <Rate
+                            className="mx-2"
+                            style={{ fontSize: "15px" }}
+                            count={5}
+                            value={4}
+                            disabled
+                          />
+                          <span
+                            style={{ fontSize: "13px" }}
+                            className="mx-2 mt-1 text-dark fw-bold  d-block"
+                          >
+                            (214)
+                          </span>
+                        </div>
                         <div className="product-price my-3 w-100 d-flex justify-content-between align-items-center">
                           <span className="text-dark fw-bold mx-2">
                             ${trendData.price}{" "}
                           </span>
 
-                          <Button onClick={()=> addToCart(trendData,findCurrentItem)} className={`buy-btn mx-2 ${findCurrentItem ? "addedBasket" : ""}`}>{findCurrentItem ? "Remove" : "Add to cart"}</Button>
+                          <Button
+                            onClick={() =>
+                              addToCart(trendData, findCurrentItem)
+                            }
+                            className={`buy-btn mx-2 ${
+                              findCurrentItem ? "addedBasket" : ""
+                            }`}
+                          >
+                            {findCurrentItem ? "Remove" : "Add to cart"}
+                          </Button>
                         </div>
                       </article>
                     </SwiperSlide>

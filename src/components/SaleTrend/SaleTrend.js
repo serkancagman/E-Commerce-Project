@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { SaleTrendItems } from "components/Helpers/SaleTrendItems";
-export const SaleTrend = () => {
+const SaleTrend = () => {
   return (
     <section id="saleTrend">
       <div className="container-fluid">
@@ -40,3 +40,4 @@ export const SaleTrend = () => {
     </section>
   );
 };
+export default  SaleTrend;

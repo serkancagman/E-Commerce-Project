@@ -1,26 +1,27 @@
-
 import React from "react";
-import { Banner } from "../Banner/Banner";
-import { FeaturedCategories } from "../FeaturedCategories/FeaturedCategories";
-import { FeaturedProducts } from "../FeaturedProducts/FeaturedProducts";
-import { Premium } from "../Premium/Premium";
-import { SpecialProducts } from "../SpecialProducts/SpecialProducts";
-import { TrendProducts } from "../TrendProducts/TrendProducts";
-import { FooterMain } from "components/Footer/FooterMain";
-import { Header } from "components/Header/Header";
+import {
+  Header,
+  Banner,
+  TrendProducts,
+  FooterMain,
+  FeaturedCategories,
+  FeaturedProducts,
+  Premium,
+  SpecialProducts,
+} from "components";
 
-export const Home = () => {
-  
+const Home = () => {
   return (
     <>
       <Header />
       <Banner />
       <TrendProducts />
-      <FeaturedProducts/>
-      <Premium/>
+      <FeaturedProducts />
+      <Premium />
       <SpecialProducts header="Special Products" />
-      <FeaturedCategories/>
+      <FeaturedCategories />
       <FooterMain />
     </>
   );
 };
+export default Home;

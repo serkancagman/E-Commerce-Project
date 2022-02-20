@@ -1,57 +1,57 @@
-import React from 'react'
+import React from "react";
 import RegisterStyle from "../style/loginorregister.module.css";
 import { useFormik } from "formik";
 import { BsGoogle } from "react-icons/bs";
-import validationSchema from "./LoginValidation";
+import validationSchema from "Validations/LoginValidation";
 import { Form, Input, Alert, Button } from "antd";
 import { Link } from "react-router-dom";
-import { loginUser } from 'API/trendProductAPI';
+import { loginUser } from "API/trendProductAPI";
 import { FaFacebookF } from "react-icons/fa";
-import { AuthLoginContext } from 'context/AuthLoginContext';
+import { AuthLoginContext } from "context";
 
 const Login = () => {
-    const {loggedUser} = React.useContext(AuthLoginContext);
-    const { handleChange, handleSubmit, errors, touched, handleBlur } = useFormik(
-        {
-          initialValues: {
-            email: "",
-            password: "",
-            passwordConfirm: "",
-          },
-          validationSchema,
-          onSubmit: async (values, bag) => {
-            try {
-              const sendLoginData = await loginUser({
-                email: values.email,
-                password: values.password,
-              });
-              loggedUser(sendLoginData);
-              console.log(sendLoginData);
-            } catch (err) {
-              bag.setErrors({ serverError: err.response.data.message });
-            }
-          },
+  const { loggedUser } = React.useContext(AuthLoginContext);
+  const { handleChange, handleSubmit, errors, touched, handleBlur } = useFormik(
+    {
+      initialValues: {
+        email: "",
+        password: "",
+        passwordConfirm: "",
+      },
+      validationSchema,
+      onSubmit: async (values, bag) => {
+        try {
+          const sendLoginData = await loginUser({
+            email: values.email,
+            password: values.password,
+          });
+          loggedUser(sendLoginData);
+          console.log(sendLoginData);
+        } catch (err) {
+          bag.setErrors({ serverError: err.response.data.message });
         }
-      );
+      },
+    }
+  );
 
-      const formItemLayout = {
-        labelCol: {
-          xs: {
-            span: 24,
-          },
-          sm: {
-            span: 6,
-          },
-        },
-        wrapperCol: {
-          xs: {
-            span: 24,
-          },
-          sm: {
-            span: 14,
-          },
-        },
-      };
+  const formItemLayout = {
+    labelCol: {
+      xs: {
+        span: 24,
+      },
+      sm: {
+        span: 6,
+      },
+    },
+    wrapperCol: {
+      xs: {
+        span: 24,
+      },
+      sm: {
+        span: 14,
+      },
+    },
+  };
   return (
     <section id="userLogin" className="py-4">
       {errors.serverError && (
@@ -70,11 +70,7 @@ const Login = () => {
                 </span>
               </div>
               <div className={RegisterStyle.registerForm}>
-                <Form
-                  onSubmitCapture={handleSubmit}
-                  
-                  {...formItemLayout}
-                >
+                <Form onSubmitCapture={handleSubmit} {...formItemLayout}>
                   <div className="d-flex justify-content-center">
                     <div className={RegisterStyle.useSocialGoogle}>
                       <BsGoogle
@@ -125,21 +121,17 @@ const Login = () => {
                     />
                   </Form.Item>
                   <div className="d-flex justify-content-center">
-                    <div className="w-50">
-                    </div>
+                    <div className="w-50"></div>
                   </div>
                   <div className="d-flex justify-content-center my-2">
-                    <Button
-                      onClick={handleSubmit}
-                      type="primary"
-                    >
+                    <Button onClick={handleSubmit} type="primary">
                       Login
                     </Button>
                   </div>
                 </Form>
               </div>
               <h6 className="text-center my-3">
-              Don't have an account ?{" "}
+                Don't have an account ?{" "}
                 <Link to="/signup" className="text-decoration-none">
                   Sign up.
                 </Link>
@@ -149,7 +141,7 @@ const Login = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

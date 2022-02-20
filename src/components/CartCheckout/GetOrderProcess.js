@@ -5,18 +5,14 @@ import { SmileOutlined } from "@ant-design/icons";
 import { MdOutlineHomeWork } from "react-icons/md";
 import checkoutStyle from "./style/checkout.module.css";
 import { BsCart3 } from "react-icons/bs";
-import { Header } from "components/Header/Header";
 import AddressInformation from "./AddressStep/AddressInformation";
 import { RiSecurePaymentLine } from "react-icons/ri";
-import { FooterMain } from "components/Footer/FooterMain";
-import { ToOrderContext } from "context/ToOrderContext";
+import { ToOrderContext } from "context";
 import Payment from "./Payment/Payment";
 const GetOrderProcess = () => {
-
-  const {step} = React.useContext(ToOrderContext)
+  const { step } = React.useContext(ToOrderContext);
   return (
     <>
-      <Header />
       <section className="checkoutMain">
         <div className="container-xxl">
           <div className={checkoutStyle.checkoutWrapper}>
@@ -44,13 +40,12 @@ const GetOrderProcess = () => {
                 />
               </Steps>
             </div>
-            {step.checkout === "process" && <Checkout/>}
-            {step.address === "process" && <AddressInformation/>}
-            {step.payment === "process" && <Payment/>}
+            {step.checkout === "process" && <Checkout />}
+            {step.address === "process" && <AddressInformation />}
+            {step.payment === "process" && <Payment />}
           </div>
         </div>
       </section>
-      <FooterMain />
     </>
   );
 };

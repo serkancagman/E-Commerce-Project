@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ToOrderContext = React.createContext();
+const ToOrderContext = React.createContext();
 
 export const ToOrderProvider = ({ children }) => {
   const [orderAddress, setOrderAddress] = React.useState({});
@@ -19,7 +19,7 @@ export const ToOrderProvider = ({ children }) => {
 
   React.useEffect(() => {
     const handleSteps = (getStep) => {
-      if(getStep === 0){
+      if (getStep === 0) {
         setStep({
           checkout: "process",
           address: "wait",
@@ -71,10 +71,10 @@ export const ToOrderProvider = ({ children }) => {
     setTotalProducts,
     orderID,
     setOrderID,
-
   };
 
   return (
     <ToOrderContext.Provider value={values}>{children}</ToOrderContext.Provider>
   );
 };
+export default ToOrderContext;

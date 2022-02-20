@@ -2,14 +2,14 @@ import React from "react";
 import RegisterStyle from "../style/loginorregister.module.css";
 import { useFormik } from "formik";
 import { BsGoogle } from "react-icons/bs";
-import validationSchema from "./RegisterValidation";
+import validationSchema from "Validations/RegisterValidation";
 import { Form, Input, Alert, Checkbox, Button } from "antd";
 import { Link } from "react-router-dom";
 import { registerUser } from "API/trendProductAPI";
 import { FaFacebookF } from "react-icons/fa";
-import { AuthLoginContext } from "context/AuthLoginContext";
+import { AuthLoginContext } from "context";
 const Register = () => {
-  const {loggedUser} = React.useContext(AuthLoginContext);
+  const { loggedUser } = React.useContext(AuthLoginContext);
   const [checkPrivacy, setCheckPrivacy] = React.useState(true);
   const { handleChange, handleSubmit, errors, touched, handleBlur } = useFormik(
     {

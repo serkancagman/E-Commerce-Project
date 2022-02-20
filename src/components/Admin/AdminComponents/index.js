@@ -1,0 +1,9 @@
+export {default as AddProduct} from './AdminAddProduct/AddProduct';
+export {default as AdminDashboard} from './AdminDashboard/AdminDashboard';
+export {default as AdminEditProduct} from './AdminEditProduct/AdminEditProduct';
+export {default as AdminOrders} from './AdminOrders/AdminOrders';
+export {default as AdminProducts} from './AdminProducts/AdminProducts';
+export {default as AdminLogin} from './AdminLogin/AdminLogin';
+export {default as AdminHeader} from './Header/AdminHeader';
+export {default as AdminNav} from './Nav/AdminNav';
+export {default as AdminFooter} from './Footer/AdminFooter';

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const PaymentFormContext = React.createContext();
+const PaymentFormContext = React.createContext();
 
 export const PaymentFormProvider = ({ children }) => {
   const [cardType, setCardType] = React.useState("");
@@ -27,3 +27,4 @@ export const PaymentFormProvider = ({ children }) => {
     </PaymentFormContext.Provider>
   );
 };
+export default PaymentFormContext;

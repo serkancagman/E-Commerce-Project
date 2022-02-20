@@ -7,7 +7,7 @@ import PremiumPic3 from "../../images/productMain4.jpg";
 import PremiumPic4 from "../../images/productMain5.jpg";
 import PremiumPic5 from "../../images/productMain6.jpg";
 import { Link } from "react-router-dom";
-export const Premium = () => {
+const Premium = () => {
   return (
     <section id="premiumProducts" className="py-3">
       <div className="container-fluid">
@@ -70,3 +70,5 @@ export const Premium = () => {
     </section>
   );
 };
+
+export default Premium

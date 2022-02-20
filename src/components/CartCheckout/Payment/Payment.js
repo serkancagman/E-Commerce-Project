@@ -8,16 +8,14 @@ import masterCardSVG from "images/mastercard.svg";
 import maestroCardSVG from "images/maestro.svg";
 import Lottie from "lottie-react";
 import dinersCardSVG from "images/diners.svg";
-import { ToOrderContext } from "context/ToOrderContext";
+import { ToOrderContext, PaymentFormContext } from "context";
 import visaCardSVG from "images/visa.svg";
 import paymentSuccess from "../Progress/paymentSuccess.json";
 import paymentProcess from "../Progress/payProcess.json";
-import { PaymentFormContext } from "context/PaymentFormContext";
 const Payment = () => {
   const { paymentFormItem, cardType } = React.useContext(PaymentFormContext);
-  const {paymentStatus, payProcess} = React.useContext(ToOrderContext)
+  const { paymentStatus, payProcess } = React.useContext(ToOrderContext);
   const [cardIcon, setCardIcon] = React.useState();
-
 
   React.useEffect(() => {
     if (cardType === "Mastercard") {
@@ -36,40 +34,38 @@ const Payment = () => {
   return (
     <div className={payStyle.paymentWrapper}>
       {paymentStatus && (
-          <div className={payStyle.payTimeOut}>
-            <div className="d-flex justify-content-center align-items-center h-100 flex-column">
-              <div className={payStyle.paymentAnimation}>
-                <Lottie
-                  width="100%"
-                  delay={1000}
-                  loop="false"
-                  animationData={paymentSuccess}
-                />
-              </div>
+        <div className={payStyle.payTimeOut}>
+          <div className="d-flex justify-content-center align-items-center h-100 flex-column">
+            <div className={payStyle.paymentAnimation}>
+              <Lottie
+                width="100%"
+                delay={1000}
+                loop="false"
+                animationData={paymentSuccess}
+              />
             </div>
           </div>
-        )}
-        {payProcess && (
-          <div className={payStyle.payStatus}>
-            <div className="d-flex justify-content-center align-items-center h-100 flex-column">
-              <div className={payStyle.paymentAnimation}>
-                <Lottie
-                  width="100"
-                  delay={1000}
-                  loop="false"
-                  animationData={paymentProcess}
-                />
-              </div>
+        </div>
+      )}
+      {payProcess && (
+        <div className={payStyle.payStatus}>
+          <div className="d-flex justify-content-center align-items-center h-100 flex-column">
+            <div className={payStyle.paymentAnimation}>
+              <Lottie
+                width="100"
+                delay={1000}
+                loop="false"
+                animationData={paymentProcess}
+              />
             </div>
           </div>
-        )}
+        </div>
+      )}
       <div className="container-xxl">
         <div className="d-flex justify-content-center mb-4 align-items-center">
           <div className={payStyle.paymentHeader}>
             <img className="img-fluid" src={securePay} alt="..." />
           </div>
-        
-          
         </div>
         <div className="row justify-content-center g-3">
           <div className="col-lg-6 col-md-12 text-center">

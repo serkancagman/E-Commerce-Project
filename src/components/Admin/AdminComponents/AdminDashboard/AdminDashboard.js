@@ -8,7 +8,7 @@ import CustomerRating from "./CustomerRating";
 import RecentReviews from "./RecentReviews";
 import OrderProducts from "./OrderProducts";
 import ActivityOverview from "./ActivityOverview";
-import AdminFooter from "components/Admin/Footer/AdminFooter";
+import AdminFooter from "components/Admin/AdminComponents/Footer/AdminFooter";
 const AdminDashboard = () => {
   return (
     <>

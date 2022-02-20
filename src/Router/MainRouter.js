@@ -1,9 +1,15 @@
-import ComputerCategory from "components/Pages/ComputerCategory";
-import { Home } from "components/Pages/Home";
-import ProductInnerPage from "components/Pages/ProductInnerPage";
-import ProfileMainPage from "components/Pages/ProfileMainPage";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import {
+  Home,
+  ProductDetailPage,
+  ComputerCategoryPage,
+  ProfileMainPage,
+  OrderSuccessPage,
+  OrderProcessPage,
+  RegisterPage,
+  LoginPage,
+} from "components/Pages";
 import {
   ProtectedAdminRoute,
   ProtectedRoute,
@@ -12,16 +18,14 @@ import {
   ProtectedCartRoute,
   ProtectedOrderSuccessRoute,
 } from "./ProtectedRoute";
-import AdminLogin from "components/Admin/AdminComponents/AdminLogin/AdminLogin";
-import AdminDashboardPage from "components/Pages/AdminPages/AdminDashboardPage";
-import AdminOrdersPage from "components/Pages/AdminPages/AdminOrdersPage";
-import AdminProductsPage from "components/Pages/AdminPages/AdminProductsPage";
-import RegisterPage from "components/Pages/RegisterPage";
-import LoginPage from "components/Pages/LoginPage";
-import AdminAddProductPage from "components/Pages/AdminPages/AdminAddProductPage";
-import AdminEditProductPage from "components/Pages/AdminPages/AdminEditProductPage";
-import GetOrderProcess from "components/CartCheckout/GetOrderProcess";
-import OrderSuccess from "components/CartCheckout/OrderSuccess";
+import {
+  AdminLoginPage,
+  AdminDashboardPage,
+  AdminOrdersPage,
+  AdminProductsPage,
+  AdminAddProductPage,
+  AdminEditProductPage,
+} from "components/Pages/AdminPages";
 
 const MainRouter = () => {
   return (
@@ -44,8 +48,8 @@ const MainRouter = () => {
             </ProtectedLoginRegisterRoute>
           }
         />
-        <Route path="/product/:product_id" element={<ProductInnerPage />} />
-        <Route path="/computer&laptops" element={<ComputerCategory />} />
+        <Route path="/product/:product_id" element={<ProductDetailPage />} />
+        <Route path="/computer&laptops" element={<ComputerCategoryPage />} />
         <Route
           path="/profile"
           element={
@@ -59,7 +63,7 @@ const MainRouter = () => {
           path="/admin"
           element={
             <ProtectedAdminLogin>
-              <AdminLogin />
+              <AdminLoginPage />
             </ProtectedAdminLogin>
           }
         />
@@ -107,7 +111,7 @@ const MainRouter = () => {
           path="/cartcheckout"
           element={
             <ProtectedCartRoute>
-              <GetOrderProcess />
+              <OrderProcessPage />
             </ProtectedCartRoute>
           }
         />
@@ -115,7 +119,7 @@ const MainRouter = () => {
           path="/order-success"
           element={
             <ProtectedOrderSuccessRoute>
-              <OrderSuccess />
+              <OrderSuccessPage />
             </ProtectedOrderSuccessRoute>
           }
         />

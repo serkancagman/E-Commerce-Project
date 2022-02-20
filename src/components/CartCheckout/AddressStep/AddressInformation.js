@@ -4,10 +4,10 @@ import addressStyle from "../style/checkout.module.css";
 import { countryCode } from "components/Helpers/PhoneCountryCode";
 import Checkbox from "antd/lib/checkbox/Checkbox";
 import { useFormik } from "formik";
-import validationSchema from "./AddressValidation";
+import validationSchema from "Validations/AddressValidation";
 import Lottie from "lottie-react";
 import checkoutAnimation from "../Progress/checkoutAnimation.json";
-import { ToOrderContext } from "context/ToOrderContext";
+import { ToOrderContext } from "context";
 const AdressInformation = () => {
   const { Option } = Select;
   const [livePhoneCode, setLivePhoneCode] = React.useState("");

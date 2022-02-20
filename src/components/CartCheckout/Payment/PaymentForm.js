@@ -3,25 +3,33 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import payStyle from "../style/checkout.module.css";
 import { useFormik } from "formik";
-import { PaymentFormContext } from "context/PaymentFormContext";
-import validationSchema from "./PaymentValidation";
-import Types from "creditcards-types"
+import {
+  PaymentFormContext,
+  ToOrderContext,
+  ShopCartContext,
+} from "context";
+import validationSchema from "Validations/PaymentValidation";
+import Types from "creditcards-types";
 import { getOrder } from "API/trendProductAPI";
-import { ToOrderContext } from "context/ToOrderContext";
-import { ShopCartContext } from "context/ShopCartContext";
 const PaymentForm = () => {
   const navigate = useNavigate();
-  const {cartItems,setCartItems} = React.useContext(ShopCartContext)
-  const {orderAddress,setOrderIsSuccess ,setPaymentStatus,setPayProcess, setOrderID} = React.useContext(ToOrderContext)
-  const { setCardType,paymentFormItem, setPaymentFormItem } =
+  const { cartItems, setCartItems } = React.useContext(ShopCartContext);
+  const {
+    orderAddress,
+    setOrderIsSuccess,
+    setPaymentStatus,
+    setPayProcess,
+    setOrderID,
+  } = React.useContext(ToOrderContext);
+  const { setCardType, paymentFormItem, setPaymentFormItem } =
     React.useContext(PaymentFormContext);
 
-    const getCartId = cartItems.map((item) => item._id)
-    const justAddress = orderAddress.address
-    const input = {
-      address:justAddress,
-      items: JSON.stringify(getCartId),
-    }
+  const getCartId = cartItems.map((item) => item._id);
+  const justAddress = orderAddress.address;
+  const input = {
+    address: justAddress,
+    items: JSON.stringify(getCartId),
+  };
   const { handleBlur, handleChange, handleSubmit, values, errors, touched } =
     useFormik({
       initialValues: {
@@ -34,33 +42,28 @@ const PaymentForm = () => {
       },
       validationSchema,
       onSubmit: async () => {
-          try{
-              const getNewOrder = await getOrder(input)
-              
-              setPayProcess(true)
-              setOrderID(getNewOrder._id)
-              setTimeout(() => {
-                setPayProcess(false)
-                setPaymentStatus(true)
-                
-              }, 5000);
-              setTimeout(() => {
-                
-                setOrderIsSuccess(true)
-                navigate("/order-success")
-                setCartItems([])
-              }, 6000);
-              setTimeout(() => {
-                setPaymentStatus(false)
-              }
-              , 7000);
-          }catch(e){
-            console.log(e);
-          }
+        try {
+          const getNewOrder = await getOrder(input);
+
+          setPayProcess(true);
+          setOrderID(getNewOrder._id);
+          setTimeout(() => {
+            setPayProcess(false);
+            setPaymentStatus(true);
+          }, 5000);
+          setTimeout(() => {
+            setOrderIsSuccess(true);
+            navigate("/order-success");
+            setCartItems([]);
+          }, 6000);
+          setTimeout(() => {
+            setPaymentStatus(false);
+          }, 7000);
+        } catch (e) {
+          console.log(e);
+        }
       },
     });
-
-
 
   React.useEffect(() => {
     let formattedCardNumber = values.cardNumber.replace(/[^\d]/g, "");
@@ -82,9 +85,8 @@ const PaymentForm = () => {
       values.expireDate = formattedExpireDate;
     }
 
-
-    const type = Types.find(type => type.test(formattedCardNumber, true))
-    setCardType(type && type.name)
+    const type = Types.find((type) => type.test(formattedCardNumber, true));
+    setCardType(type && type.name);
 
     setPaymentFormItem({
       paymentForm: {
@@ -95,7 +97,7 @@ const PaymentForm = () => {
         cvv: values.cvv,
       },
     });
-  }, [values,setCardType,setPaymentFormItem]);
+  }, [values, setCardType, setPaymentFormItem]);
 
   return (
     <Form>
@@ -166,7 +168,6 @@ const PaymentForm = () => {
           />
         </Form.Item>
         <Form.Item
-          
           validateStatus={errors.cvv && touched.cvv && "error"}
           label="CVV"
           className="mx-1"
@@ -189,8 +190,12 @@ const PaymentForm = () => {
       <Form.Item>
         <Checkbox>Save this card for future payments</Checkbox>
       </Form.Item>
-      <Button className={payStyle.continueBtn} htmlType="submit" onClick={handleSubmit}>
-      Make the payment
+      <Button
+        className={payStyle.continueBtn}
+        htmlType="submit"
+        onClick={handleSubmit}
+      >
+        Make the payment
       </Button>
     </Form>
   );

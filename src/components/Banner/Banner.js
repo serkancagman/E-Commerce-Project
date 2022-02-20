@@ -9,7 +9,7 @@ import "swiper/css";
 import { Link } from "react-router-dom";
 
 SwiperCore.use([Pagination]);
-export const Banner = () => {
+const Banner = () => {
   return (
     <section id="banner">
       <div className="container-fluid">
@@ -80,3 +80,5 @@ export const Banner = () => {
     </section>
   );
 };
+
+export default Banner;

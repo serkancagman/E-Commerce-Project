@@ -1,0 +1,9 @@
+export {default as Home} from './Home';
+export {default as BasketCheckoutPage} from './BasketCheckoutPage';
+export {default as ComputerCategoryPage} from './ComputerCategoryPage';
+export {default as ProductDetailPage} from './ProductDetailPage';
+export {default as LoginPage} from './LoginPage';
+export {default as RegisterPage} from './RegisterPage';
+export {default as ProfileMainPage} from './ProfileMainPage';
+export {default as OrderSuccessPage} from './OrderSuccessPage';
+export {default as OrderProcessPage} from './OrderProcessPage';

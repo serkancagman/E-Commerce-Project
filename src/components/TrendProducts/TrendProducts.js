@@ -2,9 +2,9 @@ import React from "react";
 import {useQuery } from "react-query";
 import { trendProductAPI } from "../../API/trendProductAPI";
 import ProductSlider from "components/ProductSlider/ProductSlider";
-import { SaleTrend } from "../SaleTrend/SaleTrend";
+import { SaleTrend } from "components";
 
-export const TrendProducts = () => {
+ const TrendProducts = () => {
   const {
     data,
     error,
@@ -23,3 +23,4 @@ export const TrendProducts = () => {
     </>
   );
 };
+export default TrendProducts;

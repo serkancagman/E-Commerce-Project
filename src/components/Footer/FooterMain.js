@@ -5,7 +5,7 @@ import { FaTruck, FaCreditCard, FaIdCard } from "react-icons/fa";
 import { IoMdHelpBuoy } from "react-icons/io";
 import { FooterInner } from "./FooterInner";
 
-export const FooterMain = () => {
+ const FooterMain = () => {
   return (
     <footer id="mainFooter">
       <div className="container-fluid">
@@ -41,3 +41,5 @@ export const FooterMain = () => {
     </footer>
   );
 };
+
+export default FooterMain;
