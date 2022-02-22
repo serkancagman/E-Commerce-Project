@@ -54,6 +54,7 @@ export const ShopCartProvider = ({ children }) => {
     setCartItems(filtered);
   };
 
+  
   const totalPrice = cartItems.reduce(
     (acc, curr) => acc + curr.price * curr.quantity,
     0

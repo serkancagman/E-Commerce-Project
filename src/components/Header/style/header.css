@@ -1001,6 +1001,29 @@ body {
   visibility: hidden;
 }
 
+.userLink {
+  text-decoration: none;
+  font-weight: 550;
+  font-size: 13px;
+}
+
+.userLink:hover {
+  color: #16bcdc !important;
+}
+
+.logoutLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .formSHow {
   visibility: visible !important;
   opacity: 1 !important;
@@ -1025,8 +1048,15 @@ body {
   display: block !important;
 }
 
+.logoutLink {
+  color: #c71717 !important;
+  text-decoration: none;
+  font-weight: 600;
+}
+
 .myProfileBtn {
   color: #fff;
+  cursor: default;
   font-weight: 600;
 }
 

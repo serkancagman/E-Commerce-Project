@@ -3,13 +3,13 @@ import ReactFlagsSelect from "react-flags-select";
 import "./style/header.css";
 import Logo from "images/logo.png";
 import { BsSearch, BsCart4 } from "react-icons/bs";
-import { FiLogOut, FiUser } from "react-icons/fi";
+import {  FiUser,FiLogOut } from "react-icons/fi";
 import Navbar from "./Navbar";
 import { AsideMenu } from "./AsideMenu";
 import { Link } from "react-router-dom";
 import { ShopCart } from "components";
-
 import { AuthLoginContext, ShopCartContext, HeaderContext } from "context";
+import { Dropdown,Menu} from "antd";
 
 const Header = () => {
   const {
@@ -22,11 +22,10 @@ const Header = () => {
     asideActive,
     setCurrency,
     showCart,
-    setLittleProfileNav,
-    littleProfileNav,
+
   } = React.useContext(HeaderContext);
   const { isLoggedIn, handleLogout } = React.useContext(AuthLoginContext);
-  const { cartItems,cartTotal } = React.useContext(ShopCartContext);
+  const { cartItems, cartTotal } = React.useContext(ShopCartContext);
   const getHandleEUR = () => {
     setCurrency("EUR");
   };
@@ -42,6 +41,26 @@ const Header = () => {
     localStorage.setItem("language", selected);
   }, [selected]);
 
+
+  const handleUserDropdown = (
+    <Menu>
+      <Menu.Item>
+        <Link className="userLink" to ="/profile">Profile</Link>
+      </Menu.Item>
+      <Menu.Item>
+        <Link className="userLink" to ="/profile">Address</Link>
+      </Menu.Item>
+      <Menu.Item>
+        <Link className="userLink" to ="/profile">Orders</Link>
+      </Menu.Item>
+      <Menu.Item>
+        <Link className="userLink" to ="/profile">Wishlist</Link>
+      </Menu.Item>
+      <Menu.Item>
+        <Link className="logoutLink" onClick={handleLogout} to="/profile"><span>Logout</span><FiLogOut/></Link>
+      </Menu.Item>
+    </Menu>
+  )
   return (
     <>
       <header
@@ -155,55 +174,20 @@ const Header = () => {
               {isLoggedIn ? (
                 <>
                   {" "}
-                  <div
-                    onMouseLeave={() => setLittleProfileNav(false)}
-                    onMouseMove={() => setLittleProfileNav(true)}
-                    className="login-menu"
+                  <Dropdown
+                    overlay={handleUserDropdown}
+                    placement="bottomCenter"
                   >
-                    <ul
-                      className={`userDropdown ${
-                        littleProfileNav ? " showLittleNav" : ""
-                      }`}
-                    >
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          Information
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          Adresses
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="#">
-                          Orders
-                        </Link>
-                      </li>
-                      <li>
-                        <hr className="dropdown-divider" />
-                      </li>
-                      <li>
-                        <Link
-                          onClick={handleLogout}
-                          className="dropdown-item signOut"
-                          to="#"
-                        >
-                          Sign out <FiLogOut />
-                        </Link>
-                      </li>
-                    </ul>
-                    <Link
-                      to="/profile"
-                      className="myProfileLink position-relative"
-                    >
-                      <FiUser className="userIcon" size={35} color="#fff" />
+                    <div className="login-menu">
+                      <div className="myProfileLink position-relative">
+                        <FiUser className="userIcon" size={35} color="#fff" />
 
-                      <div className="login-or-register ">
-                        <span className="myProfileBtn">My Profile</span>
+                        <div className="login-or-register ">
+                          <span className="myProfileBtn">My Profile</span>
+                        </div>
                       </div>
-                    </Link>
-                  </div>
+                    </div>
+                  </Dropdown>
                 </>
               ) : (
                 <>

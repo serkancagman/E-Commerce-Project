@@ -797,8 +797,20 @@ body {
   visibility: hidden;
 }
 
-
-
+.userLink{
+  text-decoration: none;
+  font-weight: 550;
+  font-size: 13px;
+  &:hover{
+    color: $secondcolor !important;
+  }
+}
+.logoutLink{
+display: flex;
+width: 100%;
+justify-content: space-between;
+align-items: center;
+}
 .formSHow {
   visibility: visible !important;
   opacity: 1 !important;
@@ -820,9 +832,14 @@ body {
 .showDarkForm {
   display: block !important;
 }
-
+.logoutLink{
+  color: #c71717 !important;
+  text-decoration: none;
+  font-weight: 600;
+}
 .myProfileBtn{
   color: #fff;
+  cursor: default;
   font-weight: 600;
 }
 .myProfileLink{
