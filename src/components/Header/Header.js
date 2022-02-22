@@ -26,7 +26,7 @@ const Header = () => {
     littleProfileNav,
   } = React.useContext(HeaderContext);
   const { isLoggedIn, handleLogout } = React.useContext(AuthLoginContext);
-  const { cartItems } = React.useContext(ShopCartContext);
+  const { cartItems,cartTotal } = React.useContext(ShopCartContext);
   const getHandleEUR = () => {
     setCurrency("EUR");
   };
@@ -221,7 +221,7 @@ const Header = () => {
                 <BsCart4 size={35} color="#fff" />
                 <div className="cart-info">
                   <span className="cart-header">My Cart</span>
-                  <span className="cart-price">€0.00</span>
+                  <span className="cart-price">€{cartTotal}</span>
                 </div>
                 <span className="product-quantity">{cartItems.length}</span>
               </div>

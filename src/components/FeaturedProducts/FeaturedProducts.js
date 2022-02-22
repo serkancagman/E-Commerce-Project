@@ -97,11 +97,9 @@ const FeaturedProducts = () => {
 
                       <Button
                         onClick={() => addToCart(featuredData, filteredItems)}
-                        className={` ${
-                          filteredItems ? "addedBasketItem" : "add-cart-btn"
-                        }`}
+                        className="add-cart-btn"
                       >
-                        {filteredItems ? "Remove from cart" : "Add to cart"}
+                        Add to cart
                       </Button>
                     </div>
                   </div>

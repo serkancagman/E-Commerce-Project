@@ -7,7 +7,7 @@ import { ShopCartContext, HeaderContext } from "context";
 import { Button } from "antd";
 const ShopCart = () => {
   const { shopCart, showCart } = React.useContext(HeaderContext);
-  const { cartItems, addToCart, cartSub, shipping, cartTotal } =
+  const { cartItems, removeFromCart, cartSub, shipping, cartTotal } =
     React.useContext(ShopCartContext);
   return (
     <aside
@@ -24,9 +24,6 @@ const ShopCart = () => {
             <div className="cartProductWrapper d-flex flex-column">
               {cartItems &&
                 cartItems.map((cartProduct) => {
-                  const findItem = cartItems.find(
-                    (item) => item._id === cartProduct._id
-                  );
                   return (
                     <div
                       key={cartProduct._id}
@@ -53,11 +50,11 @@ const ShopCart = () => {
                             <span className="cartMainPrice">
                               ${cartProduct.price}
                             </span>
-                            <span className="productQuantity"> x 1</span>
+                            <span className="productQuantity"> x {cartProduct.quantity ? cartProduct.quantity : "1"}</span>
                           </div>
                         </div>
                         <div
-                          onClick={() => addToCart(cartProduct, findItem)}
+                          onClick={() => removeFromCart(cartProduct)}
                           className="deleteCartProduct me-2"
                         >
                           <RiDeleteBin6Line size={25} />

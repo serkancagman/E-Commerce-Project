@@ -140,16 +140,13 @@ const ProductSlider = ({ data, loading, header, error }) => {
                           <span className="text-dark fw-bold mx-2">
                             ${trendData.price}{" "}
                           </span>
-
                           <Button
                             onClick={() =>
                               addToCart(trendData, findCurrentItem)
                             }
-                            className={`buy-btn mx-2 ${
-                              findCurrentItem ? "addedBasket" : ""
-                            }`}
+                            className="buy-btn mx-2 findCurrentItem"
                           >
-                            {findCurrentItem ? "Remove" : "Add to cart"}
+                            Add to cart
                           </Button>
                         </div>
                       </article>

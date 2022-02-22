@@ -207,15 +207,13 @@ const ProductDetail = () => {
 
                         <button
                           onClick={() => addToCart(data, findItem, quantity)}
-                          className={`btn addToCartButton ${
-                            findItem && "removeFromBasket"
-                          }`}
+                          className="btn addToCartButton"
                         >
                           <RiShoppingCartFill
                             className="addCartIcon"
                             size={15}
                           />
-                          {findItem ? "Remove from cart" : "Add to cart"}
+                          Add to cart
                         </button>
                       </div>
                     </div>

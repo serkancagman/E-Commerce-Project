@@ -13,17 +13,51 @@ export const ShopCartProvider = ({ children }) => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const addToCart = (data, findCurrentItem) => {
+  const addToCart = (data, findCurrentItem, quantityInput) => {
     if (!findCurrentItem) {
-      return setCartItems((cartItems) => [...cartItems, data]);
+      if (quantityInput !== undefined) {
+        return setCartItems([
+          ...cartItems,
+          { ...data, quantity: quantityInput },
+        ]);
+      } else {
+        return setCartItems([...cartItems, { ...data, quantity: 1 }]);
+      }
     }
-    const filtered = cartItems.filter(
-      (sameItem) => sameItem._id !== findCurrentItem._id
-    );
+    // if the item is already in the cart, increase the quantity
+    const newCart = cartItems.map((item) => {
+      if (item._id === data._id) {
+        if (item.quantity) {
+          if (quantityInput !== undefined) {
+            return { ...item, quantity: item.quantity + quantityInput };
+          } else {
+            return { ...item, quantity: item.quantity + 1 };
+          }
+        } else if (item.quantity === undefined) {
+          if (quantityInput !== undefined) {
+            item.quantity = 1;
+            return { ...item, quantity: item.quantity + quantityInput };
+          } else {
+            return { ...item, quantity: item.quantity + 1 };
+          }
+        }
+      } else {
+        return item;
+      }
+      return item;
+    });
+    return setCartItems(newCart);
+  };
+
+  const removeFromCart = (data) => {
+    const filtered = cartItems.filter((sameItem) => sameItem._id !== data._id);
     setCartItems(filtered);
   };
 
-  const totalPrice = cartItems.reduce((acc, curr) => acc + curr.price, 0);
+  const totalPrice = cartItems.reduce(
+    (acc, curr) => acc + curr.price * curr.quantity,
+    0
+  );
 
   React.useEffect(() => {
     let subTotal = 0;
@@ -48,6 +82,7 @@ export const ShopCartProvider = ({ children }) => {
     shipping,
     cartTotal,
     setCartItems,
+    removeFromCart,
   };
 
   return (
